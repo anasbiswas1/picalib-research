@@ -76,3 +76,47 @@ def auroc(y, p):
     if len(np.unique(y)) < 2:
         return float("nan")
     return float(roc_auc_score(y, p))
+
+
+# --------------------------------------------------------------------------- #
+# released inference-only detectors (no training; emit p = P(attack))
+# --------------------------------------------------------------------------- #
+def score_released(texts, model_name, batch_size=16, max_length=512, device=None,
+                   positive_hints=("inject", "malicious", "jailbreak", "unsafe",
+                                   "attack", "label_1", "harmful")):
+    """Score texts with a released sequence-classification guard model.
+    Returns p = P(attack) by softmax over logits, picking the 'attack' class via
+    id2label (falls back to the last class). Handles long inputs by truncation.
+
+    Examples:
+      protectai/deberta-v3-base-prompt-injection-v2   (id2label SAFE/INJECTION)
+      meta-llama/Llama-Prompt-Guard-2-86M             (gated; benign/malicious)
+    """
+    import numpy as np
+    import torch
+    from transformers import AutoTokenizer, AutoModelForSequenceClassification
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+    tok = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModelForSequenceClassification.from_pretrained(model_name).to(device).eval()
+
+    id2label = getattr(model.config, "id2label", {}) or {}
+    pos_idx = None
+    for idx, lab in id2label.items():
+        if any(h in str(lab).lower() for h in positive_hints):
+            pos_idx = int(idx)
+            break
+    if pos_idx is None:
+        pos_idx = model.config.num_labels - 1     # fallback: last class
+    print(f"  {model_name}: id2label={id2label} -> attack class index {pos_idx}")
+
+    out = []
+    texts = [str(t) for t in texts]
+    with torch.no_grad():
+        for i in range(0, len(texts), batch_size):
+            enc = tok(texts[i:i + batch_size], return_tensors="pt", truncation=True,
+                      max_length=max_length, padding=True).to(device)
+            logits = model(**enc).logits
+            p = torch.softmax(logits, dim=-1)[:, pos_idx].detach().cpu().numpy()
+            out.append(p)
+    return np.concatenate(out)
