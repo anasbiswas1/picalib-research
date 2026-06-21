@@ -1,4 +1,3 @@
-
 """
 data_loaders.py — Gate 1 data spine
 ====================================
@@ -171,3 +170,85 @@ def load_all(include_bipia=True):
             print(f"[skip] {name:10s} {e}")
     combined = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
     return combined, report
+
+
+# --------------------------------------------------------------------------- #
+# IMPROVED indirect loader: assemble REALISTIC instruction-in-document samples
+# (benign BIPIA context, vs context with a text-attack instruction injected)
+# --------------------------------------------------------------------------- #
+def _bipia_contexts(workdir, tasks=("email", "table")):
+    """Read BIPIA's shipped document contexts (email/table are clean strings;
+    qa/abstract are license-gated and absent; code is a different attack type)."""
+    out = []
+    for task in tasks:
+        for split in ("test", "train"):
+            fp = os.path.join(workdir, "benchmark", task, f"{split}.jsonl")
+            if not os.path.exists(fp):
+                continue
+            with open(fp) as f:
+                for line in f:
+                    try:
+                        o = json.loads(line)
+                    except Exception:
+                        continue
+                    ctx = o.get("context")
+                    if isinstance(ctx, str) and 20 < len(ctx) < 6000:
+                        out.append(ctx)
+    return out
+
+
+def _bipia_text_attacks(workdir):
+    """Flatten BIPIA's text-attack instruction strings."""
+    atks = []
+    for fp in glob.glob(os.path.join(workdir, "benchmark", "text_attack_*.json")):
+        try:
+            obj = json.load(open(fp))
+        except Exception:
+            continue
+        atks += _strings_from(obj)
+    return [a for a in dict.fromkeys(atks) if 3 < len(a) < 1000]
+
+
+def load_bipia_indirect(workdir="/content/_bipia", n_attack=400, seed=2023,
+                        position="end"):
+    """REALISTIC indirect injection. A real indirect sample is a benign document
+    (BIPIA email/table context) with a text-attack instruction inserted at a
+    position -- NOT a bare attack string. Returns both:
+        label 1 = context + injected attack instruction
+        label 0 = context only (indirect benign)
+    unit_type = instruction_in_document.
+
+    position in {'start','middle','end'} (BIPIA varies all three; 'end' default).
+    For the final panel, BIPIA's official AutoPIABuilder gives exact position
+    sampling; this controlled assembler is for the Gate re-run.
+    """
+    import random
+    rng = random.Random(seed)
+    if not os.path.exists(workdir):
+        print("Cloning microsoft/BIPIA ...")
+        subprocess.run(["git", "clone", "--depth", "1",
+                        "https://github.com/microsoft/BIPIA.git", workdir], check=False)
+    contexts = _bipia_contexts(workdir)
+    attacks = _bipia_text_attacks(workdir)
+    print(f"BIPIA indirect: {len(contexts)} contexts, {len(attacks)} text attacks")
+    if not contexts or not attacks:
+        raise RuntimeError("BIPIA indirect: missing contexts/attacks; check repo layout.")
+    rng.shuffle(contexts)
+    rng.shuffle(attacks)
+
+    def inject(ctx, atk, pos):
+        if pos == "start":
+            return atk + "\n\n" + ctx
+        if pos == "middle":
+            mid = len(ctx) // 2
+            return ctx[:mid] + "\n" + atk + "\n" + ctx[mid:]
+        return ctx + "\n" + atk
+
+    atk_rows = [inject(contexts[i % len(contexts)],
+                       attacks[(i * 7 + 3) % len(attacks)], position)
+                for i in range(n_attack)]
+    ben_rows = list(dict.fromkeys(contexts))  # unique contexts as indirect benigns
+
+    texts = atk_rows + ben_rows
+    labels = [1] * len(atk_rows) + [0] * len(ben_rows)
+    return _schema(texts, labels, "bipia", "instruction_in_document")
