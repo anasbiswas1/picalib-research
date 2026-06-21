@@ -1,0 +1,6 @@
+detector,shift,t,n,FNR,S,ECE_atk,benign_FPR,AUROC
+llm_judge_qwen7b,direct,0.0015,662,0.312,1.0,0.304,0.01,0.96
+llm_judge_qwen7b,indirect_harmful,0.0015,838,0.467,1.0,0.382,0.001,0.929
+llm_judge_qwen7b,indirect_hijack,0.0015,927,0.805,1.0,0.187,0.001,0.909
+llm_judge_qwen7b,jailbreak,0.0015,778,0.081,1.0,0.234,0.088,0.961
+llm_judge_qwen7b,over_defense,0.0015,339,,,,0.029,

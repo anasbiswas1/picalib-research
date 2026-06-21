@@ -1,0 +1,4 @@
+detector,t,n,mean_p_clean,mean_p_meta,FNR_clean,FNR_meta,dFNR,newly_flipped,newly_caught
+llm_judge_qwen7b,0.0015,209,0.049,0.017,0.708,0.809,0.1,31,10
+prompt_guard_2,0.0035,210,0.029,0.353,0.557,0.043,-0.514,0,108
+protectai_v2,0.0275,210,0.176,0.666,0.681,0.186,-0.495,0,104
