@@ -1,0 +1,16 @@
+detector,shift,FNR,S,ECE_atk,ECE_pooled,Brier_atk,AUROC
+protectai_v2,direct,0.548,0.999,0.041,0.238,0.579,0.882
+protectai_v2,indirect_harmful,0.65,0.995,0.109,0.188,0.73,0.444
+protectai_v2,indirect_hijack,0.693,0.993,0.157,0.239,0.821,0.424
+protectai_v2,jailbreak,0.136,0.995,0.032,0.087,0.158,0.986
+protectai_v2,over_defense,,0.0,,0.424,,
+prompt_guard_2,direct,0.532,0.999,0.234,0.302,0.75,0.942
+prompt_guard_2,indirect_harmful,0.217,0.998,0.69,0.062,0.893,0.894
+prompt_guard_2,indirect_hijack,0.693,0.998,0.303,0.159,0.993,0.625
+prompt_guard_2,jailbreak,0.01,,0.049,0.028,0.049,0.993
+prompt_guard_2,over_defense,,0.0,,0.05,,
+prompt_guard_2_22m,direct,0.837,0.996,0.091,0.366,0.91,0.777
+prompt_guard_2_22m,indirect_harmful,0.9,0.996,0.082,0.066,0.967,0.694
+prompt_guard_2_22m,indirect_hijack,0.967,0.996,0.029,0.159,0.991,0.585
+prompt_guard_2_22m,jailbreak,0.083,0.99,0.281,0.159,0.268,0.955
+prompt_guard_2_22m,over_defense,,0.0,,0.017,,
