@@ -239,3 +239,49 @@ STRUCTURE vs CONTENT:
    -> weak on both; near-flat response.
    benign-hijack EMBEDDED (a real injection) scored p=0.003 (low = missed).
 ```
+
+
+---
+## Phase 2 structure-vs-content (CORRECTED sign-aware verdict)
+_2026-06-21 12:43_
+
+```
+PHASE 2 (CORRECTED) cell means:
+          detector       payload  structure   n  mean_p  ci_lo  ci_hi
+      protectai_v2 benign_hijack   embedded 100   0.070  0.045  0.102
+      protectai_v2 benign_hijack standalone  20   0.523  0.341  0.716
+      protectai_v2       harmful   embedded  50   0.086  0.030  0.156
+      protectai_v2       harmful standalone  10   0.226  0.027  0.479
+      protectai_v2          none  clean_doc   5   0.047  0.012  0.084
+    prompt_guard_2 benign_hijack   embedded 100   0.005  0.005  0.006
+    prompt_guard_2 benign_hijack standalone  20   0.001  0.001  0.001
+    prompt_guard_2       harmful   embedded  50   0.072  0.014  0.145
+    prompt_guard_2       harmful standalone  10   0.105  0.004  0.303
+    prompt_guard_2          none  clean_doc   5   0.005  0.002  0.008
+prompt_guard_2_22m benign_hijack   embedded 100   0.003  0.003  0.004
+prompt_guard_2_22m benign_hijack standalone  20   0.049  0.002  0.144
+prompt_guard_2_22m       harmful   embedded  50   0.012  0.004  0.024
+prompt_guard_2_22m       harmful standalone  10   0.056  0.002  0.164
+prompt_guard_2_22m          none  clean_doc   5   0.003  0.002  0.004
+
+CORRECTED interpretation (sign-aware). The auto-verdict compared magnitudes
+and ignored the sign of the structure effect; a NEGATIVE structure effect means
+embedding an injection LOWERS the score, the worst case for indirect detection.
+
+[protectai_v2] content_effect=+0.015  structure_effect(hijack)=-0.453  p(benign-hijack embedded)=0.070  p(harmful standalone)=0.226
+   -> CONTEXT CAMOUFLAGE: embedding an injection SUPPRESSES the score by 0.45. The benign host document launders the attack. Worst case for indirect detection: the more innocuous the context, the blinder the detector.
+[prompt_guard_2] content_effect=+0.067  structure_effect(hijack)=+0.004  p(benign-hijack embedded)=0.005  p(harmful standalone)=0.105
+   -> CONTENT-KEYED: score moves with harmful payload words, not injection structure. Benign-payload injections near-invisible (p=0.005).
+[prompt_guard_2_22m] content_effect=+0.008  structure_effect(hijack)=-0.046  p(benign-hijack embedded)=0.003  p(harmful standalone)=0.056
+   -> FLAT-BLIND: near-zero response to both factors; benign-payload injections invisible (p=0.003).
+
+UNIFYING FINDING: no detector treats embeddedness as an injection signal. Putting an
+instruction inside content the model was asked to process either does nothing or
+actively lowers the score. Benign-payload injection (a real injection) scored: protectai_v2=0.070, prompt_guard_2=0.005, prompt_guard_2_22m=0.003.
+These behave as payload/content detectors, not injection-structure detectors; ProtectAI
+is additionally fooled by benign context (score 0.52 standalone -> 0.07 embedded).
+
+CAVEAT: standalone instructions are short, embedded ones long, so ProtectAI's drop
+conflates context-camouflage with length dilution. A length/position sweep (Phase 4)
+separates the two; operationally both collapse the score on realistic long documents.
+```
