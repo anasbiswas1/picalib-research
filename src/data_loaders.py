@@ -337,3 +337,43 @@ def load_bipia_categorized(workdir="/content/_bipia", per_category=30, seed=2023
     print(f"BIPIA categorized: {int((df.label==1).sum())} attacks across "
           f"{df[df.label==1].meta.nunique()} categories, {int((df.label==0).sum())} benigns")
     return df
+
+
+# --------------------------------------------------------------------------- #
+# jailbreak shift (standalone jailbreak prompts + benigns)
+# --------------------------------------------------------------------------- #
+def load_jailbreak(hf_path="jackhhao/jailbreak-classification", max_per_class=400, seed=2023):
+    """Jailbreak vs benign standalone prompts for the jailbreak-shift cell.
+    Default jackhhao/jailbreak-classification (cols ~ prompt/text + type/label,
+    label values like 'jailbreak'/'benign'). Robust to column/label naming.
+    Balanced down to max_per_class each. Raises on failure so the panel can
+    try/except and skip the cell cleanly.
+    """
+    from datasets import load_dataset
+    ds = load_dataset(hf_path)
+    frames = [ds[sp].to_pandas() for sp in ds.keys()]
+    d = pd.concat(frames, ignore_index=True)
+    text_col = next((c for c in ("prompt", "text", "input", "sentence") if c in d.columns), d.columns[0])
+    lab_col = next((c for c in ("type", "label", "class", "category", "jailbreak") if c in d.columns), None)
+    if lab_col is None:
+        raise RuntimeError(f"jailbreak loader: no label column in {list(d.columns)}")
+
+    def to01(v):
+        s = str(v).strip().lower()
+        if s in ("1", "jailbreak", "attack", "malicious", "injection", "true", "unsafe"):
+            return 1
+        if s in ("0", "benign", "safe", "normal", "false"):
+            return 0
+        return 1 if ("jail" in s or "attack" in s or "inject" in s) else 0
+
+    d = d[[text_col, lab_col]].dropna()
+    d["label"] = d[lab_col].map(to01)
+    out = []
+    for lab in (0, 1):
+        sub = d[d.label == lab]
+        if len(sub) > max_per_class:
+            sub = sub.sample(max_per_class, random_state=seed)
+        out.append(sub)
+    d = pd.concat(out, ignore_index=True)
+    return _schema(d[text_col].tolist(), d["label"].tolist(),
+                   "jailbreak", "standalone_prompt")

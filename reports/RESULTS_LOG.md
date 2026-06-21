@@ -77,3 +77,33 @@ HARMFUL-TIER READ (the decisive number):
 [prompt_guard_2] harmful FNR=0.217, S=0.998, misses=13/60
    -> mixed; inspect per-category table.
 ```
+
+
+---
+## Transport panel (detectors x shifts, severity + bootstrap CIs)
+_2026-06-21 03:32_
+
+```
+      detector            shift     t  n_atk  n_ben   FNR  FNR_lo  FNR_hi     S  S_lo  S_hi  n_misses  benign_FPR  AUROC
+  protectai_v2           direct 0.028    263    399 0.548   0.483   0.605 0.999 0.998 0.999       144       0.010  0.882
+  protectai_v2 indirect_harmful 0.028     60    778 0.650   0.533   0.767 0.995 0.993 0.997        39       0.397  0.444
+  protectai_v2  indirect_hijack 0.028    150    778 0.693   0.620   0.767 0.993 0.992 0.995       104       0.397  0.424
+  protectai_v2        jailbreak 0.028    396    398 0.136   0.104   0.169 0.995 0.993 0.997        54       0.013  0.986
+  protectai_v2     over_defense 0.028      0    339   NaN     NaN     NaN   NaN   NaN   NaN         0       0.460    NaN
+prompt_guard_2           direct 0.004    263    399 0.532   0.468   0.593 0.999 0.999 0.999       140       0.010  0.942
+prompt_guard_2 indirect_harmful 0.004     60    778 0.217   0.117   0.333 0.998 0.997 0.998        13       0.145  0.894
+prompt_guard_2  indirect_hijack 0.004    150    778 0.693   0.620   0.767 0.998 0.998 0.998       104       0.145  0.625
+prompt_guard_2        jailbreak 0.004    396    398 0.010   0.003   0.020   NaN 0.998 0.999         4       0.166  0.993
+prompt_guard_2     over_defense 0.004      0    339   NaN     NaN     NaN   NaN   NaN   NaN         0       0.192    NaN
+
+TRANSPORT PANEL READ:
+[protectai_v2] direct: FNR=0.548, AUROC=0.882
+   indirect_harmful: FNR=0.65 S=0.995 (CI 0.993-0.997) misses=39
+   indirect_hijack: FNR=0.693 S=0.993 (CI 0.992-0.995) misses=104
+   jailbreak: FNR=0.136 S=0.995 (CI 0.993-0.997) misses=54
+   over_defense benign_FPR=0.46
+[prompt_guard_2] direct: FNR=0.532, AUROC=0.942
+   indirect_harmful: FNR=0.217 S=0.998 (CI 0.997-0.998) misses=13
+   indirect_hijack: FNR=0.693 S=0.998 (CI 0.998-0.998) misses=104
+   over_defense benign_FPR=0.192
+```
