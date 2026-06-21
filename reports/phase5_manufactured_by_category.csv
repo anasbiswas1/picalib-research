@@ -1,0 +1,8 @@
+category,orig_ASR,manufactured_protectai_v2,manufactured_prompt_guard_2
+Emoji Substitution,1.0,0.692,0.308
+Scams & Fraud,0.615,0.231,0.385
+Base Encoding,0.385,0.154,0.231
+Language Translation,0.308,0.077,0.154
+Misinformation & Propaganda,0.231,0.0,0.0
+Reverse Text,0.077,0.0,0.0
+Substitution Ciphers,0.077,0.0,0.0
