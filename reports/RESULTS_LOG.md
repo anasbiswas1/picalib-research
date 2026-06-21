@@ -414,3 +414,27 @@ SHIFT MAGNITUDE (Part C):
 indirect_harmful       0.677     0.589                 1.00
  indirect_hijack       0.545     0.784                 1.00
 ```
+
+
+---
+## Phase 5 severity-maximizing adversary
+_2026-06-21 15:29_
+
+```
+ADAPTIVE static-vs-evasive:
+                 n  mean_p_static  mean_p_adapt  FNR_static  FNR_adapt   dFNR
+detector                                                                     
+prompt_guard_2  91          0.006         0.001       0.593      0.989  0.396
+protectai_v2    91          0.200         0.076       0.648      0.868  0.220
+
+FUNCTIONALITY ASR by source:
+src
+orig              0.385
+prompt_guard_2    0.154
+protectai_v2      0.198
+
+MANUFACTURED confident-miss rate:
+      detector  n  evades_rate  still_works_rate  MANUFACTURED_confident_miss_rate  static_miss_rate
+  protectai_v2 91        0.868             0.198                             0.165             0.648
+prompt_guard_2 91        0.989             0.154                             0.154             0.593
+```
