@@ -374,3 +374,43 @@ INJECTABLE-JUDGE READ:
   prompt_guard_2 (encoder control) dFNR=-0.514 -> unexpectedly moved.
   protectai_v2 (encoder control) dFNR=-0.495 -> unexpectedly moved.
 ```
+
+
+---
+## Phase 4 LODO matrix + position/length + shift magnitude
+_2026-06-21 14:18_
+
+```
+LODO MATRIX:
+          detector           target  oracle_t  FNR_oracle  FNR|src=deepset  FNR|src=jailbreak  FNR|src=bipia_host  FNR|src=notinject
+      protectai_v2           direct    0.0275       0.548            0.548              0.559               0.825              0.954
+      protectai_v2 indirect_harmful    1.0000       0.983            0.650              0.667               0.983              1.000
+      protectai_v2  indirect_hijack    1.0000       0.993            0.693              0.747               0.993              1.000
+      protectai_v2        jailbreak    0.0525       0.141            0.136              0.141               0.581              0.947
+    prompt_guard_2           direct    0.0035       0.532            0.532              0.711               0.643              0.844
+    prompt_guard_2 indirect_harmful    0.0125       0.683            0.217              0.850               0.683              1.000
+    prompt_guard_2  indirect_hijack    0.0125       0.960            0.693              1.000               0.960              1.000
+    prompt_guard_2        jailbreak    0.0459       0.033            0.010              0.033               0.020              0.129
+prompt_guard_2_22m           direct    0.0213       0.837            0.837              0.924               0.890              0.924
+prompt_guard_2_22m indirect_harmful    0.0590       0.917            0.900              1.000               0.917              1.000
+prompt_guard_2_22m  indirect_hijack    0.0590       1.000            0.967              1.000               1.000              1.000
+prompt_guard_2_22m        jailbreak    0.3158       0.273            0.083              0.273               0.121              0.263
+
+GAP vs oracle by target:
+                   mean    min    max
+target                               
+direct            0.127  0.000  0.406
+indirect_harmful -0.039 -0.466  0.317
+indirect_hijack  -0.063 -0.300  0.040
+jailbreak         0.079 -0.190  0.806
+
+POSITION/LENGTH (Part B):
+len=300: coherent p=0.070 vs neutral p=0.609 -> CAMOUFLAGE beyond length (coherent context suppresses more).
+len=600: coherent p=0.007 vs neutral p=0.600 -> CAMOUFLAGE beyond length (coherent context suppresses more).
+
+SHIFT MAGNITUDE (Part C):
+          target  mean_AUROC  mean_FNR  shift_magnitude_AUC
+       jailbreak       0.978     0.076                 0.99
+indirect_harmful       0.677     0.589                 1.00
+ indirect_hijack       0.545     0.784                 1.00
+```

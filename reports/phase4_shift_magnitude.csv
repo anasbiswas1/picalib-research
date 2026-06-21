@@ -1,0 +1,4 @@
+target,mean_AUROC,mean_FNR,shift_magnitude_AUC
+jailbreak,0.978,0.076,0.99
+indirect_harmful,0.677,0.589,1.0
+indirect_hijack,0.545,0.784,1.0
