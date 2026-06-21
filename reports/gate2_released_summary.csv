@@ -1,2 +1,3 @@
 detector,t,src_AUROC,tgt_AUROC,ind_benFPR,ind_atkTPR,src_FNR,tgt_FNR,tgt_S,tgt_FNCR,tgt_ECEatk,tgt_misses
 protectai_v2,0.0275,0.882,0.378,0.397,0.268,0.548,0.732,0.995,0.728,0.122,292
+prompt_guard_2,0.0035,0.942,0.627,0.145,0.338,0.532,0.662,0.998,0.66,0.32,264
