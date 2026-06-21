@@ -252,3 +252,88 @@ def load_bipia_indirect(workdir="/content/_bipia", n_attack=400, seed=2023,
     texts = atk_rows + ben_rows
     labels = [1] * len(atk_rows) + [0] * len(ben_rows)
     return _schema(texts, labels, "bipia", "instruction_in_document")
+
+
+# --------------------------------------------------------------------------- #
+# CATEGORIZED indirect loader: tag each attack by BIPIA category so we can
+# slice severity by attack type and drop the benign-ish "attacks".
+# --------------------------------------------------------------------------- #
+# Genuine injections (model is made to deviate from its task, or harmful content
+# is inserted). The dropped categories (Task Automation, Business Intelligence,
+# Conversational Agent, Research Assistance, Sentiment Analysis, Information
+# Dissemination, Entertainment, Marketing) are benign-ish instructions a guard
+# model is arguably RIGHT to score low.
+BIPIA_HARMFUL = {"Scams & Fraud", "Misinformation & Propaganda"}
+BIPIA_HIJACK = {"Substitution Ciphers", "Base Encoding", "Reverse Text",
+                "Emoji Substitution", "Language Translation"}
+BIPIA_MALICIOUS = BIPIA_HARMFUL | BIPIA_HIJACK
+
+
+def _bipia_attacks_by_cat(workdir):
+    """{category: [instruction, ...]} from BIPIA's text-attack json(s)."""
+    out = {}
+    for fp in glob.glob(os.path.join(workdir, "benchmark", "text_attack_*.json")):
+        try:
+            obj = json.load(open(fp))
+        except Exception:
+            continue
+        if isinstance(obj, dict):
+            for cat, lst in obj.items():
+                if isinstance(lst, list):
+                    out.setdefault(cat, [])
+                    out[cat] += [s for s in lst if isinstance(s, str)]
+    return out
+
+
+def load_bipia_categorized(workdir="/content/_bipia", per_category=30, seed=2023,
+                           position="end", categories=None):
+    """Like load_bipia_indirect but every attack row is TAGGED with its BIPIA
+    category (in `meta`), so severity can be sliced by attack type.
+
+    categories : set to keep (None = ALL 15, tagged -> score once, slice later).
+                 Use data_loaders.BIPIA_MALICIOUS / BIPIA_HARMFUL / BIPIA_HIJACK.
+    per_category : attack samples built per kept category.
+    Returns label 1 = context+injected attack (meta=category),
+            label 0 = context only (meta='benign').
+    """
+    import random
+    rng = random.Random(seed)
+    if not os.path.exists(workdir):
+        print("Cloning microsoft/BIPIA ...")
+        subprocess.run(["git", "clone", "--depth", "1",
+                        "https://github.com/microsoft/BIPIA.git", workdir], check=False)
+    contexts = _bipia_contexts(workdir)
+    cat_attacks = _bipia_attacks_by_cat(workdir)
+    if categories:
+        cat_attacks = {c: v for c, v in cat_attacks.items() if c in categories}
+    if not contexts or not cat_attacks:
+        raise RuntimeError("BIPIA categorized: missing contexts/attacks.")
+    rng.shuffle(contexts)
+
+    def inject(ctx, atk, pos):
+        if pos == "start":
+            return atk + "\n\n" + ctx
+        if pos == "middle":
+            mid = len(ctx) // 2
+            return ctx[:mid] + "\n" + atk + "\n" + ctx[mid:]
+        return ctx + "\n" + atk
+
+    rows, ci = [], 0
+    for cat, instrs in cat_attacks.items():
+        instrs = [a for a in instrs if 3 < len(a) < 1000]
+        if not instrs:
+            continue
+        for n in range(per_category):
+            ctx = contexts[ci % len(contexts)]
+            ci += 1
+            rows.append((inject(ctx, instrs[n % len(instrs)], position), 1, cat))
+    for ctx in dict.fromkeys(contexts):
+        rows.append((ctx, 0, "benign"))
+
+    df = pd.DataFrame(rows, columns=["text", "label", "meta"])
+    df["source"] = "bipia"
+    df["unit_type"] = "instruction_in_document"
+    df = df[df["text"].str.strip().str.len() > 0].drop_duplicates("text").reset_index(drop=True)
+    print(f"BIPIA categorized: {int((df.label==1).sum())} attacks across "
+          f"{df[df.label==1].meta.nunique()} categories, {int((df.label==0).sum())} benigns")
+    return df

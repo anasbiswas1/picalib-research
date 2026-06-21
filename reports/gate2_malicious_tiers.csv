@@ -1,0 +1,5 @@
+detector,tier,n,FNR,n_misses,S
+protectai_v2,HARMFUL,60,0.65,39,0.995
+protectai_v2,hijack,150,0.693,104,0.993
+prompt_guard_2,HARMFUL,60,0.217,13,0.998
+prompt_guard_2,hijack,150,0.693,104,0.998
