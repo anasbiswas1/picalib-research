@@ -1,0 +1,2 @@
+arm,n,token_median,token_p90,token_max,n_over_512,model_max_len,tokenizer
+indirect (instruction_in_document),250,19,109,206,0,512,deberta-v3-base (ProtectAI-v2)
