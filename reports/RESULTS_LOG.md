@@ -438,3 +438,40 @@ MANUFACTURED confident-miss rate:
   protectai_v2 91        0.868             0.198                             0.165             0.648
 prompt_guard_2 91        0.989             0.154                             0.154             0.593
 ```
+
+
+---
+## Cheap-wins: CCI + ECE_atk + Brier + decoupling
+_2026-06-21 16:13_
+
+```
+EXTENDED PANEL (ECE_atk/pooled/Brier):
+          detector            shift   FNR     S  ECE_atk  ECE_pooled  Brier_atk  AUROC
+      protectai_v2           direct 0.548 0.999    0.588       0.238      0.579  0.882
+      protectai_v2 indirect_harmful 0.650 0.995    0.759       0.188      0.730  0.444
+      protectai_v2  indirect_hijack 0.693 0.993    0.850       0.239      0.821  0.424
+      protectai_v2        jailbreak 0.136 0.995    0.169       0.087      0.158  0.986
+      protectai_v2     over_defense   NaN 0.000      NaN       0.424        NaN    NaN
+    prompt_guard_2           direct 0.532 0.999    0.766       0.302      0.750  0.942
+    prompt_guard_2 indirect_harmful 0.217 0.998    0.907       0.062      0.893  0.894
+    prompt_guard_2  indirect_hijack 0.693 0.998    0.997       0.159      0.993  0.625
+    prompt_guard_2        jailbreak 0.010   NaN    0.059       0.028      0.049  0.993
+    prompt_guard_2     over_defense   NaN 0.000      NaN       0.050        NaN    NaN
+prompt_guard_2_22m           direct 0.837 0.996    0.927       0.366      0.910  0.777
+prompt_guard_2_22m indirect_harmful 0.900 0.996    0.982       0.066      0.967  0.694
+prompt_guard_2_22m  indirect_hijack 0.967 0.996    0.995       0.159      0.991  0.585
+prompt_guard_2_22m        jailbreak 0.083 0.990    0.364       0.159      0.268  0.955
+prompt_guard_2_22m     over_defense   NaN 0.000      NaN       0.017        NaN    NaN
+
+CCI:
+          detector            shift  CCI_FNR  CCI_AUROC  CCI_ECEatk  CCI_S
+      protectai_v2 indirect_harmful     0.19      -0.50        0.29  -0.00
+      protectai_v2  indirect_hijack     0.26      -0.52        0.45  -0.01
+      protectai_v2        jailbreak    -0.75       0.12       -0.71  -0.00
+    prompt_guard_2 indirect_harmful    -0.59      -0.05        0.18  -0.00
+    prompt_guard_2  indirect_hijack     0.30      -0.34        0.30  -0.00
+    prompt_guard_2        jailbreak    -0.98       0.05       -0.92    NaN
+prompt_guard_2_22m indirect_harmful     0.08      -0.11        0.06   0.00
+prompt_guard_2_22m  indirect_hijack     0.16      -0.25        0.07   0.00
+prompt_guard_2_22m        jailbreak    -0.90       0.23       -0.61  -0.01
+```

@@ -152,21 +152,28 @@ def ece_pooled(y_true, p, t=0.5, n_bins=15):
 
 
 def ece_attack_conditional(y_true, p, t=0.5, n_bins=15):
-    """PRIMARY companion to S. Calibration of P(attack)=p restricted to TRUE
-    attacks: within each confidence bin, |mean(p) - fraction-correctly-flagged|.
-    Weight-free (no cross-class weights) and base-rate-invariant.
+    """PRIMARY companion to S. Attack-class calibration error: restricted to
+    TRUE attacks, the reliability of p against the constant target 1, since the
+    true label of every attack is the attack class. Binning the attacks by p,
+    each bin contributes |1 - mean(p)| weighted by its population:
 
-    Design note: computed over {y == attack} only. Confidence = p (prob of the
-    attack class). 'Correct' = predicted attack (p >= t). This is the honest
-    'ECE on attacks' the reviewer will ask about -- and that is the point.
+        ECE_atk = sum_b (|B_b| / N_plus) * |1 - mean_{i in B_b, y_i = 1} p_i|.
+
+    A perfectly calibrated detector outputs p = 1 on every attack, giving
+    ECE_atk = 0; confident misses (p -> 0) drive it toward 1. Computed over
+    {y == attack} only, so it is base-rate invariant. The threshold t is not
+    used here: the calibration target is the true label, not a flagging
+    decision. (The earlier version compared mean(p) to the flag rate (p >= t),
+    which collapses to ~0 precisely when the detector confidently and uniformly
+    misses -- the opposite of the intended meaning. Fixed.)
     """
     y, p = _prep(y_true, p)
     atk = y == 1
     if atk.sum() == 0:
         return np.nan
     p_atk = p[atk]
-    correct = (p_atk >= t).astype(float)        # true label is attack for all
-    return _ece_from_subset(p_atk, correct, n_bins)
+    target = np.ones_like(p_atk)                 # true label is attack (=1) for every attack
+    return _ece_from_subset(p_atk, target, n_bins)
 
 
 # --------------------------------------------------------------------------- #
