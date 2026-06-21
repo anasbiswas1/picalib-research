@@ -1,0 +1,16 @@
+detector,payload,structure,n,mean_p,ci_lo,ci_hi
+protectai_v2,benign_hijack,embedded,100,0.07,0.045,0.102
+protectai_v2,benign_hijack,standalone,20,0.523,0.341,0.716
+protectai_v2,harmful,embedded,50,0.086,0.03,0.156
+protectai_v2,harmful,standalone,10,0.226,0.027,0.479
+protectai_v2,none,clean_doc,5,0.047,0.012,0.084
+prompt_guard_2,benign_hijack,embedded,100,0.005,0.005,0.006
+prompt_guard_2,benign_hijack,standalone,20,0.001,0.001,0.001
+prompt_guard_2,harmful,embedded,50,0.072,0.014,0.145
+prompt_guard_2,harmful,standalone,10,0.105,0.004,0.303
+prompt_guard_2,none,clean_doc,5,0.005,0.002,0.008
+prompt_guard_2_22m,benign_hijack,embedded,100,0.003,0.003,0.004
+prompt_guard_2_22m,benign_hijack,standalone,20,0.049,0.002,0.144
+prompt_guard_2_22m,harmful,embedded,50,0.012,0.004,0.024
+prompt_guard_2_22m,harmful,standalone,10,0.056,0.002,0.164
+prompt_guard_2_22m,none,clean_doc,5,0.003,0.002,0.004

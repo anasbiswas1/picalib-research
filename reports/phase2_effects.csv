@@ -1,0 +1,4 @@
+detector,content_effect(harm-hijack|embedded),structure_effect_hijack(emb-alone),structure_effect_harmful(emb-alone),p_benignhijack_embedded,p_harmful_standalone
+protectai_v2,0.015,-0.453,-0.14,0.07,0.226
+prompt_guard_2,0.067,0.004,-0.033,0.005,0.105
+prompt_guard_2_22m,0.008,-0.046,-0.045,0.003,0.056
