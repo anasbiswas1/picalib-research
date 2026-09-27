@@ -543,3 +543,46 @@ Prompt-Guard-2 (22M)  indirect_hijack   0.100                          0.000    
 Prompt-Guard-2 (22M)  indirect_hijack   0.200                          0.000                     0.000                 0.430                           0.241
 Prompt-Guard-2 (22M)  indirect_hijack   0.500                          0.007                     0.003                 0.430                           0.628
 ```
+
+
+---
+## nb14: score degeneracy and tie-aware transport panel
+_2026-09-27 09:17_
+
+```
+Tie-aware panel:
+            detector            shift  n_atk  t_guar    FNR  FNR_ties_as_miss  n_atk_eq_t_guar  calFPR@t_guar  tgtFPR@t_guar  S@t_guar  FNR_published_linear  FNR_spread
+        ProtectAI-v2           direct    263  0.9634 0.6198            0.6198                0         0.0075            NaN    0.9473                0.5475      0.0913
+        ProtectAI-v2 indirect_harmful     60  0.9634 0.8333            0.8333                0         0.0075         0.0784    0.9095                0.6500      0.2833
+        ProtectAI-v2  indirect_hijack    150  0.9634 0.9067            0.9067                0         0.0075         0.0784    0.9368                0.6933      0.3733
+        ProtectAI-v2        jailbreak    396  0.9634 0.1970            0.1970                0         0.0075         0.0075    0.8507                0.1364      0.0859
+Prompt-Guard-2 (86M)           direct    263  0.0508 0.7110            0.7110                0         0.0075            NaN    0.9957                0.5323      0.1825
+Prompt-Guard-2 (86M) indirect_harmful     60  0.0508 0.8667            0.8667                0         0.0075         0.0000    0.9909                0.2167      0.6833
+Prompt-Guard-2 (86M)  indirect_hijack    150  0.0508 1.0000            1.0000                0         0.0075         0.0000    0.9966                0.6933      0.3333
+Prompt-Guard-2 (86M)        jailbreak    396  0.0508 0.0328            0.0328                0         0.0075         0.0075    0.9875                0.0101      0.0253
+Prompt-Guard-2 (22M)           direct    263  0.0486 0.8859            0.8859                0         0.0075            NaN    0.9943                0.8365      0.0494
+Prompt-Guard-2 (22M) indirect_harmful     60  0.0486 0.9167            0.9167                0         0.0075         0.0141    0.9953                0.9000      0.0167
+Prompt-Guard-2 (22M)  indirect_hijack    150  0.0486 1.0000            1.0000                0         0.0075         0.0141    0.9952                0.9667      0.0333
+Prompt-Guard-2 (22M)        jailbreak    396  0.0486 0.1086            0.1086                0         0.0075         0.1508    0.9853                0.0833      0.0253
+
+Max FNR spread per detector:
+detector
+Prompt-Guard-2 (22M)    0.049
+Prompt-Guard-2 (86M)    0.683
+ProtectAI-v2            0.373
+
+Degeneracy (attacks):
+            detector            shift  atk_n_unique  atk_modal_mass  frac_atk_in_interp_band  n_atk_eq_t_guar
+        ProtectAI-v2           direct           239           0.046                    0.049                0
+        ProtectAI-v2 indirect_harmful            60           0.017                    0.150                0
+        ProtectAI-v2  indirect_hijack           150           0.007                    0.200                0
+        ProtectAI-v2        jailbreak           265           0.053                    0.048                0
+Prompt-Guard-2 (86M)           direct           263           0.004                    0.114                0
+Prompt-Guard-2 (86M) indirect_harmful            60           0.017                    0.483                0
+Prompt-Guard-2 (86M)  indirect_hijack           150           0.007                    0.280                0
+Prompt-Guard-2 (86M)        jailbreak           358           0.013                    0.013                0
+Prompt-Guard-2 (22M)           direct           263           0.004                    0.019                0
+Prompt-Guard-2 (22M) indirect_harmful            60           0.017                    0.017                0
+Prompt-Guard-2 (22M)  indirect_hijack           150           0.007                    0.000                0
+Prompt-Guard-2 (22M)        jailbreak           380           0.013                    0.005                0
+```
