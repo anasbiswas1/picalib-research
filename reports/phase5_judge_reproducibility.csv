@@ -1,0 +1,4 @@
+judge_a,judge_b,n_items,agreement
+qwen3b_4bit (nb20),qwen3b_fp16_greedy,153,0.9803921568627451
+qwen3b_4bit (nb20),qwen7b_4bit_greedy,153,0.9803921568627451
+qwen3b_fp16_greedy,qwen7b_4bit_greedy,153,0.9607843137254902

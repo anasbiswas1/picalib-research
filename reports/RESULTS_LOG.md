@@ -923,3 +923,33 @@ Manufactured / transfer:
 structural (ablation_no_twins) own selection              doc 87   0.885          NaN                NaN             NaN                             NaN                        NaN                                          NaN                                     NaN                                         NaN                                    NaN                        0.529                         0.022       46.0
  structural (full_sizematched) own selection              doc 87   0.954          NaN                NaN             NaN                             NaN                        NaN                                          NaN                                     NaN                                         NaN                                    NaN                        0.448                         0.077       39.0
 ```
+
+
+---
+## nb21: Phase 5 judge reproducibility; paraphrase-hardened structural detector
+_2026-09-27 13:40_
+
+```
+Judge agreement:
+           judge_a            judge_b  n_items  agreement
+qwen3b_4bit (nb20) qwen3b_fp16_greedy      153      0.980
+qwen3b_4bit (nb20) qwen7b_4bit_greedy      153      0.980
+qwen3b_fp16_greedy qwen7b_4bit_greedy      153      0.961
+
+ASR by judge:
+                               judge  ASR_orig  ASR_protectai_v2  ASR_prompt_guard_2
+                  qwen3b_4bit (nb20)     0.149             0.069               0.069
+                  qwen3b_fp16_greedy     0.115             0.069               0.069
+                  qwen7b_4bit_greedy     0.138             0.069               0.069
+notebook 12 (June, 4-bit 3B, all 91)     0.385             0.198               0.154
+
+full vs full_aug:
+   model  AUROC_hijack  AUROC_harmful  FNR_hijack_doc  FNR_harmful_doc  notinject_FPR_doc  AUROC_second_source  FNR_second_source  AUROC_test_split  AUROC_emb_vs_standalone  AUROC_emb_vs_content_imperative_insert
+    full         0.962          0.992           0.140            0.067              0.000                0.995              0.028             0.975                      1.0                                   0.912
+full_aug         0.971          0.996           0.127            0.067              0.009                0.999              0.016             0.998                      1.0                                   0.994
+
+Evasion:
+   model  t_doc  mean_p_static  mean_p_adapt  FNR_static  FNR_adapt  dFNR
+    full  0.000          0.855         0.033       0.132      0.967 0.835
+full_aug  0.001          0.878         0.033       0.110      0.967 0.857
+```
