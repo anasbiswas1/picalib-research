@@ -1,0 +1,9 @@
+detector,n,source,howto_FPR_doc_threshold,howto_frac_over_0p5,bipia_host_FPR_doc_threshold,notinject_FPR_doc_threshold
+ProtectAI-v2,500,corbt/all-recipes,0.0,0.0,0.008997429305912597,0.09734513274336283
+Prompt-Guard-2 (86M),500,corbt/all-recipes,0.0,0.0,0.008997429305912597,0.13274336283185842
+Prompt-Guard-2 (22M),500,corbt/all-recipes,0.008,0.0,0.008997429305912597,0.058997050147492625
+structural (full),500,corbt/all-recipes,0.0,0.0,0.008997429305912597,0.0
+structural (full_aug),500,corbt/all-recipes,0.002,0.0,0.008997429305912597,0.008849557522123894
+deepset injection,500,corbt/all-recipes,0.0,1.0,0.008997429305912597,0.1710914454277286
+ProtectAI-v1,500,corbt/all-recipes,0.0,0.0,0.008997429305912597,0.31563421828908556
+fmops distilbert,500,corbt/all-recipes,0.004,1.0,0.008997429305912597,0.0029498525073746312

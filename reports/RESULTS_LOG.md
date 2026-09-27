@@ -1000,3 +1000,44 @@ Misinformation & Propaganda 13     0.385                      0.077             
               Scams & Fraud 13     0.308                      0.154                        0.231                            0.154              0.231                  0.231
        Substitution Ciphers 13     0.385                      0.231                        0.077                            0.077              0.000                  0.000
 ```
+
+
+---
+## nb23: referee closers: extended guard panel, how-to over-defense, position sweep
+_2026-09-27 15:41_
+
+```
+Extended panel:
+             detector  inverted  AUROC_hijack  AUROC_harmful  FNR_hijack_doc  notinject_FPR_doc  notinject_frac_over_0p5  AUROC_second_source  FNR_second_source  AUROC_direct  AUROC_jailbreak
+         ProtectAI-v2     False         0.424          0.444           0.993              0.097                    0.434                0.718              0.924         0.882            0.986
+ Prompt-Guard-2 (86M)     False         0.625          0.894           0.967              0.133                    0.044                0.946              0.499         0.942            0.993
+ Prompt-Guard-2 (22M)     False         0.585          0.694           1.000              0.059                    0.006                0.901              0.886         0.777            0.955
+    structural (full)     False         0.962          0.992           0.140              0.000                    0.000                0.995              0.028         0.282            0.813
+structural (full_aug)     False         0.971          0.996           0.127              0.009                    0.003                0.999              0.016         0.600            0.760
+    deepset injection     False         0.648          0.679           0.980              0.171                    0.714                0.910              0.929         1.000            0.791
+         ProtectAI-v1     False         0.368          0.407           0.993              0.316                    0.313                0.684              0.718         0.764            0.942
+     fmops distilbert     False         0.644          0.677           0.993              0.003                    0.717                0.995              0.101         0.999            0.929
+
+Over-defense (how-to):
+             detector   n            source  howto_FPR_doc_threshold  howto_frac_over_0p5  bipia_host_FPR_doc_threshold  notinject_FPR_doc_threshold
+         ProtectAI-v2 500 corbt/all-recipes                    0.000                  0.0                         0.009                        0.097
+ Prompt-Guard-2 (86M) 500 corbt/all-recipes                    0.000                  0.0                         0.009                        0.133
+ Prompt-Guard-2 (22M) 500 corbt/all-recipes                    0.008                  0.0                         0.009                        0.059
+    structural (full) 500 corbt/all-recipes                    0.000                  0.0                         0.009                        0.000
+structural (full_aug) 500 corbt/all-recipes                    0.002                  0.0                         0.009                        0.009
+    deepset injection 500 corbt/all-recipes                    0.000                  1.0                         0.009                        0.171
+         ProtectAI-v1 500 corbt/all-recipes                    0.000                  0.0                         0.009                        0.316
+     fmops distilbert 500 corbt/all-recipes                    0.004                  1.0                         0.009                        0.003
+
+Position sweep (hijack FNR_doc):
+position               start  middle    end
+detector                                   
+Prompt-Guard-2 (22M)   1.000   1.000  1.000
+Prompt-Guard-2 (86M)   0.987   0.967  0.973
+ProtectAI-v1           0.993   0.987  0.993
+ProtectAI-v2           0.993   1.000  1.000
+deepset injection      0.960   0.973  0.980
+fmops distilbert       0.967   0.993  0.993
+structural (full)      0.067   0.140  0.140
+structural (full_aug)  0.053   0.120  0.127
+```
