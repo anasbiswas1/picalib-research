@@ -754,3 +754,30 @@ Prompt-Guard-2 (86M)        notinject 339         0.000          0.067          
         ProtectAI-v2 jailbreak_benign 398         0.187          0.150            0.953     0.793
         ProtectAI-v2        notinject 339         0.000          0.000            1.000     0.000
 ```
+
+
+---
+## nb16 addendum: document-level FPR at each calibration-source threshold
+_2026-09-27 10:05_
+
+```
+            detector                                   pool    N  FNR_hijack_lo  docFPR_lo  notinjectFPR_lo  FNR_hijack_hi  docFPR_hi  notinjectFPR_hi  FNR_hijack_guar  docFPR_guar  notinjectFPR_guar
+        ProtectAI-v2                                deepset  399          0.533      0.567            0.478          0.893      0.108            0.407            0.907        0.078              0.363
+        ProtectAI-v2                       jailbreak_benign  398          0.707      0.392            0.460          0.893      0.109            0.407            0.953        0.039              0.206
+        ProtectAI-v2                              notinject  339          1.000      0.000            0.021          1.000      0.000            0.012            1.000        0.000              0.012
+        ProtectAI-v2                                 alpaca 3000          0.020      0.994            0.625          0.020      0.991            0.614            0.020        0.991              0.614
+        ProtectAI-v2                                  dolly 3000          0.040      0.972            0.563          0.040      0.969            0.563            0.040        0.969              0.563
+        ProtectAI-v2 pooled_direct(deepset+jb+alpaca+dolly) 6797          0.060      0.959            0.552          0.067      0.956            0.549            0.073        0.952              0.546
+Prompt-Guard-2 (86M)                                deepset  399          0.667      0.166            0.192          0.973      0.006            0.130            1.000        0.000              0.086
+Prompt-Guard-2 (86M)                       jailbreak_benign  398          1.000      0.000            0.088          1.000      0.000            0.086            1.000        0.000              0.050
+Prompt-Guard-2 (86M)                              notinject  339          1.000      0.000            0.015          1.000      0.000            0.012            1.000        0.000              0.009
+Prompt-Guard-2 (86M)                                 alpaca 3000          0.233      0.599            0.274          0.240      0.595            0.268            0.240        0.595              0.268
+Prompt-Guard-2 (86M)                                  dolly 3000          0.127      0.728            0.330          0.127      0.728            0.330            0.127        0.728              0.330
+Prompt-Guard-2 (86M) pooled_direct(deepset+jb+alpaca+dolly) 6797          0.820      0.109            0.174          0.820      0.108            0.174            0.833        0.104              0.171
+Prompt-Guard-2 (22M)                                deepset  399          0.967      0.028            0.130          0.967      0.026            0.109            1.000        0.014              0.065
+Prompt-Guard-2 (22M)                       jailbreak_benign  398          1.000      0.000            0.009          1.000      0.000            0.006            1.000        0.000              0.006
+Prompt-Guard-2 (22M)                              notinject  339          1.000      0.000            0.015          1.000      0.000            0.012            1.000        0.000              0.009
+Prompt-Guard-2 (22M)                                 alpaca 3000          0.940      0.036            0.195          0.940      0.036            0.192            0.940        0.036              0.192
+Prompt-Guard-2 (22M)                                  dolly 3000          0.873      0.067            0.283          0.873      0.064            0.283            0.873        0.064              0.283
+Prompt-Guard-2 (22M) pooled_direct(deepset+jb+alpaca+dolly) 6797          1.000      0.008            0.056          1.000      0.008            0.056            1.000        0.006              0.053
+```
