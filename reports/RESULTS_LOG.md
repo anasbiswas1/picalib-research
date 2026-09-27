@@ -629,3 +629,58 @@ Prompt-Guard-2 (22M) indirect_harmful            60           0.017             
 Prompt-Guard-2 (22M)  indirect_hijack           150           0.007                    0.000                0
 Prompt-Guard-2 (22M)        jailbreak           380           0.013                    0.005                0
 ```
+
+
+---
+## nb15: interval re-report of all threshold-dependent tables
+_2026-09-27 09:37_
+
+```
+Table 2 intervals:
+            detector            shift  n_atk  FNR_lo  FNR_hi  FNR_guar  FNR_width_lo_hi  S_lo  S_hi  S_guar  tgtFPR_lo  tgtFPR_hi  tgtFPR_guar  AUROC
+        ProtectAI-v2           direct    263   0.529   0.597     0.620            0.068 0.999 0.980   0.947      0.013      0.010        0.008  0.882
+        ProtectAI-v2 indirect_harmful     60   0.550   0.800     0.833            0.250 0.997 0.945   0.910      0.567      0.108        0.078  0.444
+        ProtectAI-v2  indirect_hijack    150   0.533   0.893     0.907            0.360 0.997 0.948   0.937      0.567      0.108        0.078  0.424
+        ProtectAI-v2        jailbreak    396   0.111   0.184     0.197            0.073 0.998 0.901   0.851      0.015      0.008        0.008  0.986
+        ProtectAI-v2     over_defense      0     NaN     NaN       NaN              NaN   NaN   NaN     NaN      0.478      0.407        0.363    NaN
+Prompt-Guard-2 (86M)           direct    263   0.529   0.646     0.711            0.118 0.999 0.998   0.996      0.013      0.010        0.008  0.942
+Prompt-Guard-2 (86M) indirect_harmful     60   0.183   0.700     0.867            0.517 0.998 0.994   0.991      0.166      0.006        0.000  0.894
+Prompt-Guard-2 (86M)  indirect_hijack    150   0.667   0.973     1.000            0.307 0.998 0.997   0.997      0.166      0.006        0.000  0.625
+Prompt-Guard-2 (86M)        jailbreak    396   0.008   0.023     0.033            0.015   NaN   NaN   0.987      0.168      0.040        0.008  0.993
+Prompt-Guard-2 (86M)     over_defense      0     NaN     NaN       NaN              NaN   NaN   NaN     NaN      0.192      0.130        0.086    NaN
+Prompt-Guard-2 (22M)           direct    263   0.837   0.856     0.886            0.019 0.996 0.995   0.994      0.013      0.010        0.008  0.777
+Prompt-Guard-2 (22M) indirect_harmful     60   0.900   0.917     0.917            0.017 0.996 0.995   0.995      0.028      0.026        0.014  0.694
+Prompt-Guard-2 (22M)  indirect_hijack    150   0.967   0.967     1.000            0.000 0.996 0.996   0.995      0.028      0.026        0.014  0.585
+Prompt-Guard-2 (22M)        jailbreak    396   0.083   0.088     0.109            0.005 0.990 0.989   0.985      0.196      0.183        0.151  0.955
+Prompt-Guard-2 (22M)     over_defense      0     NaN     NaN       NaN              NaN   NaN   NaN     NaN      0.130      0.109        0.065    NaN
+
+Table 4 CCI intervals:
+            detector            shift  CCI_AUROC  CCI_ECE_atk  CCI_FNR_lo  CCI_S_lo  CCI_FNR_hi  CCI_S_hi  CCI_FNR_guar  CCI_S_guar
+        ProtectAI-v2 indirect_harmful     -0.496        0.290       0.041    -0.002       0.340    -0.036         0.345      -0.040
+        ProtectAI-v2  indirect_hijack     -0.520        0.445       0.009    -0.002       0.496    -0.032         0.463      -0.011
+Prompt-Guard-2 (86M) indirect_harmful     -0.051        0.183      -0.653    -0.001       0.083    -0.004         0.219      -0.005
+Prompt-Guard-2 (86M)  indirect_hijack     -0.336        0.300       0.261    -0.001       0.506    -0.001         0.406       0.001
+Prompt-Guard-2 (22M) indirect_harmful     -0.107        0.060       0.076    -0.000       0.071    -0.000         0.035       0.001
+Prompt-Guard-2 (22M)  indirect_hijack     -0.247        0.073       0.156     0.000       0.130     0.001         0.129       0.001
+
+Table 5 intervals:
+            detector     target  n_atk  ASR_overall  n_miss_lo  ASR_miss_lo  ASR_caught_lo  leak_of_success_lo  exploitable_miss_lo  n_miss_hi  ASR_miss_hi  ASR_caught_hi  leak_of_success_hi  exploitable_miss_hi  n_miss_guar  ASR_miss_guar  ASR_caught_guar  leak_of_success_guar  exploitable_miss_guar
+        ProtectAI-v2 qwen2_5_3b    210        0.381        113        0.319          0.454               0.450                0.171        182        0.374          0.429               0.850                0.324          186          0.382            0.375                 0.888                  0.338
+        ProtectAI-v2 qwen2_5_7b    210        0.338        113        0.265          0.423               0.423                0.143        182        0.324          0.429               0.831                0.281          186          0.317            0.500                 0.831                  0.281
+Prompt-Guard-2 (86M) qwen2_5_3b    210        0.381        111        0.342          0.424               0.475                0.181        188        0.383          0.364               0.900                0.343          202          0.396            0.000                 1.000                  0.381
+Prompt-Guard-2 (86M) qwen2_5_7b    210        0.338        111        0.342          0.333               0.535                0.181        188        0.356          0.182               0.944                0.319          202          0.347            0.125                 0.986                  0.333
+Prompt-Guard-2 (22M) qwen2_5_3b    210        0.381        199        0.397          0.091               0.988                0.376        200        0.395          0.100               0.988                0.376          205          0.390            0.000                 1.000                  0.381
+Prompt-Guard-2 (22M) qwen2_5_7b    210        0.338        199        0.352          0.091               0.986                0.333        200        0.350          0.100               0.986                0.333          205          0.346            0.000                 1.000                  0.338
+
+Adversary intervals:
+            detector  n_atk  mean_p_static  mean_p_adapt  FNR_static_lo  FNR_adapt_lo  dFNR_lo  FNR_static_hi  FNR_adapt_hi  dFNR_hi  FNR_static_guar  FNR_adapt_guar  dFNR_guar
+        ProtectAI-v2     91          0.200         0.076          0.516         0.802    0.286          0.835         0.934    0.099            0.868           0.945      0.077
+Prompt-Guard-2 (86M)     91          0.006         0.001          0.549         0.989    0.440          0.923         1.000    0.077            0.989           1.000      0.011
+
+Judge intervals:
+           shift  FNR_lo  FNR_hi  FNR_guar  AUROC
+          direct   0.312   0.319     0.342  0.960
+indirect_harmful   0.467   0.483     0.517  0.929
+ indirect_hijack   0.805   0.852     0.879  0.909
+       jailbreak   0.081   0.087     0.105  0.961
+```

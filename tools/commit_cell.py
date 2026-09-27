@@ -3,12 +3,13 @@
     subprocess.run(["python", "tools/commit_cell.py", "message"])
 
 Restores git identity and credentials from the Drive project folder, strips all notebook outputs,
-refuses to stage data or credential files, commits if anything is staged, and always pushes so
-that unpushed commits never remain local.
+refuses to stage data, credential or oversized files, refuses any staged file containing a secret
+token pattern, commits if anything is staged, and always pushes so unpushed commits never remain local.
 """
 from __future__ import annotations
 
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -22,6 +23,15 @@ GIT_EMAIL = "anasbiswas@gmail.com"
 FORBIDDEN_NAMES = {".git-credentials", ".gitconfig", "kaggle.json", ".env"}
 FORBIDDEN_PREFIXES = ("data/", "_bipia/", ".secrets/")
 MAX_FILE_MB = 50
+SECRET_PATTERNS = [
+    re.compile(r"hf_[A-Za-z0-9]{20,}"),            # Hugging Face
+    re.compile(r"ghp_[A-Za-z0-9]{30,}"),           # GitHub classic PAT
+    re.compile(r"github_pat_[A-Za-z0-9_]{40,}"),   # GitHub fine-grained PAT
+    re.compile(r"sk-[A-Za-z0-9]{32,}"),             # OpenAI-style keys
+    re.compile(r"AKIA[0-9A-Z]{16}"),               # AWS access key id
+    re.compile(r"AIza[0-9A-Za-z_\-]{35}"),         # Google API key
+]
+TEXT_EXT = {".py", ".ipynb", ".md", ".txt", ".json", ".csv", ".yaml", ".yml", ".toml", ".cfg", ".ini", ".sh"}
 
 
 def run(args, check=True):
@@ -52,6 +62,23 @@ def strip_outputs():
     print(f"outputs: stripped {len(notebooks)} notebook(s)")
 
 
+def secret_scan(paths):
+    hits = []
+    for p in paths:
+        path = REPO_ROOT / p
+        if path.suffix.lower() not in TEXT_EXT or not path.is_file():
+            continue
+        try:
+            txt = path.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        for pat in SECRET_PATTERNS:
+            if pat.search(txt):
+                hits.append(f"{p} ({pat.pattern[:14]}...)")
+                break
+    return hits
+
+
 def main() -> None:
     if len(sys.argv) < 2 or not sys.argv[1].strip():
         raise SystemExit('usage: python tools/commit_cell.py "commit message"')
@@ -76,9 +103,10 @@ def main() -> None:
     staged = [l for l in run(["git", "diff", "--cached", "--name-only"]).splitlines() if l.strip()]
     bad = [p for p in staged if Path(p).name in FORBIDDEN_NAMES or p.startswith(FORBIDDEN_PREFIXES)]
     big = [p for p in staged if Path(p).exists() and Path(p).stat().st_size > MAX_FILE_MB * 1024 * 1024]
-    if bad or big:
+    secrets = secret_scan(staged)
+    if bad or big or secrets:
         run(["git", "reset", "-q"], check=False)
-        raise SystemExit(f"refused: forbidden={bad} oversized={big}")
+        raise SystemExit(f"refused: forbidden={bad} oversized={big} secrets_in={secrets}")
 
     if staged:
         commit = subprocess.run(["git", "commit", "-m", message], capture_output=True, text=True)
