@@ -781,3 +781,23 @@ Prompt-Guard-2 (22M)                                 alpaca 3000          0.940 
 Prompt-Guard-2 (22M)                                  dolly 3000          0.873      0.067            0.283          0.873      0.064            0.283            0.873        0.064              0.283
 Prompt-Guard-2 (22M) pooled_direct(deepset+jb+alpaca+dolly) 6797          1.000      0.008            0.056          1.000      0.008            0.056            1.000        0.006              0.053
 ```
+
+
+---
+## nb17: matched-pair structural dataset
+_2026-09-27 10:18_
+
+```
+split     n  label1  label0  content_imperative_insert  declarative_insert  embedded  host_only  standalone
+train 17316    8999    8317                       2249                2248      8999       2250        1570
+  val  2244    1200    1044                        297                 296      1200        300         151
+ test  4511    2397    2114                        600                 599      2397        600         315
+
+Lexical baseline:
+                               subset    n  AUROC   acc
+                                  all 4511  0.735 0.629
+               embedded vs standalone 2712  0.969 0.976
+                embedded vs host_only 2997  0.679 0.803
+       embedded vs declarative_insert 2996  0.603 0.796
+embedded vs content_imperative_insert 2997  0.798 0.828
+```
