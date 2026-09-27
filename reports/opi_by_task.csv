@@ -1,0 +1,43 @@
+model,target_task,n_atk,AUROC_matched,FNR_guar
+ProtectAI-v2,sentiment_analysis,150,0.7670222222222223,0.88
+ProtectAI-v2,spam_detection,150,0.7451777777777778,0.8733333333333333
+ProtectAI-v2,hate_detection,150,0.6088,0.88
+ProtectAI-v2,grammar_correction,150,0.7981777777777779,0.9733333333333334
+ProtectAI-v2,duplicate_sentence_detection,150,0.6984444444444445,0.9733333333333334
+ProtectAI-v2,natural_language_inference,150,0.6907111111111113,0.9666666666666667
+Prompt-Guard-2 (86M),sentiment_analysis,150,0.975688888888889,0.4866666666666667
+Prompt-Guard-2 (86M),spam_detection,150,0.9080888888888888,0.48
+Prompt-Guard-2 (86M),hate_detection,150,0.9167555555555555,0.5533333333333333
+Prompt-Guard-2 (86M),grammar_correction,150,0.9424888888888889,0.4866666666666667
+Prompt-Guard-2 (86M),duplicate_sentence_detection,150,0.9880888888888889,0.47333333333333333
+Prompt-Guard-2 (86M),natural_language_inference,150,0.9790666666666666,0.5133333333333333
+Prompt-Guard-2 (22M),sentiment_analysis,150,0.9808444444444445,0.9066666666666666
+Prompt-Guard-2 (22M),spam_detection,150,0.8965333333333333,0.7933333333333333
+Prompt-Guard-2 (22M),hate_detection,150,0.9259555555555555,0.8533333333333334
+Prompt-Guard-2 (22M),grammar_correction,150,0.9129333333333334,0.9133333333333333
+Prompt-Guard-2 (22M),duplicate_sentence_detection,150,0.9471111111111112,0.9733333333333334
+Prompt-Guard-2 (22M),natural_language_inference,150,0.776,0.8733333333333333
+structural (full),sentiment_analysis,150,0.9996888888888888,0.013333333333333334
+structural (full),spam_detection,150,0.9881777777777778,0.11333333333333333
+structural (full),hate_detection,150,0.9986666666666667,0.013333333333333334
+structural (full),grammar_correction,150,0.9990222222222223,0.02666666666666667
+structural (full),duplicate_sentence_detection,150,1.0,0.0
+structural (full),natural_language_inference,150,1.0,0.0
+structural (ablation_no_twins),sentiment_analysis,150,0.9146666666666667,0.17333333333333334
+structural (ablation_no_twins),spam_detection,150,0.8700888888888889,0.20666666666666667
+structural (ablation_no_twins),hate_detection,150,0.9972,0.09333333333333334
+structural (ablation_no_twins),grammar_correction,150,0.9158666666666666,0.21333333333333335
+structural (ablation_no_twins),duplicate_sentence_detection,150,0.9860888888888888,0.08
+structural (ablation_no_twins),natural_language_inference,150,0.9865777777777778,0.14666666666666667
+structural (full_sizematched),sentiment_analysis,150,0.9720444444444445,0.1
+structural (full_sizematched),spam_detection,150,0.8828888888888888,0.23333333333333334
+structural (full_sizematched),hate_detection,150,0.9826222222222222,0.06666666666666667
+structural (full_sizematched),grammar_correction,150,0.9738666666666667,0.08
+structural (full_sizematched),duplicate_sentence_detection,150,0.9997777777777779,0.006666666666666667
+structural (full_sizematched),natural_language_inference,150,0.9999111111111111,0.013333333333333334
+TF-IDF reference,sentiment_analysis,150,0.858,0.8666666666666667
+TF-IDF reference,spam_detection,150,0.843288888888889,0.88
+TF-IDF reference,hate_detection,150,0.9081777777777778,0.8866666666666667
+TF-IDF reference,grammar_correction,150,0.9373333333333334,0.7666666666666667
+TF-IDF reference,duplicate_sentence_detection,150,0.8953333333333333,0.8666666666666667
+TF-IDF reference,natural_language_inference,150,0.7956,0.68

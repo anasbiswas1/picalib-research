@@ -835,3 +835,37 @@ structural (ablation_no_twins)      0.978                    0.936              
  structural (full_sizematched)      0.981                    0.999                   0.999                            1.000                                   0.935
               TF-IDF reference      0.735                    0.969                   0.679                            0.603                                   0.798
 ```
+
+
+---
+## nb19: second indirect source (Open-Prompt-Injection construction) and seed variance
+_2026-09-27 12:26_
+
+```
+Second source overall:
+                         model  AUROC  pAUC05  FNR_guar  R_mean_on_misses
+                  ProtectAI-v2  0.718   0.554     0.924             0.305
+          Prompt-Guard-2 (86M)  0.946   0.789     0.499             0.108
+          Prompt-Guard-2 (22M)  0.901   0.648     0.886             0.112
+             structural (full)  0.995   0.986     0.028             0.157
+structural (ablation_no_twins)  0.950   0.929     0.152             0.325
+ structural (full_sizematched)  0.973   0.955     0.083             0.321
+              TF-IDF reference  0.860   0.643     0.824             0.169
+
+By strategy (FNR_guar):
+strategy                        combined  escape  fake_completion  ignore  naive
+model                                                                           
+Prompt-Guard-2 (22M)               0.770   0.985            0.989   0.689  0.971
+Prompt-Guard-2 (86M)               0.000   0.768            0.815   0.000  0.834
+ProtectAI-v2                       0.879   0.990            1.000   0.740  1.000
+TF-IDF reference                   0.709   0.876            0.847   0.853  0.823
+structural (ablation_no_twins)     0.000   0.325            0.106   0.000  0.309
+structural (full)                  0.000   0.057            0.011   0.000  0.069
+structural (full_sizematched)      0.000   0.160            0.037   0.023  0.189
+
+Seed variance:
+ seed  AUROC_bipia_hijack  AUROC_second_source
+    0              0.9618               0.9954
+    1              0.9356               0.9982
+    2              0.9594               0.9975
+```
