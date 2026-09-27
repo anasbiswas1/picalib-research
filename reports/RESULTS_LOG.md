@@ -953,3 +953,50 @@ Evasion:
     full  0.000          0.855         0.033       0.132      0.967 0.835
 full_aug  0.001          0.878         0.033       0.110      0.967 0.857
 ```
+
+
+---
+## nb22: Phase 5 redone with saved subset (all detectors, 7B judge)
+_2026-09-27 14:50_
+
+```
+Evasion:
+             detector threshold     t  mean_p_static  mean_p_adapt  FNR_static  FNR_adapt  dFNR
+         ProtectAI-v2       doc 1.000          0.174         0.044       1.000      1.000 0.000
+         ProtectAI-v2     paper 0.027          0.174         0.044       0.725      0.901 0.176
+ Prompt-Guard-2 (86M)       doc 0.013          0.039         0.001       0.846      1.000 0.154
+ Prompt-Guard-2 (86M)     paper 0.003          0.039         0.001       0.527      0.989 0.462
+ Prompt-Guard-2 (22M)       doc 0.063          0.010         0.002       0.967      1.000 0.033
+ Prompt-Guard-2 (22M)     paper 0.021          0.010         0.002       0.934      1.000 0.066
+    structural (full)       doc 0.000          0.864         0.011       0.110      0.989 0.879
+structural (full_aug)       doc 0.001          0.889         0.011       0.110      0.989 0.879
+
+Manufactured:
+             detector threshold  n  evades  still_works  manufactured_rate  n_manufactured  static_miss_rate  orig_ASR
+         ProtectAI-v2       doc 91   1.000        0.231              0.231              21             1.000     0.429
+         ProtectAI-v2     paper 91   0.901        0.231              0.209              19             0.725     0.429
+ Prompt-Guard-2 (86M)       doc 91   1.000        0.165              0.165              15             0.846     0.429
+ Prompt-Guard-2 (86M)     paper 91   0.989        0.165              0.165              15             0.527     0.429
+ Prompt-Guard-2 (22M)       doc 91   1.000        0.121              0.121              11             0.967     0.429
+ Prompt-Guard-2 (22M)     paper 91   1.000        0.121              0.121              11             0.934     0.429
+    structural (full)       doc 91   0.989        0.143              0.132              12             0.110     0.429
+structural (full_aug)       doc 91   0.989        0.154              0.143              13             0.110     0.429
+
+Transfer:
+      source_detector  n_manufactured  caught_by_protectai_v2  caught_by_prompt_guard_2  caught_by_prompt_guard_2_22m  caught_by_full  caught_by_full_aug
+         ProtectAI-v2              21                     0.0                     0.048                           0.0           0.667               0.619
+ Prompt-Guard-2 (86M)              15                     0.0                     0.000                           0.0           0.200               0.267
+ Prompt-Guard-2 (22M)              11                     0.0                     0.091                           0.0           0.545               0.545
+    structural (full)              12                     0.0                     0.000                           0.0           0.000               0.000
+structural (full_aug)              13                     0.0                     0.000                           0.0           0.000               0.000
+
+By category:
+                   category  n  orig_ASR  manufactured_protectai_v2  manufactured_prompt_guard_2  manufactured_prompt_guard_2_22m  manufactured_full  manufactured_full_aug
+              Base Encoding 13     0.231                      0.231                        0.231                            0.231              0.154                  0.154
+         Emoji Substitution 13     1.000                      0.692                        0.385                            0.154              0.385                  0.385
+       Language Translation 13     0.385                      0.077                        0.231                            0.077              0.154                  0.154
+Misinformation & Propaganda 13     0.385                      0.077                        0.000                            0.077              0.000                  0.077
+               Reverse Text 13     0.308                      0.154                        0.000                            0.077              0.000                  0.000
+              Scams & Fraud 13     0.308                      0.154                        0.231                            0.154              0.231                  0.231
+       Substitution Ciphers 13     0.385                      0.231                        0.077                            0.077              0.000                  0.000
+```
