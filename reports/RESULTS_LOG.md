@@ -896,3 +896,30 @@ Manufactured / transfer:
 structural (ablation_no_twins) own selection              doc 91   0.879          NaN                NaN             NaN                             NaN                        NaN                                          NaN                                     NaN                                         NaN                                    NaN                        0.538                         0.020       49.0
  structural (full_sizematched) own selection              doc 91   0.956          NaN                NaN             NaN                             NaN                        NaN                                          NaN                                     NaN                                         NaN                                    NaN                        0.462                         0.071       42.0
 ```
+
+
+---
+## nb20: notebook-12 adversary transferred to the structural detector
+_2026-09-27 12:51_
+
+```
+Evasion:
+                         model threshold     t  mean_p_static  mean_p_adapt  FNR_static  FNR_adapt  dFNR
+             structural (full)       doc 0.000          0.855         0.033       0.132      0.967 0.835
+structural (ablation_no_twins)       doc 0.000          0.879         0.044       0.121      0.879 0.758
+ structural (full_sizematched)       doc 0.000          0.732         0.015       0.220      0.956 0.736
+                  ProtectAI-v2       doc 1.000          0.200         0.076       0.978      1.000 0.022
+                  ProtectAI-v2     paper 0.027          0.200         0.076       0.648      0.868 0.220
+          Prompt-Guard-2 (86M)       doc 0.013          0.006         0.001       0.912      1.000 0.088
+          Prompt-Guard-2 (86M)     paper 0.003          0.006         0.001       0.593      0.989 0.396
+
+Manufactured / transfer:
+                             source_detector source_threshold  n  evades  still_works  manufactured_rate  n_manufactured  caught_by_full_of_manufactured  caught_by_full_of_evasive  caught_by_ablation_no_twins_of_manufactured  caught_by_ablation_no_twins_of_evasive  caught_by_full_sizematched_of_manufactured  caught_by_full_sizematched_of_evasive  coverage_with_known_success  manufactured_rate_on_covered  n_covered
+                                ProtectAI-v2            paper 87   0.862        0.069              0.046             4.0                           0.500                      0.267                                        0.500                                   0.333                                       0.500                                  0.253                          NaN                           NaN        NaN
+                                ProtectAI-v2              doc 87   1.000        0.069              0.069             6.0                           0.667                      0.310                                        0.667                                   0.391                                       0.500                                  0.287                          NaN                           NaN        NaN
+                        Prompt-Guard-2 (86M)            paper 87   0.989        0.069              0.069             6.0                           0.167                      0.070                                        0.333                                   0.198                                       0.167                                  0.128                          NaN                           NaN        NaN
+                        Prompt-Guard-2 (86M)              doc 87   1.000        0.069              0.069             6.0                           0.167                      0.080                                        0.333                                   0.207                                       0.167                                  0.138                          NaN                           NaN        NaN
+             structural (full) own selection              doc 87   0.966          NaN                NaN             NaN                             NaN                        NaN                                          NaN                                     NaN                                         NaN                                    NaN                        0.483                         0.071       42.0
+structural (ablation_no_twins) own selection              doc 87   0.885          NaN                NaN             NaN                             NaN                        NaN                                          NaN                                     NaN                                         NaN                                    NaN                        0.529                         0.022       46.0
+ structural (full_sizematched) own selection              doc 87   0.954          NaN                NaN             NaN                             NaN                        NaN                                          NaN                                     NaN                                         NaN                                    NaN                        0.448                         0.077       39.0
+```
