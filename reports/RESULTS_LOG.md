@@ -801,3 +801,37 @@ Lexical baseline:
        embedded vs declarative_insert 2996  0.603 0.796
 embedded vs content_imperative_insert 2997  0.798 0.828
 ```
+
+
+---
+## nb18: structural detector fine-tune, ablation, deployment-distribution evaluation
+_2026-09-27 11:31_
+
+```
+AUROC table:
+                         model  AUROC_hijack  pAUC05_hijack  AUROC_harmful  AUROC_direct  AUROC_jailbreak  notinject_frac_over_0p5
+                  ProtectAI-v2         0.424          0.502          0.444         0.882            0.986                    0.434
+          Prompt-Guard-2 (86M)         0.625          0.512          0.894         0.942            0.993                    0.044
+          Prompt-Guard-2 (22M)         0.585          0.505          0.694         0.777            0.955                    0.006
+              TF-IDF reference         0.671          0.525          0.801         0.633            0.851                    0.065
+             structural (full)         0.962          0.938          0.992         0.282            0.813                    0.000
+structural (ablation_no_twins)         0.913          0.932          0.963         0.493            0.572                    0.239
+ structural (full_sizematched)         0.935          0.899          0.976         0.192            0.659                    0.000
+
+Interval (bipia_hosts calibration):
+                         model  FNR_hijack_guar  FNR_harmful_guar  docFPR_guar  notinjectFPR_guar
+                  ProtectAI-v2            0.993             0.983        0.009              0.097
+          Prompt-Guard-2 (86M)            0.967             0.683        0.009              0.133
+          Prompt-Guard-2 (22M)            1.000             0.917        0.009              0.059
+              TF-IDF reference            0.973             0.967        0.009              0.000
+             structural (full)            0.140             0.067        0.009              0.000
+structural (ablation_no_twins)            0.133             0.067        0.009              0.546
+ structural (full_sizematched)            0.213             0.083        0.009              0.003
+
+Structural test split:
+                         model  AUROC_all  AUROC_emb_vs_standalone  AUROC_emb_vs_host_only  AUROC_emb_vs_declarative_insert  AUROC_emb_vs_content_imperative_insert
+             structural (full)      0.975                    1.000                   1.000                            1.000                                   0.912
+structural (ablation_no_twins)      0.978                    0.936                   0.999                            1.000                                   0.957
+ structural (full_sizematched)      0.981                    0.999                   0.999                            1.000                                   0.935
+              TF-IDF reference      0.735                    0.969                   0.679                            0.603                                   0.798
+```
