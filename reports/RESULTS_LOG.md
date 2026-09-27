@@ -684,3 +684,73 @@ indirect_harmful   0.467   0.483     0.517  0.929
  indirect_hijack   0.805   0.852     0.879  0.909
        jailbreak   0.081   0.087     0.105  0.961
 ```
+
+
+---
+## nb16: calibration-set size and source vs interval width
+_2026-09-27 09:58_
+
+```
+Per-source intervals (full size):
+            detector                                   pool    N  t_lo  t_hi  t_guar  tail_gap  FNR_lo_indirect_hijack  FNR_hi_indirect_hijack  FNR_guar_indirect_hijack  width_indirect_hijack  FNR_lo_indirect_harmful  FNR_hi_indirect_harmful  width_indirect_harmful
+        ProtectAI-v2                                deepset  399 0.011 0.826   0.963     0.815                   0.533                   0.893                     0.907                  0.360                    0.550                    0.800                   0.250
+        ProtectAI-v2                       jailbreak_benign  398 0.029 0.822   0.999     0.793                   0.707                   0.893                     0.953                  0.187                    0.650                    0.800                   0.150
+        ProtectAI-v2                              notinject  339 1.000 1.000   1.000     0.000                   1.000                   1.000                     1.000                  0.000                    1.000                    1.000                   0.000
+        ProtectAI-v2                                 alpaca 3000 0.000 0.000   0.000     0.000                   0.020                   0.020                     0.020                  0.000                    0.017                    0.017                   0.000
+        ProtectAI-v2                                  dolly 3000 0.000 0.000   0.000     0.000                   0.040                   0.040                     0.040                  0.000                    0.083                    0.083                   0.000
+        ProtectAI-v2 pooled_direct(deepset+jb+alpaca+dolly) 6797 0.000 0.001   0.001     0.000                   0.060                   0.067                     0.073                  0.007                    0.083                    0.083                   0.000
+Prompt-Guard-2 (86M)                                deepset  399 0.003 0.014   0.051     0.011                   0.667                   0.973                     1.000                  0.307                    0.183                    0.700                   0.517
+Prompt-Guard-2 (86M)                       jailbreak_benign  398 0.046 0.047   0.359     0.001                   1.000                   1.000                     1.000                  0.000                    0.850                    0.850                   0.000
+Prompt-Guard-2 (86M)                              notinject  339 0.987 0.995   0.996     0.008                   1.000                   1.000                     1.000                  0.000                    0.933                    1.000                   0.067
+Prompt-Guard-2 (86M)                                 alpaca 3000 0.002 0.002   0.002     0.000                   0.233                   0.240                     0.240                  0.007                    0.017                    0.017                   0.000
+Prompt-Guard-2 (86M)                                  dolly 3000 0.001 0.001   0.001     0.000                   0.127                   0.127                     0.127                  0.000                    0.000                    0.000                   0.000
+Prompt-Guard-2 (86M) pooled_direct(deepset+jb+alpaca+dolly) 6797 0.005 0.005   0.005     0.000                   0.820                   0.820                     0.833                  0.000                    0.317                    0.317                   0.000
+Prompt-Guard-2 (22M)                                deepset  399 0.021 0.025   0.049     0.004                   0.967                   0.967                     1.000                  0.000                    0.900                    0.917                   0.017
+Prompt-Guard-2 (22M)                       jailbreak_benign  398 0.315 0.340   0.344     0.025                   1.000                   1.000                     1.000                  0.000                    1.000                    1.000                   0.000
+Prompt-Guard-2 (22M)                              notinject  339 0.271 0.311   0.319     0.040                   1.000                   1.000                     1.000                  0.000                    1.000                    1.000                   0.000
+Prompt-Guard-2 (22M)                                 alpaca 3000 0.012 0.012   0.012     0.000                   0.940                   0.940                     0.940                  0.000                    0.850                    0.850                   0.000
+Prompt-Guard-2 (22M)                                  dolly 3000 0.007 0.007   0.007     0.000                   0.873                   0.873                     0.873                  0.000                    0.833                    0.833                   0.000
+Prompt-Guard-2 (22M) pooled_direct(deepset+jb+alpaca+dolly) 6797 0.066 0.070   0.073     0.004                   1.000                   1.000                     1.000                  0.000                    0.933                    0.933                   0.000
+
+Width vs N (pooled):
+            detector    N  width_hijack_mean  width_hijack_p5  width_hijack_p95  width_harmful_mean  FNR_guar_hijack_mean  tail_gap_mean
+Prompt-Guard-2 (22M)  100              0.031            0.000             0.101               0.050                 0.981          0.068
+Prompt-Guard-2 (22M)  200              0.019            0.000             0.062               0.026                 0.986          0.040
+Prompt-Guard-2 (22M)  400              0.009            0.000             0.027               0.017                 0.988          0.051
+Prompt-Guard-2 (22M)  800              0.001            0.000             0.007               0.008                 0.991          0.017
+Prompt-Guard-2 (22M) 1600              0.002            0.000             0.020               0.003                 0.998          0.009
+Prompt-Guard-2 (22M) 3200              0.001            0.000             0.007               0.003                 0.997          0.004
+Prompt-Guard-2 (22M) 6400              0.000            0.000             0.000               0.002                 1.000          0.004
+Prompt-Guard-2 (86M)  100              0.301            0.026             0.832               0.288                 0.711          0.044
+Prompt-Guard-2 (86M)  200              0.201            0.020             0.501               0.201                 0.793          0.004
+Prompt-Guard-2 (86M)  400              0.088            0.020             0.235               0.124                 0.785          0.003
+Prompt-Guard-2 (86M)  800              0.042            0.006             0.081               0.037                 0.738          0.001
+Prompt-Guard-2 (86M) 1600              0.021            0.000             0.054               0.036                 0.828          0.001
+Prompt-Guard-2 (86M) 3200              0.011            0.000             0.054               0.014                 0.812          0.000
+Prompt-Guard-2 (86M) 6400              0.010            0.000             0.027               0.010                 0.819          0.000
+        ProtectAI-v2  100              0.251            0.000             0.742               0.217                 0.323          0.066
+        ProtectAI-v2  200              0.077            0.000             0.280               0.077                 0.137          0.002
+        ProtectAI-v2  400              0.053            0.000             0.180               0.061                 0.120          0.001
+        ProtectAI-v2  800              0.022            0.000             0.067               0.032                 0.090          0.000
+        ProtectAI-v2 1600              0.008            0.000             0.021               0.007                 0.080          0.000
+        ProtectAI-v2 3200              0.003            0.000             0.020               0.004                 0.066          0.000
+        ProtectAI-v2 6400              0.002            0.000             0.007               0.000                 0.066          0.000
+
+Matched N=399 per source:
+            detector           source   N  width_hijack  width_harmful  FNR_guar_hijack  tail_gap
+Prompt-Guard-2 (22M)           alpaca 399         0.014          0.015            0.968     0.005
+Prompt-Guard-2 (22M)          deepset 399         0.000          0.017            1.000     0.004
+Prompt-Guard-2 (22M)            dolly 399         0.023          0.031            0.891     0.001
+Prompt-Guard-2 (22M) jailbreak_benign 398         0.000          0.000            1.000     0.025
+Prompt-Guard-2 (22M)        notinject 339         0.000          0.000            1.000     0.040
+Prompt-Guard-2 (86M)           alpaca 399         0.072          0.031            0.510     0.001
+Prompt-Guard-2 (86M)          deepset 399         0.307          0.517            1.000     0.011
+Prompt-Guard-2 (86M)            dolly 399         0.032          0.002            0.177     0.000
+Prompt-Guard-2 (86M) jailbreak_benign 398         0.000          0.000            1.000     0.001
+Prompt-Guard-2 (86M)        notinject 339         0.000          0.067            1.000     0.008
+        ProtectAI-v2           alpaca 399         0.031          0.036            0.120     0.000
+        ProtectAI-v2          deepset 399         0.360          0.250            0.907     0.815
+        ProtectAI-v2            dolly 399         0.019          0.028            0.121     0.000
+        ProtectAI-v2 jailbreak_benign 398         0.187          0.150            0.953     0.793
+        ProtectAI-v2        notinject 339         0.000          0.000            1.000     0.000
+```
