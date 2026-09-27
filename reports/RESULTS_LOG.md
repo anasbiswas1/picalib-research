@@ -475,3 +475,71 @@ prompt_guard_2_22m indirect_harmful     0.08      -0.11        0.06   0.00
 prompt_guard_2_22m  indirect_hijack     0.16      -0.25        0.07   0.00
 prompt_guard_2_22m        jailbreak    -0.90       0.23       -0.61  -0.01
 ```
+
+
+---
+## nb13: rank severity R, recalibration invariance (H2), deferral bound
+_2026-09-27 08:46_
+
+```
+            detector            shift   FNR     S  R_src_mean_on_misses  CMR_src
+        ProtectAI-v2           direct 0.548 0.999                 0.214    0.011
+        ProtectAI-v2 indirect_harmful 0.650 0.995                 0.020    0.000
+        ProtectAI-v2  indirect_hijack 0.693 0.993                 0.019    0.000
+        ProtectAI-v2        jailbreak 0.136 0.995                 0.042    0.000
+Prompt-Guard-2 (86M)           direct 0.532 0.999                 0.106    0.000
+Prompt-Guard-2 (86M) indirect_harmful 0.217 0.998                 0.017    0.000
+Prompt-Guard-2 (86M)  indirect_hijack 0.693 0.998                 0.026    0.000
+Prompt-Guard-2 (86M)        jailbreak 0.010   NaN                 0.127    0.000
+Prompt-Guard-2 (22M)           direct 0.837 0.996                 0.266    0.000
+Prompt-Guard-2 (22M) indirect_harmful 0.900 0.996                 0.182    0.000
+Prompt-Guard-2 (22M)  indirect_hijack 0.967 0.996                 0.217    0.000
+Prompt-Guard-2 (22M)        jailbreak 0.083 0.990                 0.094    0.000
+
+Recalibration invariance (max |dFNR|, |dCMR| over strictly increasing maps): 0.00e+00, 1.14e-02
+
+Deferral bound / abstention:
+            detector            shift  budget  attacks_below_benign_quantile  exploit_rate_lower_bound  P_exploit_given_miss  misses_recovered_by_abstention
+        ProtectAI-v2 indirect_harmful   0.005                          0.000                     0.000                 0.406                           0.000
+        ProtectAI-v2 indirect_harmful   0.010                          0.000                     0.000                 0.406                           0.000
+        ProtectAI-v2 indirect_harmful   0.020                          0.000                     0.000                 0.406                           0.000
+        ProtectAI-v2 indirect_harmful   0.050                          0.000                     0.000                 0.406                           0.000
+        ProtectAI-v2 indirect_harmful   0.100                          0.000                     0.000                 0.406                           0.000
+        ProtectAI-v2 indirect_harmful   0.200                          0.000                     0.000                 0.406                           0.104
+        ProtectAI-v2 indirect_harmful   0.500                          0.000                     0.000                 0.406                           0.271
+        ProtectAI-v2  indirect_hijack   0.005                          0.000                     0.000                 0.406                           0.000
+        ProtectAI-v2  indirect_hijack   0.010                          0.000                     0.000                 0.406                           0.007
+        ProtectAI-v2  indirect_hijack   0.020                          0.000                     0.000                 0.406                           0.007
+        ProtectAI-v2  indirect_hijack   0.050                          0.000                     0.000                 0.406                           0.007
+        ProtectAI-v2  indirect_hijack   0.100                          0.000                     0.000                 0.406                           0.022
+        ProtectAI-v2  indirect_hijack   0.200                          0.000                     0.000                 0.406                           0.075
+        ProtectAI-v2  indirect_hijack   0.500                          0.000                     0.000                 0.406                           0.351
+Prompt-Guard-2 (86M) indirect_harmful   0.005                          0.000                     0.000                 0.427                           0.024
+Prompt-Guard-2 (86M) indirect_harmful   0.010                          0.000                     0.000                 0.427                           0.024
+Prompt-Guard-2 (86M) indirect_harmful   0.020                          0.000                     0.000                 0.427                           0.024
+Prompt-Guard-2 (86M) indirect_harmful   0.050                          0.000                     0.000                 0.427                           0.167
+Prompt-Guard-2 (86M) indirect_harmful   0.100                          0.000                     0.000                 0.427                           0.429
+Prompt-Guard-2 (86M) indirect_harmful   0.200                          0.000                     0.000                 0.427                           0.738
+Prompt-Guard-2 (86M) indirect_harmful   0.500                          0.000                     0.000                 0.427                           0.952
+Prompt-Guard-2 (86M)  indirect_hijack   0.005                          0.000                     0.000                 0.427                           0.007
+Prompt-Guard-2 (86M)  indirect_hijack   0.010                          0.000                     0.000                 0.427                           0.014
+Prompt-Guard-2 (86M)  indirect_hijack   0.020                          0.000                     0.000                 0.427                           0.021
+Prompt-Guard-2 (86M)  indirect_hijack   0.050                          0.000                     0.000                 0.427                           0.055
+Prompt-Guard-2 (86M)  indirect_hijack   0.100                          0.000                     0.000                 0.427                           0.123
+Prompt-Guard-2 (86M)  indirect_hijack   0.200                          0.000                     0.000                 0.427                           0.322
+Prompt-Guard-2 (86M)  indirect_hijack   0.500                          0.000                     0.000                 0.427                           0.623
+Prompt-Guard-2 (22M) indirect_harmful   0.005                          0.000                     0.000                 0.430                           0.018
+Prompt-Guard-2 (22M) indirect_harmful   0.010                          0.000                     0.000                 0.430                           0.036
+Prompt-Guard-2 (22M) indirect_harmful   0.020                          0.000                     0.000                 0.430                           0.073
+Prompt-Guard-2 (22M) indirect_harmful   0.050                          0.000                     0.000                 0.430                           0.091
+Prompt-Guard-2 (22M) indirect_harmful   0.100                          0.000                     0.000                 0.430                           0.218
+Prompt-Guard-2 (22M) indirect_harmful   0.200                          0.000                     0.000                 0.430                           0.418
+Prompt-Guard-2 (22M) indirect_harmful   0.500                          0.017                     0.007                 0.430                           0.727
+Prompt-Guard-2 (22M)  indirect_hijack   0.005                          0.000                     0.000                 0.430                           0.000
+Prompt-Guard-2 (22M)  indirect_hijack   0.010                          0.000                     0.000                 0.430                           0.000
+Prompt-Guard-2 (22M)  indirect_hijack   0.020                          0.000                     0.000                 0.430                           0.021
+Prompt-Guard-2 (22M)  indirect_hijack   0.050                          0.000                     0.000                 0.430                           0.083
+Prompt-Guard-2 (22M)  indirect_hijack   0.100                          0.000                     0.000                 0.430                           0.152
+Prompt-Guard-2 (22M)  indirect_hijack   0.200                          0.000                     0.000                 0.430                           0.241
+Prompt-Guard-2 (22M)  indirect_hijack   0.500                          0.007                     0.003                 0.430                           0.628
+```

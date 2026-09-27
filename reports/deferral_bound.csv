@@ -1,0 +1,43 @@
+detector,shift,budget,attacks_below_benign_quantile,exploit_rate_lower_bound,P_exploit_given_miss,misses_recovered_by_abstention
+ProtectAI-v2,indirect_harmful,0.005,0.0,0.0,0.406,0.0
+ProtectAI-v2,indirect_harmful,0.01,0.0,0.0,0.406,0.0
+ProtectAI-v2,indirect_harmful,0.02,0.0,0.0,0.406,0.0
+ProtectAI-v2,indirect_harmful,0.05,0.0,0.0,0.406,0.0
+ProtectAI-v2,indirect_harmful,0.1,0.0,0.0,0.406,0.0
+ProtectAI-v2,indirect_harmful,0.2,0.0,0.0,0.406,0.10416666666666667
+ProtectAI-v2,indirect_harmful,0.5,0.0,0.0,0.406,0.2708333333333333
+ProtectAI-v2,indirect_hijack,0.005,0.0,0.0,0.406,0.0
+ProtectAI-v2,indirect_hijack,0.01,0.0,0.0,0.406,0.007462686567164179
+ProtectAI-v2,indirect_hijack,0.02,0.0,0.0,0.406,0.007462686567164179
+ProtectAI-v2,indirect_hijack,0.05,0.0,0.0,0.406,0.007462686567164179
+ProtectAI-v2,indirect_hijack,0.1,0.0,0.0,0.406,0.022388059701492536
+ProtectAI-v2,indirect_hijack,0.2,0.0,0.0,0.406,0.07462686567164178
+ProtectAI-v2,indirect_hijack,0.5,0.0,0.0,0.406,0.35074626865671643
+Prompt-Guard-2 (86M),indirect_harmful,0.005,0.0,0.0,0.427,0.023809523809523808
+Prompt-Guard-2 (86M),indirect_harmful,0.01,0.0,0.0,0.427,0.023809523809523808
+Prompt-Guard-2 (86M),indirect_harmful,0.02,0.0,0.0,0.427,0.023809523809523808
+Prompt-Guard-2 (86M),indirect_harmful,0.05,0.0,0.0,0.427,0.16666666666666666
+Prompt-Guard-2 (86M),indirect_harmful,0.1,0.0,0.0,0.427,0.42857142857142855
+Prompt-Guard-2 (86M),indirect_harmful,0.2,0.0,0.0,0.427,0.7380952380952381
+Prompt-Guard-2 (86M),indirect_harmful,0.5,0.0,0.0,0.427,0.9523809523809523
+Prompt-Guard-2 (86M),indirect_hijack,0.005,0.0,0.0,0.427,0.00684931506849315
+Prompt-Guard-2 (86M),indirect_hijack,0.01,0.0,0.0,0.427,0.0136986301369863
+Prompt-Guard-2 (86M),indirect_hijack,0.02,0.0,0.0,0.427,0.02054794520547945
+Prompt-Guard-2 (86M),indirect_hijack,0.05,0.0,0.0,0.427,0.0547945205479452
+Prompt-Guard-2 (86M),indirect_hijack,0.1,0.0,0.0,0.427,0.1232876712328767
+Prompt-Guard-2 (86M),indirect_hijack,0.2,0.0,0.0,0.427,0.3219178082191781
+Prompt-Guard-2 (86M),indirect_hijack,0.5,0.0,0.0,0.427,0.6232876712328768
+Prompt-Guard-2 (22M),indirect_harmful,0.005,0.0,0.0,0.4295,0.01818181818181818
+Prompt-Guard-2 (22M),indirect_harmful,0.01,0.0,0.0,0.4295,0.03636363636363636
+Prompt-Guard-2 (22M),indirect_harmful,0.02,0.0,0.0,0.4295,0.07272727272727272
+Prompt-Guard-2 (22M),indirect_harmful,0.05,0.0,0.0,0.4295,0.09090909090909091
+Prompt-Guard-2 (22M),indirect_harmful,0.1,0.0,0.0,0.4295,0.21818181818181817
+Prompt-Guard-2 (22M),indirect_harmful,0.2,0.0,0.0,0.4295,0.41818181818181815
+Prompt-Guard-2 (22M),indirect_harmful,0.5,0.016666666666666666,0.007158333333333333,0.4295,0.7272727272727273
+Prompt-Guard-2 (22M),indirect_hijack,0.005,0.0,0.0,0.4295,0.0
+Prompt-Guard-2 (22M),indirect_hijack,0.01,0.0,0.0,0.4295,0.0
+Prompt-Guard-2 (22M),indirect_hijack,0.02,0.0,0.0,0.4295,0.020689655172413793
+Prompt-Guard-2 (22M),indirect_hijack,0.05,0.0,0.0,0.4295,0.08275862068965517
+Prompt-Guard-2 (22M),indirect_hijack,0.1,0.0,0.0,0.4295,0.15172413793103448
+Prompt-Guard-2 (22M),indirect_hijack,0.2,0.0,0.0,0.4295,0.2413793103448276
+Prompt-Guard-2 (22M),indirect_hijack,0.5,0.006666666666666667,0.0028633333333333336,0.4295,0.6275862068965518
