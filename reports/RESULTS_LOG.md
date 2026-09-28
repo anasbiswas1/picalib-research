@@ -1260,3 +1260,73 @@ fmops distilbert        0.963   0.991      0.931
 structural (full)       0.592   0.816      0.878
 structural (full_aug)   0.721   0.896      0.735
 ```
+
+
+---
+## nb24: PIGuard, conventional fine-tune baseline, intervals on headline numbers, judge validation sheet
+_2026-09-28 06:32_
+
+```
+Extended panel with CIs:
+                         model         AUROC_hijack        AUROC_harmful       FNR_hijack_doc    notinject_FPR_doc  AUROC_second_source    FNR_second_source AUROC_direct AUROC_jailbreak
+                  ProtectAI-v2 0.424 [0.371, 0.478] 0.444 [0.358, 0.535] 0.993 [0.963, 0.999] 0.097 [0.070, 0.134] 0.718 [0.695, 0.741] 0.924 [0.905, 0.940]        0.882           0.986
+          Prompt-Guard-2 (86M) 0.625 [0.577, 0.674] 0.894 [0.853, 0.929] 0.967 [0.924, 0.986] 0.133 [0.101, 0.173] 0.946 [0.937, 0.955] 0.499 [0.466, 0.531]        0.942           0.993
+          Prompt-Guard-2 (22M) 0.585 [0.535, 0.636] 0.694 [0.622, 0.759] 1.000 [0.975, 1.000] 0.059 [0.039, 0.089] 0.901 [0.886, 0.914] 0.886 [0.863, 0.905]        0.777           0.955
+             deepset injection 0.648 [0.607, 0.689] 0.679 [0.621, 0.735] 0.980 [0.943, 0.993] 0.171 [0.135, 0.215] 0.910 [0.894, 0.924] 0.929 [0.910, 0.944]        1.000           0.791
+                  ProtectAI-v1 0.368 [0.323, 0.412] 0.407 [0.342, 0.470] 0.993 [0.963, 0.999] 0.316 [0.268, 0.367] 0.684 [0.660, 0.708] 0.718 [0.687, 0.746]        0.764           0.942
+              fmops distilbert 0.644 [0.600, 0.689] 0.677 [0.618, 0.735] 0.993 [0.963, 0.999] 0.003 [0.001, 0.017] 0.995 [0.993, 0.997] 0.101 [0.083, 0.123]        0.999           0.929
+                       PIGuard 0.994 [0.990, 0.997] 0.993 [0.982, 1.000] 0.107 [0.067, 0.166] 0.142 [0.108, 0.183] 0.928 [0.914, 0.940] 0.793 [0.766, 0.819]        0.985           0.999
+             structural (full) 0.962 [0.935, 0.984] 0.992 [0.979, 1.000] 0.140 [0.093, 0.205] 0.000 [0.000, 0.011] 0.995 [0.993, 0.998] 0.028 [0.019, 0.041]        0.282           0.813
+         structural (full_aug) 0.971 [0.951, 0.987] 0.996 [0.991, 1.000] 0.127 [0.083, 0.189] 0.009 [0.003, 0.026] 0.999 [0.998, 1.000] 0.016 [0.009, 0.026]        0.600           0.760
+structural (ablation_no_twins) 0.913 [0.875, 0.949] 0.963 [0.917, 0.999] 0.133 [0.088, 0.197] 0.546 [0.493, 0.598] 0.950 [0.938, 0.960] 0.152 [0.130, 0.177]        0.493           0.572
+ structural (full_sizematched) 0.935 [0.907, 0.958] 0.976 [0.946, 0.997] 0.213 [0.155, 0.286] 0.003 [0.001, 0.017] 0.973 [0.965, 0.980] 0.083 [0.067, 0.103]        0.192           0.659
+        conventional fine-tune 0.509 [0.458, 0.560] 0.576 [0.506, 0.642] 0.980 [0.943, 0.993] 0.206 [0.167, 0.253] 0.603 [0.577, 0.630] 0.992 [0.984, 0.996]        0.823           0.944
+
+Identification gap vs sampling:
+            detector            shift  identification_gap          FNR_low_end         FNR_high_end  sampling_half_width_low
+        ProtectAI-v2           direct               0.068 0.529 [0.468, 0.586] 0.597 [0.536, 0.650]                    0.059
+        ProtectAI-v2 indirect_harmful               0.250 0.550 [0.417, 0.667] 0.800 [0.700, 0.883]                    0.125
+        ProtectAI-v2  indirect_hijack               0.360 0.533 [0.453, 0.613] 0.893 [0.840, 0.940]                    0.080
+        ProtectAI-v2        jailbreak               0.073 0.111 [0.081, 0.141] 0.184 [0.149, 0.222]                    0.030
+Prompt-Guard-2 (86M)           direct               0.118 0.529 [0.464, 0.589] 0.646 [0.589, 0.707]                    0.063
+Prompt-Guard-2 (86M) indirect_harmful               0.517 0.183 [0.083, 0.300] 0.700 [0.583, 0.817]                    0.108
+Prompt-Guard-2 (86M)  indirect_hijack               0.307 0.667 [0.587, 0.747] 0.973 [0.947, 0.993]                    0.080
+Prompt-Guard-2 (86M)        jailbreak               0.015 0.008 [0.000, 0.018] 0.023 [0.010, 0.040]                    0.009
+Prompt-Guard-2 (22M)           direct               0.019 0.837 [0.791, 0.878] 0.856 [0.814, 0.897]                    0.044
+Prompt-Guard-2 (22M) indirect_harmful               0.017 0.900 [0.817, 0.967] 0.917 [0.850, 0.983]                    0.075
+Prompt-Guard-2 (22M)  indirect_hijack               0.000 0.967 [0.933, 0.993] 0.967 [0.933, 0.993]                    0.030
+Prompt-Guard-2 (22M)        jailbreak               0.005 0.083 [0.058, 0.114] 0.088 [0.061, 0.121]                    0.028
+
+Judge validation:
+  n  agreement  agreement_lo95  agreement_hi95  cohen_kappa  judge_precision  judge_recall  tp  fp  fn  tn
+100        0.9           0.826           0.945        0.796            0.949         0.822  37   2   8  53
+```
+
+
+---
+## nb26: paraphrase smoothing at test time, attacker first and second
+_2026-09-28 11:47_
+
+```
+Paraphrase smoothing (k=4), guaranteed-threshold miss rates:
+             detector aggregation  static_FNR_guar  adaptive_first_FNR_guar  adaptive_second_FNR_guar  hosts_FPR_guar  notinject_FPR_guar
+    structural (full)        base            0.077                    0.989                     0.989           0.007                0.00
+    structural (full)         max            0.121                    0.967                     0.989           0.007                0.01
+    structural (full)        mean            0.121                    0.967                     0.989           0.007                0.01
+structural (full_aug)        base            0.110                    0.989                     0.989           0.007                0.02
+structural (full_aug)         max            0.099                    0.945                     0.989           0.007                0.06
+structural (full_aug)        mean            0.099                    0.945                     0.989           0.007                0.07
+         ProtectAI-v2        base            1.000                    1.000                     1.000           0.007                0.12
+         ProtectAI-v2         max            1.000                    0.978                     1.000           0.007                0.11
+         ProtectAI-v2        mean            1.000                    1.000                     1.000           0.007                0.08
+ Prompt-Guard-2 (86M)        base            0.912                    1.000                     1.000           0.007                0.17
+ Prompt-Guard-2 (86M)         max            0.868                    0.967                     1.000           0.007                0.22
+ Prompt-Guard-2 (86M)        mean            0.945                    0.978                     1.000           0.007                0.14
+
+Independence check:
+             detector threshold  k  mean_per_paraphrase_evasion  observed_evasion  independence_prediction  base_evasion
+    structural (full)      guar  4                          1.0             0.989                    0.989         0.989
+structural (full_aug)      guar  4                          1.0             0.989                    0.989         0.989
+         ProtectAI-v2      guar  4                          1.0             1.000                    1.000         1.000
+ Prompt-Guard-2 (86M)      guar  4                          1.0             1.000                    1.000         1.000
+```

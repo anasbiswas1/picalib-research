@@ -1,0 +1,5 @@
+detector,threshold,k,mean_per_paraphrase_evasion,observed_evasion,independence_prediction,base_evasion
+structural (full),guar,4,1.0,0.989010989010989,0.989010989010989,0.989010989010989
+structural (full_aug),guar,4,1.0,0.989010989010989,0.989010989010989,0.989010989010989
+ProtectAI-v2,guar,4,1.0,1.0,1.0,1.0
+Prompt-Guard-2 (86M),guar,4,1.0,1.0,1.0,1.0
