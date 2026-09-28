@@ -1330,3 +1330,65 @@ structural (full_aug)      guar  4                          1.0             0.98
          ProtectAI-v2      guar  4                          1.0             1.000                    1.000         1.000
  Prompt-Guard-2 (86M)      guar  4                          1.0             1.000                    1.000         1.000
 ```
+
+
+---
+## nb27: ensembles under attacker-second; task-drift probe on the target model
+_2026-09-28 14:42_
+
+```
+Ensembles (attacker second):
+                                                                                              ensemble  size  static_FNR_guar  adaptive_second_FNR_guar  adaptive_second_FNR_lo  hosts_FPR_guar
+                                                                                     structural (full)     1            0.110                     0.989                   0.989           0.009
+                                                                                 structural (full_aug)     1            0.110                     0.989                   0.989           0.009
+                                                                                          ProtectAI-v2     1            1.000                     1.000                   1.000           0.009
+                                                                                  Prompt-Guard-2 (86M)     1            0.846                     1.000                   1.000           0.009
+                                                                                  Prompt-Guard-2 (22M)     1            0.967                     1.000                   1.000           0.009
+                                                                      ProtectAI-v2 + structural (full)     2            0.121                     0.989                   0.989           0.008
+                                                                  ProtectAI-v2 + structural (full_aug)     2            0.110                     0.989                   0.989           0.008
+                                                              Prompt-Guard-2 (86M) + structural (full)     2            0.110                     0.989                   0.989           0.008
+                                                          Prompt-Guard-2 (86M) + structural (full_aug)     2            0.099                     0.989                   0.989           0.008
+                                                              Prompt-Guard-2 (22M) + structural (full)     2            0.121                     0.989                   0.989           0.008
+                                                          Prompt-Guard-2 (22M) + structural (full_aug)     2            0.110                     0.989                   0.989           0.008
+                                                             structural (full) + structural (full_aug)     2            0.110                     0.989                   0.989           0.008
+                                                                   ProtectAI-v2 + Prompt-Guard-2 (86M)     2            0.879                     1.000                   1.000           0.008
+                                                                   ProtectAI-v2 + Prompt-Guard-2 (22M)     2            0.978                     1.000                   1.000           0.008
+                                                           Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M)     2            0.868                     1.000                   1.000           0.008
+                                               ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full)     3            0.110                     0.989                   0.989           0.006
+                                           ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full_aug)     3            0.099                     0.989                   0.989           0.006
+                                               ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full)     3            0.121                     0.989                   0.989           0.006
+                                           ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full_aug)     3            0.110                     0.989                   0.989           0.006
+                                              ProtectAI-v2 + structural (full) + structural (full_aug)     3            0.110                     0.989                   0.989           0.006
+                                       Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full)     3            0.110                     0.989                   0.989           0.006
+                                   Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full_aug)     3            0.099                     0.989                   0.989           0.006
+                                      Prompt-Guard-2 (86M) + structural (full) + structural (full_aug)     3            0.099                     0.989                   0.989           0.008
+                                      Prompt-Guard-2 (22M) + structural (full) + structural (full_aug)     3            0.110                     0.989                   0.989           0.008
+                                            ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M)     3            0.890                     1.000                   1.000           0.005
+ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full) + structural (full_aug)     5            0.110                     0.989                   0.989           0.006
+
+Task-drift probe (layer 14, val AUROC 1.000):
+                                     distribution                AUROC                 FNR_guar     calibration
+                            BIPIA hijack vs hosts 0.697 [0.634, 0.755]     0.493 [0.414, 0.573]     BIPIA hosts
+                           BIPIA harmful vs hosts 0.583 [0.487, 0.684]     0.583 [0.457, 0.699]     BIPIA hosts
+                      second source (600 sampled) 1.000 [1.000, 1.000]     0.000 [0.000, 0.013] its own benigns
+AgentDojo tool outputs (129 benign, 400 attacked) 0.970 [0.955, 0.983]     0.378 [0.331, 0.426] its own benigns
+                         NotInject (over-defense)                  n/a FPR 0.401 [0.350, 0.454]     BIPIA hosts
+                           recipes (over-defense)                  n/a FPR 0.000 [0.000, 0.019]     BIPIA hosts
+
+Adversary:
+                                            setting  FNR_guar  FNR_lo
+                              static (91 originals)     0.538   0.538
+attacker first (rewrites chosen against structural)     0.835   0.835
+attacker second (rewrites chosen against the probe)     0.967   0.967
+
+Cross-tab:
+ works   n  flagged_guar  flagged_lo
+     0 273         0.136       0.136
+     1  39         0.282       0.282
+
+Tasks:
+     task  hijack_AUROC  harmful_AUROC  hijack_FNR_guar
+summarize         0.697          0.583            0.493
+       qa         0.679          0.550            0.740
+  extract         0.685          0.596            0.500
+```

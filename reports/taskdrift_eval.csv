@@ -1,0 +1,7 @@
+distribution,AUROC,FNR_guar,calibration
+BIPIA hijack vs hosts,"0.697 [0.634, 0.755]","0.493 [0.414, 0.573]",BIPIA hosts
+BIPIA harmful vs hosts,"0.583 [0.487, 0.684]","0.583 [0.457, 0.699]",BIPIA hosts
+second source (600 sampled),"1.000 [1.000, 1.000]","0.000 [0.000, 0.013]",its own benigns
+"AgentDojo tool outputs (129 benign, 400 attacked)","0.970 [0.955, 0.983]","0.378 [0.331, 0.426]",its own benigns
+NotInject (over-defense),n/a,"FPR 0.401 [0.350, 0.454]",BIPIA hosts
+recipes (over-defense),n/a,"FPR 0.000 [0.000, 0.019]",BIPIA hosts
