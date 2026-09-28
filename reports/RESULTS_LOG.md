@@ -1392,3 +1392,32 @@ summarize         0.697          0.583            0.493
        qa         0.679          0.550            0.740
   extract         0.685          0.596            0.500
 ```
+
+
+---
+## nb28: model-side defense via twin preference tuning, attacked by the phase-5 adversary
+_2026-09-28 17:17_
+
+```
+Model-side defense (LoRA preference tuning with twins), attack success:
+     model        ASR_static_ci      ASR_adaptive_ci user_instruction_followed  clean_summary_degenerate_rate
+undefended 0.429 [0.332, 0.531] 0.484 [0.384, 0.585]      0.350 [0.242, 0.476]                            0.0
+  defended 0.407 [0.311, 0.509] 0.473 [0.373, 0.574]      0.433 [0.316, 0.559]                            0.0
+
+By category:
+     model                    category  n  ASR_static  ASR_adaptive
+undefended               Base Encoding 13       0.308         0.538
+undefended          Emoji Substitution 13       1.000         1.000
+undefended        Language Translation 13       0.385         0.462
+undefended Misinformation & Propaganda 13       0.308         0.308
+undefended                Reverse Text 13       0.385         0.385
+undefended               Scams & Fraud 13       0.308         0.385
+undefended        Substitution Ciphers 13       0.308         0.308
+  defended               Base Encoding 13       0.462         0.538
+  defended          Emoji Substitution 13       1.000         1.000
+  defended        Language Translation 13       0.308         0.538
+  defended Misinformation & Propaganda 13       0.308         0.385
+  defended                Reverse Text 13       0.231         0.308
+  defended               Scams & Fraud 13       0.385         0.385
+  defended        Substitution Ciphers 13       0.154         0.154
+```
