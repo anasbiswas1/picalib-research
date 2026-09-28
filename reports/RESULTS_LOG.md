@@ -1082,3 +1082,48 @@ fmops distilbert       0.967   0.993  0.993
 structural (full)      0.067   0.140  0.140
 structural (full_aug)  0.053   0.120  0.127
 ```
+
+
+---
+## nb25: AgentDojo tool-output matched set, all scorers
+_2026-09-28 04:22_
+
+```
+AgentDojo overall:
+                model  AUROC  AUROC_lo95  AUROC_hi95  pAUC05  FNR_guar  FNR_guar_lo95  FNR_guar_hi95
+         ProtectAI-v2  0.798       0.742       0.852   0.569     0.959          0.928          0.983
+ Prompt-Guard-2 (86M)  0.940       0.918       0.959   0.783     0.430          0.389          0.472
+ Prompt-Guard-2 (22M)  0.828       0.772       0.874   0.524     0.946          0.898          0.988
+    deepset injection  0.785       0.724       0.841   0.567     0.887          0.834          0.937
+         ProtectAI-v1  0.569       0.533       0.609   0.580     0.984          0.963          0.999
+     fmops distilbert  0.881       0.837       0.919   0.636     0.899          0.868          0.929
+    structural (full)  0.827       0.768       0.877   0.577     0.831          0.778          0.883
+structural (full_aug)  0.712       0.654       0.769   0.611     0.786          0.747          0.824
+     TF-IDF reference  0.561       0.486       0.634   0.510     0.956          0.911          0.990
+
+By attack (FNR_guar):
+attack                 direct  ignore_previous  important_instructions  injecagent  system_message  tool_knowledge
+model                                                                                                             
+Prompt-Guard-2 (22M)    0.983            0.955                   0.917       0.901           0.959           0.963
+Prompt-Guard-2 (86M)    0.946            0.000                   0.450       0.000           0.950           0.236
+ProtectAI-v1            1.000            0.979                   1.000       0.926           1.000           1.000
+ProtectAI-v2            0.992            0.872                   1.000       0.905           0.988           1.000
+TF-IDF reference        0.950            0.917                   1.000       0.917           0.950           1.000
+deepset injection       0.942            0.711                   1.000       0.719           0.950           1.000
+fmops distilbert        1.000            0.988                   0.988       0.764           1.000           0.653
+structural (full)       0.913            0.665                   0.979       0.479           0.950           1.000
+structural (full_aug)   0.926            0.645                   0.959       0.326           0.913           0.946
+
+By suite (AUROC):
+suite                  slack  travel  workspace
+model                                          
+Prompt-Guard-2 (22M)   0.817   0.932      0.801
+Prompt-Guard-2 (86M)   0.898   0.990      0.930
+ProtectAI-v1           0.452   0.529      0.601
+ProtectAI-v2           0.812   0.901      0.832
+TF-IDF reference       0.650   0.602      0.578
+deepset injection      0.640   0.975      0.892
+fmops distilbert       0.963   0.991      0.931
+structural (full)      0.592   0.816      0.878
+structural (full_aug)  0.721   0.896      0.735
+```
