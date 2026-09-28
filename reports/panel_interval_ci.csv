@@ -1,0 +1,13 @@
+detector,shift,identification_gap,FNR_low_end,FNR_high_end,sampling_half_width_low
+ProtectAI-v2,direct,0.068,"0.529 [0.468, 0.586]","0.597 [0.536, 0.650]",0.059
+ProtectAI-v2,indirect_harmful,0.25,"0.550 [0.417, 0.667]","0.800 [0.700, 0.883]",0.125
+ProtectAI-v2,indirect_hijack,0.36,"0.533 [0.453, 0.613]","0.893 [0.840, 0.940]",0.08
+ProtectAI-v2,jailbreak,0.073,"0.111 [0.081, 0.141]","0.184 [0.149, 0.222]",0.03
+Prompt-Guard-2 (86M),direct,0.118,"0.529 [0.464, 0.589]","0.646 [0.589, 0.707]",0.063
+Prompt-Guard-2 (86M),indirect_harmful,0.517,"0.183 [0.083, 0.300]","0.700 [0.583, 0.817]",0.108
+Prompt-Guard-2 (86M),indirect_hijack,0.307,"0.667 [0.587, 0.747]","0.973 [0.947, 0.993]",0.08
+Prompt-Guard-2 (86M),jailbreak,0.015,"0.008 [0.000, 0.018]","0.023 [0.010, 0.040]",0.009
+Prompt-Guard-2 (22M),direct,0.019,"0.837 [0.791, 0.878]","0.856 [0.814, 0.897]",0.044
+Prompt-Guard-2 (22M),indirect_harmful,0.017,"0.900 [0.817, 0.967]","0.917 [0.850, 0.983]",0.075
+Prompt-Guard-2 (22M),indirect_hijack,0.0,"0.967 [0.933, 0.993]","0.967 [0.933, 0.993]",0.03
+Prompt-Guard-2 (22M),jailbreak,0.005,"0.083 [0.058, 0.114]","0.088 [0.061, 0.121]",0.028
