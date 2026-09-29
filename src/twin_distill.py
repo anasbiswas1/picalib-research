@@ -31,6 +31,28 @@ def build_examples(samples, n=1500, seed=0, positions=(0.45, 0.45, 0.10)):
     rng.shuffle(out); return out
 
 
+def _split_sentences(text):
+    import re
+    parts = re.split(r"(?<=[.!?])\s+", text.strip()); return [p for p in parts if p]
+
+
+def build_doc_examples(hosts, instructions, task_user, task_user_with, n=1500, seed=0, positions=(0.45, 0.45, 0.10)):
+    """Document-style examples: a passage (SQuAD or AG News host) with a random instruction injected at the end, the
+    start, or between two sentences; the task is the paper's summarization task. Same student/teacher/twin layout."""
+    rng = np.random.default_rng(seed); H = [h for h in hosts if len(h.split()) >= 30]; I = [i.strip() for i in instructions if i.strip()]
+    out = []
+    for k in range(min(n, len(H))):
+        h = H[int(rng.integers(len(H)))]; inj = I[int(rng.integers(len(I)))]; r = rng.random()
+        if r < positions[0]: injected = h.rstrip() + "\n" + inj
+        elif r < positions[0] + positions[1]: injected = inj + "\n" + h
+        else:
+            s = _split_sentences(h); cut = int(rng.integers(1, len(s))) if len(s) > 1 else 1
+            injected = " ".join(s[:cut]) + "\n" + inj + "\n" + " ".join(s[cut:]) if len(s) > 1 else h.rstrip() + "\n" + inj
+        out.append(dict(kind="attacked", student=task_user.format(doc=injected), teacher=task_user.format(doc=h)))
+        twin = task_user_with.format(instr=inj, doc=h); out.append(dict(kind="twin", student=twin, teacher=twin))
+    rng.shuffle(out); return out
+
+
 def _chat(tok, system, user, add_gen=True):
     return tok.apply_chat_template([{"role": "system", "content": system}, {"role": "user", "content": user}], tokenize=False, add_generation_prompt=add_gen)
 
