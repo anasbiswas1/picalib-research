@@ -1421,3 +1421,40 @@ undefended        Substitution Ciphers 13       0.308         0.308
   defended               Scams & Fraud 13       0.385         0.385
   defended        Substitution Ciphers 13       0.154         0.154
 ```
+
+
+---
+## nb29: twin distillation (on-policy token-level self-distillation with twin anchoring), attacked by the phase-5 adversary
+_2026-09-29 02:43_
+
+```
+Twin distillation vs controls, attack success:
+         model        ASR_static_ci      ASR_adaptive_ci user_instruction_followed alpaca_instruction_followed  clean_summary_degenerate_rate
+    undefended 0.429 [0.332, 0.531] 0.484 [0.384, 0.585]      0.350 [0.242, 0.476]        0.117 [0.058, 0.222]                            0.0
+dpo_twins_nb28 0.407 [0.311, 0.509] 0.473 [0.373, 0.574]      0.433 [0.316, 0.559]        0.200 [0.118, 0.318]                            0.0
+twin_distilled 0.330 [0.242, 0.431] 0.396 [0.301, 0.498]      0.350 [0.242, 0.476]        0.167 [0.093, 0.280]                            0.0
+
+By category:
+         model                    category  n  ASR_static  ASR_adaptive
+    undefended               Base Encoding 13       0.308         0.538
+    undefended          Emoji Substitution 13       1.000         1.000
+    undefended        Language Translation 13       0.385         0.462
+    undefended Misinformation & Propaganda 13       0.308         0.308
+    undefended                Reverse Text 13       0.385         0.385
+    undefended               Scams & Fraud 13       0.308         0.385
+    undefended        Substitution Ciphers 13       0.308         0.308
+dpo_twins_nb28               Base Encoding 13       0.462         0.538
+dpo_twins_nb28          Emoji Substitution 13       1.000         1.000
+dpo_twins_nb28        Language Translation 13       0.308         0.538
+dpo_twins_nb28 Misinformation & Propaganda 13       0.308         0.385
+dpo_twins_nb28                Reverse Text 13       0.231         0.308
+dpo_twins_nb28               Scams & Fraud 13       0.385         0.385
+dpo_twins_nb28        Substitution Ciphers 13       0.154         0.154
+twin_distilled               Base Encoding 13       0.308         0.462
+twin_distilled          Emoji Substitution 13       0.923         1.000
+twin_distilled        Language Translation 13       0.231         0.308
+twin_distilled Misinformation & Propaganda 13       0.154         0.231
+twin_distilled                Reverse Text 13       0.154         0.154
+twin_distilled               Scams & Fraud 13       0.308         0.385
+twin_distilled        Substitution Ciphers 13       0.231         0.231
+```
