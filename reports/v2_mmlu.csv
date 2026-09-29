@@ -1,0 +1,4 @@
+model,n,accuracy,unparsed
+undefended,300,"0.633 [0.577, 0.686]",0.0
+twin_distilled_v1,300,"0.637 [0.581, 0.689]",0.0
+twin_distilled_v2,300,"0.627 [0.571, 0.679]",0.0
