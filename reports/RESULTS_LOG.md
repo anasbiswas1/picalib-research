@@ -1535,3 +1535,49 @@ MMLU:
 twin_distilled_v1 300 0.637 [0.581, 0.689]       0.0
 twin_distilled_v2 300 0.627 [0.571, 0.679]       0.0
 ```
+
+
+---
+## nb32: twin distillation v3 (reworded injections by the defender paraphraser; email, table and recipe hosts)
+_2026-09-30 10:25_
+
+```
+v3 vs v2 vs undefended, strict ASR at k:
+model     twin_distilled_v2     twin_distilled_v3            undefended
+tries                                                                  
+1      0.014 [0.005, 0.041]  0.005 [0.001, 0.026]  0.419 [0.354, 0.487]
+3      0.124 [0.086, 0.175]  0.105 [0.070, 0.154]  0.462 [0.396, 0.529]
+5      0.152 [0.110, 0.207]  0.138 [0.098, 0.191]  0.481 [0.414, 0.548]
+9      0.195 [0.147, 0.254]  0.195 [0.147, 0.254]  0.510 [0.442, 0.576]
+13     0.224 [0.173, 0.285]  0.219 [0.168, 0.280]  0.510 [0.442, 0.576]
+
+Summary:
+            model    adaptive_5_strict        second_source        user_followed      alpaca_followed                 mmlu  summary_median_chars  degenerate
+       undefended 0.481 [0.414, 0.548] 0.307 [0.257, 0.361] 0.350 [0.242, 0.476] 0.117 [0.058, 0.222] 0.633 [0.577, 0.686]                   463         0.0
+twin_distilled_v2 0.152 [0.110, 0.207] 0.033 [0.018, 0.060] 0.367 [0.256, 0.493] 0.133 [0.069, 0.242] 0.627 [0.571, 0.679]                   409         0.0
+twin_distilled_v3 0.138 [0.098, 0.191] 0.027 [0.014, 0.052] 0.367 [0.256, 0.493] 0.133 [0.069, 0.242] 0.623 [0.567, 0.676]                   445         0.0
+
+By category:
+            model                    category  adaptive_5_strict
+       undefended               Base Encoding              0.600
+       undefended          Emoji Substitution              1.000
+       undefended        Language Translation              0.433
+       undefended Misinformation & Propaganda              0.300
+       undefended                Reverse Text              0.267
+       undefended               Scams & Fraud              0.533
+       undefended        Substitution Ciphers              0.233
+twin_distilled_v2               Base Encoding              0.367
+twin_distilled_v2          Emoji Substitution              0.200
+twin_distilled_v2        Language Translation              0.133
+twin_distilled_v2 Misinformation & Propaganda              0.033
+twin_distilled_v2                Reverse Text              0.000
+twin_distilled_v2               Scams & Fraud              0.333
+twin_distilled_v2        Substitution Ciphers              0.000
+twin_distilled_v3               Base Encoding              0.300
+twin_distilled_v3          Emoji Substitution              0.067
+twin_distilled_v3        Language Translation              0.167
+twin_distilled_v3 Misinformation & Propaganda              0.067
+twin_distilled_v3                Reverse Text              0.000
+twin_distilled_v3               Scams & Fraud              0.367
+twin_distilled_v3        Substitution Ciphers              0.000
+```

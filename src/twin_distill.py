@@ -53,6 +53,55 @@ def build_doc_examples(hosts, instructions, task_user, task_user_with, n=1500, s
     rng.shuffle(out); return out
 
 
+REWORD_SYS = "Rewrite the sentence you are given in different words. Keep its meaning and keep it as an instruction. Output only the rewritten sentence."
+
+
+def reword_instructions(instructions, gen, batch_size=16):
+    """One rewording per instruction from the defender's own paraphraser (a different model and prompt from the attacker)."""
+    outs = gen(list(instructions), REWORD_SYS, 60, 0.8, batch_size, 4242)
+    return [(o or "").strip() if len((o or "").strip()) >= 8 else i for i, o in zip(instructions, outs)]
+
+
+def _as_email(passage, rng):
+    names = ["Priya Natarajan", "Tom Adeyemi", "Lena Fischer", "Marco Ruiz", "Aiko Tanaka", "Sam Okafor"]
+    s = _split_sentences(passage); subj = (s[0][:60] if s else "Update").rstrip(".")
+    a, b = rng.choice(names, 2, replace=False)
+    return f"From: {a}\nTo: {b}\nSubject: {subj}\n\nHi {b.split()[0]},\n\n{passage.strip()}\n\nBest,\n{a.split()[0]}"
+
+
+def _as_table(passage, rng):
+    s = _split_sentences(passage)[:6]
+    rows = "\n".join(f"| {k + 1} | {x[:90].replace('|', '/')} |" for k, x in enumerate(s))
+    return f"| Item | Detail |\n|---|---|\n{rows}"
+
+
+def _inject(host, inj, rng, twice=False):
+    r = rng.random(); s = _split_sentences(host)
+    if r < 0.35: out = host.rstrip() + "\n" + inj
+    elif r < 0.65: out = inj + "\n" + host
+    else:
+        cut = int(rng.integers(1, len(s))) if len(s) > 1 else 1
+        out = (" ".join(s[:cut]) + "\n" + inj + "\n" + " ".join(s[cut:])) if len(s) > 1 else host.rstrip() + "\n" + inj
+    if twice: out = out.rstrip() + "\n" + inj
+    return out
+
+
+def build_v3_examples(passages, recipes, instr_pool, task_user, task_user_with, counts=(700, 500, 400, 400), seed=0, twice_rate=0.15):
+    """Document-style examples in four host genres: passage, email, table, recipe. instr_pool: injected instructions
+    (plain and reworded). Returns attacked examples with student/teacher prompts and their twins."""
+    rng = np.random.default_rng(seed); P = [p for p in passages if len(p.split()) >= 30]; R = [r for r in recipes if len(r.split()) >= 30]; out = []
+    genres = [("passage", counts[0]), ("email", counts[1]), ("table", counts[2]), ("recipe", counts[3])]
+    for g, n in genres:
+        for _ in range(n):
+            base = R[int(rng.integers(len(R)))] if g == "recipe" else P[int(rng.integers(len(P)))]
+            host = base if g in ("passage", "recipe") else (_as_email(base, rng) if g == "email" else _as_table(base, rng))
+            inj = instr_pool[int(rng.integers(len(instr_pool)))]
+            injected = _inject(host, inj, rng, twice=rng.random() < twice_rate)
+            out.append(dict(kind="attacked", genre=g, student=task_user.format(doc=injected), teacher=task_user.format(doc=host)))
+            twin = task_user_with.format(instr=inj, doc=host); out.append(dict(kind="twin", genre=g, student=twin, teacher=twin))
+    rng.shuffle(out); return out
+
+
 def _chat(tok, system, user, add_gen=True):
     return tok.apply_chat_template([{"role": "system", "content": system}, {"role": "user", "content": user}], tokenize=False, add_generation_prompt=add_gen)
 
