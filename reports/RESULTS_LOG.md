@@ -1817,3 +1817,36 @@ twin_distilled_v2       all 120       0.0      0.150    0.517     0.333
           no_twin     count  40       0.0      0.225    0.775     0.000
           no_twin       all 120       0.0      0.100    0.567     0.333
 ```
+
+
+---
+## nb33: twin anchor ablation (no-twin distillation on the v1 attacked examples) and the fidelity test
+_2026-10-01 17:28_
+
+```
+Twin anchor ablation:
+            model          ASR_1_tries          ASR_5_tries         ASR_13_tries        second_source        user_followed      alpaca_followed                 mmlu  summary_median_chars  degenerate
+       undefended 0.419 [0.354, 0.487] 0.481 [0.414, 0.548] 0.510 [0.442, 0.576] 0.307 [0.257, 0.361] 0.350 [0.242, 0.476] 0.117 [0.058, 0.222] 0.633 [0.577, 0.686]                   463         0.0
+          no_twin 0.081 [0.051, 0.126] 0.224 [0.173, 0.285] 0.271 [0.216, 0.335] 0.067 [0.044, 0.101] 0.283 [0.185, 0.408] 0.183 [0.106, 0.299] 0.617 [0.561, 0.670]                   323         0.0
+twin_distilled_v1 0.319 [0.260, 0.385] 0.400 [0.336, 0.467] 0.448 [0.382, 0.515] 0.183 [0.144, 0.231] 0.350 [0.242, 0.476] 0.167 [0.093, 0.280] 0.637 [0.581, 0.689]                   373         0.0
+twin_distilled_v2 0.014 [0.005, 0.041] 0.152 [0.110, 0.207] 0.224 [0.173, 0.285] 0.033 [0.018, 0.060] 0.367 [0.256, 0.493] 0.133 [0.069, 0.242] 0.627 [0.571, 0.679]                   409         0.0
+
+Fidelity:
+            model      task   n  executed  processed  omitted  unparsed
+       undefended translate  40     0.100      0.150    0.750       0.0
+       undefended     quote  40     0.000      0.250    0.750       0.0
+       undefended     count  40     0.000      0.100    0.900       0.0
+       undefended       all 120     0.033      0.167    0.800       0.0
+twin_distilled_v1 translate  40     0.000      0.000    1.000       0.0
+twin_distilled_v1     quote  40     0.000      0.250    0.750       0.0
+twin_distilled_v1     count  40     0.000      0.175    0.825       0.0
+twin_distilled_v1       all 120     0.000      0.142    0.858       0.0
+twin_distilled_v2 translate  40     0.025      0.000    0.975       0.0
+twin_distilled_v2     quote  40     0.000      0.250    0.750       0.0
+twin_distilled_v2     count  40     0.000      0.200    0.800       0.0
+twin_distilled_v2       all 120     0.008      0.150    0.842       0.0
+          no_twin translate  40     0.025      0.000    0.975       0.0
+          no_twin     quote  40     0.000      0.075    0.925       0.0
+          no_twin     count  40     0.000      0.225    0.775       0.0
+          no_twin       all 120     0.008      0.100    0.892       0.0
+```
