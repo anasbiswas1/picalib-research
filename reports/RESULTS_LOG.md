@@ -1752,3 +1752,35 @@ detector + v2 + form check (full stack)                Reverse Text             
 detector + v2 + form check (full stack)               Scams & Fraud             0.400
 detector + v2 + form check (full stack)        Substitution Ciphers             0.000
 ```
+
+
+---
+## nb36: twin distillation on Qwen2.5-7B-Instruct (4,500 attacked examples, no twins) beside the 3B results
+_2026-10-01 16:02_
+
+```
+3B and 7B:
+                                             model          ASR_1_tries          ASR_5_tries         ASR_13_tries        second_source    user_followed_150      alpaca_followed                 mmlu  summary_median_chars  degenerate
+                                    3B: undefended 0.419 [0.354, 0.487] 0.481 [0.414, 0.548] 0.510 [0.442, 0.576] 0.307 [0.257, 0.361] 0.340 [0.269, 0.419] 0.117 [0.058, 0.222] 0.633 [0.577, 0.686]                   463         0.0
+            3B: no twin, v2 scale (4,500 attacked) 0.024 [0.010, 0.055] 0.148 [0.106, 0.202] 0.233 [0.181, 0.295] 0.023 [0.011, 0.047] 0.367 [0.294, 0.446] 0.167 [0.093, 0.280] 0.610 [0.554, 0.663]                   373         0.0
+3B: twins, v2 scale (4,500 attacked + 4,500 twins) 0.014 [0.005, 0.041] 0.152 [0.110, 0.207] 0.224 [0.173, 0.285] 0.033 [0.018, 0.060] 0.327 [0.257, 0.405] 0.133 [0.069, 0.242] 0.627 [0.571, 0.679]                   409         0.0
+                                    7B: undefended 0.348 [0.286, 0.414] 0.486 [0.419, 0.553] 0.529 [0.461, 0.595] 0.313 [0.263, 0.368] 0.353 [0.281, 0.433] 0.133 [0.069, 0.242] 0.677 [0.622, 0.727]                   378         0.0
+  7B: twin distillation (4,500 attacked, no twins) 0.071 [0.044, 0.114] 0.262 [0.207, 0.325] 0.300 [0.242, 0.365] 0.023 [0.011, 0.047] 0.120 [0.077, 0.182] 0.133 [0.069, 0.242] 0.677 [0.622, 0.727]                   415         0.0
+
+7B by category:
+            model                    category  adaptive_5_strict
+    undefended_7b               Base Encoding              0.633
+    undefended_7b          Emoji Substitution              1.000
+    undefended_7b        Language Translation              0.533
+    undefended_7b Misinformation & Propaganda              0.233
+    undefended_7b                Reverse Text              0.200
+    undefended_7b               Scams & Fraud              0.500
+    undefended_7b        Substitution Ciphers              0.300
+twin_distilled_7b               Base Encoding              0.400
+twin_distilled_7b          Emoji Substitution              0.500
+twin_distilled_7b        Language Translation              0.433
+twin_distilled_7b Misinformation & Propaganda              0.067
+twin_distilled_7b                Reverse Text              0.033
+twin_distilled_7b               Scams & Fraud              0.367
+twin_distilled_7b        Substitution Ciphers              0.033
+```
