@@ -1658,3 +1658,50 @@ twins, v2 scale (4,500 attacked + 4,500 twins)                Reverse Text      
 twins, v2 scale (4,500 attacked + 4,500 twins)               Scams & Fraud              0.333
 twins, v2 scale (4,500 attacked + 4,500 twins)        Substitution Ciphers              0.000
 ```
+
+
+---
+## nb34: layered defense (detector + twin distillation v2 + output form check) against the 13-try attacker
+_2026-10-01 04:13_
+
+```
+Layered defense:
+                          configuration      success_1_tries      success_5_tries     success_13_tries
+                      undefended target 0.419 [0.354, 0.487] 0.481 [0.414, 0.548] 0.510 [0.442, 0.576]
+                          detector only 0.033 [0.016, 0.067] 0.200 [0.152, 0.259] 0.281 [0.225, 0.345]
+                        form check only 0.162 [0.118, 0.218] 0.257 [0.203, 0.320] 0.295 [0.238, 0.360]
+                  detector + form check 0.014 [0.005, 0.041] 0.143 [0.102, 0.197] 0.190 [0.143, 0.249]
+                   twin distillation v2 0.014 [0.005, 0.041] 0.152 [0.110, 0.207] 0.224 [0.173, 0.285]
+                          detector + v2 0.000 [0.000, 0.018] 0.152 [0.110, 0.207] 0.224 [0.173, 0.285]
+                        v2 + form check 0.014 [0.005, 0.041] 0.124 [0.086, 0.175] 0.167 [0.122, 0.223]
+detector + v2 + form check (full stack) 0.000 [0.000, 0.018] 0.124 [0.086, 0.175] 0.167 [0.122, 0.223]
+
+Form check:
+            model  n_benign_outputs       form_check_FPR  share_of_attacked_outputs_flagged  share_of_successful_outputs_flagged
+       undefended               120 0.017 [0.005, 0.059]                           0.069597                             0.376947
+twin_distilled_v2               120 0.025 [0.009, 0.071]                           0.023077                             0.151685
+
+By category (13 tries):
+                          configuration                    category  success_13_tries
+                      undefended target               Base Encoding             0.633
+                      undefended target          Emoji Substitution             1.000
+                      undefended target        Language Translation             0.500
+                      undefended target Misinformation & Propaganda             0.300
+                      undefended target                Reverse Text             0.367
+                      undefended target               Scams & Fraud             0.533
+                      undefended target        Substitution Ciphers             0.233
+                   twin distillation v2               Base Encoding             0.433
+                   twin distillation v2          Emoji Substitution             0.367
+                   twin distillation v2        Language Translation             0.300
+                   twin distillation v2 Misinformation & Propaganda             0.033
+                   twin distillation v2                Reverse Text             0.033
+                   twin distillation v2               Scams & Fraud             0.400
+                   twin distillation v2        Substitution Ciphers             0.000
+detector + v2 + form check (full stack)               Base Encoding             0.400
+detector + v2 + form check (full stack)          Emoji Substitution             0.000
+detector + v2 + form check (full stack)        Language Translation             0.300
+detector + v2 + form check (full stack) Misinformation & Propaganda             0.033
+detector + v2 + form check (full stack)                Reverse Text             0.033
+detector + v2 + form check (full stack)               Scams & Fraud             0.400
+detector + v2 + form check (full stack)        Substitution Ciphers             0.000
+```

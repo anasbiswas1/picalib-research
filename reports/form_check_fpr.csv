@@ -1,0 +1,3 @@
+model,n_benign_outputs,form_check_FPR,share_of_attacked_outputs_flagged,share_of_successful_outputs_flagged
+undefended,120,"0.017 [0.005, 0.059]",0.0695970695970696,0.37694704049844235
+twin_distilled_v2,120,"0.025 [0.009, 0.071]",0.023076923076923078,0.15168539325842698
