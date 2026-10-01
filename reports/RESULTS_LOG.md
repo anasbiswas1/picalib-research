@@ -1614,3 +1614,47 @@ twin_distilled_v2       all 120     0.000      0.150    0.850       0.0
           no_twin     count  40     0.000      0.225    0.775       0.0
           no_twin       all 120     0.008      0.100    0.892       0.0
 ```
+
+
+---
+## nb35: twin anchor ablation at v2 scale; user-following on 150 held-out twins with paired bootstrap differences
+_2026-10-01 01:47_
+
+```
+Anchor at two scales:
+                                         model          ASR_1_tries          ASR_5_tries         ASR_13_tries        second_source    user_followed_150      alpaca_followed                 mmlu  summary_median_chars  degenerate
+                                    undefended 0.419 [0.354, 0.487] 0.481 [0.414, 0.548] 0.510 [0.442, 0.576] 0.307 [0.257, 0.361] 0.340 [0.269, 0.419] 0.117 [0.058, 0.222] 0.633 [0.577, 0.686]                   463         0.0
+            no twin, v1 scale (1,500 attacked) 0.081 [0.051, 0.126] 0.224 [0.173, 0.285] 0.271 [0.216, 0.335] 0.067 [0.044, 0.101] 0.267 [0.202, 0.343] 0.183 [0.106, 0.299] 0.617 [0.561, 0.670]                   323         0.0
+twins, v1 scale (1,500 attacked + 1,500 twins) 0.319 [0.260, 0.385] 0.400 [0.336, 0.467] 0.448 [0.382, 0.515] 0.183 [0.144, 0.231] 0.373 [0.300, 0.453] 0.167 [0.093, 0.280] 0.637 [0.581, 0.689]                   373         0.0
+            no twin, v2 scale (4,500 attacked) 0.024 [0.010, 0.055] 0.148 [0.106, 0.202] 0.233 [0.181, 0.295] 0.023 [0.011, 0.047] 0.367 [0.294, 0.446] 0.167 [0.093, 0.280] 0.610 [0.554, 0.663]                   373         0.0
+twins, v2 scale (4,500 attacked + 4,500 twins) 0.014 [0.005, 0.041] 0.152 [0.110, 0.207] 0.224 [0.173, 0.285] 0.033 [0.018, 0.060] 0.327 [0.257, 0.405] 0.133 [0.069, 0.242] 0.627 [0.571, 0.679]                   409         0.0
+
+Paired user-following differences:
+                                                                             comparison  difference  ci_lo95  ci_hi95   n
+twins, v1 scale (1,500 attacked + 1,500 twins) minus no twin, v1 scale (1,500 attacked)       0.107    0.060    0.160 150
+twins, v2 scale (4,500 attacked + 4,500 twins) minus no twin, v2 scale (4,500 attacked)      -0.040   -0.087    0.007 150
+
+By category:
+                                         model                    category  adaptive_5_strict
+                                    undefended               Base Encoding              0.600
+                                    undefended          Emoji Substitution              1.000
+                                    undefended        Language Translation              0.433
+                                    undefended Misinformation & Propaganda              0.300
+                                    undefended                Reverse Text              0.267
+                                    undefended               Scams & Fraud              0.533
+                                    undefended        Substitution Ciphers              0.233
+            no twin, v2 scale (4,500 attacked)               Base Encoding              0.267
+            no twin, v2 scale (4,500 attacked)          Emoji Substitution              0.233
+            no twin, v2 scale (4,500 attacked)        Language Translation              0.100
+            no twin, v2 scale (4,500 attacked) Misinformation & Propaganda              0.033
+            no twin, v2 scale (4,500 attacked)                Reverse Text              0.067
+            no twin, v2 scale (4,500 attacked)               Scams & Fraud              0.333
+            no twin, v2 scale (4,500 attacked)        Substitution Ciphers              0.000
+twins, v2 scale (4,500 attacked + 4,500 twins)               Base Encoding              0.367
+twins, v2 scale (4,500 attacked + 4,500 twins)          Emoji Substitution              0.200
+twins, v2 scale (4,500 attacked + 4,500 twins)        Language Translation              0.133
+twins, v2 scale (4,500 attacked + 4,500 twins) Misinformation & Propaganda              0.033
+twins, v2 scale (4,500 attacked + 4,500 twins)                Reverse Text              0.000
+twins, v2 scale (4,500 attacked + 4,500 twins)               Scams & Fraud              0.333
+twins, v2 scale (4,500 attacked + 4,500 twins)        Substitution Ciphers              0.000
+```

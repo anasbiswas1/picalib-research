@@ -1,0 +1,3 @@
+comparison,difference,ci_lo95,ci_hi95,n
+"twins, v1 scale (1,500 attacked + 1,500 twins) minus no twin, v1 scale (1,500 attacked)",0.10666666666666667,0.06,0.16,150
+"twins, v2 scale (4,500 attacked + 4,500 twins) minus no twin, v2 scale (4,500 attacked)",-0.04,-0.08666666666666667,0.006666666666666667,150
