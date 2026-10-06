@@ -1850,3 +1850,81 @@ twin_distilled_v2       all 120     0.008      0.150    0.842       0.0
           no_twin     count  40     0.000      0.225    0.775       0.0
           no_twin       all 120     0.008      0.100    0.892       0.0
 ```
+
+
+---
+## nb37: translate fidelity from reviewed blind labels
+_2026-10-06 18:06_
+
+```
+            model  n             executed            processed              omitted
+       undefended 40 0.725 [0.572, 0.839] 0.225 [0.123, 0.375] 0.050 [0.014, 0.165]
+twin_distilled_v2 40 0.075 [0.026, 0.199] 0.150 [0.071, 0.291] 0.775 [0.625, 0.877]
+
+three-way judge agreement: 0.487
+
+Paired:
+twin_distilled_v2  E   O  P
+undefended                 
+E                  3  24  2
+O                  0   2  0
+P                  0   5  4
+```
+
+
+---
+## nb37: fidelity by exact rules (repeat, number, quote; instruction vs statement, paired) on five models
+_2026-10-06 20:35_
+
+```
+Rates:
+            model       task     version  n                 kept  dropped  task failed  added_text  quoted_previous
+    undefended_3b     repeat instruction 80 0.613 [0.503, 0.712]    0.338        0.050       0.350              NaN
+    undefended_3b     repeat   statement 80 0.975 [0.913, 0.993]    0.000        0.025       0.037              NaN
+    undefended_3b     number instruction 80 0.662 [0.554, 0.757]    0.325        0.013       0.500              NaN
+    undefended_3b     number   statement 80 0.963 [0.895, 0.987]    0.037        0.000       0.125              NaN
+    undefended_3b quote_last instruction 80 0.300 [0.211, 0.408]      NaN          NaN         NaN            0.250
+    undefended_3b quote_last   statement 80 0.800 [0.700, 0.873]      NaN          NaN         NaN            0.138
+twin_distilled_v2     repeat instruction 80 0.650 [0.541, 0.745]    0.350        0.000       0.025              NaN
+twin_distilled_v2     repeat   statement 80 1.000 [0.954, 1.000]    0.000        0.000       0.025              NaN
+twin_distilled_v2     number instruction 80 0.463 [0.357, 0.571]    0.512        0.025       0.150              NaN
+twin_distilled_v2     number   statement 80 0.963 [0.895, 0.987]    0.037        0.000       0.113              NaN
+twin_distilled_v2 quote_last instruction 80 0.087 [0.043, 0.170]      NaN          NaN         NaN            0.537
+twin_distilled_v2 quote_last   statement 80 0.675 [0.566, 0.768]      NaN          NaN         NaN            0.212
+       no_twin_v2     repeat instruction 80 0.575 [0.466, 0.677]    0.400        0.025       0.025              NaN
+       no_twin_v2     repeat   statement 80 0.975 [0.913, 0.993]    0.000        0.025       0.050              NaN
+       no_twin_v2     number instruction 80 0.237 [0.158, 0.341]    0.700        0.062       0.163              NaN
+       no_twin_v2     number   statement 80 0.975 [0.913, 0.993]    0.025        0.000       0.125              NaN
+       no_twin_v2 quote_last instruction 80 0.000 [0.000, 0.046]      NaN          NaN         NaN            0.650
+       no_twin_v2 quote_last   statement 80 0.675 [0.566, 0.768]      NaN          NaN         NaN            0.237
+    undefended_7b     repeat instruction 80 0.750 [0.645, 0.832]    0.163        0.087       0.188              NaN
+    undefended_7b     repeat   statement 80 1.000 [0.954, 1.000]    0.000        0.000       0.013              NaN
+    undefended_7b     number instruction 80 0.613 [0.503, 0.712]    0.275        0.113       0.287              NaN
+    undefended_7b     number   statement 80 1.000 [0.954, 1.000]    0.000        0.000       0.050              NaN
+    undefended_7b quote_last instruction 80 0.350 [0.255, 0.459]      NaN          NaN         NaN            0.412
+    undefended_7b quote_last   statement 80 0.887 [0.800, 0.940]      NaN          NaN         NaN            0.075
+twin_distilled_7b     repeat instruction 80 0.688 [0.579, 0.778]    0.312        0.000       0.037              NaN
+twin_distilled_7b     repeat   statement 80 1.000 [0.954, 1.000]    0.000        0.000       0.025              NaN
+twin_distilled_7b     number instruction 80 0.150 [0.088, 0.244]    0.838        0.013       0.062              NaN
+twin_distilled_7b     number   statement 80 1.000 [0.954, 1.000]    0.000        0.000       0.062              NaN
+twin_distilled_7b quote_last instruction 80 0.150 [0.088, 0.244]      NaN          NaN         NaN            0.762
+twin_distilled_7b quote_last   statement 80 0.863 [0.770, 0.921]      NaN          NaN         NaN            0.113
+
+Paired gaps:
+            model       task            deletion_gap           execution_gap deletion_gap_vs_undefended execution_gap_vs_undefended
+    undefended_3b     repeat +0.362 [+0.250, +0.475] +0.312 [+0.212, +0.425]                                                       
+    undefended_3b     number +0.300 [+0.188, +0.425] +0.375 [+0.262, +0.500]                                                       
+    undefended_3b quote_last +0.500 [+0.362, +0.637]                                                                               
+twin_distilled_v2     repeat +0.350 [+0.237, +0.463] +0.000 [+0.000, +0.000]    -0.013 [-0.100, +0.087]     -0.312 [-0.425, -0.212]
+twin_distilled_v2     number +0.500 [+0.388, +0.613] +0.037 [-0.037, +0.113]    +0.200 [+0.075, +0.325]     -0.338 [-0.475, -0.200]
+twin_distilled_v2 quote_last +0.588 [+0.463, +0.713]                            +0.087 [-0.075, +0.237]                            
+       no_twin_v2     repeat +0.400 [+0.287, +0.512] -0.025 [-0.062, +0.000]    +0.037 [-0.075, +0.163]     -0.338 [-0.450, -0.237]
+       no_twin_v2     number +0.738 [+0.637, +0.838] +0.037 [-0.025, +0.100]    +0.438 [+0.312, +0.562]     -0.338 [-0.463, -0.212]
+       no_twin_v2 quote_last +0.675 [+0.575, +0.775]                            +0.175 [+0.025, +0.312]                            
+    undefended_7b     repeat +0.250 [+0.163, +0.350] +0.175 [+0.100, +0.263]                                                       
+    undefended_7b     number +0.388 [+0.275, +0.487] +0.237 [+0.138, +0.338]                                                       
+    undefended_7b quote_last +0.537 [+0.425, +0.650]                                                                               
+twin_distilled_7b     repeat +0.312 [+0.212, +0.412] +0.013 [+0.000, +0.037]    +0.062 [-0.062, +0.188]     -0.163 [-0.250, -0.075]
+twin_distilled_7b     number +0.850 [+0.775, +0.925] +0.000 [-0.037, +0.037]    +0.463 [+0.350, +0.575]     -0.237 [-0.338, -0.138]
+twin_distilled_7b quote_last +0.713 [+0.612, +0.812]                            +0.175 [+0.062, +0.287]
+```
