@@ -2111,3 +2111,108 @@ _2026-10-07 15:32_
 Phase 1: 9000 examples, final reverse-KL (last 100 steps) 0.013
 Phase 2: 4000 examples, final reverse-KL 0.009, final exact-target loss 0.006
 ```
+
+
+---
+## nb42: head-to-head on Llama-3.1-8B-Instruct (ours against Meta-SecAlign-8B)
+_2026-10-07 20:03_
+
+```
+Security:
+                                   model      success_1_tries      success_5_tries     success_13_tries        second_source
+                 undefended Llama-3.1-8B 0.410 [0.345, 0.477] 0.476 [0.410, 0.544] 0.514 [0.447, 0.581] 0.297 [0.248, 0.351]
+         Meta-SecAlign-8B (as specified) 0.010 [0.003, 0.034] 0.067 [0.040, 0.109] 0.090 [0.059, 0.137] 0.000 [0.000, 0.013]
+Meta-SecAlign-8B (data in the user turn) 0.129 [0.090, 0.181] 0.195 [0.147, 0.254] 0.229 [0.177, 0.290] 0.000 [0.000, 0.013]
+       ours, phase 1 (twin distillation) 0.133 [0.094, 0.186] 0.267 [0.211, 0.330] 0.324 [0.264, 0.390] 0.013 [0.005, 0.034]
+                       ours, full recipe 0.067 [0.040, 0.109] 0.219 [0.168, 0.280] 0.267 [0.211, 0.330] 0.020 [0.009, 0.043]
+
+Second source by strategy:
+                                   model  combined  escape  fake_completion  ignore  naive
+                 undefended Llama-3.1-8B     0.333   0.200            0.217   0.367  0.367
+         Meta-SecAlign-8B (as specified)     0.000   0.000            0.000   0.000  0.000
+Meta-SecAlign-8B (data in the user turn)     0.000   0.000            0.000   0.000  0.000
+       ours, phase 1 (twin distillation)     0.000   0.000            0.017   0.000  0.050
+                       ours, full recipe     0.017   0.017            0.000   0.017  0.050
+
+Utility:
+                                   model    user_followed_150      alpaca_followed                 mmlu  ifeval_prompt_strict  ifeval_instruction_strict  ifeval_prompt_loose  ifeval_instruction_loose  summary_median_chars  degenerate
+                 undefended Llama-3.1-8B 0.360 [0.288, 0.439] 0.117 [0.058, 0.222] 0.663 [0.608, 0.714]                 0.732                      0.813                0.774                     0.847                   361         0.0
+         Meta-SecAlign-8B (as specified) 0.233 [0.173, 0.307] 0.167 [0.093, 0.280] 0.627 [0.571, 0.679]                 0.723                      0.805                0.786                     0.851                   290         0.0
+Meta-SecAlign-8B (data in the user turn) 0.213 [0.155, 0.286] 0.217 [0.131, 0.336] 0.627 [0.571, 0.679]                 0.723                      0.805                0.786                     0.851                   348         0.0
+       ours, phase 1 (twin distillation) 0.347 [0.275, 0.426] 0.083 [0.036, 0.181] 0.647 [0.591, 0.699]                 0.738                      0.808                0.769                     0.836                   358         0.0
+                       ours, full recipe 0.353 [0.281, 0.433] 0.117 [0.058, 0.222] 0.650 [0.594, 0.702]                 0.738                      0.808                0.774                     0.839                   330         0.0
+
+Fidelity:
+                                   model       task     instruction_kept       statement_kept            deletion_gap           execution_gap
+                 undefended Llama-3.1-8B     repeat 0.838 [0.742, 0.903] 1.000 [0.954, 1.000] +0.163 [+0.087, +0.250] +0.250 [+0.163, +0.350]
+                 undefended Llama-3.1-8B     number 0.738 [0.632, 0.821] 1.000 [0.954, 1.000] +0.263 [+0.163, +0.362] +0.312 [+0.212, +0.425]
+                 undefended Llama-3.1-8B quote_last 0.275 [0.189, 0.381] 0.950 [0.878, 0.980] +0.675 [+0.562, +0.775]                        
+         Meta-SecAlign-8B (as specified)     repeat 0.588 [0.478, 0.689] 0.900 [0.815, 0.948] +0.312 [+0.200, +0.425] +0.037 [-0.050, +0.125]
+         Meta-SecAlign-8B (as specified)     number 0.600 [0.490, 0.700] 1.000 [0.954, 1.000] +0.400 [+0.300, +0.512] +0.000 [+0.000, +0.000]
+         Meta-SecAlign-8B (as specified) quote_last 0.400 [0.300, 0.510] 0.850 [0.756, 0.912] +0.450 [+0.338, +0.562]                        
+Meta-SecAlign-8B (data in the user turn)     repeat 0.775 [0.672, 0.853] 0.988 [0.933, 0.998] +0.212 [+0.125, +0.312] +0.025 [+0.000, +0.062]
+Meta-SecAlign-8B (data in the user turn)     number 0.775 [0.672, 0.853] 1.000 [0.954, 1.000] +0.225 [+0.138, +0.312] +0.025 [+0.000, +0.062]
+Meta-SecAlign-8B (data in the user turn) quote_last 0.438 [0.334, 0.547] 0.938 [0.862, 0.973] +0.500 [+0.388, +0.613]                        
+       ours, phase 1 (twin distillation)     repeat 0.637 [0.528, 0.734] 1.000 [0.954, 1.000] +0.362 [+0.263, +0.475] +0.000 [+0.000, +0.000]
+       ours, phase 1 (twin distillation)     number 0.450 [0.346, 0.559] 1.000 [0.954, 1.000] +0.550 [+0.450, +0.662] +0.000 [+0.000, +0.000]
+       ours, phase 1 (twin distillation) quote_last 0.150 [0.088, 0.244] 0.963 [0.895, 0.987] +0.812 [+0.725, +0.887]                        
+                       ours, full recipe     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+                       ours, full recipe     number 0.963 [0.895, 0.987] 1.000 [0.954, 1.000] +0.037 [+0.000, +0.087] +0.000 [+0.000, +0.000]
+                       ours, full recipe quote_last 0.775 [0.672, 0.853] 0.988 [0.933, 0.998] +0.212 [+0.125, +0.300]                        
+
+Paired:
+                                 comparison                                        meaning                                 measure              difference
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                 attack success, 5 tries +0.152 [+0.095, +0.210]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                attack success, 13 tries +0.176 [+0.119, +0.238]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                           second source +0.020 [+0.007, +0.037]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified user-issued instructions followed (150) +0.120 [+0.020, +0.213]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                      MMLU correct (300) +0.023 [-0.017, +0.063]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified        IFEval prompt-level strict (541) +0.015 [-0.017, +0.046]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                    deletion gap, repeat -0.312 [-0.425, -0.200]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                   execution gap, repeat -0.037 [-0.125, +0.050]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                    deletion gap, number -0.362 [-0.475, -0.263]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                   execution gap, number +0.000 [+0.000, +0.000]
+            llama_full minus llama_secalign        ours against Meta-SecAlign as specified                deletion gap, quote_last -0.237 [-0.375, -0.100]
+          llama_full minus llama_undefended                        ours against undefended                 attack success, 5 tries -0.257 [-0.319, -0.195]
+          llama_full minus llama_undefended                        ours against undefended                attack success, 13 tries -0.248 [-0.310, -0.186]
+          llama_full minus llama_undefended                        ours against undefended                           second source -0.277 [-0.330, -0.227]
+          llama_full minus llama_undefended                        ours against undefended user-issued instructions followed (150) -0.007 [-0.047, +0.033]
+          llama_full minus llama_undefended                        ours against undefended                      MMLU correct (300) -0.013 [-0.037, +0.010]
+          llama_full minus llama_undefended                        ours against undefended        IFEval prompt-level strict (541) +0.006 [-0.022, +0.033]
+          llama_full minus llama_undefended                        ours against undefended                    deletion gap, repeat -0.163 [-0.250, -0.087]
+          llama_full minus llama_undefended                        ours against undefended                   execution gap, repeat -0.250 [-0.350, -0.163]
+          llama_full minus llama_undefended                        ours against undefended                    deletion gap, number -0.225 [-0.338, -0.125]
+          llama_full minus llama_undefended                        ours against undefended                   execution gap, number -0.312 [-0.425, -0.212]
+          llama_full minus llama_undefended                        ours against undefended                deletion gap, quote_last -0.463 [-0.575, -0.350]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                 attack success, 5 tries -0.410 [-0.481, -0.343]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                attack success, 13 tries -0.424 [-0.495, -0.352]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                           second source -0.297 [-0.347, -0.247]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended user-issued instructions followed (150) -0.127 [-0.213, -0.033]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                      MMLU correct (300) -0.037 [-0.077, +0.003]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended        IFEval prompt-level strict (541) -0.009 [-0.046, +0.024]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                    deletion gap, repeat +0.150 [+0.037, +0.263]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                   execution gap, repeat -0.212 [-0.338, -0.100]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                    deletion gap, number +0.138 [+0.025, +0.263]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                   execution gap, number -0.312 [-0.425, -0.212]
+      llama_secalign minus llama_undefended               Meta-SecAlign against undefended                deletion gap, quote_last -0.225 [-0.350, -0.100]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                 attack success, 5 tries -0.048 [-0.090, -0.005]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                attack success, 13 tries -0.057 [-0.100, -0.019]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                           second source +0.007 [-0.010, +0.023]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1) user-issued instructions followed (150) +0.007 [-0.040, +0.047]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                      MMLU correct (300) +0.003 [-0.010, +0.017]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)        IFEval prompt-level strict (541) +0.000 [-0.024, +0.024]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                    deletion gap, repeat -0.362 [-0.475, -0.263]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                   execution gap, repeat +0.000 [+0.000, +0.000]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                    deletion gap, number -0.512 [-0.625, -0.412]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                   execution gap, number +0.000 [+0.000, +0.000]
+             llama_full minus llama_twin_p1 literal examples added (phase 2 minus phase 1)                deletion gap, quote_last -0.600 [-0.700, -0.487]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                 attack success, 5 tries +0.129 [+0.071, +0.181]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                attack success, 13 tries +0.138 [+0.086, +0.190]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                           second source +0.000 [+0.000, +0.000]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn user-issued instructions followed (150) -0.020 [-0.067, +0.027]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                    deletion gap, repeat -0.100 [-0.200, +0.000]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                   execution gap, repeat -0.013 [-0.100, +0.075]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                    deletion gap, number -0.175 [-0.287, -0.075]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                   execution gap, number +0.025 [+0.000, +0.062]
+llama_secalign_no_role minus llama_secalign   Meta-SecAlign with the data in the user turn                deletion gap, quote_last +0.050 [-0.087, +0.175]
+```

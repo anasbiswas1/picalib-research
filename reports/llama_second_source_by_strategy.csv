@@ -1,0 +1,6 @@
+model,combined,escape,fake_completion,ignore,naive
+undefended Llama-3.1-8B,0.333,0.2,0.217,0.367,0.367
+Meta-SecAlign-8B (as specified),0.0,0.0,0.0,0.0,0.0
+Meta-SecAlign-8B (data in the user turn),0.0,0.0,0.0,0.0,0.0
+"ours, phase 1 (twin distillation)",0.0,0.0,0.017,0.0,0.05
+"ours, full recipe",0.017,0.017,0.0,0.017,0.05

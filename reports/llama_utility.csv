@@ -1,0 +1,6 @@
+model,user_followed_150,alpaca_followed,mmlu,ifeval_prompt_strict,ifeval_instruction_strict,ifeval_prompt_loose,ifeval_instruction_loose,summary_median_chars,degenerate
+undefended Llama-3.1-8B,"0.360 [0.288, 0.439]","0.117 [0.058, 0.222]","0.663 [0.608, 0.714]",0.732,0.813,0.774,0.847,361,0.0
+Meta-SecAlign-8B (as specified),"0.233 [0.173, 0.307]","0.167 [0.093, 0.280]","0.627 [0.571, 0.679]",0.723,0.805,0.786,0.851,290,0.0
+Meta-SecAlign-8B (data in the user turn),"0.213 [0.155, 0.286]","0.217 [0.131, 0.336]","0.627 [0.571, 0.679]",0.723,0.805,0.786,0.851,348,0.0
+"ours, phase 1 (twin distillation)","0.347 [0.275, 0.426]","0.083 [0.036, 0.181]","0.647 [0.591, 0.699]",0.738,0.808,0.769,0.836,358,0.0
+"ours, full recipe","0.353 [0.281, 0.433]","0.117 [0.058, 0.222]","0.650 [0.594, 0.702]",0.738,0.808,0.774,0.839,330,0.0
