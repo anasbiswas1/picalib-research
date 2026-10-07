@@ -1,0 +1,13 @@
+comparison,meaning,measure,difference
+fidelity_v4_7b minus twin_distilled_7b,twins and literal examples added,"deletion gap, repeat","-0.312 [-0.412, -0.212]"
+fidelity_v4_7b minus twin_distilled_7b,twins and literal examples added,"execution gap, repeat","-0.013 [-0.037, +0.000]"
+fidelity_v4_7b minus twin_distilled_7b,twins and literal examples added,"deletion gap, number","-0.850 [-0.925, -0.775]"
+fidelity_v4_7b minus twin_distilled_7b,twins and literal examples added,"execution gap, number","+0.000 [-0.037, +0.037]"
+fidelity_v4_7b minus twin_distilled_7b,twins and literal examples added,"deletion gap, quote_last","-0.350 [-0.475, -0.225]"
+fidelity_v4_7b minus twin_distilled_7b,twins and literal examples added,user-issued instructions followed (150),"+0.213 [+0.153, +0.280]"
+fidelity_v4_7b minus undefended_7b,full recipe against undefended,"deletion gap, repeat","-0.250 [-0.350, -0.163]"
+fidelity_v4_7b minus undefended_7b,full recipe against undefended,"execution gap, repeat","-0.175 [-0.263, -0.100]"
+fidelity_v4_7b minus undefended_7b,full recipe against undefended,"deletion gap, number","-0.388 [-0.487, -0.275]"
+fidelity_v4_7b minus undefended_7b,full recipe against undefended,"execution gap, number","-0.237 [-0.338, -0.138]"
+fidelity_v4_7b minus undefended_7b,full recipe against undefended,"deletion gap, quote_last","-0.175 [-0.300, -0.050]"
+fidelity_v4_7b minus undefended_7b,full recipe against undefended,user-issued instructions followed (150),"-0.020 [-0.047, +0.000]"

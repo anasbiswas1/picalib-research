@@ -1982,3 +1982,49 @@ v2_keep_prompt minus twin_distilled_v2                    prompt only quote_last
        fidelity_v4 minus undefended_3b fidelity_v4 against undefended     number -0.250 [-0.362, -0.150]  -0.350 [-0.475, -0.225]
        fidelity_v4 minus undefended_3b fidelity_v4 against undefended quote_last -0.062 [-0.212, +0.087]
 ```
+
+
+---
+## nb39: the full recipe (twins and literal examples) on the 7B
+_2026-10-07 08:35_
+
+```
+Security:
+                           model      success_1_tries      success_5_tries     success_13_tries        second_source
+                   undefended 7B 0.348 [0.286, 0.414] 0.486 [0.419, 0.553] 0.529 [0.461, 0.595] 0.313 [0.263, 0.368]
+         distilled 7B (no twins) 0.071 [0.044, 0.114] 0.262 [0.207, 0.325] 0.300 [0.242, 0.365] 0.023 [0.011, 0.047]
+fidelity_v4_7b (twins + literal) 0.105 [0.070, 0.154] 0.319 [0.260, 0.385] 0.386 [0.322, 0.453] 0.157 [0.120, 0.202]
+
+Utility:
+                           model    user_followed_150      alpaca_followed                 mmlu  summary_median_chars  degenerate
+                   undefended 7B 0.353 [0.281, 0.433] 0.133 [0.069, 0.242] 0.677 [0.622, 0.727]                   378         0.0
+         distilled 7B (no twins) 0.120 [0.077, 0.182] 0.133 [0.069, 0.242] 0.677 [0.622, 0.727]                   415         0.0
+fidelity_v4_7b (twins + literal) 0.333 [0.263, 0.412] 0.133 [0.069, 0.242] 0.673 [0.618, 0.724]                   376         0.0
+
+Fidelity:
+            model       task     instruction_kept       statement_kept            deletion_gap           execution_gap
+    undefended_7b     repeat 0.750 [0.645, 0.832] 1.000 [0.954, 1.000] +0.250 [+0.163, +0.350] +0.175 [+0.100, +0.263]
+    undefended_7b     number 0.613 [0.503, 0.712] 1.000 [0.954, 1.000] +0.388 [+0.275, +0.487] +0.237 [+0.138, +0.338]
+    undefended_7b quote_last 0.350 [0.255, 0.459] 0.887 [0.800, 0.940] +0.537 [+0.425, +0.650]                        
+twin_distilled_7b     repeat 0.688 [0.579, 0.778] 1.000 [0.954, 1.000] +0.312 [+0.212, +0.412] +0.013 [+0.000, +0.037]
+twin_distilled_7b     number 0.150 [0.088, 0.244] 1.000 [0.954, 1.000] +0.850 [+0.775, +0.925] +0.000 [-0.037, +0.037]
+twin_distilled_7b quote_last 0.150 [0.088, 0.244] 0.863 [0.770, 0.921] +0.713 [+0.612, +0.812]                        
+   fidelity_v4_7b     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+   fidelity_v4_7b     number 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+   fidelity_v4_7b quote_last 0.613 [0.503, 0.712] 0.975 [0.913, 0.993] +0.362 [+0.263, +0.463]                        
+
+Paired:
+                            comparison                          meaning                                 measure              difference
+fidelity_v4_7b minus twin_distilled_7b twins and literal examples added                    deletion gap, repeat -0.312 [-0.412, -0.212]
+fidelity_v4_7b minus twin_distilled_7b twins and literal examples added                   execution gap, repeat -0.013 [-0.037, +0.000]
+fidelity_v4_7b minus twin_distilled_7b twins and literal examples added                    deletion gap, number -0.850 [-0.925, -0.775]
+fidelity_v4_7b minus twin_distilled_7b twins and literal examples added                   execution gap, number +0.000 [-0.037, +0.037]
+fidelity_v4_7b minus twin_distilled_7b twins and literal examples added                deletion gap, quote_last -0.350 [-0.475, -0.225]
+fidelity_v4_7b minus twin_distilled_7b twins and literal examples added user-issued instructions followed (150) +0.213 [+0.153, +0.280]
+    fidelity_v4_7b minus undefended_7b   full recipe against undefended                    deletion gap, repeat -0.250 [-0.350, -0.163]
+    fidelity_v4_7b minus undefended_7b   full recipe against undefended                   execution gap, repeat -0.175 [-0.263, -0.100]
+    fidelity_v4_7b minus undefended_7b   full recipe against undefended                    deletion gap, number -0.388 [-0.487, -0.275]
+    fidelity_v4_7b minus undefended_7b   full recipe against undefended                   execution gap, number -0.237 [-0.338, -0.138]
+    fidelity_v4_7b minus undefended_7b   full recipe against undefended                deletion gap, quote_last -0.175 [-0.300, -0.050]
+    fidelity_v4_7b minus undefended_7b   full recipe against undefended user-issued instructions followed (150) -0.020 [-0.047, +0.000]
+```
