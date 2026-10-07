@@ -1,0 +1,13 @@
+comparison,meaning,task,deletion_gap_difference,execution_gap_difference
+fidelity_v4 minus twin_distilled_v2,literal examples added,repeat,"-0.350 [-0.463, -0.237]","+0.000 [+0.000, +0.000]"
+fidelity_v4 minus twin_distilled_v2,literal examples added,number,"-0.450 [-0.562, -0.338]","-0.013 [-0.087, +0.075]"
+fidelity_v4 minus twin_distilled_v2,literal examples added,quote_last,"-0.150 [-0.300, +0.000]",
+v2_keep_prompt minus twin_distilled_v2,prompt only,repeat,"-0.100 [-0.175, -0.025]","+0.000 [-0.037, +0.037]"
+v2_keep_prompt minus twin_distilled_v2,prompt only,number,"-0.075 [-0.188, +0.037]","+0.025 [-0.062, +0.113]"
+v2_keep_prompt minus twin_distilled_v2,prompt only,quote_last,"-0.113 [-0.225, +0.000]",
+no_twin_v2 minus twin_distilled_v2,twins removed (anchor test),repeat,"+0.050 [-0.037, +0.138]","-0.025 [-0.062, +0.000]"
+no_twin_v2 minus twin_distilled_v2,twins removed (anchor test),number,"+0.237 [+0.150, +0.338]","+0.000 [-0.075, +0.075]"
+no_twin_v2 minus twin_distilled_v2,twins removed (anchor test),quote_last,"+0.087 [-0.013, +0.188]",
+fidelity_v4 minus undefended_3b,fidelity_v4 against undefended,repeat,"-0.362 [-0.475, -0.250]","-0.312 [-0.425, -0.212]"
+fidelity_v4 minus undefended_3b,fidelity_v4 against undefended,number,"-0.250 [-0.362, -0.150]","-0.350 [-0.475, -0.225]"
+fidelity_v4 minus undefended_3b,fidelity_v4 against undefended,quote_last,"-0.062 [-0.212, +0.087]",

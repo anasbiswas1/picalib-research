@@ -1928,3 +1928,57 @@ twin_distilled_7b     repeat +0.312 [+0.212, +0.412] +0.013 [+0.000, +0.037]    
 twin_distilled_7b     number +0.850 [+0.775, +0.925] +0.000 [-0.037, +0.037]    +0.463 [+0.350, +0.575]     -0.237 [-0.338, -0.138]
 twin_distilled_7b quote_last +0.713 [+0.612, +0.812]                            +0.175 [+0.062, +0.287]
 ```
+
+
+---
+## nb38: fidelity-preserving twin distillation (v2 + literal examples) with a prompt-only control
+_2026-10-07 06:44_
+
+```
+Security:
+                              model      success_1_tries      success_5_tries     success_13_tries        second_source
+                      undefended 3B 0.419 [0.354, 0.487] 0.481 [0.414, 0.548] 0.510 [0.442, 0.576] 0.307 [0.257, 0.361]
+               twin distillation v2 0.014 [0.005, 0.041] 0.152 [0.110, 0.207] 0.224 [0.173, 0.285] 0.033 [0.018, 0.060]
+    v2 + keep-every-sentence prompt 0.029 [0.013, 0.061] 0.186 [0.139, 0.244] 0.295 [0.238, 0.360] 0.043 [0.025, 0.073]
+fidelity_v4 (v2 + literal examples) 0.014 [0.005, 0.041] 0.152 [0.110, 0.207] 0.219 [0.168, 0.280] 0.047 [0.028, 0.077]
+
+Utility:
+                              model    user_followed_150      alpaca_followed                 mmlu  summary_median_chars  degenerate
+                      undefended 3B 0.340 [0.269, 0.419] 0.117 [0.058, 0.222] 0.633 [0.577, 0.686]                   463         0.0
+               twin distillation v2 0.327 [0.257, 0.405] 0.133 [0.069, 0.242] 0.627 [0.571, 0.679]                   409         0.0
+    v2 + keep-every-sentence prompt 0.320 [0.251, 0.398] 0.217 [0.131, 0.336] 0.627 [0.571, 0.679]                   305         0.0
+fidelity_v4 (v2 + literal examples) 0.327 [0.257, 0.405] 0.150 [0.081, 0.261] 0.623 [0.567, 0.676]                   389         0.0
+
+Fidelity:
+            model       task     instruction_kept       statement_kept            deletion_gap           execution_gap
+    undefended_3b     repeat 0.613 [0.503, 0.712] 0.975 [0.913, 0.993] +0.362 [+0.250, +0.475] +0.312 [+0.212, +0.425]
+    undefended_3b     number 0.662 [0.554, 0.757] 0.963 [0.895, 0.987] +0.300 [+0.188, +0.425] +0.375 [+0.262, +0.500]
+    undefended_3b quote_last 0.300 [0.211, 0.408] 0.800 [0.700, 0.873] +0.500 [+0.362, +0.637]                        
+twin_distilled_v2     repeat 0.650 [0.541, 0.745] 1.000 [0.954, 1.000] +0.350 [+0.237, +0.463] +0.000 [+0.000, +0.000]
+twin_distilled_v2     number 0.463 [0.357, 0.571] 0.963 [0.895, 0.987] +0.500 [+0.388, +0.613] +0.037 [-0.037, +0.113]
+twin_distilled_v2 quote_last 0.087 [0.043, 0.170] 0.675 [0.566, 0.768] +0.588 [+0.463, +0.713]                        
+       no_twin_v2     repeat 0.575 [0.466, 0.677] 0.975 [0.913, 0.993] +0.400 [+0.287, +0.512] -0.025 [-0.062, +0.000]
+       no_twin_v2     number 0.237 [0.158, 0.341] 0.975 [0.913, 0.993] +0.738 [+0.637, +0.838] +0.037 [-0.025, +0.100]
+       no_twin_v2 quote_last 0.000 [0.000, 0.046] 0.675 [0.566, 0.768] +0.675 [+0.575, +0.775]                        
+   v2_keep_prompt     repeat 0.738 [0.632, 0.821] 0.988 [0.933, 0.998] +0.250 [+0.150, +0.350] +0.000 [-0.037, +0.037]
+   v2_keep_prompt     number 0.537 [0.429, 0.643] 0.963 [0.895, 0.987] +0.425 [+0.300, +0.550] +0.062 [-0.013, +0.138]
+   v2_keep_prompt quote_last 0.050 [0.020, 0.122] 0.525 [0.417, 0.631] +0.475 [+0.375, +0.588]                        
+      fidelity_v4     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+      fidelity_v4     number 0.925 [0.846, 0.965] 0.975 [0.913, 0.993] +0.050 [-0.013, +0.125] +0.025 [-0.025, +0.075]
+      fidelity_v4 quote_last 0.425 [0.323, 0.534] 0.863 [0.770, 0.921] +0.438 [+0.312, +0.562]                        
+
+Paired:
+                            comparison                        meaning       task deletion_gap_difference execution_gap_difference
+   fidelity_v4 minus twin_distilled_v2         literal examples added     repeat -0.350 [-0.463, -0.237]  +0.000 [+0.000, +0.000]
+   fidelity_v4 minus twin_distilled_v2         literal examples added     number -0.450 [-0.562, -0.338]  -0.013 [-0.087, +0.075]
+   fidelity_v4 minus twin_distilled_v2         literal examples added quote_last -0.150 [-0.300, +0.000]                         
+v2_keep_prompt minus twin_distilled_v2                    prompt only     repeat -0.100 [-0.175, -0.025]  +0.000 [-0.037, +0.037]
+v2_keep_prompt minus twin_distilled_v2                    prompt only     number -0.075 [-0.188, +0.037]  +0.025 [-0.062, +0.113]
+v2_keep_prompt minus twin_distilled_v2                    prompt only quote_last -0.113 [-0.225, +0.000]                         
+    no_twin_v2 minus twin_distilled_v2    twins removed (anchor test)     repeat +0.050 [-0.037, +0.138]  -0.025 [-0.062, +0.000]
+    no_twin_v2 minus twin_distilled_v2    twins removed (anchor test)     number +0.237 [+0.150, +0.338]  +0.000 [-0.075, +0.075]
+    no_twin_v2 minus twin_distilled_v2    twins removed (anchor test) quote_last +0.087 [-0.013, +0.188]                         
+       fidelity_v4 minus undefended_3b fidelity_v4 against undefended     repeat -0.362 [-0.475, -0.250]  -0.312 [-0.425, -0.212]
+       fidelity_v4 minus undefended_3b fidelity_v4 against undefended     number -0.250 [-0.362, -0.150]  -0.350 [-0.475, -0.225]
+       fidelity_v4 minus undefended_3b fidelity_v4 against undefended quote_last -0.062 [-0.212, +0.087]
+```
