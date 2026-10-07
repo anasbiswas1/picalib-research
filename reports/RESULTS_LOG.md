@@ -2101,3 +2101,13 @@ fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B
     fidelity_v5_7b minus undefended_7b                 against the undefended 7B                   execution gap, number -0.237 [-0.338, -0.138]
     fidelity_v5_7b minus undefended_7b                 against the undefended 7B                deletion gap, quote_last -0.163 [-0.287, -0.037]
 ```
+
+
+---
+## nb41: the recipe trained on Llama-3.1-8B-Instruct (phase 1 twin distillation, phase 2 literal examples)
+_2026-10-07 15:32_
+
+```
+Phase 1: 9000 examples, final reverse-KL (last 100 steps) 0.013
+Phase 2: 4000 examples, final reverse-KL 0.009, final exact-target loss 0.006
+```
