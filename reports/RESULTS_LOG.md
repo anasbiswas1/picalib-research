@@ -2028,3 +2028,76 @@ fidelity_v4_7b minus twin_distilled_7b twins and literal examples added user-iss
     fidelity_v4_7b minus undefended_7b   full recipe against undefended                deletion gap, quote_last -0.175 [-0.300, -0.050]
     fidelity_v4_7b minus undefended_7b   full recipe against undefended user-issued instructions followed (150) -0.020 [-0.047, +0.000]
 ```
+
+
+---
+## nb40: the 7B recipe with the final phase rebalanced toward the defense
+_2026-10-07 10:41_
+
+```
+Security:
+                                         model      success_1_tries      success_5_tries     success_13_tries        second_source
+                                 undefended 7B 0.348 [0.286, 0.414] 0.486 [0.419, 0.553] 0.529 [0.461, 0.595] 0.313 [0.263, 0.368]
+                       distilled 7B (no twins) 0.071 [0.044, 0.114] 0.262 [0.207, 0.325] 0.300 [0.242, 0.365] 0.023 [0.011, 0.047]
+              fidelity_v4_7b (twins + literal) 0.105 [0.070, 0.154] 0.319 [0.260, 0.385] 0.386 [0.322, 0.453] 0.157 [0.120, 0.202]
+fidelity_v5_7b (rebalanced toward the defense) 0.024 [0.010, 0.055] 0.233 [0.181, 0.295] 0.305 [0.246, 0.370] 0.087 [0.060, 0.124]
+
+Second source by strategy:
+                                         model  combined  escape  fake_completion  ignore  naive
+                                 undefended 7B     0.283   0.283            0.233   0.400  0.367
+                       distilled 7B (no twins)     0.000   0.050            0.017   0.000  0.050
+              fidelity_v4_7b (twins + literal)     0.050   0.050            0.150   0.300  0.233
+fidelity_v5_7b (rebalanced toward the defense)     0.017   0.050            0.067   0.117  0.183
+
+Utility:
+                                         model    user_followed_150      alpaca_followed                 mmlu  summary_median_chars  degenerate
+                                 undefended 7B 0.353 [0.281, 0.433] 0.133 [0.069, 0.242] 0.677 [0.622, 0.727]                   378         0.0
+                       distilled 7B (no twins) 0.120 [0.077, 0.182] 0.133 [0.069, 0.242] 0.677 [0.622, 0.727]                   415         0.0
+              fidelity_v4_7b (twins + literal) 0.333 [0.263, 0.412] 0.133 [0.069, 0.242] 0.673 [0.618, 0.724]                   376         0.0
+fidelity_v5_7b (rebalanced toward the defense) 0.347 [0.275, 0.426] 0.150 [0.081, 0.261] 0.677 [0.622, 0.727]                   357         0.0
+
+Fidelity:
+            model       task     instruction_kept       statement_kept            deletion_gap           execution_gap
+    undefended_7b     repeat 0.750 [0.645, 0.832] 1.000 [0.954, 1.000] +0.250 [+0.163, +0.350] +0.175 [+0.100, +0.263]
+    undefended_7b     number 0.613 [0.503, 0.712] 1.000 [0.954, 1.000] +0.388 [+0.275, +0.487] +0.237 [+0.138, +0.338]
+    undefended_7b quote_last 0.350 [0.255, 0.459] 0.887 [0.800, 0.940] +0.537 [+0.425, +0.650]                        
+twin_distilled_7b     repeat 0.688 [0.579, 0.778] 1.000 [0.954, 1.000] +0.312 [+0.212, +0.412] +0.013 [+0.000, +0.037]
+twin_distilled_7b     number 0.150 [0.088, 0.244] 1.000 [0.954, 1.000] +0.850 [+0.775, +0.925] +0.000 [-0.037, +0.037]
+twin_distilled_7b quote_last 0.150 [0.088, 0.244] 0.863 [0.770, 0.921] +0.713 [+0.612, +0.812]                        
+   fidelity_v4_7b     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+   fidelity_v4_7b     number 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+   fidelity_v4_7b quote_last 0.613 [0.503, 0.712] 0.975 [0.913, 0.993] +0.362 [+0.263, +0.463]                        
+   fidelity_v5_7b     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+   fidelity_v5_7b     number 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+   fidelity_v5_7b quote_last 0.600 [0.490, 0.700] 0.975 [0.913, 0.993] +0.375 [+0.275, +0.475]                        
+
+Paired:
+                            comparison                                   meaning                                 measure              difference
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                 attack success, 5 tries -0.086 [-0.133, -0.043]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                attack success, 13 tries -0.081 [-0.124, -0.038]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                           second source -0.070 [-0.113, -0.027]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense user-issued instructions followed (150) +0.013 [-0.013, +0.040]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                    deletion gap, repeat +0.000 [+0.000, +0.000]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                   execution gap, repeat +0.000 [+0.000, +0.000]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                    deletion gap, number +0.000 [+0.000, +0.000]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                   execution gap, number +0.000 [+0.000, +0.000]
+   fidelity_v5_7b minus fidelity_v4_7b final phase rebalanced toward the defense                deletion gap, quote_last +0.013 [-0.037, +0.075]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                 attack success, 5 tries -0.029 [-0.067, +0.014]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                attack success, 13 tries +0.005 [-0.033, +0.043]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                           second source +0.063 [+0.033, +0.097]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B user-issued instructions followed (150) +0.227 [+0.160, +0.300]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                    deletion gap, repeat -0.312 [-0.412, -0.212]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                   execution gap, repeat -0.013 [-0.037, +0.000]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                    deletion gap, number -0.850 [-0.925, -0.775]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                   execution gap, number +0.000 [-0.037, +0.037]
+fidelity_v5_7b minus twin_distilled_7b              against the security-only 7B                deletion gap, quote_last -0.338 [-0.463, -0.212]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                 attack success, 5 tries -0.252 [-0.314, -0.190]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                attack success, 13 tries -0.224 [-0.286, -0.167]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                           second source -0.227 [-0.287, -0.170]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B user-issued instructions followed (150) -0.007 [-0.020, +0.000]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                    deletion gap, repeat -0.250 [-0.350, -0.163]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                   execution gap, repeat -0.175 [-0.263, -0.100]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                    deletion gap, number -0.388 [-0.487, -0.275]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                   execution gap, number -0.237 [-0.338, -0.138]
+    fidelity_v5_7b minus undefended_7b                 against the undefended 7B                deletion gap, quote_last -0.163 [-0.287, -0.037]
+```

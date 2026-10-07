@@ -1,0 +1,5 @@
+model,user_followed_150,alpaca_followed,mmlu,summary_median_chars,degenerate
+undefended 7B,"0.353 [0.281, 0.433]","0.133 [0.069, 0.242]","0.677 [0.622, 0.727]",378,0.0
+distilled 7B (no twins),"0.120 [0.077, 0.182]","0.133 [0.069, 0.242]","0.677 [0.622, 0.727]",415,0.0
+fidelity_v4_7b (twins + literal),"0.333 [0.263, 0.412]","0.133 [0.069, 0.242]","0.673 [0.618, 0.724]",376,0.0
+fidelity_v5_7b (rebalanced toward the defense),"0.347 [0.275, 0.426]","0.150 [0.081, 0.261]","0.677 [0.622, 0.727]",357,0.0
