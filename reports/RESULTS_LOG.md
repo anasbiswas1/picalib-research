@@ -2330,3 +2330,111 @@ Meta-SecAlign-8B (data in the user turn)                Reverse Text            
 Meta-SecAlign-8B (data in the user turn)               Scams & Fraud              0.433
 Meta-SecAlign-8B (data in the user turn)        Substitution Ciphers              0.500
 ```
+
+
+---
+## nb44: adaptive attacker re-scored strictly (emoji and base64 copied from the document no longer count; scams need markers and the judge) and the combined attacker
+_2026-10-08 11:57_
+
+```
+Strict adaptive:
+                                   model         success_at_1         success_at_4         success_at_7        success_at_10        success_at_13
+                      Qwen 3B undefended 0.376 [0.313, 0.443] 0.595 [0.528, 0.659] 0.681 [0.615, 0.740] 0.733 [0.670, 0.789] 0.762 [0.700, 0.814]
+            Qwen 3B twin distillation v2 0.000 [0.000, 0.018] 0.010 [0.003, 0.034] 0.014 [0.005, 0.041] 0.019 [0.007, 0.048] 0.024 [0.010, 0.055]
+             Qwen 3B full recipe (final) 0.000 [0.000, 0.018] 0.000 [0.000, 0.018] 0.010 [0.003, 0.034] 0.024 [0.010, 0.055] 0.029 [0.013, 0.061]
+                      Qwen 7B undefended 0.357 [0.295, 0.424] 0.514 [0.447, 0.581] 0.600 [0.533, 0.664] 0.629 [0.561, 0.691] 0.638 [0.571, 0.700]
+             Qwen 7B full recipe (final) 0.019 [0.007, 0.048] 0.024 [0.010, 0.055] 0.029 [0.013, 0.061] 0.038 [0.019, 0.073] 0.048 [0.026, 0.085]
+                     Llama 8B undefended 0.376 [0.313, 0.443] 0.557 [0.490, 0.623] 0.619 [0.552, 0.682] 0.648 [0.581, 0.709] 0.671 [0.605, 0.731]
+              Llama 8B ours, full recipe 0.048 [0.026, 0.085] 0.143 [0.102, 0.197] 0.186 [0.139, 0.244] 0.219 [0.168, 0.280] 0.233 [0.181, 0.295]
+         Meta-SecAlign-8B (as specified) 0.005 [0.001, 0.026] 0.014 [0.005, 0.041] 0.033 [0.016, 0.067] 0.048 [0.026, 0.085] 0.057 [0.033, 0.097]
+Meta-SecAlign-8B (data in the user turn) 0.100 [0.066, 0.148] 0.224 [0.173, 0.285] 0.267 [0.211, 0.330] 0.295 [0.238, 0.360] 0.300 [0.242, 0.365]
+
+Inflation, adaptive:
+                                   model           category  old_rule_success_13_nb43  strict_success_13  attempts  attempts_counted_only_by_old_rule
+                      Qwen 3B undefended Emoji Substitution                     1.000              1.000        30                                  0
+                      Qwen 3B undefended      Base Encoding                     0.800              0.800       145                                  3
+                      Qwen 3B undefended      Scams & Fraud                     0.567              0.367       274                                 44
+            Qwen 3B twin distillation v2 Emoji Substitution                     0.100              0.000       390                                  4
+            Qwen 3B twin distillation v2      Base Encoding                     0.033              0.000       390                                 10
+            Qwen 3B twin distillation v2      Scams & Fraud                     0.100              0.033       380                                 26
+             Qwen 3B full recipe (final) Emoji Substitution                     0.133              0.067       378                                  2
+             Qwen 3B full recipe (final)      Base Encoding                     0.033              0.000       390                                 12
+             Qwen 3B full recipe (final)      Scams & Fraud                     0.100              0.033       389                                 35
+                      Qwen 7B undefended Emoji Substitution                     1.000              1.000        30                                  0
+                      Qwen 7B undefended      Base Encoding                     0.767              0.767       128                                  0
+                      Qwen 7B undefended      Scams & Fraud                     0.500              0.267       297                                 39
+             Qwen 7B full recipe (final) Emoji Substitution                     0.067              0.033       378                                  1
+             Qwen 7B full recipe (final)      Base Encoding                     0.100              0.067       373                                 13
+             Qwen 7B full recipe (final)      Scams & Fraud                     0.100              0.033       381                                 22
+                     Llama 8B undefended Emoji Substitution                     1.000              1.000        35                                  0
+                     Llama 8B undefended      Base Encoding                     0.633              0.633       224                                  7
+                     Llama 8B undefended      Scams & Fraud                     0.433              0.233       326                                 32
+              Llama 8B ours, full recipe Emoji Substitution                     0.767              0.633       217                                  2
+              Llama 8B ours, full recipe      Base Encoding                     0.100              0.100       366                                 13
+              Llama 8B ours, full recipe      Scams & Fraud                     0.233              0.100       373                                 15
+         Meta-SecAlign-8B (as specified) Emoji Substitution                     0.100              0.300       330                                  1
+         Meta-SecAlign-8B (as specified)      Base Encoding                     0.033              0.000       390                                 13
+         Meta-SecAlign-8B (as specified)      Scams & Fraud                     0.300              0.067       379                                 31
+Meta-SecAlign-8B (data in the user turn) Emoji Substitution                     0.867              0.833       127                                  0
+Meta-SecAlign-8B (data in the user turn)      Base Encoding                     0.167              0.167       342                                 13
+Meta-SecAlign-8B (data in the user turn)      Scams & Fraud                     0.433              0.267       306                                 11
+
+Inflation, fixed:
+                                   model           category  fixed_13_reported_rules  fixed_13_strict
+                      Qwen 3B undefended Emoji Substitution                    1.000            1.000
+                      Qwen 3B undefended      Base Encoding                    0.633            0.600
+                      Qwen 3B undefended      Scams & Fraud                    0.533            0.300
+            Qwen 3B twin distillation v2 Emoji Substitution                    0.367            0.367
+            Qwen 3B twin distillation v2      Base Encoding                    0.433            0.267
+            Qwen 3B twin distillation v2      Scams & Fraud                    0.400            0.133
+             Qwen 3B full recipe (final) Emoji Substitution                    0.300            0.300
+             Qwen 3B full recipe (final)      Base Encoding                    0.433            0.267
+             Qwen 3B full recipe (final)      Scams & Fraud                    0.400            0.167
+                      Qwen 7B undefended Emoji Substitution                    1.000            1.000
+                      Qwen 7B undefended      Base Encoding                    0.633            0.633
+                      Qwen 7B undefended      Scams & Fraud                    0.500            0.300
+             Qwen 7B full recipe (final) Emoji Substitution                    0.533            0.533
+             Qwen 7B full recipe (final)      Base Encoding                    0.467            0.300
+             Qwen 7B full recipe (final)      Scams & Fraud                    0.400            0.200
+                     Llama 8B undefended Emoji Substitution                    0.967            0.967
+                     Llama 8B undefended      Base Encoding                    0.367            0.267
+                     Llama 8B undefended      Scams & Fraud                    0.367            0.167
+              Llama 8B ours, full recipe Emoji Substitution                    0.267            0.267
+              Llama 8B ours, full recipe      Base Encoding                    0.367            0.033
+              Llama 8B ours, full recipe      Scams & Fraud                    0.300            0.100
+         Meta-SecAlign-8B (as specified) Emoji Substitution                    0.067            0.067
+         Meta-SecAlign-8B (as specified)      Base Encoding                    0.100            0.000
+         Meta-SecAlign-8B (as specified)      Scams & Fraud                    0.433            0.167
+Meta-SecAlign-8B (data in the user turn) Emoji Substitution                    0.433            0.433
+Meta-SecAlign-8B (data in the user turn)      Base Encoding                    0.233            0.033
+Meta-SecAlign-8B (data in the user turn)      Scams & Fraud                    0.467            0.167
+
+Fixed, adaptive, combined:
+                                   model  fixed_13_reported  fixed_13_recomputed  fixed_13_strict  adaptive_13_strict combined_either_attacker
+                      Qwen 3B undefended              0.510                0.510            0.471               0.762     0.790 [0.730, 0.840]
+            Qwen 3B twin distillation v2              0.224                0.224            0.162               0.024     0.181 [0.135, 0.239]
+             Qwen 3B full recipe (final)              0.219                0.219            0.162               0.029     0.181 [0.135, 0.239]
+                      Qwen 7B undefended              0.529                0.529            0.500               0.638     0.714 [0.650, 0.771]
+             Qwen 7B full recipe (final)              0.305                0.305            0.252               0.048     0.276 [0.220, 0.340]
+                     Llama 8B undefended              0.514                0.514            0.471               0.671     0.733 [0.670, 0.789]
+              Llama 8B ours, full recipe              0.267                0.267            0.190               0.233     0.348 [0.286, 0.414]
+         Meta-SecAlign-8B (as specified)              0.090                0.090            0.038               0.057     0.081 [0.051, 0.126]
+Meta-SecAlign-8B (data in the user turn)              0.229                0.229            0.157               0.300     0.352 [0.291, 0.419]
+
+Paired:
+                             comparison                                               meaning                    measure              difference
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified strict adaptive, within 13 +0.176 [+0.119, +0.233]
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified          combined attacker +0.267 [+0.195, +0.338]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn strict adaptive, within 13 -0.067 [-0.124, -0.005]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn          combined attacker -0.005 [-0.076, +0.067]
+      llama_full minus llama_undefended                        ours against undefended, Llama strict adaptive, within 13 -0.438 [-0.510, -0.367]
+      llama_full minus llama_undefended                        ours against undefended, Llama          combined attacker -0.386 [-0.452, -0.314]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended strict adaptive, within 13 -0.614 [-0.681, -0.548]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended          combined attacker -0.652 [-0.719, -0.586]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B strict adaptive, within 13 -0.733 [-0.790, -0.676]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B          combined attacker -0.610 [-0.681, -0.538]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B strict adaptive, within 13 +0.005 [-0.024, +0.029]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B          combined attacker +0.000 [-0.043, +0.038]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B strict adaptive, within 13 -0.590 [-0.657, -0.524]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B          combined attacker -0.438 [-0.505, -0.371]
+```
