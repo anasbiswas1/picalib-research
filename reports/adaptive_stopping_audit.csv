@@ -1,0 +1,19 @@
+model,run,attempts,stopping_verdicts,stopping_verdicts_reversed_by_final_rules,attempts_added_by_final_rules
+qwen3b_undefended,notebook 44,449,65,0,0
+qwen3b_undefended,notebook 45,679,91,0,35
+qwen3b_v2,notebook 44,1160,1,0,0
+qwen3b_v2,notebook 45,1531,4,0,8
+qwen3b_v4,notebook 44,1157,3,0,0
+qwen3b_v4,notebook 45,1544,3,0,2
+qwen7b_undefended,notebook 44,455,61,0,0
+qwen7b_undefended,notebook 45,862,74,0,84
+qwen7b_v5,notebook 44,1132,4,0,0
+qwen7b_v5,notebook 45,1504,7,0,17
+llama_undefended,notebook 44,585,56,0,0
+llama_undefended,notebook 45,698,87,0,111
+llama_full,notebook 44,956,25,0,0
+llama_full,notebook 45,1317,26,0,58
+llama_secalign,notebook 44,1099,11,0,0
+llama_secalign,notebook 45,1560,0,0,0
+llama_secalign_no_role,notebook 44,775,38,0,0
+llama_secalign_no_role,notebook 45,1386,23,0,45

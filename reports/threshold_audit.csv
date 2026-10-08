@@ -1,0 +1,21 @@
+detector,calibration_set,n_benign,blocked_old,calFPR_old,blocked_strict,calFPR_strict,FNR_old,FNR_strict,fallback_fired,loo_FPR_strict
+ProtectAI-v2,BIPIA hosts (778),778,7,0.009,7,0.009,0.993,0.993,False,0.009
+ProtectAI-v2,second source benigns,900,9,0.01,9,0.01,0.924,0.924,False,0.0089
+Prompt-Guard-2 (86M),BIPIA hosts (778),778,7,0.009,7,0.009,0.967,0.967,False,0.009
+Prompt-Guard-2 (86M),second source benigns,900,9,0.01,9,0.01,0.499,0.499,False,0.0089
+Prompt-Guard-2 (22M),BIPIA hosts (778),778,7,0.009,7,0.009,1.0,1.0,False,0.009
+Prompt-Guard-2 (22M),second source benigns,900,9,0.01,9,0.01,0.886,0.886,False,0.0089
+deepset injection,BIPIA hosts (778),778,7,0.009,7,0.009,0.98,0.98,False,0.009
+deepset injection,second source benigns,900,9,0.01,9,0.01,0.929,0.929,False,0.01
+ProtectAI-v1,BIPIA hosts (778),778,7,0.009,7,0.009,0.993,0.993,False,0.009
+ProtectAI-v1,second source benigns,900,9,0.01,9,0.01,0.718,0.718,False,0.0089
+fmops distilbert,BIPIA hosts (778),778,7,0.009,7,0.009,0.993,0.993,False,0.009
+fmops distilbert,second source benigns,900,9,0.01,9,0.01,0.101,0.101,False,0.0089
+PIGuard,BIPIA hosts (778),778,7,0.009,7,0.009,0.107,0.107,False,0.009
+PIGuard,second source benigns,900,9,0.01,9,0.01,0.793,0.793,False,0.0089
+structural (full),BIPIA hosts (778),778,7,0.009,7,0.009,0.14,0.14,False,0.009
+structural (full),second source benigns,900,9,0.01,9,0.01,0.028,0.028,False,0.0089
+structural (full_aug),BIPIA hosts (778),778,7,0.009,7,0.009,0.127,0.127,False,0.009
+structural (full_aug),second source benigns,900,9,0.01,9,0.01,0.016,0.016,False,0.0089
+conventional fine-tune,BIPIA hosts (778),778,7,0.009,7,0.009,0.98,0.98,False,0.009
+conventional fine-tune,second source benigns,900,9,0.01,9,0.01,0.992,0.992,False,0.0089

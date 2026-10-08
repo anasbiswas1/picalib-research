@@ -1,0 +1,67 @@
+model,attack,n,FNR_strict,FNR_old
+ProtectAI-v2,important_instructions,242,1.0,1.0
+ProtectAI-v2,ignore_previous,242,0.876,0.872
+ProtectAI-v2,injecagent,242,0.909,0.905
+ProtectAI-v2,tool_knowledge,242,1.0,1.0
+ProtectAI-v2,direct,242,0.996,0.992
+ProtectAI-v2,system_message,242,0.988,0.988
+Prompt-Guard-2 (86M),important_instructions,242,0.45,0.45
+Prompt-Guard-2 (86M),ignore_previous,242,0.0,0.0
+Prompt-Guard-2 (86M),injecagent,242,0.0,0.0
+Prompt-Guard-2 (86M),tool_knowledge,242,0.236,0.236
+Prompt-Guard-2 (86M),direct,242,0.946,0.946
+Prompt-Guard-2 (86M),system_message,242,0.95,0.95
+Prompt-Guard-2 (22M),important_instructions,242,0.917,0.917
+Prompt-Guard-2 (22M),ignore_previous,242,0.955,0.955
+Prompt-Guard-2 (22M),injecagent,242,0.901,0.901
+Prompt-Guard-2 (22M),tool_knowledge,242,0.963,0.963
+Prompt-Guard-2 (22M),direct,242,0.983,0.983
+Prompt-Guard-2 (22M),system_message,242,0.959,0.959
+deepset injection,important_instructions,242,1.0,1.0
+deepset injection,ignore_previous,242,0.711,0.711
+deepset injection,injecagent,242,0.719,0.719
+deepset injection,tool_knowledge,242,1.0,1.0
+deepset injection,direct,242,0.942,0.942
+deepset injection,system_message,242,0.95,0.95
+ProtectAI-v1,important_instructions,242,1.0,1.0
+ProtectAI-v1,ignore_previous,242,0.979,0.979
+ProtectAI-v1,injecagent,242,0.926,0.926
+ProtectAI-v1,tool_knowledge,242,1.0,1.0
+ProtectAI-v1,direct,242,1.0,1.0
+ProtectAI-v1,system_message,242,1.0,1.0
+fmops distilbert,important_instructions,242,0.988,0.988
+fmops distilbert,ignore_previous,242,0.988,0.988
+fmops distilbert,injecagent,242,0.764,0.764
+fmops distilbert,tool_knowledge,242,0.653,0.653
+fmops distilbert,direct,242,1.0,1.0
+fmops distilbert,system_message,242,1.0,1.0
+structural (full),important_instructions,242,0.979,0.979
+structural (full),ignore_previous,242,0.665,0.665
+structural (full),injecagent,242,0.479,0.479
+structural (full),tool_knowledge,242,1.0,1.0
+structural (full),direct,242,0.913,0.913
+structural (full),system_message,242,0.95,0.95
+structural (full_aug),important_instructions,242,0.959,0.959
+structural (full_aug),ignore_previous,242,0.645,0.645
+structural (full_aug),injecagent,242,0.326,0.326
+structural (full_aug),tool_knowledge,242,0.946,0.946
+structural (full_aug),direct,242,0.926,0.926
+structural (full_aug),system_message,242,0.913,0.913
+conventional fine-tune,important_instructions,242,0.496,0.496
+conventional fine-tune,ignore_previous,242,0.748,0.748
+conventional fine-tune,injecagent,242,0.777,0.777
+conventional fine-tune,tool_knowledge,242,0.388,0.388
+conventional fine-tune,direct,242,0.992,0.992
+conventional fine-tune,system_message,242,0.868,0.868
+PIGuard,important_instructions,242,0.632,0.632
+PIGuard,ignore_previous,242,0.835,0.835
+PIGuard,injecagent,242,0.227,0.227
+PIGuard,tool_knowledge,242,0.905,0.905
+PIGuard,direct,242,0.901,0.901
+PIGuard,system_message,242,0.926,0.926
+TF-IDF reference,important_instructions,242,1.0,1.0
+TF-IDF reference,ignore_previous,242,0.917,0.917
+TF-IDF reference,injecagent,242,0.917,0.917
+TF-IDF reference,tool_knowledge,242,1.0,1.0
+TF-IDF reference,direct,242,0.95,0.95
+TF-IDF reference,system_message,242,0.95,0.95

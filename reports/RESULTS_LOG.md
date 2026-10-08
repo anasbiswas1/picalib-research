@@ -2724,3 +2724,107 @@ Meta-SecAlign-8B (data in the user turn)    0.124     0.195                     
                           v2_keep_prompt    0.048     0.262                     0.233             0.029
                            llama_twin_p1    0.124     0.267                     0.229             0.038
 ```
+
+
+---
+## nb47: strict guaranteed threshold (the cap always holds), audit of every calibration set, AgentDojo re-evaluated, adaptive stopping audit, host-level bootstrap for the paired comparisons
+_2026-10-08 19:51_
+
+```
+Threshold audit:
+              detector       calibration_set  n_benign  blocked_old  calFPR_old  blocked_strict  calFPR_strict  FNR_old  FNR_strict  fallback_fired  loo_FPR_strict
+          ProtectAI-v2     BIPIA hosts (778)       778            7       0.009               7          0.009    0.993       0.993           False          0.0090
+          ProtectAI-v2 second source benigns       900            9       0.010               9          0.010    0.924       0.924           False          0.0089
+  Prompt-Guard-2 (86M)     BIPIA hosts (778)       778            7       0.009               7          0.009    0.967       0.967           False          0.0090
+  Prompt-Guard-2 (86M) second source benigns       900            9       0.010               9          0.010    0.499       0.499           False          0.0089
+  Prompt-Guard-2 (22M)     BIPIA hosts (778)       778            7       0.009               7          0.009    1.000       1.000           False          0.0090
+  Prompt-Guard-2 (22M) second source benigns       900            9       0.010               9          0.010    0.886       0.886           False          0.0089
+     deepset injection     BIPIA hosts (778)       778            7       0.009               7          0.009    0.980       0.980           False          0.0090
+     deepset injection second source benigns       900            9       0.010               9          0.010    0.929       0.929           False          0.0100
+          ProtectAI-v1     BIPIA hosts (778)       778            7       0.009               7          0.009    0.993       0.993           False          0.0090
+          ProtectAI-v1 second source benigns       900            9       0.010               9          0.010    0.718       0.718           False          0.0089
+      fmops distilbert     BIPIA hosts (778)       778            7       0.009               7          0.009    0.993       0.993           False          0.0090
+      fmops distilbert second source benigns       900            9       0.010               9          0.010    0.101       0.101           False          0.0089
+               PIGuard     BIPIA hosts (778)       778            7       0.009               7          0.009    0.107       0.107           False          0.0090
+               PIGuard second source benigns       900            9       0.010               9          0.010    0.793       0.793           False          0.0089
+     structural (full)     BIPIA hosts (778)       778            7       0.009               7          0.009    0.140       0.140           False          0.0090
+     structural (full) second source benigns       900            9       0.010               9          0.010    0.028       0.028           False          0.0089
+ structural (full_aug)     BIPIA hosts (778)       778            7       0.009               7          0.009    0.127       0.127           False          0.0090
+ structural (full_aug) second source benigns       900            9       0.010               9          0.010    0.016       0.016           False          0.0089
+conventional fine-tune     BIPIA hosts (778)       778            7       0.009               7          0.009    0.980       0.980           False          0.0090
+conventional fine-tune second source benigns       900            9       0.010               9          0.010    0.992       0.992           False          0.0089
+
+AgentDojo strict:
+                 model  AUROC  blocked_strict  calFPR_strict  loo_FPR_strict  FNR_strict  FNR_strict_lo95  FNR_strict_hi95  FNR_old  calFPR_old  fallback_fired
+          ProtectAI-v2  0.798               0         0.0000          0.0155       0.961            0.928            0.983    0.959      0.0155            True
+  Prompt-Guard-2 (86M)  0.940               0         0.0000          0.0000       0.430            0.389            0.472    0.430      0.0465            True
+  Prompt-Guard-2 (22M)  0.828               1         0.0078          0.0078       0.946            0.898            0.988    0.946      0.0078           False
+     deepset injection  0.785               1         0.0078          0.0078       0.887            0.834            0.937    0.887      0.0078           False
+          ProtectAI-v1  0.569               1         0.0078          0.0078       0.984            0.963            0.999    0.984      0.0078           False
+      fmops distilbert  0.881               1         0.0078          0.0078       0.899            0.868            0.929    0.899      0.0078           False
+     structural (full)  0.827               0         0.0000          0.0000       0.831            0.778            0.883    0.831      0.0388            True
+ structural (full_aug)  0.712               1         0.0078          0.0078       0.786            0.747            0.824    0.786      0.0078           False
+conventional fine-tune  0.814               1         0.0078          0.0078       0.711            0.612            0.819    0.711      0.0078           False
+               PIGuard  0.925               0         0.0000          0.0000       0.738            0.659            0.808    0.738      0.0233            True
+      TF-IDF reference  0.561               0         0.0000          0.0000       0.956            0.911            0.990    0.956      0.0388            True
+
+AgentDojo by attack, strict:
+attack                  direct  ignore_previous  important_instructions  injecagent  system_message  tool_knowledge
+model                                                                                                              
+PIGuard                  0.901            0.835                   0.632       0.227           0.926           0.905
+Prompt-Guard-2 (22M)     0.983            0.955                   0.917       0.901           0.959           0.963
+Prompt-Guard-2 (86M)     0.946            0.000                   0.450       0.000           0.950           0.236
+ProtectAI-v1             1.000            0.979                   1.000       0.926           1.000           1.000
+ProtectAI-v2             0.996            0.876                   1.000       0.909           0.988           1.000
+TF-IDF reference         0.950            0.917                   1.000       0.917           0.950           1.000
+conventional fine-tune   0.992            0.748                   0.496       0.777           0.868           0.388
+deepset injection        0.942            0.711                   1.000       0.719           0.950           1.000
+fmops distilbert         1.000            0.988                   0.988       0.764           1.000           0.653
+structural (full)        0.913            0.665                   0.979       0.479           0.950           1.000
+structural (full_aug)    0.926            0.645                   0.959       0.326           0.913           0.946
+
+Adaptive stopping audit:
+                 model         run  attempts  stopping_verdicts  stopping_verdicts_reversed_by_final_rules  attempts_added_by_final_rules
+     qwen3b_undefended notebook 44       449                 65                                          0                              0
+     qwen3b_undefended notebook 45       679                 91                                          0                             35
+             qwen3b_v2 notebook 44      1160                  1                                          0                              0
+             qwen3b_v2 notebook 45      1531                  4                                          0                              8
+             qwen3b_v4 notebook 44      1157                  3                                          0                              0
+             qwen3b_v4 notebook 45      1544                  3                                          0                              2
+     qwen7b_undefended notebook 44       455                 61                                          0                              0
+     qwen7b_undefended notebook 45       862                 74                                          0                             84
+             qwen7b_v5 notebook 44      1132                  4                                          0                              0
+             qwen7b_v5 notebook 45      1504                  7                                          0                             17
+      llama_undefended notebook 44       585                 56                                          0                              0
+      llama_undefended notebook 45       698                 87                                          0                            111
+            llama_full notebook 44       956                 25                                          0                              0
+            llama_full notebook 45      1317                 26                                          0                             58
+        llama_secalign notebook 44      1099                 11                                          0                              0
+        llama_secalign notebook 45      1560                  0                                          0                              0
+llama_secalign_no_role notebook 44       775                 38                                          0                              0
+llama_secalign_no_role notebook 45      1386                 23                                          0                             45
+
+Paired by host:
+                             comparison                                               meaning  measure            by_injection                 by_host
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified    fixed +0.152 [+0.095, +0.214] +0.152 [+0.096, +0.213]
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified adaptive +0.219 [+0.157, +0.276] +0.219 [+0.161, +0.279]
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified combined +0.276 [+0.210, +0.348] +0.276 [+0.206, +0.344]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn    fixed +0.019 [-0.038, +0.081] +0.019 [-0.039, +0.081]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn adaptive -0.048 [-0.114, +0.019] -0.048 [-0.115, +0.019]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn combined -0.019 [-0.095, +0.052] -0.019 [-0.096, +0.057]
+      llama_full minus llama_undefended                        ours against undefended, Llama    fixed -0.276 [-0.343, -0.214] -0.276 [-0.345, -0.212]
+      llama_full minus llama_undefended                        ours against undefended, Llama adaptive -0.443 [-0.510, -0.376] -0.443 [-0.510, -0.377]
+      llama_full minus llama_undefended                        ours against undefended, Llama combined -0.362 [-0.429, -0.295] -0.362 [-0.432, -0.294]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended    fixed -0.429 [-0.500, -0.357] -0.429 [-0.500, -0.358]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended adaptive -0.662 [-0.724, -0.595] -0.662 [-0.725, -0.599]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended combined -0.638 [-0.705, -0.571] -0.638 [-0.706, -0.572]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B    fixed -0.348 [-0.419, -0.281] -0.348 [-0.419, -0.278]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B adaptive -0.714 [-0.771, -0.652] -0.714 [-0.777, -0.654]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B combined -0.590 [-0.657, -0.524] -0.590 [-0.660, -0.521]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B    fixed +0.000 [-0.038, +0.038] +0.000 [-0.038, +0.034]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B adaptive -0.005 [-0.033, +0.019] -0.005 [-0.029, +0.019]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B combined -0.010 [-0.052, +0.029] -0.010 [-0.052, +0.033]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B    fixed -0.290 [-0.353, -0.229] -0.290 [-0.354, -0.227]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B adaptive -0.590 [-0.657, -0.524] -0.590 [-0.657, -0.525]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B combined -0.457 [-0.529, -0.386] -0.457 [-0.524, -0.388]
+```

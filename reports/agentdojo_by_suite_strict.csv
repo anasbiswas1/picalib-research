@@ -1,0 +1,34 @@
+model,suite,n_atk,n_ben,FNR_strict
+ProtectAI-v2,workspace,540,79,0.917
+ProtectAI-v2,slack,150,11,0.953
+ProtectAI-v2,travel,546,34,1.0
+Prompt-Guard-2 (86M),workspace,540,79,0.578
+Prompt-Guard-2 (86M),slack,150,11,0.187
+Prompt-Guard-2 (86M),travel,546,34,0.375
+Prompt-Guard-2 (22M),workspace,540,79,1.0
+Prompt-Guard-2 (22M),slack,150,11,0.48
+Prompt-Guard-2 (22M),travel,546,34,1.0
+deepset injection,workspace,540,79,0.702
+deepset injection,slack,150,11,0.98
+deepset injection,travel,546,34,1.0
+ProtectAI-v1,workspace,540,79,0.993
+ProtectAI-v1,slack,150,11,0.947
+ProtectAI-v1,travel,546,34,1.0
+fmops distilbert,workspace,540,79,0.83
+fmops distilbert,slack,150,11,0.927
+fmops distilbert,travel,546,34,0.938
+structural (full),workspace,540,79,0.939
+structural (full),slack,150,11,0.727
+structural (full),travel,546,34,0.689
+structural (full_aug),workspace,540,79,0.781
+structural (full_aug),slack,150,11,0.873
+structural (full_aug),travel,546,34,0.707
+conventional fine-tune,workspace,540,79,0.574
+conventional fine-tune,slack,150,11,0.747
+conventional fine-tune,travel,546,34,1.0
+PIGuard,workspace,540,79,0.819
+PIGuard,slack,150,11,0.86
+PIGuard,travel,546,34,0.751
+TF-IDF reference,workspace,540,79,1.0
+TF-IDF reference,slack,150,11,0.573
+TF-IDF reference,travel,546,34,1.0
