@@ -3256,3 +3256,68 @@ llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in 
               qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B -0.010 [-0.052, +0.029] +0.000 [-0.043, +0.043]
       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.457 [-0.529, -0.386] -0.486 [-0.557, -0.414]
 ```
+
+
+---
+## nb49: strict threshold computed in the scores own precision; AgentDojo, prose control and Table 7 recomputed; reasons for incomplete transformations
+_2026-10-08 21:08_
+
+```
+Precision fix, changed values:
+                     output                                       item  before  after  changed
+       Table 16 (AgentDojo)              ProtectAI-v2: FNR_strict_lo95   0.928  0.932     True
+   Table 17 (prose control)                     ProtectAI-v1: FNR_lo95   0.644  0.650     True
+   Table 17 (prose control)                     ProtectAI-v1: FNR_hi95   0.767  0.772     True
+Table 7 (calibration pools) ProtectAI-v2, notinject: notinjectFPR_guar   0.012  0.000     True
+
+AgentDojo strict:
+                 model  AUROC  blocked_strict  calFPR_strict  loo_FPR_strict  FNR_strict  FNR_strict_lo95  FNR_strict_hi95  FNR_old  calFPR_old  fallback_fired
+          ProtectAI-v2  0.798               0         0.0000          0.0155       0.961            0.932            0.983    0.959      0.0155            True
+  Prompt-Guard-2 (86M)  0.940               0         0.0000          0.0000       0.430            0.389            0.472    0.430      0.0465            True
+  Prompt-Guard-2 (22M)  0.828               1         0.0078          0.0078       0.946            0.898            0.988    0.946      0.0078           False
+     deepset injection  0.785               1         0.0078          0.0078       0.887            0.834            0.937    0.887      0.0078           False
+          ProtectAI-v1  0.569               1         0.0078          0.0078       0.984            0.963            0.999    0.984      0.0078           False
+      fmops distilbert  0.881               1         0.0078          0.0078       0.899            0.868            0.929    0.899      0.0078           False
+     structural (full)  0.827               0         0.0000          0.0000       0.831            0.778            0.883    0.831      0.0388            True
+ structural (full_aug)  0.712               1         0.0078          0.0078       0.786            0.747            0.824    0.786      0.0078           False
+conventional fine-tune  0.814               1         0.0078          0.0078       0.711            0.612            0.819    0.711      0.0078           False
+               PIGuard  0.925               0         0.0000          0.0000       0.738            0.659            0.808    0.738      0.0233            True
+      TF-IDF reference  0.561               0         0.0000          0.0000       0.956            0.911            0.990    0.956      0.0388            True
+
+Prose control:
+                 model  n_atk  n_ben  AUROC  AUROC_lo95  AUROC_hi95  blocked  calFPR  loo_FPR   FNR  FNR_lo95  FNR_hi95  top_tie  cap  tool_outputs_AUROC  tool_outputs_FNR
+          ProtectAI-v2    486    486  0.926       0.903       0.947        4   0.008    0.008 0.521     0.461     0.589        1    4               0.798             0.961
+  Prompt-Guard-2 (86M)    486    486  0.967       0.953       0.979        4   0.008    0.008 0.224     0.167     0.282        1    4               0.940             0.430
+  Prompt-Guard-2 (22M)    486    486  0.720       0.687       0.755        4   0.008    0.008 0.934     0.909     0.957        1    4               0.828             0.946
+     deepset injection    486    486  0.927       0.909       0.943        4   0.008    0.008 0.821     0.784     0.858        1    4               0.785             0.887
+          ProtectAI-v1    486    486  0.617       0.574       0.656        0   0.000    0.000 0.710     0.650     0.772       12    4               0.569             0.984
+      fmops distilbert    486    486  0.975       0.965       0.984        4   0.008    0.008 0.506     0.440     0.566        1    4               0.881             0.899
+     structural (full)    486    486  0.763       0.720       0.809        4   0.008    0.008 0.492     0.424     0.564        1    4               0.827             0.831
+ structural (full_aug)    486    486  0.976       0.967       0.984        4   0.008    0.008 0.335     0.267     0.403        1    4               0.712             0.786
+conventional fine-tune    486    486  0.914       0.887       0.938        4   0.008    0.008 0.626     0.580     0.671        1    4               0.814             0.711
+               PIGuard    486    486  0.984       0.973       0.992        4   0.008    0.008 0.938     0.912     0.963        1    4               0.925             0.738
+
+Fidelity failure reasons (number):
+reason                                       an unnumbered last line  complete  fewer numbered lines than sentences (sentences merged or dropped)  more numbered lines than sentences (a sentence split)  other line structure  words changed in a numbered line
+model                           version                                                                                                                                                                                                                         
+Llama 8B ours, full recipe      instruction                      0.0      75.0                                                                4.0                                                    1.0                   0.0                               0.0
+                                statement                        0.0      78.0                                                                1.0                                                    1.0                   0.0                               0.0
+Llama 8B undefended             instruction                      4.0      49.0                                                                4.0                                                    2.0                  21.0                               0.0
+                                statement                        0.0      77.0                                                                1.0                                                    1.0                   0.0                               1.0
+Meta-SecAlign-8B (as specified) instruction                      0.0      46.0                                                               32.0                                                    0.0                   0.0                               2.0
+                                statement                        0.0      77.0                                                                1.0                                                    1.0                   0.0                               1.0
+Qwen 3B full recipe (final)     instruction                      0.0      55.0                                                               16.0                                                    7.0                   2.0                               0.0
+                                statement                        0.0      72.0                                                                1.0                                                    7.0                   0.0                               0.0
+Qwen 3B twin distillation v2    instruction                      0.0      20.0                                                               37.0                                                    8.0                   5.0                              10.0
+                                statement                        1.0      62.0                                                                1.0                                                    9.0                   1.0                               6.0
+Qwen 3B undefended              instruction                      5.0      16.0                                                                9.0                                                   12.0                  28.0                              10.0
+                                statement                        1.0      51.0                                                                1.0                                                    8.0                   2.0                              17.0
+Qwen 7B full recipe (final)     instruction                      0.0      38.0                                                                2.0                                                    0.0                  40.0                               0.0
+                                statement                        0.0      38.0                                                                1.0                                                    0.0                  41.0                               0.0
+Qwen 7B literal phase           instruction                      0.0      44.0                                                                3.0                                                    1.0                  32.0                               0.0
+                                statement                        0.0      38.0                                                                1.0                                                    0.0                  41.0                               0.0
+Qwen 7B twin distillation       instruction                      0.0       8.0                                                               65.0                                                    3.0                   1.0                               3.0
+                                statement                        0.0      73.0                                                                1.0                                                    5.0                   1.0                               0.0
+Qwen 7B undefended              instruction                      0.0      39.0                                                               14.0                                                    8.0                  15.0                               4.0
+                                statement                        0.0      74.0                                                                1.0                                                    4.0                   1.0                               0.0
+```

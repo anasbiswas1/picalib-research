@@ -1,0 +1,168 @@
+output,item,before,after,changed
+Table 16 (AgentDojo),ProtectAI-v2: FNR_strict,0.961,0.961,False
+Table 16 (AgentDojo),ProtectAI-v2: FNR_strict_lo95,0.928,0.932,True
+Table 16 (AgentDojo),ProtectAI-v2: FNR_strict_hi95,0.983,0.983,False
+Table 16 (AgentDojo),ProtectAI-v2: blocked_strict,0.0,0.0,False
+Table 16 (AgentDojo),ProtectAI-v2: loo_FPR_strict,0.0155,0.0155,False
+Table 16 (AgentDojo),Prompt-Guard-2 (86M): FNR_strict,0.43,0.43,False
+Table 16 (AgentDojo),Prompt-Guard-2 (86M): FNR_strict_lo95,0.389,0.389,False
+Table 16 (AgentDojo),Prompt-Guard-2 (86M): FNR_strict_hi95,0.472,0.472,False
+Table 16 (AgentDojo),Prompt-Guard-2 (86M): blocked_strict,0.0,0.0,False
+Table 16 (AgentDojo),Prompt-Guard-2 (86M): loo_FPR_strict,0.0,0.0,False
+Table 16 (AgentDojo),Prompt-Guard-2 (22M): FNR_strict,0.946,0.946,False
+Table 16 (AgentDojo),Prompt-Guard-2 (22M): FNR_strict_lo95,0.898,0.898,False
+Table 16 (AgentDojo),Prompt-Guard-2 (22M): FNR_strict_hi95,0.988,0.988,False
+Table 16 (AgentDojo),Prompt-Guard-2 (22M): blocked_strict,1.0,1.0,False
+Table 16 (AgentDojo),Prompt-Guard-2 (22M): loo_FPR_strict,0.0078,0.0078,False
+Table 16 (AgentDojo),deepset injection: FNR_strict,0.887,0.887,False
+Table 16 (AgentDojo),deepset injection: FNR_strict_lo95,0.834,0.834,False
+Table 16 (AgentDojo),deepset injection: FNR_strict_hi95,0.937,0.937,False
+Table 16 (AgentDojo),deepset injection: blocked_strict,1.0,1.0,False
+Table 16 (AgentDojo),deepset injection: loo_FPR_strict,0.0078,0.0078,False
+Table 16 (AgentDojo),ProtectAI-v1: FNR_strict,0.984,0.984,False
+Table 16 (AgentDojo),ProtectAI-v1: FNR_strict_lo95,0.963,0.963,False
+Table 16 (AgentDojo),ProtectAI-v1: FNR_strict_hi95,0.999,0.999,False
+Table 16 (AgentDojo),ProtectAI-v1: blocked_strict,1.0,1.0,False
+Table 16 (AgentDojo),ProtectAI-v1: loo_FPR_strict,0.0078,0.0078,False
+Table 16 (AgentDojo),fmops distilbert: FNR_strict,0.899,0.899,False
+Table 16 (AgentDojo),fmops distilbert: FNR_strict_lo95,0.868,0.868,False
+Table 16 (AgentDojo),fmops distilbert: FNR_strict_hi95,0.929,0.929,False
+Table 16 (AgentDojo),fmops distilbert: blocked_strict,1.0,1.0,False
+Table 16 (AgentDojo),fmops distilbert: loo_FPR_strict,0.0078,0.0078,False
+Table 16 (AgentDojo),structural (full): FNR_strict,0.831,0.831,False
+Table 16 (AgentDojo),structural (full): FNR_strict_lo95,0.778,0.778,False
+Table 16 (AgentDojo),structural (full): FNR_strict_hi95,0.883,0.883,False
+Table 16 (AgentDojo),structural (full): blocked_strict,0.0,0.0,False
+Table 16 (AgentDojo),structural (full): loo_FPR_strict,0.0,0.0,False
+Table 16 (AgentDojo),structural (full_aug): FNR_strict,0.786,0.786,False
+Table 16 (AgentDojo),structural (full_aug): FNR_strict_lo95,0.747,0.747,False
+Table 16 (AgentDojo),structural (full_aug): FNR_strict_hi95,0.824,0.824,False
+Table 16 (AgentDojo),structural (full_aug): blocked_strict,1.0,1.0,False
+Table 16 (AgentDojo),structural (full_aug): loo_FPR_strict,0.0078,0.0078,False
+Table 16 (AgentDojo),conventional fine-tune: FNR_strict,0.711,0.711,False
+Table 16 (AgentDojo),conventional fine-tune: FNR_strict_lo95,0.612,0.612,False
+Table 16 (AgentDojo),conventional fine-tune: FNR_strict_hi95,0.819,0.819,False
+Table 16 (AgentDojo),conventional fine-tune: blocked_strict,1.0,1.0,False
+Table 16 (AgentDojo),conventional fine-tune: loo_FPR_strict,0.0078,0.0078,False
+Table 16 (AgentDojo),PIGuard: FNR_strict,0.738,0.738,False
+Table 16 (AgentDojo),PIGuard: FNR_strict_lo95,0.659,0.659,False
+Table 16 (AgentDojo),PIGuard: FNR_strict_hi95,0.808,0.808,False
+Table 16 (AgentDojo),PIGuard: blocked_strict,0.0,0.0,False
+Table 16 (AgentDojo),PIGuard: loo_FPR_strict,0.0,0.0,False
+Table 16 (AgentDojo),TF-IDF reference: FNR_strict,0.956,0.956,False
+Table 16 (AgentDojo),TF-IDF reference: FNR_strict_lo95,0.911,0.911,False
+Table 16 (AgentDojo),TF-IDF reference: FNR_strict_hi95,0.99,0.99,False
+Table 16 (AgentDojo),TF-IDF reference: blocked_strict,0.0,0.0,False
+Table 16 (AgentDojo),TF-IDF reference: loo_FPR_strict,0.0,0.0,False
+Table 17 (prose control),ProtectAI-v2: FNR,0.521,0.521,False
+Table 17 (prose control),ProtectAI-v2: FNR_lo95,0.461,0.461,False
+Table 17 (prose control),ProtectAI-v2: FNR_hi95,0.589,0.589,False
+Table 17 (prose control),ProtectAI-v2: blocked,4.0,4.0,False
+Table 17 (prose control),Prompt-Guard-2 (86M): FNR,0.224,0.224,False
+Table 17 (prose control),Prompt-Guard-2 (86M): FNR_lo95,0.167,0.167,False
+Table 17 (prose control),Prompt-Guard-2 (86M): FNR_hi95,0.282,0.282,False
+Table 17 (prose control),Prompt-Guard-2 (86M): blocked,4.0,4.0,False
+Table 17 (prose control),Prompt-Guard-2 (22M): FNR,0.934,0.934,False
+Table 17 (prose control),Prompt-Guard-2 (22M): FNR_lo95,0.909,0.909,False
+Table 17 (prose control),Prompt-Guard-2 (22M): FNR_hi95,0.957,0.957,False
+Table 17 (prose control),Prompt-Guard-2 (22M): blocked,4.0,4.0,False
+Table 17 (prose control),deepset injection: FNR,0.821,0.821,False
+Table 17 (prose control),deepset injection: FNR_lo95,0.784,0.784,False
+Table 17 (prose control),deepset injection: FNR_hi95,0.858,0.858,False
+Table 17 (prose control),deepset injection: blocked,4.0,4.0,False
+Table 17 (prose control),ProtectAI-v1: FNR,0.71,0.71,False
+Table 17 (prose control),ProtectAI-v1: FNR_lo95,0.644,0.65,True
+Table 17 (prose control),ProtectAI-v1: FNR_hi95,0.767,0.772,True
+Table 17 (prose control),ProtectAI-v1: blocked,0.0,0.0,False
+Table 17 (prose control),fmops distilbert: FNR,0.506,0.506,False
+Table 17 (prose control),fmops distilbert: FNR_lo95,0.44,0.44,False
+Table 17 (prose control),fmops distilbert: FNR_hi95,0.566,0.566,False
+Table 17 (prose control),fmops distilbert: blocked,4.0,4.0,False
+Table 17 (prose control),structural (full): FNR,0.492,0.492,False
+Table 17 (prose control),structural (full): FNR_lo95,0.424,0.424,False
+Table 17 (prose control),structural (full): FNR_hi95,0.564,0.564,False
+Table 17 (prose control),structural (full): blocked,4.0,4.0,False
+Table 17 (prose control),structural (full_aug): FNR,0.335,0.335,False
+Table 17 (prose control),structural (full_aug): FNR_lo95,0.267,0.267,False
+Table 17 (prose control),structural (full_aug): FNR_hi95,0.403,0.403,False
+Table 17 (prose control),structural (full_aug): blocked,4.0,4.0,False
+Table 17 (prose control),conventional fine-tune: FNR,0.626,0.626,False
+Table 17 (prose control),conventional fine-tune: FNR_lo95,0.58,0.58,False
+Table 17 (prose control),conventional fine-tune: FNR_hi95,0.671,0.671,False
+Table 17 (prose control),conventional fine-tune: blocked,4.0,4.0,False
+Table 17 (prose control),PIGuard: FNR,0.938,0.938,False
+Table 17 (prose control),PIGuard: FNR_lo95,0.912,0.912,False
+Table 17 (prose control),PIGuard: FNR_hi95,0.963,0.963,False
+Table 17 (prose control),PIGuard: blocked,4.0,4.0,False
+Table 7 (calibration pools),"ProtectAI-v2, deepset: FNR_guar_hijack",0.907,0.907,False
+Table 7 (calibration pools),"ProtectAI-v2, deepset: docFPR_guar",0.078,0.078,False
+Table 7 (calibration pools),"ProtectAI-v2, deepset: notinjectFPR_guar",0.363,0.363,False
+Table 7 (calibration pools),"ProtectAI-v2, deepset: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"ProtectAI-v2, jailbreak_benign: FNR_guar_hijack",0.953,0.953,False
+Table 7 (calibration pools),"ProtectAI-v2, jailbreak_benign: docFPR_guar",0.039,0.039,False
+Table 7 (calibration pools),"ProtectAI-v2, jailbreak_benign: notinjectFPR_guar",0.206,0.206,False
+Table 7 (calibration pools),"ProtectAI-v2, jailbreak_benign: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"ProtectAI-v2, notinject: FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"ProtectAI-v2, notinject: docFPR_guar",0.0,0.0,False
+Table 7 (calibration pools),"ProtectAI-v2, notinject: notinjectFPR_guar",0.012,0.0,True
+Table 7 (calibration pools),"ProtectAI-v2, notinject: blocked_guar",0.0,0.0,False
+Table 7 (calibration pools),"ProtectAI-v2, alpaca: FNR_guar_hijack",0.02,0.02,False
+Table 7 (calibration pools),"ProtectAI-v2, alpaca: docFPR_guar",0.991,0.991,False
+Table 7 (calibration pools),"ProtectAI-v2, alpaca: notinjectFPR_guar",0.614,0.614,False
+Table 7 (calibration pools),"ProtectAI-v2, alpaca: blocked_guar",30.0,30.0,False
+Table 7 (calibration pools),"ProtectAI-v2, dolly: FNR_guar_hijack",0.04,0.04,False
+Table 7 (calibration pools),"ProtectAI-v2, dolly: docFPR_guar",0.969,0.969,False
+Table 7 (calibration pools),"ProtectAI-v2, dolly: notinjectFPR_guar",0.563,0.563,False
+Table 7 (calibration pools),"ProtectAI-v2, dolly: blocked_guar",30.0,30.0,False
+Table 7 (calibration pools),"ProtectAI-v2, pooled (all four direct sources): FNR_guar_hijack",0.073,0.073,False
+Table 7 (calibration pools),"ProtectAI-v2, pooled (all four direct sources): docFPR_guar",0.952,0.952,False
+Table 7 (calibration pools),"ProtectAI-v2, pooled (all four direct sources): notinjectFPR_guar",0.546,0.546,False
+Table 7 (calibration pools),"ProtectAI-v2, pooled (all four direct sources): blocked_guar",67.0,67.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), deepset: FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), deepset: docFPR_guar",0.0,0.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), deepset: notinjectFPR_guar",0.086,0.086,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), deepset: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), jailbreak_benign: FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), jailbreak_benign: docFPR_guar",0.0,0.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), jailbreak_benign: notinjectFPR_guar",0.05,0.05,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), jailbreak_benign: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), notinject: FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), notinject: docFPR_guar",0.0,0.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), notinject: notinjectFPR_guar",0.009,0.009,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), notinject: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), alpaca: FNR_guar_hijack",0.24,0.24,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), alpaca: docFPR_guar",0.595,0.595,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), alpaca: notinjectFPR_guar",0.268,0.268,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), alpaca: blocked_guar",30.0,30.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), dolly: FNR_guar_hijack",0.127,0.127,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), dolly: docFPR_guar",0.728,0.728,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), dolly: notinjectFPR_guar",0.33,0.33,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), dolly: blocked_guar",30.0,30.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), pooled (all four direct sources): FNR_guar_hijack",0.833,0.833,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), pooled (all four direct sources): docFPR_guar",0.104,0.104,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), pooled (all four direct sources): notinjectFPR_guar",0.171,0.171,False
+Table 7 (calibration pools),"Prompt-Guard-2 (86M), pooled (all four direct sources): blocked_guar",67.0,67.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), deepset: FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), deepset: docFPR_guar",0.014,0.014,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), deepset: notinjectFPR_guar",0.065,0.065,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), deepset: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), jailbreak_benign: FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), jailbreak_benign: docFPR_guar",0.0,0.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), jailbreak_benign: notinjectFPR_guar",0.006,0.006,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), jailbreak_benign: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), notinject: FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), notinject: docFPR_guar",0.0,0.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), notinject: notinjectFPR_guar",0.009,0.009,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), notinject: blocked_guar",3.0,3.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), alpaca: FNR_guar_hijack",0.94,0.94,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), alpaca: docFPR_guar",0.036,0.036,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), alpaca: notinjectFPR_guar",0.192,0.192,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), alpaca: blocked_guar",30.0,30.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), dolly: FNR_guar_hijack",0.873,0.873,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), dolly: docFPR_guar",0.064,0.064,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), dolly: notinjectFPR_guar",0.283,0.283,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), dolly: blocked_guar",30.0,30.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), pooled (all four direct sources): FNR_guar_hijack",1.0,1.0,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), pooled (all four direct sources): docFPR_guar",0.006,0.006,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), pooled (all four direct sources): notinjectFPR_guar",0.053,0.053,False
+Table 7 (calibration pools),"Prompt-Guard-2 (22M), pooled (all four direct sources): blocked_guar",67.0,67.0,False
