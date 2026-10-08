@@ -1,0 +1,59 @@
+calibration_set,detector,n_benign,cap,top_tie,earlier_routine_exceeded_cap,blocked_earlier,blocked_strict,calFPR_strict
+Section 5 pool: deepset,ProtectAI-v2,399,3,1,False,3,3,0.0075
+Section 5 pool: jailbreak_benign,ProtectAI-v2,398,3,1,False,3,3,0.0075
+Section 5 pool: notinject,ProtectAI-v2,339,3,4,True,4,0,0.0
+Section 5 pool: alpaca,ProtectAI-v2,3000,30,1,False,30,30,0.01
+Section 5 pool: dolly,ProtectAI-v2,3000,30,1,False,30,30,0.01
+Section 5 pool: pooled (all four direct sources),ProtectAI-v2,6797,67,1,False,67,67,0.0099
+Section 5 pool: deepset,Prompt-Guard-2 (86M),399,3,1,False,3,3,0.0075
+Section 5 pool: jailbreak_benign,Prompt-Guard-2 (86M),398,3,1,False,3,3,0.0075
+Section 5 pool: notinject,Prompt-Guard-2 (86M),339,3,1,False,3,3,0.0088
+Section 5 pool: alpaca,Prompt-Guard-2 (86M),3000,30,1,False,30,30,0.01
+Section 5 pool: dolly,Prompt-Guard-2 (86M),3000,30,1,False,30,30,0.01
+Section 5 pool: pooled (all four direct sources),Prompt-Guard-2 (86M),6797,67,1,False,67,67,0.0099
+Section 5 pool: deepset,Prompt-Guard-2 (22M),399,3,1,False,3,3,0.0075
+Section 5 pool: jailbreak_benign,Prompt-Guard-2 (22M),398,3,1,False,3,3,0.0075
+Section 5 pool: notinject,Prompt-Guard-2 (22M),339,3,1,False,3,3,0.0088
+Section 5 pool: alpaca,Prompt-Guard-2 (22M),3000,30,1,False,30,30,0.01
+Section 5 pool: dolly,Prompt-Guard-2 (22M),3000,30,1,False,30,30,0.01
+Section 5 pool: pooled (all four direct sources),Prompt-Guard-2 (22M),6797,67,1,False,67,67,0.0099
+smoothing: 150 paraphrased hosts,"structural (full), base",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"structural (full), max",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"structural (full), mean",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"structural (full_aug), base",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"structural (full_aug), max",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"structural (full_aug), mean",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"ProtectAI-v2, base",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"ProtectAI-v2, max",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"ProtectAI-v2, mean",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"Prompt-Guard-2 (86M), base",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"Prompt-Guard-2 (86M), max",150,1,1,False,1,1,0.0067
+smoothing: 150 paraphrased hosts,"Prompt-Guard-2 (86M), mean",150,1,1,False,1,1,0.0067
+ensembles: 778 BIPIA hosts,ProtectAI-v2,778,7,1,False,7,7,0.009
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (86M),778,7,1,False,7,7,0.009
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (22M),778,7,1,False,7,7,0.009
+ensembles: 778 BIPIA hosts,structural (full),778,7,1,False,7,7,0.009
+ensembles: 778 BIPIA hosts,structural (full_aug),778,7,1,False,7,7,0.009
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (86M),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (22M),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + structural (full),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + structural (full_aug),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (86M) + structural (full),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (86M) + structural (full_aug),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (22M) + structural (full),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (22M) + structural (full_aug),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,structural (full) + structural (full_aug),778,7,2,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M),778,7,3,False,4,4,0.0051
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full),778,7,3,False,5,5,0.0064
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full_aug),778,7,3,False,5,5,0.0064
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full),778,7,3,False,5,5,0.0064
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full_aug),778,7,3,False,5,5,0.0064
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + structural (full) + structural (full_aug),778,7,3,False,5,5,0.0064
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full),778,7,3,False,5,5,0.0064
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full_aug),778,7,3,False,5,5,0.0064
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (86M) + structural (full) + structural (full_aug),778,7,3,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,Prompt-Guard-2 (22M) + structural (full) + structural (full_aug),778,7,3,False,6,6,0.0077
+ensembles: 778 BIPIA hosts,ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full) + structural (full_aug),778,7,5,False,5,5,0.0064
+task-drift probe: 778 BIPIA hosts,"probe, layer 14",778,7,1,False,7,7,0.009
+task-drift probe: 129 AgentDojo benigns,"probe, layer 14",129,1,1,False,1,1,0.0078

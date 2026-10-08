@@ -1,0 +1,46 @@
+model,host_kept,rewrites,success_rate
+Qwen 3B undefended,0.00 to 0.25,923,0.101
+Qwen 3B undefended,0.25 to 0.50,561,0.011
+Qwen 3B undefended,0.50 to 0.75,629,0.035
+Qwen 3B undefended,0.75 to 1.00,407,0.037
+Qwen 3B undefended,originals,210,0.4
+Qwen 3B twin distillation v2,0.00 to 0.25,923,0.067
+Qwen 3B twin distillation v2,0.25 to 0.50,561,0.002
+Qwen 3B twin distillation v2,0.50 to 0.75,629,0.011
+Qwen 3B twin distillation v2,0.75 to 1.00,407,0.005
+Qwen 3B twin distillation v2,originals,210,0.0
+Qwen 3B full recipe (final),0.00 to 0.25,923,0.092
+Qwen 3B full recipe (final),0.25 to 0.50,561,0.002
+Qwen 3B full recipe (final),0.50 to 0.75,629,0.011
+Qwen 3B full recipe (final),0.75 to 1.00,407,0.005
+Qwen 3B full recipe (final),originals,210,0.0
+Qwen 7B undefended,0.00 to 0.25,923,0.145
+Qwen 7B undefended,0.25 to 0.50,561,0.014
+Qwen 7B undefended,0.50 to 0.75,629,0.049
+Qwen 7B undefended,0.75 to 1.00,407,0.052
+Qwen 7B undefended,originals,210,0.39
+Qwen 7B full recipe (final),0.00 to 0.25,923,0.168
+Qwen 7B full recipe (final),0.25 to 0.50,561,0.009
+Qwen 7B full recipe (final),0.50 to 0.75,629,0.029
+Qwen 7B full recipe (final),0.75 to 1.00,407,0.01
+Qwen 7B full recipe (final),originals,210,0.019
+Llama 8B undefended,0.00 to 0.25,923,0.126
+Llama 8B undefended,0.25 to 0.50,561,0.134
+Llama 8B undefended,0.50 to 0.75,629,0.035
+Llama 8B undefended,0.75 to 1.00,407,0.012
+Llama 8B undefended,originals,210,0.41
+"Llama 8B ours, full recipe",0.00 to 0.25,923,0.103
+"Llama 8B ours, full recipe",0.25 to 0.50,561,0.119
+"Llama 8B ours, full recipe",0.50 to 0.75,629,0.016
+"Llama 8B ours, full recipe",0.75 to 1.00,407,0.0
+"Llama 8B ours, full recipe",originals,210,0.062
+Meta-SecAlign-8B (as specified),0.00 to 0.25,923,0.013
+Meta-SecAlign-8B (as specified),0.25 to 0.50,561,0.005
+Meta-SecAlign-8B (as specified),0.50 to 0.75,629,0.013
+Meta-SecAlign-8B (as specified),0.75 to 1.00,407,0.0
+Meta-SecAlign-8B (as specified),originals,210,0.005
+Meta-SecAlign-8B (data in the user turn),0.00 to 0.25,923,0.035
+Meta-SecAlign-8B (data in the user turn),0.25 to 0.50,561,0.004
+Meta-SecAlign-8B (data in the user turn),0.50 to 0.75,629,0.01
+Meta-SecAlign-8B (data in the user turn),0.75 to 1.00,407,0.002
+Meta-SecAlign-8B (data in the user turn),originals,210,0.124

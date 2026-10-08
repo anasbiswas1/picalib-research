@@ -1,0 +1,10 @@
+model,fixed_13,fixed_host_half_kept,fixed_host_80_kept,fixed_original_only,combined,combined_host_half_kept,combined_host_80_kept
+Qwen 3B undefended,0.51,0.438,0.414,0.4,0.776,0.757,0.748
+Qwen 3B twin distillation v2,0.162,0.014,0.0,0.0,0.195,0.048,0.038
+Qwen 3B full recipe (final),0.162,0.014,0.005,0.0,0.186,0.043,0.038
+Qwen 7B undefended,0.543,0.424,0.4,0.39,0.743,0.676,0.667
+Qwen 7B full recipe (final),0.252,0.048,0.024,0.019,0.286,0.095,0.081
+Llama 8B undefended,0.49,0.424,0.41,0.41,0.738,0.719,0.714
+"Llama 8B ours, full recipe",0.214,0.076,0.062,0.062,0.376,0.286,0.271
+Meta-SecAlign-8B (as specified),0.062,0.019,0.005,0.005,0.1,0.067,0.052
+Meta-SecAlign-8B (data in the user turn),0.195,0.138,0.124,0.124,0.395,0.343,0.329

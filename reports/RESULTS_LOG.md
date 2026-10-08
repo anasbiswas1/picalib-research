@@ -2828,3 +2828,431 @@ llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in 
       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B adaptive -0.590 [-0.657, -0.524] -0.590 [-0.657, -0.525]
       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B combined -0.457 [-0.529, -0.386] -0.457 [-0.524, -0.388]
 ```
+
+
+---
+## nb48: review audit (tie-aware interval, remaining calibration sets, prose control rebuilt, fidelity measures, fixed-attacker host retention, tight marker rules)
+_2026-10-08 20:36_
+
+```
+Table 3, tie-aware:
+            detector                    shift  blocked_convention  FNR_low  FNR_low_earlier  injections_tied_at_low_end  FNR_high  FNR_guar  tgtFPR_low  tgtFPR_low_earlier  tgtFPR_high  tgtFPR_guar
+        ProtectAI-v2                   direct                   4    0.529            0.529                         0.0     0.597     0.620       0.010               0.013        0.010        0.008
+        ProtectAI-v2         indirect_harmful                   4    0.550            0.550                         0.0     0.800     0.833       0.567               0.567        0.108        0.078
+        ProtectAI-v2          indirect_hijack                   4    0.533            0.533                         0.0     0.893     0.907       0.567               0.567        0.108        0.078
+        ProtectAI-v2                jailbreak                   4    0.111            0.111                         0.0     0.184     0.197       0.015               0.015        0.008        0.008
+        ProtectAI-v2 over_defense (NotInject)                   4      NaN              NaN                         NaN       NaN       NaN       0.478               0.478        0.407        0.363
+Prompt-Guard-2 (86M)                   direct                   4    0.529            0.529                         0.0     0.646     0.711       0.010               0.013        0.010        0.008
+Prompt-Guard-2 (86M)         indirect_harmful                   4    0.183            0.183                         0.0     0.700     0.867       0.166               0.166        0.006        0.000
+Prompt-Guard-2 (86M)          indirect_hijack                   4    0.667            0.667                         0.0     0.973     1.000       0.166               0.166        0.006        0.000
+Prompt-Guard-2 (86M)                jailbreak                   4    0.008            0.008                         0.0     0.023     0.033       0.168               0.168        0.040        0.008
+Prompt-Guard-2 (86M) over_defense (NotInject)                   4      NaN              NaN                         NaN       NaN       NaN       0.192               0.192        0.130        0.086
+Prompt-Guard-2 (22M)                   direct                   4    0.837            0.837                         0.0     0.856     0.886       0.010               0.013        0.010        0.008
+Prompt-Guard-2 (22M)         indirect_harmful                   4    0.900            0.900                         0.0     0.917     0.917       0.028               0.028        0.026        0.014
+Prompt-Guard-2 (22M)          indirect_hijack                   4    0.967            0.967                         0.0     0.967     1.000       0.028               0.028        0.026        0.014
+Prompt-Guard-2 (22M)                jailbreak                   4    0.083            0.083                         0.0     0.088     0.109       0.196               0.196        0.183        0.151
+Prompt-Guard-2 (22M) over_defense (NotInject)                   4      NaN              NaN                         NaN       NaN       NaN       0.130               0.130        0.109        0.065
+
+Table 5 CCI:
+            detector            shift  CCI_AUROC  CCI_ECE_atk  CCI_FNR_low  CCI_FNR_high  CCI_FNR_guar  CCI_FNR_low_earlier  CCI_FNR_high_earlier  CCI_FNR_guar_earlier
+        ProtectAI-v2 indirect_harmful     -0.496        0.290        0.041         0.340         0.345                0.041                 0.340                 0.345
+        ProtectAI-v2  indirect_hijack     -0.520        0.445        0.009         0.496         0.463                0.009                 0.496                 0.463
+Prompt-Guard-2 (86M) indirect_harmful     -0.051        0.183       -0.653         0.083         0.219               -0.653                 0.083                 0.219
+Prompt-Guard-2 (86M)  indirect_hijack     -0.336        0.300        0.261         0.506         0.406                0.261                 0.506                 0.406
+Prompt-Guard-2 (22M) indirect_harmful     -0.107        0.060        0.076         0.071         0.035                0.076                 0.071                 0.035
+Prompt-Guard-2 (22M)  indirect_hijack     -0.247        0.073        0.156         0.130         0.129                0.156                 0.130                 0.129
+
+Table 6:
+            detector           source   N  width_hijack  width_hijack_earlier  FNR_guar_hijack  FNR_guar_hijack_earlier  draws_where_earlier_routine_exceeded_cap
+Prompt-Guard-2 (22M)           alpaca 399         0.014                 0.014            0.968                    0.968                                         0
+Prompt-Guard-2 (22M)          deepset 399         0.000                 0.000            1.000                    1.000                                         0
+Prompt-Guard-2 (22M)            dolly 399         0.023                 0.023            0.891                    0.891                                         0
+Prompt-Guard-2 (22M) jailbreak_benign 398         0.000                 0.000            1.000                    1.000                                         0
+Prompt-Guard-2 (22M)        notinject 339         0.000                 0.000            1.000                    1.000                                         0
+Prompt-Guard-2 (86M)           alpaca 399         0.072                 0.072            0.510                    0.510                                         0
+Prompt-Guard-2 (86M)          deepset 399         0.307                 0.307            1.000                    1.000                                         0
+Prompt-Guard-2 (86M)            dolly 399         0.032                 0.032            0.177                    0.177                                         0
+Prompt-Guard-2 (86M) jailbreak_benign 398         0.000                 0.000            1.000                    1.000                                         0
+Prompt-Guard-2 (86M)        notinject 339         0.000                 0.000            1.000                    1.000                                         0
+        ProtectAI-v2           alpaca 399         0.031                 0.031            0.120                    0.120                                         0
+        ProtectAI-v2          deepset 399         0.360                 0.360            0.907                    0.907                                         0
+        ProtectAI-v2            dolly 399         0.019                 0.019            0.121                    0.121                                         0
+        ProtectAI-v2 jailbreak_benign 398         0.187                 0.187            0.953                    0.953                                         0
+        ProtectAI-v2        notinject 339         0.000                 0.000            1.000                    1.000                                        20
+
+Table 7:
+            detector                             pool    N  blocked_guar  fallback_earlier  FNR_guar_hijack  docFPR_guar  notinjectFPR_guar
+        ProtectAI-v2                          deepset  399             3             False            0.907        0.078              0.363
+        ProtectAI-v2                 jailbreak_benign  398             3             False            0.953        0.039              0.206
+        ProtectAI-v2                        notinject  339             0              True            1.000        0.000              0.012
+        ProtectAI-v2                           alpaca 3000            30             False            0.020        0.991              0.614
+        ProtectAI-v2                            dolly 3000            30             False            0.040        0.969              0.563
+        ProtectAI-v2 pooled (all four direct sources) 6797            67             False            0.073        0.952              0.546
+Prompt-Guard-2 (86M)                          deepset  399             3             False            1.000        0.000              0.086
+Prompt-Guard-2 (86M)                 jailbreak_benign  398             3             False            1.000        0.000              0.050
+Prompt-Guard-2 (86M)                        notinject  339             3             False            1.000        0.000              0.009
+Prompt-Guard-2 (86M)                           alpaca 3000            30             False            0.240        0.595              0.268
+Prompt-Guard-2 (86M)                            dolly 3000            30             False            0.127        0.728              0.330
+Prompt-Guard-2 (86M) pooled (all four direct sources) 6797            67             False            0.833        0.104              0.171
+Prompt-Guard-2 (22M)                          deepset  399             3             False            1.000        0.014              0.065
+Prompt-Guard-2 (22M)                 jailbreak_benign  398             3             False            1.000        0.000              0.006
+Prompt-Guard-2 (22M)                        notinject  339             3             False            1.000        0.000              0.009
+Prompt-Guard-2 (22M)                           alpaca 3000            30             False            0.940        0.036              0.192
+Prompt-Guard-2 (22M)                            dolly 3000            30             False            0.873        0.064              0.283
+Prompt-Guard-2 (22M) pooled (all four direct sources) 6797            67             False            1.000        0.006              0.053
+
+Table 8:
+            detector           target  blocked_convention  blocked_guar  FNR_low  FNR_high  FNR_guar  FNR_low_earlier
+        ProtectAI-v2 indirect_harmful                   8             7    0.983     0.983     0.983            0.983
+        ProtectAI-v2  indirect_hijack                   8             7    0.993     0.993     0.993            0.993
+Prompt-Guard-2 (86M) indirect_harmful                   8             7    0.683     0.683     0.683            0.683
+Prompt-Guard-2 (86M)  indirect_hijack                   8             7    0.960     0.960     0.967            0.960
+Prompt-Guard-2 (22M) indirect_harmful                   8             7    0.917     0.917     0.917            0.917
+Prompt-Guard-2 (22M)  indirect_hijack                   8             7    1.000     1.000     1.000            1.000
+
+Remaining calibration sets:
+                                 calibration_set                                                                                               detector  n_benign  cap  top_tie  earlier_routine_exceeded_cap  blocked_earlier  blocked_strict  calFPR_strict
+                         Section 5 pool: deepset                                                                                           ProtectAI-v2       399    3        1                         False                3               3         0.0075
+                Section 5 pool: jailbreak_benign                                                                                           ProtectAI-v2       398    3        1                         False                3               3         0.0075
+                       Section 5 pool: notinject                                                                                           ProtectAI-v2       339    3        4                          True                4               0         0.0000
+                          Section 5 pool: alpaca                                                                                           ProtectAI-v2      3000   30        1                         False               30              30         0.0100
+                           Section 5 pool: dolly                                                                                           ProtectAI-v2      3000   30        1                         False               30              30         0.0100
+Section 5 pool: pooled (all four direct sources)                                                                                           ProtectAI-v2      6797   67        1                         False               67              67         0.0099
+                         Section 5 pool: deepset                                                                                   Prompt-Guard-2 (86M)       399    3        1                         False                3               3         0.0075
+                Section 5 pool: jailbreak_benign                                                                                   Prompt-Guard-2 (86M)       398    3        1                         False                3               3         0.0075
+                       Section 5 pool: notinject                                                                                   Prompt-Guard-2 (86M)       339    3        1                         False                3               3         0.0088
+                          Section 5 pool: alpaca                                                                                   Prompt-Guard-2 (86M)      3000   30        1                         False               30              30         0.0100
+                           Section 5 pool: dolly                                                                                   Prompt-Guard-2 (86M)      3000   30        1                         False               30              30         0.0100
+Section 5 pool: pooled (all four direct sources)                                                                                   Prompt-Guard-2 (86M)      6797   67        1                         False               67              67         0.0099
+                         Section 5 pool: deepset                                                                                   Prompt-Guard-2 (22M)       399    3        1                         False                3               3         0.0075
+                Section 5 pool: jailbreak_benign                                                                                   Prompt-Guard-2 (22M)       398    3        1                         False                3               3         0.0075
+                       Section 5 pool: notinject                                                                                   Prompt-Guard-2 (22M)       339    3        1                         False                3               3         0.0088
+                          Section 5 pool: alpaca                                                                                   Prompt-Guard-2 (22M)      3000   30        1                         False               30              30         0.0100
+                           Section 5 pool: dolly                                                                                   Prompt-Guard-2 (22M)      3000   30        1                         False               30              30         0.0100
+Section 5 pool: pooled (all four direct sources)                                                                                   Prompt-Guard-2 (22M)      6797   67        1                         False               67              67         0.0099
+                smoothing: 150 paraphrased hosts                                                                                structural (full), base       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                                 structural (full), max       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                                structural (full), mean       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                            structural (full_aug), base       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                             structural (full_aug), max       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                            structural (full_aug), mean       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                                     ProtectAI-v2, base       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                                      ProtectAI-v2, max       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                                     ProtectAI-v2, mean       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                             Prompt-Guard-2 (86M), base       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                              Prompt-Guard-2 (86M), max       150    1        1                         False                1               1         0.0067
+                smoothing: 150 paraphrased hosts                                                                             Prompt-Guard-2 (86M), mean       150    1        1                         False                1               1         0.0067
+                      ensembles: 778 BIPIA hosts                                                                                           ProtectAI-v2       778    7        1                         False                7               7         0.0090
+                      ensembles: 778 BIPIA hosts                                                                                   Prompt-Guard-2 (86M)       778    7        1                         False                7               7         0.0090
+                      ensembles: 778 BIPIA hosts                                                                                   Prompt-Guard-2 (22M)       778    7        1                         False                7               7         0.0090
+                      ensembles: 778 BIPIA hosts                                                                                      structural (full)       778    7        1                         False                7               7         0.0090
+                      ensembles: 778 BIPIA hosts                                                                                  structural (full_aug)       778    7        1                         False                7               7         0.0090
+                      ensembles: 778 BIPIA hosts                                                                    ProtectAI-v2 + Prompt-Guard-2 (86M)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                                    ProtectAI-v2 + Prompt-Guard-2 (22M)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                                       ProtectAI-v2 + structural (full)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                                   ProtectAI-v2 + structural (full_aug)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                            Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                               Prompt-Guard-2 (86M) + structural (full)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                           Prompt-Guard-2 (86M) + structural (full_aug)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                               Prompt-Guard-2 (22M) + structural (full)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                           Prompt-Guard-2 (22M) + structural (full_aug)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                                              structural (full) + structural (full_aug)       778    7        2                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                             ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M)       778    7        3                         False                4               4         0.0051
+                      ensembles: 778 BIPIA hosts                                                ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full)       778    7        3                         False                5               5         0.0064
+                      ensembles: 778 BIPIA hosts                                            ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full_aug)       778    7        3                         False                5               5         0.0064
+                      ensembles: 778 BIPIA hosts                                                ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full)       778    7        3                         False                5               5         0.0064
+                      ensembles: 778 BIPIA hosts                                            ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full_aug)       778    7        3                         False                5               5         0.0064
+                      ensembles: 778 BIPIA hosts                                               ProtectAI-v2 + structural (full) + structural (full_aug)       778    7        3                         False                5               5         0.0064
+                      ensembles: 778 BIPIA hosts                                        Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full)       778    7        3                         False                5               5         0.0064
+                      ensembles: 778 BIPIA hosts                                    Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full_aug)       778    7        3                         False                5               5         0.0064
+                      ensembles: 778 BIPIA hosts                                       Prompt-Guard-2 (86M) + structural (full) + structural (full_aug)       778    7        3                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts                                       Prompt-Guard-2 (22M) + structural (full) + structural (full_aug)       778    7        3                         False                6               6         0.0077
+                      ensembles: 778 BIPIA hosts ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full) + structural (full_aug)       778    7        5                         False                5               5         0.0064
+               task-drift probe: 778 BIPIA hosts                                                                                        probe, layer 14       778    7        1                         False                7               7         0.0090
+         task-drift probe: 129 AgentDojo benigns                                                                                        probe, layer 14       129    1        1                         False                1               1         0.0078
+
+Smoothing strict:
+             detector aggregation  static_FNR_guar  adaptive_first_FNR_guar  adaptive_second_FNR_guar  hosts_FPR_guar  notinject_FPR_guar  earlier_static  earlier_adaptive_second  earlier_hosts_FPR
+    structural (full)        base            0.077                    0.989                     0.989           0.007                0.00           0.077                    0.989              0.007
+    structural (full)         max            0.121                    0.967                     0.989           0.007                0.01           0.121                    0.989              0.007
+    structural (full)        mean            0.121                    0.967                     0.989           0.007                0.01           0.121                    0.989              0.007
+structural (full_aug)        base            0.110                    0.989                     0.989           0.007                0.02           0.110                    0.989              0.007
+structural (full_aug)         max            0.099                    0.945                     0.989           0.007                0.06           0.099                    0.989              0.007
+structural (full_aug)        mean            0.099                    0.945                     0.989           0.007                0.07           0.099                    0.989              0.007
+         ProtectAI-v2        base            1.000                    1.000                     1.000           0.007                0.12           1.000                    1.000              0.007
+         ProtectAI-v2         max            1.000                    0.978                     1.000           0.007                0.11           1.000                    1.000              0.007
+         ProtectAI-v2        mean            1.000                    1.000                     1.000           0.007                0.08           1.000                    1.000              0.007
+ Prompt-Guard-2 (86M)        base            0.912                    1.000                     1.000           0.007                0.17           0.912                    1.000              0.007
+ Prompt-Guard-2 (86M)         max            0.868                    0.967                     1.000           0.007                0.22           0.868                    1.000              0.007
+ Prompt-Guard-2 (86M)        mean            0.945                    0.978                     1.000           0.007                0.14           0.945                    1.000              0.007
+
+Ensembles strict:
+                                                                                              ensemble  size  static_FNR_guar  adaptive_second_FNR_guar  hosts_FPR_guar  earlier_static  earlier_adaptive_second
+                                                                                          ProtectAI-v2     1            1.000                     1.000           0.009           1.000                    1.000
+                                                                                  Prompt-Guard-2 (86M)     1            0.846                     1.000           0.009           0.846                    1.000
+                                                                                  Prompt-Guard-2 (22M)     1            0.967                     1.000           0.009           0.967                    1.000
+                                                                                     structural (full)     1            0.110                     0.989           0.009           0.110                    0.989
+                                                                                 structural (full_aug)     1            0.110                     0.989           0.009           0.110                    0.989
+                                                                   ProtectAI-v2 + Prompt-Guard-2 (86M)     2            0.879                     1.000           0.008           0.879                    1.000
+                                                                   ProtectAI-v2 + Prompt-Guard-2 (22M)     2            0.978                     1.000           0.008           0.978                    1.000
+                                                                      ProtectAI-v2 + structural (full)     2            0.121                     0.989           0.008           0.121                    0.989
+                                                                  ProtectAI-v2 + structural (full_aug)     2            0.110                     0.989           0.008           0.110                    0.989
+                                                           Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M)     2            0.868                     1.000           0.008           0.868                    1.000
+                                                              Prompt-Guard-2 (86M) + structural (full)     2            0.110                     0.989           0.008           0.110                    0.989
+                                                          Prompt-Guard-2 (86M) + structural (full_aug)     2            0.099                     0.989           0.008           0.099                    0.989
+                                                              Prompt-Guard-2 (22M) + structural (full)     2            0.121                     0.989           0.008           0.121                    0.989
+                                                          Prompt-Guard-2 (22M) + structural (full_aug)     2            0.110                     0.989           0.008           0.110                    0.989
+                                                             structural (full) + structural (full_aug)     2            0.110                     0.989           0.008           0.110                    0.989
+                                            ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M)     3            0.890                     1.000           0.005           0.890                    1.000
+                                               ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full)     3            0.110                     0.989           0.006           0.110                    0.989
+                                           ProtectAI-v2 + Prompt-Guard-2 (86M) + structural (full_aug)     3            0.099                     0.989           0.006           0.099                    0.989
+                                               ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full)     3            0.121                     0.989           0.006           0.121                    0.989
+                                           ProtectAI-v2 + Prompt-Guard-2 (22M) + structural (full_aug)     3            0.110                     0.989           0.006           0.110                    0.989
+                                              ProtectAI-v2 + structural (full) + structural (full_aug)     3            0.110                     0.989           0.006           0.110                    0.989
+                                       Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full)     3            0.110                     0.989           0.006           0.110                    0.989
+                                   Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full_aug)     3            0.099                     0.989           0.006           0.099                    0.989
+                                      Prompt-Guard-2 (86M) + structural (full) + structural (full_aug)     3            0.099                     0.989           0.008           0.099                    0.989
+                                      Prompt-Guard-2 (22M) + structural (full) + structural (full_aug)     3            0.110                     0.989           0.008           0.110                    0.989
+ProtectAI-v2 + Prompt-Guard-2 (86M) + Prompt-Guard-2 (22M) + structural (full) + structural (full_aug)     5            0.110                     0.989           0.006           0.110                    0.989
+
+Prose control:
+                 model  n_atk  n_ben  AUROC  AUROC_lo95  AUROC_hi95  blocked  calFPR  loo_FPR   FNR  FNR_lo95  FNR_hi95  top_tie  cap  tool_outputs_AUROC  tool_outputs_FNR
+          ProtectAI-v2    486    486  0.926       0.903       0.947        4   0.008    0.008 0.521     0.461     0.589        1    4               0.798             0.961
+  Prompt-Guard-2 (86M)    486    486  0.967       0.953       0.979        4   0.008    0.008 0.224     0.167     0.282        1    4               0.940             0.430
+  Prompt-Guard-2 (22M)    486    486  0.720       0.687       0.755        4   0.008    0.008 0.934     0.909     0.957        1    4               0.828             0.946
+     deepset injection    486    486  0.927       0.909       0.943        4   0.008    0.008 0.821     0.784     0.858        1    4               0.785             0.887
+          ProtectAI-v1    486    486  0.617       0.574       0.656        0   0.000    0.000 0.710     0.644     0.767       12    4               0.569             0.984
+      fmops distilbert    486    486  0.975       0.965       0.984        4   0.008    0.008 0.506     0.440     0.566        1    4               0.881             0.899
+     structural (full)    486    486  0.763       0.720       0.809        4   0.008    0.008 0.492     0.424     0.564        1    4               0.827             0.831
+ structural (full_aug)    486    486  0.976       0.967       0.984        4   0.008    0.008 0.335     0.267     0.403        1    4               0.712             0.786
+conventional fine-tune    486    486  0.914       0.887       0.938        4   0.008    0.008 0.626     0.580     0.671        1    4               0.814             0.711
+               PIGuard    486    486  0.984       0.973       0.992        4   0.008    0.008 0.938     0.912     0.963        1    4               0.925             0.738
+
+Prose control by attack:
+                 model                 attack  n  FNR_prose  AUROC_prose  FNR_tool_outputs
+          ProtectAI-v2 important_instructions 81      0.531        0.967             1.000
+          ProtectAI-v2        ignore_previous 81      0.111        0.996             0.876
+          ProtectAI-v2             injecagent 81      0.049        0.997             0.909
+          ProtectAI-v2         tool_knowledge 81      0.864        0.931             1.000
+          ProtectAI-v2                 direct 81      0.901        0.732             0.996
+          ProtectAI-v2         system_message 81      0.667        0.934             0.988
+  Prompt-Guard-2 (86M) important_instructions 81      0.000        1.000             0.450
+  Prompt-Guard-2 (86M)        ignore_previous 81      0.000        1.000             0.000
+  Prompt-Guard-2 (86M)             injecagent 81      0.000        1.000             0.000
+  Prompt-Guard-2 (86M)         tool_knowledge 81      0.000        1.000             0.236
+  Prompt-Guard-2 (86M)                 direct 81      0.728        0.862             0.946
+  Prompt-Guard-2 (86M)         system_message 81      0.617        0.938             0.950
+  Prompt-Guard-2 (22M) important_instructions 81      0.938        0.752             0.917
+  Prompt-Guard-2 (22M)        ignore_previous 81      0.827        0.787             0.955
+  Prompt-Guard-2 (22M)             injecagent 81      0.988        0.822             0.901
+  Prompt-Guard-2 (22M)         tool_knowledge 81      0.889        0.889             0.963
+  Prompt-Guard-2 (22M)                 direct 81      0.988        0.532             0.983
+  Prompt-Guard-2 (22M)         system_message 81      0.975        0.540             0.959
+     deepset injection important_instructions 81      0.790        0.956             1.000
+     deepset injection        ignore_previous 81      0.667        0.950             0.711
+     deepset injection             injecagent 81      0.704        0.962             0.719
+     deepset injection         tool_knowledge 81      0.963        0.941             1.000
+     deepset injection                 direct 81      0.901        0.862             0.942
+     deepset injection         system_message 81      0.901        0.888             0.950
+          ProtectAI-v1 important_instructions 81      1.000        0.452             1.000
+          ProtectAI-v1        ignore_previous 81      0.247        0.898             0.979
+          ProtectAI-v1             injecagent 81      0.037        0.986             0.926
+          ProtectAI-v1         tool_knowledge 81      0.975        0.425             1.000
+          ProtectAI-v1                 direct 81      1.000        0.457             1.000
+          ProtectAI-v1         system_message 81      1.000        0.486             1.000
+      fmops distilbert important_instructions 81      0.469        0.990             0.988
+      fmops distilbert        ignore_previous 81      0.654        0.971             0.988
+      fmops distilbert             injecagent 81      0.123        0.997             0.764
+      fmops distilbert         tool_knowledge 81      0.025        0.999             0.653
+      fmops distilbert                 direct 81      0.852        0.950             1.000
+      fmops distilbert         system_message 81      0.914        0.943             1.000
+     structural (full) important_instructions 81      0.901        0.517             0.979
+     structural (full)        ignore_previous 81      0.000        1.000             0.665
+     structural (full)             injecagent 81      0.012        0.999             0.479
+     structural (full)         tool_knowledge 81      0.827        0.825             1.000
+     structural (full)                 direct 81      0.605        0.600             0.913
+     structural (full)         system_message 81      0.605        0.640             0.950
+ structural (full_aug) important_instructions 81      0.877        0.939             0.959
+ structural (full_aug)        ignore_previous 81      0.000        1.000             0.645
+ structural (full_aug)             injecagent 81      0.000        1.000             0.326
+ structural (full_aug)         tool_knowledge 81      0.901        0.952             0.946
+ structural (full_aug)                 direct 81      0.173        0.971             0.926
+ structural (full_aug)         system_message 81      0.062        0.997             0.913
+conventional fine-tune important_instructions 81      0.395        0.989             0.496
+conventional fine-tune        ignore_previous 81      0.679        0.954             0.748
+conventional fine-tune             injecagent 81      0.531        0.970             0.777
+conventional fine-tune         tool_knowledge 81      0.272        0.995             0.388
+conventional fine-tune                 direct 81      1.000        0.664             0.992
+conventional fine-tune         system_message 81      0.877        0.914             0.868
+               PIGuard important_instructions 81      1.000        0.986             0.632
+               PIGuard        ignore_previous 81      0.951        0.988             0.835
+               PIGuard             injecagent 81      0.691        0.992             0.227
+               PIGuard         tool_knowledge 81      1.000        0.980             0.905
+               PIGuard                 direct 81      0.988        0.981             0.901
+               PIGuard         system_message 81      1.000        0.978             0.926
+
+Fidelity rates:
+                                   model       task  n     instruction_kept       statement_kept          deletion_gap instruction_complete   statement_complete           complete_gap    added_instruction      added_statement         added_text_gap
+                      Qwen 3B undefended     repeat 80 0.613 [0.503, 0.712] 0.975 [0.913, 0.993]  0.362 [0.246, 0.474] 0.400 [0.300, 0.510] 0.787 [0.686, 0.863]   0.387 [0.271, 0.487] 0.350 [0.255, 0.459] 0.037 [0.013, 0.105]   0.312 [0.199, 0.423]
+                      Qwen 3B undefended     number 80 0.662 [0.554, 0.757] 0.963 [0.895, 0.987]  0.300 [0.177, 0.415] 0.200 [0.127, 0.300] 0.637 [0.528, 0.734]   0.437 [0.283, 0.563] 0.500 [0.393, 0.607] 0.125 [0.069, 0.215]   0.375 [0.249, 0.486]
+                      Qwen 3B undefended quote_last 80 0.300 [0.211, 0.408] 0.800 [0.700, 0.873]  0.500 [0.352, 0.616] 0.163 [0.097, 0.258] 0.700 [0.592, 0.789]   0.537 [0.393, 0.648]                                                                 
+            Qwen 3B twin distillation v2     repeat 80 0.650 [0.541, 0.745] 1.000 [0.954, 1.000]  0.350 [0.244, 0.459] 0.575 [0.466, 0.677] 0.838 [0.742, 0.903]   0.263 [0.149, 0.369] 0.025 [0.007, 0.087] 0.025 [0.007, 0.087]  0.000 [-0.050, 0.050]
+            Qwen 3B twin distillation v2     number 80 0.463 [0.357, 0.571] 0.963 [0.895, 0.987]  0.500 [0.379, 0.605] 0.250 [0.168, 0.355] 0.775 [0.672, 0.853]   0.525 [0.383, 0.634] 0.150 [0.088, 0.244] 0.113 [0.060, 0.200]  0.037 [-0.043, 0.122]
+            Qwen 3B twin distillation v2 quote_last 80 0.087 [0.043, 0.170] 0.675 [0.566, 0.768]  0.588 [0.447, 0.693] 0.075 [0.035, 0.154] 0.600 [0.490, 0.700]   0.525 [0.386, 0.635]                                                                 
+                        Qwen 3B no twins     repeat 80 0.575 [0.466, 0.677] 0.975 [0.913, 0.993]  0.400 [0.286, 0.509] 0.512 [0.405, 0.619] 0.850 [0.756, 0.912]   0.338 [0.209, 0.451] 0.025 [0.007, 0.087] 0.050 [0.020, 0.122] -0.025 [-0.089, 0.028]
+                        Qwen 3B no twins     number 80 0.237 [0.158, 0.341] 0.975 [0.913, 0.993]  0.738 [0.617, 0.819] 0.138 [0.079, 0.230] 0.750 [0.645, 0.832]   0.613 [0.474, 0.712] 0.163 [0.097, 0.258] 0.125 [0.069, 0.215]  0.038 [-0.035, 0.114]
+                        Qwen 3B no twins quote_last 80 0.000 [0.000, 0.046] 0.675 [0.566, 0.768]  0.675 [0.557, 0.768] 0.000 [0.000, 0.046] 0.625 [0.515, 0.723]   0.625 [0.506, 0.723]                                                                 
+     Qwen 3B v2 with keep-content prompt     repeat 80 0.738 [0.632, 0.821] 0.988 [0.933, 0.998]  0.250 [0.147, 0.357] 0.675 [0.566, 0.768] 0.863 [0.770, 0.921]   0.188 [0.073, 0.299] 0.037 [0.013, 0.105] 0.037 [0.013, 0.105]  0.000 [-0.059, 0.059]
+     Qwen 3B v2 with keep-content prompt     number 80 0.537 [0.429, 0.643] 0.963 [0.895, 0.987]  0.425 [0.290, 0.541] 0.263 [0.179, 0.368] 0.725 [0.619, 0.811]   0.462 [0.319, 0.578] 0.212 [0.137, 0.314] 0.150 [0.088, 0.244]  0.062 [-0.016, 0.144]
+     Qwen 3B v2 with keep-content prompt quote_last 80 0.050 [0.020, 0.122] 0.525 [0.417, 0.631]  0.475 [0.355, 0.580] 0.050 [0.020, 0.122] 0.475 [0.369, 0.583]   0.425 [0.309, 0.532]                                                                 
+             Qwen 3B full recipe (final)     repeat 80 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] 0.000 [-0.046, 0.046] 0.975 [0.913, 0.993] 0.975 [0.913, 0.993]  0.000 [-0.050, 0.050] 0.025 [0.007, 0.087] 0.025 [0.007, 0.087]  0.000 [-0.050, 0.050]
+             Qwen 3B full recipe (final)     number 80 0.925 [0.846, 0.965] 0.975 [0.913, 0.993] 0.050 [-0.025, 0.132] 0.688 [0.579, 0.778] 0.900 [0.815, 0.948]   0.213 [0.100, 0.323] 0.075 [0.035, 0.154] 0.050 [0.020, 0.122]  0.025 [-0.038, 0.095]
+             Qwen 3B full recipe (final) quote_last 80 0.425 [0.323, 0.534] 0.863 [0.770, 0.921]  0.438 [0.306, 0.547] 0.212 [0.137, 0.314] 0.800 [0.700, 0.873]   0.588 [0.455, 0.685]                                                                 
+                      Qwen 7B undefended     repeat 80 0.750 [0.645, 0.832] 1.000 [0.954, 1.000]  0.250 [0.156, 0.355] 0.688 [0.579, 0.778] 0.950 [0.878, 0.980]   0.262 [0.156, 0.370] 0.188 [0.117, 0.287] 0.013 [0.002, 0.067]   0.175 [0.090, 0.274]
+                      Qwen 7B undefended     number 80 0.613 [0.503, 0.712] 1.000 [0.954, 1.000]  0.387 [0.278, 0.497] 0.487 [0.381, 0.595] 0.925 [0.846, 0.965]   0.438 [0.313, 0.546] 0.287 [0.200, 0.395] 0.050 [0.020, 0.122]   0.237 [0.127, 0.348]
+                      Qwen 7B undefended quote_last 80 0.350 [0.255, 0.459] 0.887 [0.800, 0.940]  0.537 [0.407, 0.640] 0.287 [0.200, 0.395] 0.875 [0.785, 0.931]   0.588 [0.456, 0.686]                                                                 
+               Qwen 7B twin distillation     repeat 80 0.688 [0.579, 0.778] 1.000 [0.954, 1.000]  0.312 [0.211, 0.421] 0.650 [0.541, 0.745] 0.963 [0.895, 0.987]   0.312 [0.207, 0.420] 0.037 [0.013, 0.105] 0.025 [0.007, 0.087]  0.012 [-0.038, 0.071]
+               Qwen 7B twin distillation     number 80 0.150 [0.088, 0.244] 1.000 [0.954, 1.000]  0.850 [0.745, 0.912] 0.100 [0.052, 0.185] 0.912 [0.830, 0.957]   0.812 [0.692, 0.880] 0.062 [0.027, 0.138] 0.062 [0.027, 0.138]  0.000 [-0.058, 0.058]
+               Qwen 7B twin distillation quote_last 80 0.150 [0.088, 0.244] 0.863 [0.770, 0.921]  0.713 [0.589, 0.793] 0.150 [0.088, 0.244] 0.850 [0.756, 0.912]   0.700 [0.576, 0.782]                                                                 
+                   Qwen 7B literal phase     repeat 80 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] 0.000 [-0.046, 0.046] 0.963 [0.895, 0.987] 0.963 [0.895, 0.987]  0.000 [-0.049, 0.049] 0.025 [0.007, 0.087] 0.025 [0.007, 0.087]  0.000 [-0.050, 0.050]
+                   Qwen 7B literal phase     number 80 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] 0.000 [-0.046, 0.046] 0.550 [0.441, 0.654] 0.475 [0.369, 0.583] -0.075 [-0.213, 0.068] 0.013 [0.002, 0.067] 0.013 [0.002, 0.067]  0.000 [-0.051, 0.051]
+                   Qwen 7B literal phase quote_last 80 0.613 [0.503, 0.712] 0.975 [0.913, 0.993]  0.362 [0.252, 0.471] 0.562 [0.453, 0.666] 0.963 [0.895, 0.987]   0.400 [0.278, 0.511]                                                                 
+             Qwen 7B full recipe (final)     repeat 80 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] 0.000 [-0.046, 0.046] 0.963 [0.895, 0.987] 0.963 [0.895, 0.987]  0.000 [-0.049, 0.049] 0.025 [0.007, 0.087] 0.025 [0.007, 0.087]  0.000 [-0.050, 0.050]
+             Qwen 7B full recipe (final)     number 80 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] 0.000 [-0.046, 0.046] 0.475 [0.369, 0.583] 0.475 [0.369, 0.583]  0.000 [-0.129, 0.129] 0.013 [0.002, 0.067] 0.013 [0.002, 0.067]  0.000 [-0.051, 0.051]
+             Qwen 7B full recipe (final) quote_last 80 0.600 [0.490, 0.700] 0.975 [0.913, 0.993]  0.375 [0.263, 0.484] 0.600 [0.490, 0.700] 0.963 [0.895, 0.987]   0.363 [0.244, 0.474]                                                                 
+                     Llama 8B undefended     repeat 80 0.838 [0.742, 0.903] 1.000 [0.954, 1.000]  0.162 [0.083, 0.258] 0.650 [0.541, 0.745] 0.975 [0.913, 0.993]   0.325 [0.219, 0.433] 0.275 [0.189, 0.381] 0.025 [0.007, 0.087]   0.250 [0.153, 0.355]
+                     Llama 8B undefended     number 80 0.738 [0.632, 0.821] 1.000 [0.954, 1.000]  0.262 [0.167, 0.368] 0.613 [0.503, 0.712] 0.963 [0.895, 0.987]   0.350 [0.241, 0.458] 0.325 [0.232, 0.434] 0.013 [0.002, 0.067]   0.312 [0.207, 0.421]
+                     Llama 8B undefended quote_last 80 0.275 [0.189, 0.381] 0.950 [0.878, 0.980]  0.675 [0.547, 0.766] 0.225 [0.147, 0.328] 0.925 [0.846, 0.965]   0.700 [0.570, 0.787]                                                                 
+         Meta-SecAlign-8B (as specified)     repeat 80 0.588 [0.478, 0.689] 0.900 [0.815, 0.948]  0.312 [0.193, 0.424] 0.550 [0.441, 0.654] 0.863 [0.770, 0.921]   0.312 [0.193, 0.422] 0.163 [0.097, 0.258] 0.125 [0.069, 0.215]  0.038 [-0.057, 0.133]
+         Meta-SecAlign-8B (as specified)     number 80 0.600 [0.490, 0.700] 1.000 [0.954, 1.000]  0.400 [0.290, 0.510] 0.575 [0.466, 0.677] 0.963 [0.895, 0.987]   0.388 [0.267, 0.499] 0.013 [0.002, 0.067] 0.013 [0.002, 0.067]  0.000 [-0.051, 0.051]
+         Meta-SecAlign-8B (as specified) quote_last 80 0.400 [0.300, 0.510] 0.850 [0.756, 0.912]  0.450 [0.318, 0.559] 0.400 [0.300, 0.510] 0.838 [0.742, 0.903]   0.438 [0.306, 0.546]                                                                 
+Meta-SecAlign-8B (data in the user turn)     repeat 80 0.775 [0.672, 0.853] 0.988 [0.933, 0.998]  0.213 [0.115, 0.317] 0.725 [0.619, 0.811] 0.963 [0.895, 0.987]   0.238 [0.134, 0.344] 0.050 [0.020, 0.122] 0.025 [0.007, 0.087]  0.025 [-0.028, 0.089]
+Meta-SecAlign-8B (data in the user turn)     number 80 0.775 [0.672, 0.853] 1.000 [0.954, 1.000]  0.225 [0.135, 0.328] 0.725 [0.619, 0.811] 0.963 [0.895, 0.987]   0.238 [0.134, 0.344] 0.037 [0.013, 0.105] 0.013 [0.002, 0.067]  0.025 [-0.029, 0.090]
+Meta-SecAlign-8B (data in the user turn) quote_last 80 0.438 [0.334, 0.547] 0.938 [0.862, 0.973]  0.500 [0.372, 0.607] 0.438 [0.334, 0.547] 0.938 [0.862, 0.973]   0.500 [0.372, 0.607]                                                                 
+                  Llama 8B ours, phase 1     repeat 80 0.637 [0.528, 0.734] 1.000 [0.954, 1.000]  0.363 [0.255, 0.472] 0.613 [0.503, 0.712] 0.975 [0.913, 0.993]   0.362 [0.252, 0.471] 0.025 [0.007, 0.087] 0.025 [0.007, 0.087]  0.000 [-0.050, 0.050]
+                  Llama 8B ours, phase 1     number 80 0.450 [0.346, 0.559] 1.000 [0.954, 1.000]  0.550 [0.432, 0.654] 0.438 [0.334, 0.547] 0.963 [0.895, 0.987]   0.525 [0.403, 0.629] 0.013 [0.002, 0.067] 0.013 [0.002, 0.067]  0.000 [-0.051, 0.051]
+                  Llama 8B ours, phase 1 quote_last 80 0.150 [0.088, 0.244] 0.963 [0.895, 0.987]  0.812 [0.697, 0.879] 0.150 [0.088, 0.244] 0.938 [0.862, 0.973]   0.787 [0.669, 0.858]                                                                 
+              Llama 8B ours, full recipe     repeat 80 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] 0.000 [-0.046, 0.046] 0.975 [0.913, 0.993] 0.975 [0.913, 0.993]  0.000 [-0.050, 0.050] 0.025 [0.007, 0.087] 0.025 [0.007, 0.087]  0.000 [-0.050, 0.050]
+              Llama 8B ours, full recipe     number 80 0.963 [0.895, 0.987] 1.000 [0.954, 1.000] 0.037 [-0.015, 0.105] 0.938 [0.862, 0.973] 0.975 [0.913, 0.993]  0.037 [-0.018, 0.107] 0.013 [0.002, 0.067] 0.013 [0.002, 0.067]  0.000 [-0.051, 0.051]
+              Llama 8B ours, full recipe quote_last 80 0.775 [0.672, 0.853] 0.988 [0.933, 0.998]  0.213 [0.121, 0.315] 0.775 [0.672, 0.853] 0.975 [0.913, 0.993]   0.200 [0.101, 0.304]                                                                 
+
+Fidelity paired:
+                             comparison                                           meaning       task deletion_gap_difference instruction_kept_difference instruction_complete_difference                                                      added_text_gap_difference
+    fidelity_v4 minus twin_distilled_v2                          literal phase added (3B)     repeat -0.350 [-0.463, -0.237]        0.350 [0.244, 0.459]            0.400 [0.286, 0.509] +0.000 [+0.000, +0.000] (no item differs; at most 0.045 of items could, 97.5%)
+    fidelity_v4 minus twin_distilled_v2                          literal phase added (3B)     number -0.450 [-0.562, -0.338]        0.463 [0.343, 0.567]            0.438 [0.300, 0.549]                                                        -0.013 [-0.087, +0.075]
+    fidelity_v4 minus twin_distilled_v2                          literal phase added (3B) quote_last -0.150 [-0.300, +0.000]        0.338 [0.215, 0.450]            0.138 [0.043, 0.237]                                                                               
+ v2_keep_prompt minus twin_distilled_v2                                  prompt only (3B)     repeat -0.100 [-0.175, -0.025]        0.088 [0.012, 0.163]            0.100 [0.014, 0.183]                                                        +0.000 [-0.037, +0.037]
+ v2_keep_prompt minus twin_distilled_v2                                  prompt only (3B)     number -0.075 [-0.188, +0.037]       0.075 [-0.030, 0.176]           0.013 [-0.102, 0.127]                                                        +0.025 [-0.062, +0.113]
+ v2_keep_prompt minus twin_distilled_v2                                  prompt only (3B) quote_last -0.113 [-0.225, +0.000]      -0.037 [-0.124, 0.046]          -0.025 [-0.109, 0.056]                                                                               
+     no_twin_v2 minus twin_distilled_v2                                twins removed (3B)     repeat +0.050 [-0.037, +0.138]      -0.075 [-0.153, 0.004]          -0.062 [-0.162, 0.040]                                                        -0.025 [-0.062, +0.000]
+     no_twin_v2 minus twin_distilled_v2                                twins removed (3B)     number +0.237 [+0.150, +0.338]     -0.225 [-0.316, -0.128]         -0.112 [-0.205, -0.023]                                                        +0.000 [-0.075, +0.075]
+     no_twin_v2 minus twin_distilled_v2                                twins removed (3B) quote_last +0.087 [-0.013, +0.188]     -0.087 [-0.170, -0.024]         -0.075 [-0.154, -0.014]                                                                               
+        fidelity_v4 minus undefended_3b                     final against undefended (3B)     repeat -0.362 [-0.475, -0.250]        0.387 [0.278, 0.497]            0.575 [0.452, 0.676]                                                        -0.312 [-0.425, -0.212]
+        fidelity_v4 minus undefended_3b                     final against undefended (3B)     number -0.250 [-0.362, -0.150]        0.263 [0.163, 0.365]            0.487 [0.358, 0.590]                                                        -0.350 [-0.475, -0.225]
+        fidelity_v4 minus undefended_3b                     final against undefended (3B) quote_last -0.062 [-0.212, +0.087]       0.125 [-0.022, 0.265]           0.050 [-0.063, 0.163]                                                                               
+ fidelity_v5_7b minus twin_distilled_7b              final against distillation only (7B)     repeat -0.312 [-0.412, -0.212]        0.312 [0.211, 0.421]            0.312 [0.207, 0.420]                                                        -0.013 [-0.037, +0.000]
+ fidelity_v5_7b minus twin_distilled_7b              final against distillation only (7B)     number -0.850 [-0.925, -0.775]        0.850 [0.745, 0.912]            0.375 [0.235, 0.496]                                                        +0.000 [-0.037, +0.037]
+ fidelity_v5_7b minus twin_distilled_7b              final against distillation only (7B) quote_last -0.338 [-0.463, -0.212]        0.450 [0.329, 0.550]            0.450 [0.329, 0.550]                                                                               
+     fidelity_v5_7b minus undefended_7b                     final against undefended (7B)     repeat -0.250 [-0.350, -0.163]        0.250 [0.156, 0.355]            0.275 [0.175, 0.380]                                                        -0.175 [-0.263, -0.100]
+     fidelity_v5_7b minus undefended_7b                     final against undefended (7B)     number -0.388 [-0.487, -0.275]        0.387 [0.278, 0.497]          -0.013 [-0.169, 0.145]                                                        -0.237 [-0.338, -0.138]
+     fidelity_v5_7b minus undefended_7b                     final against undefended (7B) quote_last -0.163 [-0.287, -0.037]        0.250 [0.126, 0.361]            0.312 [0.186, 0.423]                                                                               
+         llama_full minus llama_twin_p1                       literal phase added (Llama)     repeat -0.362 [-0.475, -0.263]        0.363 [0.255, 0.472]            0.362 [0.252, 0.471] +0.000 [+0.000, +0.000] (no item differs; at most 0.045 of items could, 97.5%)
+         llama_full minus llama_twin_p1                       literal phase added (Llama)     number -0.512 [-0.625, -0.412]        0.512 [0.391, 0.617]            0.500 [0.379, 0.603] +0.000 [+0.000, +0.000] (no item differs; at most 0.045 of items could, 97.5%)
+         llama_full minus llama_twin_p1                       literal phase added (Llama) quote_last -0.600 [-0.700, -0.487]        0.625 [0.499, 0.715]            0.625 [0.499, 0.715]                                                                               
+      llama_full minus llama_undefended                  final against undefended (Llama)     repeat -0.163 [-0.250, -0.087]        0.162 [0.083, 0.258]            0.325 [0.219, 0.433]                                                        -0.250 [-0.350, -0.163]
+      llama_full minus llama_undefended                  final against undefended (Llama)     number -0.225 [-0.338, -0.125]        0.225 [0.118, 0.334]            0.325 [0.204, 0.438]                                                        -0.312 [-0.425, -0.212]
+      llama_full minus llama_undefended                  final against undefended (Llama) quote_last -0.463 [-0.575, -0.350]        0.500 [0.376, 0.597]            0.550 [0.424, 0.645]                                                                               
+        llama_full minus llama_secalign           ours against Meta-SecAlign as specified     repeat -0.312 [-0.425, -0.200]        0.412 [0.301, 0.522]            0.425 [0.309, 0.534]                                                        -0.037 [-0.125, +0.050]
+        llama_full minus llama_secalign           ours against Meta-SecAlign as specified     number -0.362 [-0.475, -0.263]        0.363 [0.252, 0.471]            0.363 [0.251, 0.469] +0.000 [+0.000, +0.000] (no item differs; at most 0.045 of items could, 97.5%)
+        llama_full minus llama_secalign           ours against Meta-SecAlign as specified quote_last -0.237 [-0.375, -0.100]        0.375 [0.254, 0.478]            0.375 [0.254, 0.478]                                                                               
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign, data in the user turn     repeat -0.212 [-0.312, -0.125]        0.225 [0.135, 0.328]            0.250 [0.153, 0.355]                                                        -0.025 [-0.062, +0.000]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign, data in the user turn     number -0.188 [-0.275, -0.100]        0.188 [0.092, 0.290]            0.213 [0.113, 0.316]                                                        -0.025 [-0.062, +0.000]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign, data in the user turn quote_last -0.287 [-0.400, -0.175]        0.338 [0.220, 0.440]            0.338 [0.220, 0.440]                                                                               
+
+Fidelity adjusted:
+                                   model       task  deletion_gap          adjusted_gap  matched_items           matched_gap
+                      Qwen 3B undefended     repeat         0.362  0.381 [0.186, 0.572]             18  0.444 [0.179, 0.663]
+                      Qwen 3B undefended     number         0.300  0.237 [0.037, 0.464]             16 0.312 [-0.006, 0.566]
+                      Qwen 3B undefended quote_last         0.500  0.454 [0.158, 0.753]             13  0.462 [0.113, 0.676]
+            Qwen 3B twin distillation v2     repeat         0.350  0.346 [0.160, 0.539]             18  0.444 [0.179, 0.663]
+            Qwen 3B twin distillation v2     number         0.500  0.492 [0.299, 0.691]             16  0.375 [0.104, 0.614]
+            Qwen 3B twin distillation v2 quote_last         0.588  0.333 [0.083, 0.565]             13 0.308 [-0.099, 0.608]
+                        Qwen 3B no twins     repeat         0.400  0.427 [0.245, 0.624]             18  0.389 [0.109, 0.611]
+                        Qwen 3B no twins     number         0.738  0.850 [0.699, 0.990]             16  0.875 [0.570, 0.965]
+                        Qwen 3B no twins quote_last         0.675  0.534 [0.349, 0.711]             13  0.615 [0.269, 0.823]
+     Qwen 3B v2 with keep-content prompt     repeat         0.250  0.267 [0.096, 0.444]             18  0.333 [0.088, 0.563]
+     Qwen 3B v2 with keep-content prompt     number         0.425  0.351 [0.147, 0.544]             16  0.375 [0.104, 0.614]
+     Qwen 3B v2 with keep-content prompt quote_last         0.475  0.291 [0.130, 0.463]             13  0.462 [0.138, 0.709]
+             Qwen 3B full recipe (final)     repeat         0.000  0.000 [0.000, 0.000]             18 0.000 [-0.176, 0.176]
+             Qwen 3B full recipe (final)     number         0.050 0.067 [-0.028, 0.182]             16 0.125 [-0.089, 0.360]
+             Qwen 3B full recipe (final) quote_last         0.438  0.511 [0.288, 0.719]             13  0.615 [0.233, 0.801]
+                      Qwen 7B undefended     repeat         0.250  0.327 [0.151, 0.503]             18  0.389 [0.133, 0.614]
+                      Qwen 7B undefended     number         0.387  0.401 [0.208, 0.590]             16  0.500 [0.207, 0.720]
+                      Qwen 7B undefended quote_last         0.537  0.504 [0.292, 0.712]             13  0.462 [0.138, 0.709]
+               Qwen 7B twin distillation     repeat         0.312  0.280 [0.097, 0.458]             18  0.333 [0.088, 0.563]
+               Qwen 7B twin distillation     number         0.850  0.866 [0.727, 0.979]             16  0.938 [0.644, 0.989]
+               Qwen 7B twin distillation quote_last         0.713  0.666 [0.486, 0.834]             13  0.769 [0.398, 0.897]
+                   Qwen 7B literal phase     repeat         0.000  0.000 [0.000, 0.000]             18 0.000 [-0.176, 0.176]
+                   Qwen 7B literal phase     number         0.000  0.000 [0.000, 0.000]             16 0.000 [-0.194, 0.194]
+                   Qwen 7B literal phase quote_last         0.362  0.477 [0.279, 0.669]             13  0.462 [0.138, 0.709]
+             Qwen 7B full recipe (final)     repeat         0.000  0.000 [0.000, 0.000]             18 0.000 [-0.176, 0.176]
+             Qwen 7B full recipe (final)     number         0.000  0.000 [0.000, 0.000]             16 0.000 [-0.194, 0.194]
+             Qwen 7B full recipe (final) quote_last         0.375  0.432 [0.239, 0.633]             13  0.385 [0.076, 0.645]
+                     Llama 8B undefended     repeat         0.162  0.227 [0.087, 0.384]             18  0.278 [0.045, 0.509]
+                     Llama 8B undefended     number         0.262  0.208 [0.057, 0.373]             16  0.250 [0.006, 0.495]
+                     Llama 8B undefended quote_last         0.675  0.690 [0.477, 0.903]             13  0.538 [0.173, 0.755]
+         Meta-SecAlign-8B (as specified)     repeat         0.312  0.343 [0.138, 0.558]             18  0.389 [0.076, 0.622]
+         Meta-SecAlign-8B (as specified)     number         0.400  0.352 [0.179, 0.558]             16 0.188 [-0.041, 0.430]
+         Meta-SecAlign-8B (as specified) quote_last         0.450  0.372 [0.179, 0.606]             13  0.308 [0.001, 0.552]
+Meta-SecAlign-8B (data in the user turn)     repeat         0.213  0.265 [0.092, 0.438]             18  0.278 [0.045, 0.509]
+Meta-SecAlign-8B (data in the user turn)     number         0.225  0.170 [0.035, 0.326]             16 0.062 [-0.138, 0.283]
+Meta-SecAlign-8B (data in the user turn) quote_last         0.500  0.388 [0.156, 0.630]             13  0.385 [0.054, 0.621]
+                  Llama 8B ours, phase 1     repeat         0.363  0.466 [0.268, 0.655]             18  0.444 [0.179, 0.663]
+                  Llama 8B ours, phase 1     number         0.550  0.434 [0.252, 0.639]             16  0.438 [0.154, 0.668]
+                  Llama 8B ours, phase 1 quote_last         0.812  0.807 [0.628, 0.983]             13  0.692 [0.319, 0.854]
+              Llama 8B ours, full recipe     repeat         0.000  0.000 [0.000, 0.000]             18 0.000 [-0.176, 0.176]
+              Llama 8B ours, full recipe     number         0.037 0.057 [-0.008, 0.159]             16 0.062 [-0.138, 0.283]
+              Llama 8B ours, full recipe quote_last         0.213 0.159 [-0.003, 0.330]             13 0.154 [-0.118, 0.421]
+
+Host retention:
+                                   model  fixed_13  fixed_host_half_kept  fixed_host_80_kept  fixed_original_only  combined  combined_host_half_kept  combined_host_80_kept
+                      Qwen 3B undefended     0.510                 0.438               0.414                0.400     0.776                    0.757                  0.748
+            Qwen 3B twin distillation v2     0.162                 0.014               0.000                0.000     0.195                    0.048                  0.038
+             Qwen 3B full recipe (final)     0.162                 0.014               0.005                0.000     0.186                    0.043                  0.038
+                      Qwen 7B undefended     0.543                 0.424               0.400                0.390     0.743                    0.676                  0.667
+             Qwen 7B full recipe (final)     0.252                 0.048               0.024                0.019     0.286                    0.095                  0.081
+                     Llama 8B undefended     0.490                 0.424               0.410                0.410     0.738                    0.719                  0.714
+              Llama 8B ours, full recipe     0.214                 0.076               0.062                0.062     0.376                    0.286                  0.271
+         Meta-SecAlign-8B (as specified)     0.062                 0.019               0.005                0.005     0.100                    0.067                  0.052
+Meta-SecAlign-8B (data in the user turn)     0.195                 0.138               0.124                0.124     0.395                    0.343                  0.329
+
+Host-kept paired:
+                             comparison                                               meaning            all_variants          host_half_kept            host_80_kept
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified +0.276 [+0.210, +0.348] +0.219 [+0.157, +0.281] +0.219 [+0.157, +0.276]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn -0.019 [-0.095, +0.052] -0.057 [-0.129, +0.014] -0.057 [-0.124, +0.005]
+      llama_full minus llama_undefended                        ours against undefended, Llama -0.362 [-0.429, -0.295] -0.433 [-0.500, -0.362] -0.443 [-0.510, -0.376]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B -0.590 [-0.657, -0.524] -0.714 [-0.771, -0.652] -0.710 [-0.767, -0.648]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B -0.010 [-0.052, +0.029] -0.005 [-0.029, +0.019] +0.000 [-0.029, +0.029]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.457 [-0.529, -0.386] -0.581 [-0.648, -0.510] -0.586 [-0.652, -0.514]
+
+Tight rules:
+                                   model  fixed_13  fixed_13_tight  adaptive_13  adaptive_13_tight  combined  combined_tight  emoji_and_encoding_combined  emoji_and_encoding_combined_tight  adaptive_runs_stopped_on_an_attempt_the_tight_rule_rejects
+                      Qwen 3B undefended     0.510           0.486        0.748              0.705     0.776           0.743                        0.900                              0.783                                                           9
+            Qwen 3B twin distillation v2     0.162           0.119        0.038              0.038     0.195           0.152                        0.317                              0.167                                                           0
+             Qwen 3B full recipe (final)     0.162           0.124        0.033              0.033     0.186           0.152                        0.300                              0.183                                                           0
+                      Qwen 7B undefended     0.543           0.529        0.667              0.633     0.743           0.714                        0.883                              0.783                                                           8
+             Qwen 7B full recipe (final)     0.252           0.195        0.076              0.076     0.286           0.229                        0.433                              0.233                                                           0
+                     Llama 8B undefended     0.490           0.471        0.714              0.671     0.738           0.695                        0.850                              0.700                                                          10
+              Llama 8B ours, full recipe     0.214           0.190        0.271              0.229     0.376           0.333                        0.383                              0.233                                                           9
+         Meta-SecAlign-8B (as specified)     0.062           0.052        0.052              0.043     0.100           0.090                        0.150                              0.117                                                           2
+Meta-SecAlign-8B (data in the user turn)     0.195           0.181        0.319              0.286     0.395           0.367                        0.500                              0.400                                                           9
+
+Tight paired:
+                             comparison                                               meaning             paper_rules             tight_rules
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified +0.276 [+0.210, +0.348] +0.243 [+0.176, +0.305]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn -0.019 [-0.095, +0.052] -0.033 [-0.105, +0.043]
+      llama_full minus llama_undefended                        ours against undefended, Llama -0.362 [-0.429, -0.295] -0.362 [-0.433, -0.290]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B -0.590 [-0.657, -0.524] -0.590 [-0.657, -0.519]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B -0.010 [-0.052, +0.029] +0.000 [-0.043, +0.043]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.457 [-0.529, -0.386] -0.486 [-0.557, -0.414]
+```
