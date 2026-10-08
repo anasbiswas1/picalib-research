@@ -1,0 +1,4 @@
+rule,n,positives,agreement,kappa,false_positives,false_negatives
+judge,22,17,0.864,0.68,0,3
+langid,22,17,0.591,0.288,0,9
+either,22,17,0.864,0.68,0,3

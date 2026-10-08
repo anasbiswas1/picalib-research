@@ -1,0 +1,18 @@
+model,case,NO,YES
+"Llama 8B ours, full recipe","judge yes, language id no",0,8
+"Llama 8B ours, full recipe","language id yes, judge no",149,0
+Llama 8B undefended,"judge yes, language id no",0,16
+Llama 8B undefended,"language id yes, judge no",209,0
+Meta-SecAlign-8B (as specified),"judge yes, language id no",0,4
+Meta-SecAlign-8B (data in the user turn),"judge yes, language id no",0,10
+Meta-SecAlign-8B (data in the user turn),"language id yes, judge no",29,0
+Qwen 3B full recipe (final),"judge yes, language id no",0,13
+Qwen 3B full recipe (final),"language id yes, judge no",2,0
+Qwen 3B twin distillation v2,"judge yes, language id no",0,11
+Qwen 3B twin distillation v2,"language id yes, judge no",6,0
+Qwen 3B undefended,"judge yes, language id no",0,29
+Qwen 3B undefended,"language id yes, judge no",35,0
+Qwen 7B full recipe (final),"judge yes, language id no",0,31
+Qwen 7B full recipe (final),"language id yes, judge no",12,0
+Qwen 7B undefended,"judge yes, language id no",0,35
+Qwen 7B undefended,"language id yes, judge no",72,0

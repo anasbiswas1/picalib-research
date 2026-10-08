@@ -1,0 +1,6 @@
+variant,injections,Qwen 3B undefended,Qwen 3B twin distillation v2,Qwen 3B full recipe (final),Qwen 7B undefended,Qwen 7B full recipe (final),Llama 8B undefended,"Llama 8B ours, full recipe",Meta-SecAlign-8B (as specified),Meta-SecAlign-8B (data in the user turn)
+paper,210,0.776,0.195,0.186,0.743,0.286,0.738,0.376,0.1,0.395
+translation by the judge alone (notebook 45),210,0.771,0.181,0.181,0.729,0.271,0.714,0.333,0.1,0.362
+translation by language id alone,210,0.733,0.152,0.138,0.695,0.229,0.719,0.352,0.076,0.357
+scams by markers alone,210,0.79,0.233,0.219,0.771,0.314,0.757,0.4,0.138,0.419
+scams excluded,180,0.833,0.206,0.189,0.806,0.3,0.817,0.406,0.083,0.406
