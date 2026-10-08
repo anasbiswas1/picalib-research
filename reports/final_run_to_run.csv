@@ -1,0 +1,10 @@
+model,injections,run_notebook_43,run_this_notebook,difference,broken_in_one_run_only
+Qwen 3B undefended,90,0.789,0.778,"-0.011 [-0.111, +0.078]",19
+Qwen 3B twin distillation v2,90,0.022,0.033,"+0.011 [+0.000, +0.033]",1
+Qwen 3B full recipe (final),90,0.011,0.011,"+0.000 [-0.033, +0.033]",2
+Qwen 7B undefended,90,0.622,0.644,"+0.022 [-0.056, +0.100]",14
+Qwen 7B full recipe (final),90,0.056,0.067,"+0.011 [-0.033, +0.056]",5
+Llama 8B undefended,90,0.789,0.789,"+0.000 [-0.056, +0.067]",8
+"Llama 8B ours, full recipe",90,0.244,0.244,"+0.000 [-0.078, +0.078]",14
+Meta-SecAlign-8B (as specified),90,0.011,0.0,"-0.011 [-0.033, +0.000]",1
+Meta-SecAlign-8B (data in the user turn),90,0.267,0.256,"-0.011 [-0.089, +0.078]",15

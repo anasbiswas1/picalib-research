@@ -2438,3 +2438,154 @@ llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in 
       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B strict adaptive, within 13 -0.590 [-0.657, -0.524]
       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B          combined attacker -0.438 [-0.505, -0.371]
 ```
+
+
+---
+## nb45: one explicit rule set for every security number (translation by the judge everywhere), every adaptive attempt logged, final security table
+_2026-10-08 15:50_
+
+```
+Judge against hand labels:
+                   category   n  positives  judge_agreement  judge_kappa  judge_false_positives  judge_false_negatives  langid_agreement  langid_kappa
+       Language Translation  22         17            0.864        0.680                      0                      3             0.591         0.288
+Misinformation & Propaganda  31         10            0.935        0.844                      0                      2               NaN           NaN
+               Reverse Text  24          7            0.833        0.597                      2                      2               NaN           NaN
+       Substitution Ciphers  23         11            0.957        0.913                      0                      1               NaN           NaN
+                   all four 100         45            0.900        0.796                      2                      8               NaN           NaN
+
+Translation agreement:
+                                   model  outputs  judge_yes  langid_yes  cached_yes  judge_vs_cached  judge_vs_langid  cached_vs_langid
+                      Qwen 3B undefended      390         48          19          48            1.000            0.874             0.874
+            Qwen 3B twin distillation v2      390         28           0          28            1.000            0.928             0.928
+             Qwen 3B full recipe (final)      390         52           0          52            1.000            0.867             0.867
+                      Qwen 7B undefended      390         68          31          68            1.000            0.828             0.828
+             Qwen 7B full recipe (final)      390        102           5         102            1.000            0.746             0.746
+                     Llama 8B undefended      390         44         186         186            0.579            0.579             1.000
+              Llama 8B ours, full recipe      390         36         152         152            0.651            0.651             1.000
+         Meta-SecAlign-8B (as specified)      390          8           0           0            0.979            0.979             1.000
+Meta-SecAlign-8B (data in the user turn)      390         27           4           4            0.921            0.921             1.000
+                       twin_distilled_v1      390         59          15          59            1.000            0.846             0.846
+                          fidelity_v4_7b      390         79          14          79            1.000            0.797             0.797
+                                 no_twin      390         50           4          50            1.000            0.867             0.867
+                              no_twin_v2      390         16           1          16            1.000            0.956             0.956
+                       twin_distilled_7b      390         93           9          93            1.000            0.769             0.769
+                       twin_distilled_v3      390         23           3          20            0.992            0.944             0.951
+                          v2_keep_prompt      390         27          36          27            1.000            0.905             0.905
+                           llama_twin_p1      390         33         155         155            0.626            0.626             1.000
+
+Cached judge verdicts reproduced: 1.000
+
+Final security:
+                                   model              fixed_1             fixed_13          adaptive_13             combined  fixed_13_first_reported  fixed_13_reported_rules_recomputed combined_notebook_44
+                      Qwen 3B undefended 0.371 [0.309, 0.439] 0.471 [0.405, 0.539] 0.743 [0.680, 0.797] 0.771 [0.710, 0.823]                    0.510                               0.510 0.790 [0.730, 0.840]
+            Qwen 3B twin distillation v2 0.000 [0.000, 0.018] 0.162 [0.118, 0.218] 0.024 [0.010, 0.055] 0.181 [0.135, 0.239]                    0.224                               0.224 0.181 [0.135, 0.239]
+             Qwen 3B full recipe (final) 0.000 [0.000, 0.018] 0.162 [0.118, 0.218] 0.029 [0.013, 0.061] 0.181 [0.135, 0.239]                    0.219                               0.219 0.181 [0.135, 0.239]
+                      Qwen 7B undefended 0.333 [0.273, 0.400] 0.500 [0.433, 0.567] 0.643 [0.576, 0.705] 0.729 [0.665, 0.784]                    0.529                               0.529 0.714 [0.650, 0.771]
+             Qwen 7B full recipe (final) 0.019 [0.007, 0.048] 0.252 [0.198, 0.315] 0.052 [0.029, 0.091] 0.271 [0.216, 0.335]                    0.305                               0.305 0.276 [0.220, 0.340]
+                     Llama 8B undefended 0.348 [0.286, 0.414] 0.443 [0.377, 0.510] 0.681 [0.615, 0.740] 0.714 [0.650, 0.771]                    0.514                               0.514 0.733 [0.670, 0.789]
+              Llama 8B ours, full recipe 0.052 [0.029, 0.091] 0.176 [0.131, 0.233] 0.243 [0.190, 0.305] 0.333 [0.273, 0.400]                    0.267                               0.267 0.348 [0.286, 0.414]
+         Meta-SecAlign-8B (as specified) 0.005 [0.001, 0.026] 0.062 [0.037, 0.103] 0.052 [0.029, 0.091] 0.100 [0.066, 0.148]                    0.090                               0.090 0.081 [0.051, 0.126]
+Meta-SecAlign-8B (data in the user turn) 0.110 [0.074, 0.159] 0.176 [0.131, 0.233] 0.290 [0.233, 0.355] 0.362 [0.300, 0.429]                    0.229                               0.229 0.352 [0.291, 0.419]
+
+Paired:
+                             comparison                                               meaning               measure              difference
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified       fixed, 13 tries +0.114 [+0.057, +0.171]
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified adaptive, 13 attempts +0.190 [+0.133, +0.248]
+        llama_full minus llama_secalign               ours against Meta-SecAlign as specified              combined +0.233 [+0.167, +0.300]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn       fixed, 13 tries +0.000 [-0.057, +0.062]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn adaptive, 13 attempts -0.048 [-0.114, +0.014]
+llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn              combined -0.029 [-0.105, +0.048]
+      llama_full minus llama_undefended                        ours against undefended, Llama       fixed, 13 tries -0.267 [-0.333, -0.200]
+      llama_full minus llama_undefended                        ours against undefended, Llama adaptive, 13 attempts -0.438 [-0.505, -0.367]
+      llama_full minus llama_undefended                        ours against undefended, Llama              combined -0.381 [-0.448, -0.310]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended       fixed, 13 tries -0.381 [-0.452, -0.305]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended adaptive, 13 attempts -0.629 [-0.690, -0.562]
+  llama_secalign minus llama_undefended                      Meta-SecAlign against undefended              combined -0.614 [-0.681, -0.543]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B       fixed, 13 tries -0.310 [-0.376, -0.243]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B adaptive, 13 attempts -0.714 [-0.771, -0.652]
+      qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B              combined -0.590 [-0.657, -0.524]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B       fixed, 13 tries +0.000 [-0.038, +0.038]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B adaptive, 13 attempts +0.005 [-0.019, +0.029]
+              qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B              combined +0.000 [-0.043, +0.038]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B       fixed, 13 tries -0.248 [-0.310, -0.186]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B adaptive, 13 attempts -0.590 [-0.662, -0.524]
+      qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B              combined -0.457 [-0.529, -0.390]
+
+Robustness:
+                                    variant  injections  Qwen 3B undefended  Qwen 3B twin distillation v2  Qwen 3B full recipe (final)  Qwen 7B undefended  Qwen 7B full recipe (final)  Llama 8B undefended  Llama 8B ours, full recipe  Meta-SecAlign-8B (as specified)  Meta-SecAlign-8B (data in the user turn)
+                                      final         210               0.771                         0.181                        0.181               0.729                        0.271                0.714                       0.333                            0.100                                     0.362
+translation by language id (fixed attacker)         210               0.762                         0.138                        0.133               0.714                        0.210                0.733                       0.348                            0.076                                     0.343
+                     scams by markers alone         210               0.786                         0.219                        0.214               0.757                        0.300                0.733                       0.357                            0.138                                     0.386
+                             scams excluded         180               0.828                         0.189                        0.183               0.789                        0.283                0.789                       0.356                            0.083                                     0.367
+             scams and translation excluded         150               0.833                         0.160                        0.140               0.773                        0.233                0.813                       0.313                            0.067                                     0.387
+
+Robustness, paired:
+                                    variant                              comparison                                               meaning              difference
+                                      final         llama_full minus llama_secalign               ours against Meta-SecAlign as specified +0.233 [+0.167, +0.300]
+                                      final llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn -0.029 [-0.105, +0.048]
+                                      final       llama_full minus llama_undefended                        ours against undefended, Llama -0.381 [-0.448, -0.310]
+                                      final   llama_secalign minus llama_undefended                      Meta-SecAlign against undefended -0.614 [-0.681, -0.543]
+                                      final       qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B -0.590 [-0.657, -0.524]
+                                      final               qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B +0.000 [-0.043, +0.038]
+                                      final       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.457 [-0.529, -0.390]
+translation by language id (fixed attacker)         llama_full minus llama_secalign               ours against Meta-SecAlign as specified +0.271 [+0.205, +0.338]
+translation by language id (fixed attacker) llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn +0.005 [-0.076, +0.076]
+translation by language id (fixed attacker)       llama_full minus llama_undefended                        ours against undefended, Llama -0.386 [-0.452, -0.319]
+translation by language id (fixed attacker)   llama_secalign minus llama_undefended                      Meta-SecAlign against undefended -0.657 [-0.719, -0.590]
+translation by language id (fixed attacker)       qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B -0.629 [-0.695, -0.562]
+translation by language id (fixed attacker)               qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B -0.005 [-0.043, +0.029]
+translation by language id (fixed attacker)       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.505 [-0.581, -0.433]
+                     scams by markers alone         llama_full minus llama_secalign               ours against Meta-SecAlign as specified +0.219 [+0.148, +0.286]
+                     scams by markers alone llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn -0.029 [-0.105, +0.043]
+                     scams by markers alone       llama_full minus llama_undefended                        ours against undefended, Llama -0.376 [-0.448, -0.305]
+                     scams by markers alone   llama_secalign minus llama_undefended                      Meta-SecAlign against undefended -0.595 [-0.662, -0.524]
+                     scams by markers alone       qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B -0.571 [-0.633, -0.505]
+                     scams by markers alone               qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B -0.005 [-0.043, +0.033]
+                     scams by markers alone       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.457 [-0.524, -0.390]
+                             scams excluded         llama_full minus llama_secalign               ours against Meta-SecAlign as specified +0.272 [+0.200, +0.350]
+                             scams excluded llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn -0.011 [-0.094, +0.072]
+                             scams excluded       llama_full minus llama_undefended                        ours against undefended, Llama -0.433 [-0.511, -0.356]
+                             scams excluded   llama_secalign minus llama_undefended                      Meta-SecAlign against undefended -0.706 [-0.778, -0.633]
+                             scams excluded       qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B -0.644 [-0.717, -0.567]
+                             scams excluded               qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B -0.006 [-0.056, +0.044]
+                             scams excluded       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.506 [-0.578, -0.428]
+             scams and translation excluded         llama_full minus llama_secalign               ours against Meta-SecAlign as specified +0.247 [+0.173, +0.320]
+             scams and translation excluded llama_full minus llama_secalign_no_role ours against Meta-SecAlign with data in the user turn -0.073 [-0.167, +0.007]
+             scams and translation excluded       llama_full minus llama_undefended                        ours against undefended, Llama -0.500 [-0.580, -0.420]
+             scams and translation excluded   llama_secalign minus llama_undefended                      Meta-SecAlign against undefended -0.747 [-0.813, -0.680]
+             scams and translation excluded       qwen3b_v4 minus qwen3b_undefended                      ours against undefended, Qwen 3B -0.693 [-0.760, -0.620]
+             scams and translation excluded               qwen3b_v4 minus qwen3b_v2                      final recipe against v2, Qwen 3B -0.020 [-0.067, +0.027]
+             scams and translation excluded       qwen7b_v5 minus qwen7b_undefended                      ours against undefended, Qwen 7B -0.540 [-0.620, -0.453]
+
+Run to run:
+                                   model  injections  run_notebook_43  run_this_notebook              difference  broken_in_one_run_only
+                      Qwen 3B undefended          90            0.789              0.778 -0.011 [-0.111, +0.078]                      19
+            Qwen 3B twin distillation v2          90            0.022              0.033 +0.011 [+0.000, +0.033]                       1
+             Qwen 3B full recipe (final)          90            0.011              0.011 +0.000 [-0.033, +0.033]                       2
+                      Qwen 7B undefended          90            0.622              0.644 +0.022 [-0.056, +0.100]                      14
+             Qwen 7B full recipe (final)          90            0.056              0.067 +0.011 [-0.033, +0.056]                       5
+                     Llama 8B undefended          90            0.789              0.789 +0.000 [-0.056, +0.067]                       8
+              Llama 8B ours, full recipe          90            0.244              0.244 +0.000 [-0.078, +0.078]                      14
+         Meta-SecAlign-8B (as specified)          90            0.011              0.000 -0.011 [-0.033, +0.000]                       1
+Meta-SecAlign-8B (data in the user turn)          90            0.267              0.256 -0.011 [-0.089, +0.078]                      15
+
+Every model, fixed attacker:
+                                   model  fixed_1_reported_rules  fixed_1_final  fixed_13_reported_rules  fixed_13_final  change_13
+                      Qwen 3B undefended                   0.419          0.371                    0.510           0.471     -0.039
+            Qwen 3B twin distillation v2                   0.014          0.000                    0.224           0.162     -0.062
+             Qwen 3B full recipe (final)                   0.014          0.000                    0.219           0.162     -0.057
+                      Qwen 7B undefended                   0.348          0.333                    0.529           0.500     -0.029
+             Qwen 7B full recipe (final)                   0.024          0.019                    0.305           0.252     -0.053
+                     Llama 8B undefended                   0.410          0.348                    0.514           0.443     -0.071
+              Llama 8B ours, full recipe                   0.067          0.052                    0.267           0.176     -0.091
+         Meta-SecAlign-8B (as specified)                   0.010          0.005                    0.090           0.062     -0.028
+Meta-SecAlign-8B (data in the user turn)                   0.129          0.110                    0.229           0.176     -0.053
+                       twin_distilled_v1                   0.319          0.290                    0.448           0.414     -0.034
+                          fidelity_v4_7b                   0.105          0.095                    0.386           0.329     -0.057
+                                 no_twin                   0.081          0.062                    0.271           0.229     -0.042
+                              no_twin_v2                   0.024          0.010                    0.233           0.181     -0.052
+                       twin_distilled_7b                   0.071          0.062                    0.300           0.257     -0.043
+                       twin_distilled_v3                   0.005          0.000                    0.219           0.157     -0.062
+                          v2_keep_prompt                   0.029          0.019                    0.295           0.233     -0.062
+                           llama_twin_p1                   0.133          0.110                    0.324           0.229     -0.095
+```

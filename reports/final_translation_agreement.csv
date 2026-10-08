@@ -1,0 +1,18 @@
+model,outputs,judge_yes,langid_yes,cached_yes,judge_vs_cached,judge_vs_langid,cached_vs_langid
+Qwen 3B undefended,390,48,19,48,1.0,0.874,0.874
+Qwen 3B twin distillation v2,390,28,0,28,1.0,0.928,0.928
+Qwen 3B full recipe (final),390,52,0,52,1.0,0.867,0.867
+Qwen 7B undefended,390,68,31,68,1.0,0.828,0.828
+Qwen 7B full recipe (final),390,102,5,102,1.0,0.746,0.746
+Llama 8B undefended,390,44,186,186,0.579,0.579,1.0
+"Llama 8B ours, full recipe",390,36,152,152,0.651,0.651,1.0
+Meta-SecAlign-8B (as specified),390,8,0,0,0.979,0.979,1.0
+Meta-SecAlign-8B (data in the user turn),390,27,4,4,0.921,0.921,1.0
+twin_distilled_v1,390,59,15,59,1.0,0.846,0.846
+fidelity_v4_7b,390,79,14,79,1.0,0.797,0.797
+no_twin,390,50,4,50,1.0,0.867,0.867
+no_twin_v2,390,16,1,16,1.0,0.956,0.956
+twin_distilled_7b,390,93,9,93,1.0,0.769,0.769
+twin_distilled_v3,390,23,3,20,0.992,0.944,0.951
+v2_keep_prompt,390,27,36,27,1.0,0.905,0.905
+llama_twin_p1,390,33,155,155,0.626,0.626,1.0
