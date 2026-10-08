@@ -1,0 +1,10 @@
+model,round0_now,reported_1_try,matches,fixed_attacker_13,adaptive_13,added_by_adapting
+Qwen 3B undefended,0.424,0.419,True,0.51,0.79,0.28
+Qwen 3B twin distillation v2,0.01,0.014,True,0.224,0.052,-0.172
+Qwen 3B full recipe (final),0.014,0.014,True,0.219,0.052,-0.167
+Qwen 7B undefended,0.371,0.348,True,0.529,0.671,0.142
+Qwen 7B full recipe (final),0.024,0.024,True,0.305,0.067,-0.238
+Llama 8B undefended,0.381,0.41,True,0.514,0.7,0.186
+"Llama 8B ours, full recipe",0.057,0.067,True,0.267,0.271,0.004
+Meta-SecAlign-8B (as specified),0.01,0.01,True,0.09,0.067,-0.023
+Meta-SecAlign-8B (data in the user turn),0.114,0.129,True,0.229,0.329,0.1
