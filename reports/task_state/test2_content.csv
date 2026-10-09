@@ -1,0 +1,4 @@
+model,items,f1_failed_attacks_vs_clean_answer,f1_unpatched_successes_vs_clean_answer,f1_clean_all_stopped_vs_clean_answer,f1_other_all_stopped_vs_own_clean_answer,f1_other_all_stopped_vs_other_documents_clean_answer,degenerate_clean_all_stopped,degenerate_random_all_stopped,first_token_as_clean_answer_clean_all,unpatched_answer_same_text_as_logged
+Qwen 3B undefended,"adaptive attacker, exact clean twin",0.383,0.134,0.549,0.561,0.194,0.0,0.292,1.0,0.834
+"Qwen 3B full recipe (v4, the paper)","adaptive attacker, exact clean twin",0.636,0.407,0.69,0.652,0.128,0.0,0.0,1.0,0.857
+"Qwen 3B full recipe (v4, the paper)","fixed-attacker rewrite, original host as clean twin",0.636,0.131,0.17,0.148,0.137,0.0,0.0,1.0,0.906

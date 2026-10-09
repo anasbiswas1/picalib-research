@@ -1,0 +1,2 @@
+VERDICT: FAIL  (test 1 fail, test 2 fail, test 3 fail; main subject Qwen 3B undefended)
+Restoring the clean task state stops attacks, but a random change of the same size stops more than 15 percent or about as many, so the effect cannot be told apart from disruption. By the pass marks the idea is dropped; the single-layer patches and the other-document control show whether that is a fair reading before the role signal is tested.

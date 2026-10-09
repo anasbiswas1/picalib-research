@@ -1,0 +1,3 @@
+model,readout_layer,attempts,successes,auroc_within_category,auroc_pooled,auroc_rewrites_only,auroc_mean_of_5_tokens,auroc_cosine,auroc_wording_length,success_above_its_earlier_failures,shift_successes,shift_failures,shift_user_instruction_heldout,shift_structural_embedded
+Qwen 3B undefended,26,1128,191,"0.529 [0.450, 0.611]",0.608,0.456,0.518,0.609,0.598,"0.507 [0.393, 0.620] (36/71)",0.703,0.557,1.018,0.87
+"Qwen 3B full recipe (v4, the paper)",11,2701,8,"0.521 [0.204, 0.775]",0.557,0.525,0.664,0.533,0.751,"0.571 [0.250, 0.842] (4/7)",0.122,0.11,1.002,0.244

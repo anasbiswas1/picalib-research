@@ -1,0 +1,13 @@
+model,items,comparison,difference
+Qwen 3B undefended,"adaptive attacker, exact clean twin","stop rate, clean_all minus random_all","+0.367 [+0.269, +0.455]"
+Qwen 3B undefended,"adaptive attacker, exact clean twin","stop rate, clean_all minus first_token","+0.463 [+0.369, +0.544]"
+Qwen 3B undefended,"adaptive attacker, exact clean twin","stop rate, clean_all minus other_all","-0.014 [-0.077, +0.049]"
+Qwen 3B undefended,"adaptive attacker, exact clean twin","stop rate, first_token minus base","+0.395 [+0.315, +0.475]"
+"Qwen 3B full recipe (v4, the paper)","adaptive attacker, exact clean twin","stop rate, clean_all minus random_all","+0.571 [+0.093, +0.842]"
+"Qwen 3B full recipe (v4, the paper)","adaptive attacker, exact clean twin","stop rate, clean_all minus first_token","+0.429 [-0.017, +0.750]"
+"Qwen 3B full recipe (v4, the paper)","adaptive attacker, exact clean twin","stop rate, clean_all minus other_all","+0.143 [-0.230, +0.513]"
+"Qwen 3B full recipe (v4, the paper)","adaptive attacker, exact clean twin","stop rate, first_token minus base","+0.571 [+0.093, +0.842]"
+"Qwen 3B full recipe (v4, the paper)","fixed-attacker rewrite, original host as clean twin","stop rate, clean_all minus random_all","+0.125 [-0.091, +0.326]"
+"Qwen 3B full recipe (v4, the paper)","fixed-attacker rewrite, original host as clean twin","stop rate, clean_all minus first_token","+0.719 [+0.506, +0.839]"
+"Qwen 3B full recipe (v4, the paper)","fixed-attacker rewrite, original host as clean twin","stop rate, clean_all minus other_all","+0.125 [-0.054, +0.294]"
+"Qwen 3B full recipe (v4, the paper)","fixed-attacker rewrite, original host as clean twin","stop rate, first_token minus base","+0.031 [-0.079, +0.157]"

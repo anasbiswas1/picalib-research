@@ -1,0 +1,4 @@
+originals,n,shift_undefended,shift_v4,v4_minus_undefended
+broke the undefended model,86,0.764,0.145,"-0.618 [-0.696, -0.544]"
+did not break it,124,0.692,0.113,"-0.579 [-0.647, -0.510]"
+all,210,0.721,0.126,"-0.595 [-0.644, -0.543]"

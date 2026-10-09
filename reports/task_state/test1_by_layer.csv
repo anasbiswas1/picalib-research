@@ -1,0 +1,73 @@
+model,layer,auroc_within_category,direction_consistency
+Qwen 3B undefended,0,0.5197,0.606
+Qwen 3B undefended,1,0.5237,0.6241
+Qwen 3B undefended,2,0.533,0.6185
+Qwen 3B undefended,3,0.4712,0.5082
+Qwen 3B undefended,4,0.4695,0.6025
+Qwen 3B undefended,5,0.4389,0.572
+Qwen 3B undefended,6,0.4651,0.6451
+Qwen 3B undefended,7,0.4935,0.6673
+Qwen 3B undefended,8,0.4829,0.7504
+Qwen 3B undefended,9,0.5261,0.7504
+Qwen 3B undefended,10,0.5767,0.7401
+Qwen 3B undefended,11,0.5645,0.7589
+Qwen 3B undefended,12,0.6305,0.7197
+Qwen 3B undefended,13,0.6121,0.7322
+Qwen 3B undefended,14,0.6396,0.7243
+Qwen 3B undefended,15,0.6517,0.7423
+Qwen 3B undefended,16,0.5587,0.749
+Qwen 3B undefended,17,0.6363,0.7613
+Qwen 3B undefended,18,0.6356,0.7584
+Qwen 3B undefended,19,0.6032,0.7582
+Qwen 3B undefended,20,0.6203,0.7849
+Qwen 3B undefended,21,0.6431,0.7509
+Qwen 3B undefended,22,0.5754,0.7506
+Qwen 3B undefended,23,0.5157,0.7573
+Qwen 3B undefended,24,0.525,0.7599
+Qwen 3B undefended,25,0.5565,0.7843
+Qwen 3B undefended,26,0.5286,0.7937
+Qwen 3B undefended,27,0.5274,0.7776
+Qwen 3B undefended,28,0.5453,0.7614
+Qwen 3B undefended,29,0.5346,0.749
+Qwen 3B undefended,30,0.5488,0.7383
+Qwen 3B undefended,31,0.5314,0.7193
+Qwen 3B undefended,32,0.531,0.663
+Qwen 3B undefended,33,0.5246,0.5998
+Qwen 3B undefended,34,0.5222,0.5928
+Qwen 3B undefended,35,0.5229,0.5956
+"Qwen 3B full recipe (v4, the paper)",0,0.738,0.6025
+"Qwen 3B full recipe (v4, the paper)",1,0.7085,0.6209
+"Qwen 3B full recipe (v4, the paper)",2,0.6653,0.6175
+"Qwen 3B full recipe (v4, the paper)",3,0.2315,0.5182
+"Qwen 3B full recipe (v4, the paper)",4,0.1871,0.6202
+"Qwen 3B full recipe (v4, the paper)",5,0.1227,0.5833
+"Qwen 3B full recipe (v4, the paper)",6,0.1741,0.6604
+"Qwen 3B full recipe (v4, the paper)",7,0.4756,0.6944
+"Qwen 3B full recipe (v4, the paper)",8,0.4733,0.765
+"Qwen 3B full recipe (v4, the paper)",9,0.5095,0.7743
+"Qwen 3B full recipe (v4, the paper)",10,0.5456,0.7825
+"Qwen 3B full recipe (v4, the paper)",11,0.5211,0.8248
+"Qwen 3B full recipe (v4, the paper)",12,0.5055,0.7833
+"Qwen 3B full recipe (v4, the paper)",13,0.4753,0.7903
+"Qwen 3B full recipe (v4, the paper)",14,0.4362,0.786
+"Qwen 3B full recipe (v4, the paper)",15,0.5877,0.7975
+"Qwen 3B full recipe (v4, the paper)",16,0.6338,0.8
+"Qwen 3B full recipe (v4, the paper)",17,0.6551,0.8043
+"Qwen 3B full recipe (v4, the paper)",18,0.6471,0.7922
+"Qwen 3B full recipe (v4, the paper)",19,0.663,0.7874
+"Qwen 3B full recipe (v4, the paper)",20,0.8318,0.8079
+"Qwen 3B full recipe (v4, the paper)",21,0.8534,0.7676
+"Qwen 3B full recipe (v4, the paper)",22,0.8925,0.7636
+"Qwen 3B full recipe (v4, the paper)",23,0.8982,0.7683
+"Qwen 3B full recipe (v4, the paper)",24,0.8872,0.7663
+"Qwen 3B full recipe (v4, the paper)",25,0.8534,0.7858
+"Qwen 3B full recipe (v4, the paper)",26,0.9085,0.7957
+"Qwen 3B full recipe (v4, the paper)",27,0.8557,0.777
+"Qwen 3B full recipe (v4, the paper)",28,0.864,0.7601
+"Qwen 3B full recipe (v4, the paper)",29,0.8643,0.7481
+"Qwen 3B full recipe (v4, the paper)",30,0.862,0.7391
+"Qwen 3B full recipe (v4, the paper)",31,0.8604,0.7182
+"Qwen 3B full recipe (v4, the paper)",32,0.8673,0.6554
+"Qwen 3B full recipe (v4, the paper)",33,0.857,0.589
+"Qwen 3B full recipe (v4, the paper)",34,0.8517,0.5812
+"Qwen 3B full recipe (v4, the paper)",35,0.8607,0.5677
