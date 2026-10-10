@@ -71,3 +71,89 @@ Learned scorer fit rows: {"learned_all": {"rows": 1849, "positives": 88}, "learn
 
 Cells above alpha + 3 SE on the mean over random splits: 0 of 240; seed-54 Wilson exclusions: 3 of 240
 ```
+
+
+---
+## nb54b: risk control diagnosis, what set lambda (no decision)
+_2026-10-10 16:32_
+
+```
+Undefended 3B, judge2, alpha 5 percent: of the 5 calibration injections at or below lambda, 4 are form attacks (emoji, base64, reversed, cipher, translation) and 1 are content attacks (misinformation, scams). With the content attacks out of the loss, the lowest abstention at alpha 5 percent on the undefended 3B is 0.200 (learned_all); with them in, notebook 54 found 0.629 (learned_blind). A stronger judge has room to help: the lambda-setters are mostly form attacks the judge should see.
+
+Lambda-setters by category:
+category                               Base Encoding  Emoji Substitution  Language Translation  Misinformation & Propaganda  Reverse Text  Scams & Fraud  Substitution Ciphers
+model             score         alpha                                                                                                                                         
+qwen3b_undefended form          0.05               1                   0                     4                            0             0              0                     0
+                                0.10               1                   0                     6                            3             0              0                     0
+                  judge2        0.05               0                   0                     4                            1             0              0                     0
+                                0.10               0                   2                     6                            1             0              0                     1
+                  learned_all   0.05               0                   0                     1                            2             0              0                     0
+                                0.10               0                   0                     2                            4             0              0                     0
+                  learned_blind 0.05               0                   0                     0                            3             0              0                     0
+                                0.10               0                   1                     1                            4             0              0                     0
+                  probe         0.05               1                   1                     0                            1             0              0                     2
+                                0.10               3                   1                     0                            1             1              1                     3
+                  promptguard2  0.05               0                   1                     3                            0             0              1                     0
+                                0.10               1                   2                     4                            0             1              2                     0
+                  protectai     0.05               0                   0                     3                            1             0              1                     0
+                                0.10               1                   0                     6                            2             0              1                     0
+                  structural    0.05               0                   0                     2                            0             1              2                     0
+                                0.10               1                   1                     4                            1             1              2                     0
+qwen3b_v4         form          0.05               0                   0                     4                            1             0              0                     0
+                                0.10               3                   0                     4                            1             0              2                     0
+                  judge2        0.05               1                   0                     3                            1             0              0                     0
+                                0.10               2                   2                     5                            1             0              0                     0
+                  learned_all   0.05               0                   0                     1                            1             0              1                     0
+                                0.10               0                   0                     3                            1             0              2                     0
+                  learned_blind 0.05               0                   1                     0                            1             0              1                     0
+                                0.10               0                   3                     1                            1             0              1                     0
+                  probe         0.05               0                   3                     1                            0             0              1                     0
+                                0.10               2                   3                     4                            0             0              1                     0
+                  promptguard2  0.05               0                   1                     4                            0             0              0                     0
+                                0.10               1                   2                     5                            0             0              2                     0
+                  protectai     0.05               0                   0                     4                            0             0              1                     0
+                                0.10               1                   2                     6                            0             0              1                     0
+                  structural    0.05               0                   0                     3                            0             0              2                     0
+                                0.10               0                   4                     4                            0             0              2                     0
+
+Separation (AUROC) by category:
+category                         Base Encoding  Emoji Substitution  Language Translation  Misinformation & Propaganda  Reverse Text  Scams & Fraud  Substitution Ciphers
+model             score                                                                                                                                                 
+qwen3b_undefended form                   0.967               1.000                 0.776                        0.500         0.613          0.500                 0.900
+                  judge2                 0.804               0.828                 0.647                        0.888         0.827          0.813                 0.842
+                  learned_all            0.971               1.000                 0.969                        0.778         0.846          0.649                 0.982
+                  learned_blind          0.988               0.949                 0.976                        0.665         0.868          0.812                 0.998
+                  probe                  0.778               0.704                 0.518                        0.546         0.603          0.728                 0.653
+                  promptguard2           0.457               0.484                 0.359                        0.867         0.623          0.491                 0.629
+                  protectai              0.611               0.588                 0.332                        0.280         0.499          0.633                 0.380
+                  structural             0.925               0.875                 0.598                        0.893         0.930          0.541                 1.000
+qwen3b_v4         form                   0.950               1.000                 0.536                          NaN         0.500          0.500                   NaN
+                  judge2                 0.847               0.841                 0.749                          NaN         0.733          0.738                   NaN
+                  learned_all            0.920               1.000                 0.989                          NaN         0.843          0.481                   NaN
+                  learned_blind          0.998               0.959                 0.990                          NaN         0.960          0.711                   NaN
+                  probe                  0.745               0.580                 0.416                          NaN         0.949          0.814                   NaN
+                  promptguard2           0.181               0.350                 0.018                          NaN         0.795          0.267                   NaN
+                  protectai              0.874               0.859                 0.052                          NaN         0.627          0.676                   NaN
+                  structural             0.711               0.600                 0.123                          NaN         0.586          0.214                   NaN
+
+Goal-blind ceiling (abstention on test):
+alpha                                              0.02                                               0.05                                               0.10                           
+loss                            content attacks removed paper rule, all categories content attacks removed paper rule, all categories content attacks removed paper rule, all categories
+model             score                                                                                                                                                                 
+qwen3b_undefended form                            1.000                      1.000                   1.000                      1.000                   1.000                      1.000
+                  judge2                          0.790                      0.790                   0.610                      0.686                   0.495                      0.562
+                  learned_all                     0.676                      0.981                   0.200                      0.571                   0.000                      0.362
+                  learned_blind                   0.629                      0.933                   0.267                      0.629                   0.067                      0.305
+                  probe                           0.981                      0.990                   0.962                      0.981                   0.886                      0.924
+                  promptguard2                    1.000                      1.000                   0.962                      1.000                   0.905                      0.933
+                  protectai                       1.000                      1.000                   0.981                      0.990                   0.962                      0.971
+                  structural                      1.000                      1.000                   0.943                      1.000                   0.743                      0.829
+qwen3b_v4         form                            1.000                      1.000                   0.000                      1.000                   0.000                      0.000
+                  judge2                          0.562                      0.600                   0.362                      0.371                   0.171                      0.181
+                  learned_all                     0.029                      0.686                   0.000                      0.000                   0.000                      0.000
+                  learned_blind                   0.076                      0.257                   0.010                      0.076                   0.000                      0.010
+                  probe                           0.838                      0.838                   0.571                      0.762                   0.162                      0.210
+                  promptguard2                    1.000                      1.000                   1.000                      1.000                   0.724                      0.933
+                  protectai                       1.000                      1.000                   0.886                      0.924                   0.210                      0.238
+                  structural                      1.000                      1.000                   0.990                      1.000                   0.400                      0.486
+```
