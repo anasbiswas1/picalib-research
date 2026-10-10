@@ -1,0 +1,7 @@
+model,setting,FNR_guar
+Qwen2.5-3B (the Section 8 target),static (91 originals),"0.549 [0.447, 0.648]"
+Qwen2.5-3B (the Section 8 target),attacker first (rewrites chosen against structural),"0.934 [0.864, 0.969]"
+Qwen2.5-3B (the Section 8 target),attacker second (rewrites chosen against the probe),"0.978 [0.923, 0.994]"
+Qwen2.5-7B (notebook 27),static (91 originals),"0.538 [0.437, 0.637]"
+Qwen2.5-7B (notebook 27),attacker first (rewrites chosen against structural),"0.835 [0.746, 0.897]"
+Qwen2.5-7B (notebook 27),attacker second (rewrites chosen against the probe),"0.967 [0.908, 0.989]"

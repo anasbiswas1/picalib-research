@@ -1,0 +1,13 @@
+model,distribution,AUROC,FNR_guar,calibration,benigns_blocked,loo_FPR
+Qwen2.5-3B (the Section 8 target),BIPIA hijack vs hosts,"0.672 [0.608, 0.734]","0.500 [0.421, 0.579]",BIPIA hosts (778),7,
+Qwen2.5-3B (the Section 8 target),BIPIA harmful vs hosts,"0.666 [0.582, 0.752]","0.583 [0.457, 0.699]",BIPIA hosts (778),7,
+Qwen2.5-3B (the Section 8 target),second source (600 sampled),"1.000 [1.000, 1.000]","0.000 [0.000, 0.013]",its own benigns (300),3,
+Qwen2.5-3B (the Section 8 target),"AgentDojo tool outputs (129 benign, 400 sampled attacked)","0.931 [0.910, 0.951]","0.273 [0.231, 0.318]",its own benigns (129),1,0.0078
+Qwen2.5-3B (the Section 8 target),NotInject (over-defense),n/a,"FPR 0.189 [0.151, 0.234]",BIPIA hosts (778),7,
+Qwen2.5-3B (the Section 8 target),recipes (over-defense),n/a,"FPR 0.000 [0.000, 0.019]",BIPIA hosts (778),7,
+Qwen2.5-7B (notebook 27),BIPIA hijack vs hosts,"0.697 [0.634, 0.755]","0.493 [0.414, 0.573]",BIPIA hosts (778),7,
+Qwen2.5-7B (notebook 27),BIPIA harmful vs hosts,"0.583 [0.487, 0.684]","0.583 [0.457, 0.699]",BIPIA hosts (778),7,
+Qwen2.5-7B (notebook 27),second source (600 sampled),"1.000 [1.000, 1.000]","0.000 [0.000, 0.013]",its own benigns (300),3,
+Qwen2.5-7B (notebook 27),"AgentDojo tool outputs (129 benign, 400 sampled attacked)","0.970 [0.955, 0.983]","0.378 [0.331, 0.426]",its own benigns (129),1,0.0078
+Qwen2.5-7B (notebook 27),NotInject (over-defense),n/a,"FPR 0.401 [0.350, 0.454]",BIPIA hosts (778),7,
+Qwen2.5-7B (notebook 27),recipes (over-defense),n/a,"FPR 0.000 [0.000, 0.019]",BIPIA hosts (778),7,

@@ -3381,3 +3381,59 @@ Paired:
       statement_literal minus fidelity_v4 statement-only literal examples in place of instruction-bearing ones +0.000 [-0.033, +0.033] 0.013 [-0.010, 0.037]  -0.137 [-0.230, -0.063]                                        +0.138 [+0.062, +0.212]      -0.137 [-0.230, -0.060]  -0.213 [-0.311, -0.121] +0.212 [+0.125, +0.300]      -0.213 [-0.306, -0.111]      -0.287 [-0.392, -0.177]  +0.263 [+0.150, +0.375]          -0.125 [-0.211, -0.049]
 statement_literal minus twin_distilled_v2                             statement-only literal phase added to v2 +0.000 [-0.033, +0.033] 0.013 [-0.010, 0.037]     0.213 [0.119, 0.307]                                        -0.212 [-0.300, -0.125]         0.263 [0.161, 0.359]     0.250 [0.149, 0.342] -0.237 [-0.338, -0.150]         0.225 [0.116, 0.326]        0.050 [-0.018, 0.125]  +0.113 [+0.013, +0.225]            0.012 [-0.056, 0.084]
 ```
+
+
+---
+## nb52: the task-drift probe on Qwen2.5-3B, the model whose behaviour the cross-tab uses; the 7B refitted beside it under the same threshold rule
+_2026-10-10 00:00_
+
+```
+On the 3B's own states (layer 18), the probe flags 0.231 [0.126, 0.383] of the variants the 3B followed and 0.121 [0.087, 0.165] of those it did not; difference +0.110 [-0.003, +0.266]. The interval includes zero: the probe does not show that it sees obedience.
+
+Layers:
+                            model  layer  val_AUROC    C
+Qwen2.5-3B (the Section 8 target)     10     0.9961 0.10
+Qwen2.5-3B (the Section 8 target)     18     1.0000 0.01
+Qwen2.5-3B (the Section 8 target)     26     1.0000 0.01
+         Qwen2.5-7B (notebook 27)      8     0.9996 0.10
+         Qwen2.5-7B (notebook 27)     14     1.0000 0.01
+         Qwen2.5-7B (notebook 27)     20     1.0000 0.01
+
+Static panel:
+                            model                                              distribution                AUROC                 FNR_guar           calibration  benigns_blocked  loo_FPR
+Qwen2.5-3B (the Section 8 target)                                     BIPIA hijack vs hosts 0.672 [0.608, 0.734]     0.500 [0.421, 0.579]     BIPIA hosts (778)                7      NaN
+Qwen2.5-3B (the Section 8 target)                                    BIPIA harmful vs hosts 0.666 [0.582, 0.752]     0.583 [0.457, 0.699]     BIPIA hosts (778)                7      NaN
+Qwen2.5-3B (the Section 8 target)                               second source (600 sampled) 1.000 [1.000, 1.000]     0.000 [0.000, 0.013] its own benigns (300)                3      NaN
+Qwen2.5-3B (the Section 8 target) AgentDojo tool outputs (129 benign, 400 sampled attacked) 0.931 [0.910, 0.951]     0.273 [0.231, 0.318] its own benigns (129)                1   0.0078
+Qwen2.5-3B (the Section 8 target)                                  NotInject (over-defense)                  n/a FPR 0.189 [0.151, 0.234]     BIPIA hosts (778)                7      NaN
+Qwen2.5-3B (the Section 8 target)                                    recipes (over-defense)                  n/a FPR 0.000 [0.000, 0.019]     BIPIA hosts (778)                7      NaN
+         Qwen2.5-7B (notebook 27)                                     BIPIA hijack vs hosts 0.697 [0.634, 0.755]     0.493 [0.414, 0.573]     BIPIA hosts (778)                7      NaN
+         Qwen2.5-7B (notebook 27)                                    BIPIA harmful vs hosts 0.583 [0.487, 0.684]     0.583 [0.457, 0.699]     BIPIA hosts (778)                7      NaN
+         Qwen2.5-7B (notebook 27)                               second source (600 sampled) 1.000 [1.000, 1.000]     0.000 [0.000, 0.013] its own benigns (300)                3      NaN
+         Qwen2.5-7B (notebook 27) AgentDojo tool outputs (129 benign, 400 sampled attacked) 0.970 [0.955, 0.983]     0.378 [0.331, 0.426] its own benigns (129)                1   0.0078
+         Qwen2.5-7B (notebook 27)                                  NotInject (over-defense)                  n/a FPR 0.401 [0.350, 0.454]     BIPIA hosts (778)                7      NaN
+         Qwen2.5-7B (notebook 27)                                    recipes (over-defense)                  n/a FPR 0.000 [0.000, 0.019]     BIPIA hosts (778)                7      NaN
+
+Adversary:
+                            model                                             setting             FNR_guar
+Qwen2.5-3B (the Section 8 target)                               static (91 originals) 0.549 [0.447, 0.648]
+Qwen2.5-3B (the Section 8 target) attacker first (rewrites chosen against structural) 0.934 [0.864, 0.969]
+Qwen2.5-3B (the Section 8 target) attacker second (rewrites chosen against the probe) 0.978 [0.923, 0.994]
+         Qwen2.5-7B (notebook 27)                               static (91 originals) 0.538 [0.437, 0.637]
+         Qwen2.5-7B (notebook 27) attacker first (rewrites chosen against structural) 0.835 [0.746, 0.897]
+         Qwen2.5-7B (notebook 27) attacker second (rewrites chosen against the probe) 0.967 [0.908, 0.989]
+
+Cross-tab:
+                            model  followed_n     followed_flagged  not_followed_n not_followed_flagged  difference  difference_lo  difference_hi
+Qwen2.5-3B (the Section 8 target)          39 0.231 [0.126, 0.383]             273 0.121 [0.087, 0.165]       0.110         -0.003          0.266
+         Qwen2.5-7B (notebook 27)          39 0.282 [0.165, 0.438]             273 0.136 [0.100, 0.181]       0.147          0.021          0.306
+
+Tasks:
+                            model      task  hijack_AUROC  harmful_AUROC  hijack_FNR_guar
+Qwen2.5-3B (the Section 8 target) summarize         0.672          0.666            0.500
+Qwen2.5-3B (the Section 8 target)        qa         0.798          0.723            0.587
+Qwen2.5-3B (the Section 8 target)   extract         0.781          0.699            0.627
+         Qwen2.5-7B (notebook 27) summarize         0.697          0.583            0.493
+         Qwen2.5-7B (notebook 27)        qa         0.679          0.550            0.740
+         Qwen2.5-7B (notebook 27)   extract         0.685          0.596            0.500
+```

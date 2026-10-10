@@ -1,0 +1,7 @@
+model,layer,val_AUROC,C
+Qwen2.5-3B (the Section 8 target),10,0.9961,0.1
+Qwen2.5-3B (the Section 8 target),18,1.0,0.01
+Qwen2.5-3B (the Section 8 target),26,1.0,0.01
+Qwen2.5-7B (notebook 27),8,0.9996,0.1
+Qwen2.5-7B (notebook 27),14,1.0,0.01
+Qwen2.5-7B (notebook 27),20,1.0,0.01

@@ -1,0 +1,7 @@
+model,task,hijack_AUROC,harmful_AUROC,hijack_FNR_guar
+Qwen2.5-3B (the Section 8 target),summarize,0.672,0.666,0.5
+Qwen2.5-3B (the Section 8 target),qa,0.798,0.723,0.587
+Qwen2.5-3B (the Section 8 target),extract,0.781,0.699,0.627
+Qwen2.5-7B (notebook 27),summarize,0.697,0.583,0.493
+Qwen2.5-7B (notebook 27),qa,0.679,0.55,0.74
+Qwen2.5-7B (notebook 27),extract,0.685,0.596,0.5
