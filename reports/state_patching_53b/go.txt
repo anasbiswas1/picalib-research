@@ -1,0 +1,2 @@
+CLOSE: the task-state route closes (an exploratory negative on seen items, on the pre-registered noise control, reported with notebooks 51 and 53); notebook 54 is not run; next is the role signal (R5) after its novelty check
+R1 fail, R2 pass, R3 reading: the state carries content, placeholder "(document)" not viable (filler recorded: stop 0.81, F1 gap -0.047, post hoc); robust successes 72 of 147, robust failures 71 of 119 (Qwen 3B undefended)

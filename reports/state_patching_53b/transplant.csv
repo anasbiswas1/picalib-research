@@ -1,0 +1,25 @@
+items,n,condition,own_injection_followed,donor_injection_followed,neither,degenerate,median_f1_vs_clean_answer
+robust failures,71,donor,"0.155 [0.089, 0.257]","0.535 [0.420, 0.646]",0.38,0.211,0.105
+robust failures,71,otherclean,"0.014 [0.002, 0.076]","0.000 [0.000, 0.051]",0.986,0.0,0.578
+robust failures,71,noiseR,"0.070 [0.030, 0.154]","0.014 [0.002, 0.076]",0.915,0.042,0.39
+robust failures,71,"noise (notebook 53, added every layer)","0.099 [0.049, 0.190]","0.042 [0.014, 0.117]",0.873,0.113,0.411
+robust failures,71,donor minus rebuilt noise (own injection followed),"+0.08 [-0.02, +0.19]",,,,
+robust failures,71,donor minus rebuilt noise (donor injection followed),,"+0.52 [+0.39, +0.63]",,,
+all failed originals,119,donor,"0.235 [0.168, 0.319]","0.580 [0.490, 0.665]",0.303,0.202,0.101
+all failed originals,119,otherclean,"0.034 [0.013, 0.083]","0.000 [0.000, 0.031]",0.966,0.0,0.576
+all failed originals,119,noiseR,"0.143 [0.091, 0.217]","0.059 [0.029, 0.116]",0.815,0.067,0.353
+all failed originals,119,"noise (notebook 53, added every layer)","0.143 [0.091, 0.217]","0.059 [0.029, 0.116]",0.824,0.126,0.335
+all failed originals,119,donor minus rebuilt noise (own injection followed),"+0.09 [-0.01, +0.19]",,,,
+all failed originals,119,donor minus rebuilt noise (donor injection followed),,"+0.52 [+0.41, +0.61]",,,
+twins of robust successes,72,donor,"0.042 [0.014, 0.115]","0.542 [0.427, 0.652]",0.458,0.222,0.22
+twins of robust successes,72,otherclean,"0.000 [0.000, 0.051]","0.014 [0.002, 0.075]",0.986,0.0,0.656
+twins of robust successes,72,noiseR,"0.000 [0.000, 0.051]","0.000 [0.000, 0.051]",1.0,0.0,0.603
+twins of robust successes,72,"noise (notebook 53, added every layer)","0.014 [0.002, 0.075]","0.028 [0.008, 0.096]",0.958,0.014,0.495
+twins of robust successes,72,donor minus rebuilt noise (own injection followed),"+0.04 [-0.02, +0.12]",,,,
+twins of robust successes,72,donor minus rebuilt noise (donor injection followed),,"+0.54 [+0.42, +0.65]",,,
+all clean twins,147,donor,"0.020 [0.007, 0.058]","0.565 [0.484, 0.642]",0.435,0.204,0.224
+all clean twins,147,otherclean,"0.000 [0.000, 0.025]","0.007 [0.001, 0.038]",0.993,0.0,0.667
+all clean twins,147,noiseR,"0.000 [0.000, 0.025]","0.000 [0.000, 0.025]",1.0,0.0,0.603
+all clean twins,147,"noise (notebook 53, added every layer)","0.007 [0.001, 0.038]","0.020 [0.007, 0.058]",0.973,0.027,0.496
+all clean twins,147,donor minus rebuilt noise (own injection followed),"+0.02 [-0.01, +0.06]",,,,
+all clean twins,147,donor minus rebuilt noise (donor injection followed),,"+0.56 [+0.48, +0.64]",,,

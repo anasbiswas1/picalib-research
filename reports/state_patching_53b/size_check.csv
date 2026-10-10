@@ -1,0 +1,5 @@
+window,measured_after_layer,arm,median_ratio_all_positions,median_ratio_last_position
+L21-26,27,notebook 53 noise (added at every layer),2.13,1.55
+L21-26,27,rebuilt noise (attacked + noise at every layer),0.97,0.85
+L0-31,32,notebook 53 noise (added at every layer),3.14,1.91
+L0-31,32,rebuilt noise (attacked + noise at every layer),1.0,1.01
