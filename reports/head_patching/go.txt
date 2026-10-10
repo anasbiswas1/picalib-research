@@ -1,0 +1,2 @@
+GO to notebook 57 on sufficiency alone (L1 partial, L2 failed): the defense is judged on security only and no necessity claim is made
+proxy pass / gate two fail, L1 partial, L2 fail, L3 pass, I1 fail, O1 void

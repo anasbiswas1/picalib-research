@@ -1,0 +1,4 @@
+head_set,what,does_the_task,rate
+I_20 (instruction heads),"instruction run into the plain run, pool two","0.180 [0.127, 0.249]",0.18
+C_20 (carrier heads),"instruction run into the plain run, pool two (cross-transfer)","0.180 [0.127, 0.249]",0.18
+all heads,"instruction run into the plain run, pool two","0.200 [0.144, 0.271]",0.2

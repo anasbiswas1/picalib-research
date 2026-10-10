@@ -1,0 +1,10 @@
+mark,criterion,value,needed,met
+Proxy gate one,"injection margin against the judge, version ""A, same document"" (see change 6)","0.800 [0.662, 0.922]",>= 0.80,True
+Proxy gate one as pre-registered,"the same against the judge on the cross-document transplant: failed, kept on the record","0.766 [0.676, 0.856]",>= 0.80,False
+Proxy gate two,"margin against the judge, joint C_20 patch on the 72",0.609,>= 0.75,False
+L1,"C_20 from the attacked run into the clean twin: twins following the injection (controls: random_20_draw1, random_20_draw2, random_20_draw3, complement_20, attention_20)","0.111 [0.057, 0.204] (controls, highest 0.000); C_40 0.319 [0.223, 0.434]",>= 0.30 with controls <= 0.05,False
+L1 (partial),C_40 reaches 0.15 with controls at most 0.05,0.319 (controls 0.000),>= 0.15 with controls <= 0.05,True
+L2,C_20 from the clean twin into the attacked run: attacks stopped; random matched; paired difference,"0.625 [0.510, 0.728]; random 0.264; +0.36 [+0.20, +0.50]",">= 0.60, <= 0.15, lower end >= 0.25",False
+L3,median token F1 of the stopped answers with the clean twin's answer; degenerate share,0.503 on 45 answers (notebook 53 full state 0.597); degenerate 0.000,>= 0.497 and <= 0.05,True
+I1,I_20 from an instruction run into a plain run: the model does the task,"0.180 [0.127, 0.249]",>= 0.30,False
+O1,overlap reading (void if I1 fails),void: I1 failed,reported,True

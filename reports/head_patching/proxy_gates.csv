@@ -1,0 +1,4 @@
+version,what,n,followed,auroc,lo,hi,mark,met
+"A, same document (the gate)","attacked run's full template state into its own clean twin, 72 twins",72,41,0.8,0.662,0.922,0.8,True
+"B, necessity","clean twin's full state into the attacked run, notebook 53's judged answers, 72 items",72,60,0.634,0.408,0.851,,
+"C, cross-document transplant (the gate as pre-registered; FAILED)","notebook 53's transplant, donor from another category and document",147,83,0.766,0.676,0.856,0.8,False

@@ -1,0 +1,11 @@
+family,pool,n,instruction_run_does_the_task,plain_run_does_it
+translation,one,30,1.0,0.0
+emoji,one,30,1.0,0.0
+base64,one,30,0.033,0.033
+reverse,one,30,0.0,0.0
+cipher,one,30,0.8,0.0
+translation,two,30,1.0,0.0
+emoji,two,30,0.967,0.0
+base64,two,30,0.0,0.0
+reverse,two,30,0.0,0.0
+cipher,two,30,0.7,0.0

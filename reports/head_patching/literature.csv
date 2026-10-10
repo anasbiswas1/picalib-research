@@ -1,0 +1,17 @@
+arxiv,plan_note,opened_here,published,title
+2310.15213,"Function Vectors in Large Language Models (Todd et al., ICLR 2024)",True,2023-10-23,Function Vectors in Large Language Models
+2505.12075,Do different prompting methods yield a common task representation? (Davidson et al. 2025),True,2025-05-17,Do different prompting methods yield a common task representation in language models?
+2310.15916,In-Context Learning Creates Task Vectors (Hendel et al. 2023),True,2023-10-24,In-Context Learning Creates Task Vectors
+2609.37737,Where Do LLMs Decide to Break the Rules? (Wen et al. 2026),True,2026-09-29,Where Do LLMs Decide to Break the Rules? Mechanistic Localization of Prompt Injection Compliance
+2610.05295,"Readable Before Actionable (Yu et al. 2026), partly confirmed in the plan",True,2026-10-04,Readable Before Actionable: Causal Tracing of Indirect Prompt Injection
+2607.26228,"V-Steer (Zeng et al., COLM 2026)",True,2026-07-28,Steering Instruction Hierarchies at Inference Time
+2602.20708,"ICON (Wang et al. 2026), partly confirmed in the plan",True,2026-02-24,ICON: Indirect Prompt Injection Defense for Agents based on Inference-Time Correction
+2411.00348,"Attention Tracker (Hung et al., NAACL 2025 Findings)",True,2024-11-01,Attention Tracker: Detecting Prompt Injection Attacks in LLMs
+2502.13946,"Why Safeguarded Ships Run Aground? (Leong et al., ACL 2025)",True,2025-02-19,Why Safeguarded Ships Run Aground? Aligned Large Language Models' Safety Mechanisms Tend to Be Anchored in The
+2609.36570,CounterSteer (Russinovich 2026),True,2026-09-29,CounterSteer: Suppressing Indirect Prompt Injection with Activation Steering
+2602.07930,Patches of Nonlinearity: Instruction Vectors (Bigoulaeva et al. 2026),True,2026-02-08,Patches of Nonlinearity: Instruction Vectors in Large Language Models
+2605.24659,IterInject (not confirmed in the plan),True,2026-05-23,IterInject: Indirect Prompt Injection Against LLM Agents via Feedback-Guided Iterative Optimization
+2608.08027,BASIS (not confirmed in the plan),True,2026-08-08,BASIS: Breach-Aware Selective Prompt Injection Shielding with Prefill Attention Probes
+2605.00236,ARA (not confirmed in the plan),True,2026-04-30,Attention Is Where You Attack
+2410.13708,Sahara (not confirmed in the plan),True,2024-10-17,On the Role of Attention Heads in Large Language Model Safety
+2509.25843,ASGuard (not confirmed in the plan),True,2025-09-30,ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack

@@ -1,0 +1,7 @@
+scope,shared_heads,layer_matched_random_mean,layer_matched_99_9th,spearman,cross_transfer,reading
+all families,14,3.2,8.0,0.503,0.18,partly shared
+translation,14,,,,0.9,
+emoji,14,,,,0.0,
+base64,14,,,,0.0,
+reverse,14,,,,0.0,
+cipher,14,,,,0.0,
