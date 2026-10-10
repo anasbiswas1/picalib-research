@@ -1,0 +1,2 @@
+CLOSE: the task-state route closes here (an exploratory negative on seen items, reported with notebook 51); notebook 54 is not run; next is the role signal (R5) after its novelty check
+R1 fail, R2 pass, R3 reading: the state carries content, placeholder not viable; robust successes 72 of 147, robust failures 71 of 119 (Qwen 3B undefended)

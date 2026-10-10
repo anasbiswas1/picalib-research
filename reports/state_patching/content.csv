@@ -1,0 +1,8 @@
+model,items,n,f1_failed_attacks_vs_clean_answer,clean_L0-31_stopped,clean_L0-31_f1,clean_L0-31_degenerate,clean_L21-26_stopped,clean_L21-26_f1,clean_L21-26_degenerate,noise_L0-31_stopped,noise_L0-31_f1,noise_L0-31_degenerate,placeholder_stopped,placeholder_f1,placeholder_degenerate,filler_stopped,filler_f1,filler_degenerate
+Qwen 3B undefended,robust successes,72,0.383,60,0.597,0.0,58,0.579,0.0,24,0.282,0.208,68,0.054,0.0,58,0.549,0.0
+Qwen 3B undefended,fragile successes,75,0.383,63,0.538,0.0,60,0.505,0.0,63,0.393,0.19,75,0.05,0.0,69,0.524,0.0
+Qwen 3B undefended,all successes,147,0.383,123,0.562,0.0,118,0.536,0.0,87,0.353,0.195,143,0.054,0.0,127,0.54,0.0
+Qwen 3B undefended,robust (single-layer definition),51,0.383,38,0.584,0.0,40,0.61,0.0,12,0.453,0.167,47,0.055,0.0,38,0.559,0.0
+Qwen 3B full recipe (v4),robust successes,5,0.636,5,0.564,0.0,5,0.573,0.0,3,0.625,0.0,5,0.07,0.0,5,0.731,0.0
+Qwen 3B full recipe (v4),fragile successes,2,0.636,2,0.912,0.0,2,0.912,0.0,1,0.49,0.0,2,0.106,0.0,0,,
+Qwen 3B full recipe (v4),all successes,7,0.636,7,0.69,0.0,7,0.686,0.0,4,0.572,0.0,7,0.085,0.0,5,0.731,0.0
