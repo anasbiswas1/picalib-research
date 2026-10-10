@@ -1,0 +1,13 @@
+head_set,held_out_on,all 72 (as before): stopped,all 72 (as before): clean stop,outside the sweep: stopped,outside the sweep: clean stop,outside sweep and re-rank: stopped,outside sweep and re-rank: clean stop
+C_10,outside the sweep,0.458,0.444,0.45,0.425,0.52,0.48
+C_20,outside the sweep,0.625,0.625,0.65,0.65,0.56,0.56
+C_40,outside the sweep,0.653,0.653,0.625,0.625,0.52,0.52
+Cknock_10,outside sweep and re-rank,0.556,0.556,,,0.56,0.56
+Cknock_20,outside sweep and re-rank,0.736,0.736,,,0.76,0.76
+all_heads,any,0.819,0.819,0.8,0.8,0.8,0.8
+random_20_draw1,any,0.181,0.111,0.2,0.075,0.16,0.08
+random_20_draw2,any,0.264,0.181,0.25,0.125,0.2,0.08
+random_20_draw3,any,0.222,0.111,0.2,0.025,0.16,0.04
+complement_20,any,0.194,0.083,0.225,0.1,0.16,0.08
+attention_20,any,0.278,0.264,0.275,0.25,0.24,0.24
+C_20 mean ablation,outside the sweep,0.583,0.583,0.55,0.55,0.56,0.56

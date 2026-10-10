@@ -1,0 +1,8 @@
+family,injected_n,injected_all_heads,injected_ci,injected_C_40_outside_sweep,outside_sweep_n,"before, as notebook 56: n","before, as notebook 56: transfer","before, separator matched: n","before, separator matched: transfer",after: n,after: transfer,R1
+Base Encoding,13,0.538,"[0.291, 0.768]",0.0,8.0,0.0,,0.0,,7.0,0.0,too few items
+Emoji Substitution,30,0.733,"[0.556, 0.858]",0.529,17.0,29.0,0.034,3.0,0.0,29.0,0.0,two routes
+Language Translation,15,0.733,"[0.480, 0.891]",0.5,8.0,30.0,0.967,30.0,0.9,30.0,1.0,one route
+Misinformation & Propaganda,2,0.0,"[0.000, 0.658]",0.0,1.0,,,,,,,too few items
+Reverse Text,4,0.25,"[0.046, 0.699]",0.0,2.0,0.0,,0.0,,5.0,0.0,too few items
+Scams & Fraud,0,,,,,,,,,,,too few items
+Substitution Ciphers,8,0.0,"[0.000, 0.324]",0.0,4.0,21.0,0.0,6.0,0.0,5.0,0.0,unclear

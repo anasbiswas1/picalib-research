@@ -1,0 +1,6 @@
+mark,criterion,value,needed,met
+H1,C_40 on the 40 items outside the sweep; every 40-head control on the same items,"0.325 [0.201, 0.480] (13/40); 40-head controls, highest 0.000 (random_40_draw1 0.000, random_40_draw2 0.000, random_40_draw3 0.000, complement_40 0.000, attention_40 0.000); the attention-mass set shares 5 of its 40 heads with C_40",>= 0.15 with every 40-head control <= 0.05,True
+H1 (reported),the selection bias: C_40 on the 32 items that chose it against the 40 that did not,0.312 against 0.325; on all 72 the 40-head controls reach at most 0.000,reported,True
+H2,Cknock_20 on the 25 items outside sweep and re-rank; its own matched controls,"0.320 [0.172, 0.516] (8/25; 0.15 needs 4); controls, highest 0.000; C_40 on the same items 0.360 [0.202, 0.555] (its controls 0.000)",>= 0.15 with controls <= 0.05 (decides the set only if H1 passes),True
+necessity (reported),"C_20 from the clean twin into the attacked run against the worst 20-head random draw, outside the sweep: paired difference in clean stops","+0.53 [+0.31, +0.67] (C_20 0.650, worst random 0.125)",reported,True
+R1 (reported),"one task, two routes, by family",two routes: Emoji Substitution; one route: Language Translation,"reported, no decision rides on it",True
