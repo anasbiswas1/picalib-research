@@ -1,0 +1,2 @@
+CLOSE: calibrating on the original injections already holds against this attacker, so attacker-in-the-loop calibration has no point here
+G1 pass, G2 fail, G3 fail; named score learned_blind (chosen on calibration only)
