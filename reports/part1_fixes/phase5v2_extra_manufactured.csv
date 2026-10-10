@@ -1,0 +1,3 @@
+detector,n,static_miss_rate,evades,still_works,manufactured,n_manufactured,orig_ASR_final_complete
+PIGuard,91,"0.110 [0.061, 0.191]","0.912 [0.836, 0.955]","0.066 [0.031, 0.136]","0.066 [0.031, 0.136]",6,"0.429 [0.332, 0.531]"
+conventional fine-tune,91,"0.978 [0.923, 0.994]","1.000 [0.959, 1.000]","0.198 [0.129, 0.291]","0.198 [0.129, 0.291]",18,"0.429 [0.332, 0.531]"

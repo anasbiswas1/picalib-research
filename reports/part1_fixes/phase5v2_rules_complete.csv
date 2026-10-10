@@ -1,0 +1,7 @@
+source,works_final_complete,scam_marker_positive,scam_marker_and_judge,manufactured_final_complete,manufactured_n
+orig,"0.429 [0.332, 0.531]",4,2,,
+ProtectAI-v2,"0.198 [0.129, 0.291]",2,1,"0.198 [0.129, 0.291]",18.0
+Prompt-Guard-2 (86M),"0.110 [0.061, 0.191]",3,1,"0.110 [0.061, 0.191]",10.0
+Prompt-Guard-2 (22M),"0.077 [0.038, 0.150]",2,1,"0.077 [0.038, 0.150]",7.0
+structural (full),"0.066 [0.031, 0.136]",3,1,"0.055 [0.024, 0.122]",5.0
+structural (full_aug),"0.077 [0.038, 0.150]",3,1,"0.066 [0.031, 0.136]",6.0

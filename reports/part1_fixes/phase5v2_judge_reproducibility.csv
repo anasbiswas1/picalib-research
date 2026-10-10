@@ -1,0 +1,5 @@
+judge_A,judge_B,items,agreement,kappa
+notebook 22 run of the 7B judge,qwen7b_4bit_greedy (the paper's judge),312,1.0,1.0
+qwen7b_4bit_greedy (the paper's judge),qwen3b_4bit_greedy,312,0.888,0.352
+qwen7b_4bit_greedy (the paper's judge),qwen3b_fp16_greedy,312,0.891,0.343
+qwen3b_4bit_greedy,qwen3b_fp16_greedy,312,0.952,0.569

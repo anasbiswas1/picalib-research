@@ -1,0 +1,8 @@
+source_detector,n_manufactured,caught_by_protectai_v2,caught_by_prompt_guard_2,caught_by_prompt_guard_2_22m,caught_by_full,caught_by_full_aug,caught_by_piguard,caught_by_conventional_ft
+ProtectAI-v2,18,0.0,0.056,0.0,0.833,0.778,0.778,0.0
+Prompt-Guard-2 (86M),10,0.0,0.0,0.0,0.3,0.4,0.6,0.0
+Prompt-Guard-2 (22M),7,0.0,0.143,0.0,0.714,0.714,0.714,0.0
+structural (full),5,0.0,0.0,0.0,0.0,0.0,0.2,0.0
+structural (full_aug),6,0.0,0.0,0.0,0.0,0.0,0.333,0.0
+PIGuard,6,0.0,0.167,0.0,0.167,0.0,0.0,0.0
+conventional fine-tune,18,0.0,0.0,0.0,0.722,0.667,0.667,0.0

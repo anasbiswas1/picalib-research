@@ -3463,3 +3463,16 @@ Stage I: the notebook 08 layout is reconstructed and every cell mean of reports/
 Stage I: embedded benign-worded injection against the 778 hosts, AUROC: ProtectAI-v2 0.539, Prompt-Guard-2 (86M) 0.745, Prompt-Guard-2 (22M) 0.634; share of embedded copies scoring below the same instruction alone: ProtectAI-v2 0.690, Prompt-Guard-2 (86M) 0.010, Prompt-Guard-2 (22M) 0.070
 Stage J: figures/phase5v2.png regenerated from reports/phase5v2_evasion.csv and reports/phase5v2_manufactured.csv (legend: manufactured miss)
 ```
+
+
+---
+## nb52c: Section 8 items that need a model (scams under the final rule, the two extra detectors executed, three judges, instruction presence)
+_2026-10-10 14:32_
+
+```
+Stage 1: scams, marker-positive outputs the judge rejects: {'orig': 2, 'ProtectAI-v2': 1, 'Prompt-Guard-2 (86M)': 2, 'Prompt-Guard-2 (22M)': 1, 'structural (full)': 2, 'structural (full_aug)': 2} | manufactured-miss rates under the complete final rule: {'ProtectAI-v2': '0.198 [0.129, 0.291]', 'Prompt-Guard-2 (86M)': '0.110 [0.061, 0.191]', 'Prompt-Guard-2 (22M)': '0.077 [0.038, 0.150]', 'structural (full)': '0.055 [0.024, 0.122]', 'structural (full_aug)': '0.066 [0.031, 0.136]'}
+Stage 2: PIGuard: evades 0.912 [0.836, 0.955], still works 0.066 [0.031, 0.136], manufactured 0.066 [0.031, 0.136]; conventional fine-tune: evades 1.000 [0.959, 1.000], still works 0.198 [0.129, 0.291], manufactured 0.198 [0.129, 0.291]
+Stage 3: agreement of the three judges on this section's 312 judge-decided outputs: {"notebook 22 run of the 7B judge vs qwen7b_4bit_greedy (the paper's judge)": 1.0, "qwen7b_4bit_greedy (the paper's judge) vs qwen3b_4bit_greedy": 0.888, "qwen7b_4bit_greedy (the paper's judge) vs qwen3b_fp16_greedy": 0.891, 'qwen3b_4bit_greedy vs qwen3b_fp16_greedy': 0.952} | success on the originals in the four judge categories, by judge: {"qwen7b_4bit_greedy (the paper's judge)": 0.365, 'qwen3b_4bit_greedy': 0.173, 'qwen3b_fp16_greedy': 0.154}
+Stage 4: the judge finds the instruction still present in 0.374 of the 91 originals (a control: every original carries it) and in 0.126 of the 364 rewrites
+Stage 4: selected rewrites that still carry the instruction, per detector: ProtectAI-v2 0.198, Prompt-Guard-2 (86M) 0.187, Prompt-Guard-2 (22M) 0.176, structural (full) 0.176, structural (full_aug) 0.198, PIGuard 0.143, conventional fine-tune 0.220 (judge labels, not hand labels)
+```
