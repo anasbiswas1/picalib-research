@@ -99,3 +99,79 @@ Literature opened:
 2410.13708                                                        Sahara (not confirmed in the plan)         True 2024-10-17                                                  On the Role of Attention Heads in Large Language Model Safety
 2509.25843                                                       ASGuard (not confirmed in the plan)         True 2025-09-30                                     ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack
 ```
+
+
+---
+## nb56b (follow-on work): the head ranking redone by generation after gate two failed, and the instruction asymmetry tested by placement
+_2026-10-10 21:26_
+
+```
+the single-head ranking has no resolution (0 of 64 heads do anything alone), so C* is largely the margin set reordered and F2 is close to a repeat of L1 on fresh controls. GO to notebook 57 on sufficiency alone, built on C*_40 (partial F2, F3 failed as it did in notebook 56), mean ablation primary; no claim about instruction heads either way: P1 gave neither reading
+F2 partial, F3 fail, P1: neither reading: reported as it stands; C*_20 keeps 20 of notebook 56's C_20; C_40 by generation 0.319, Cknock_20 0.264, controls at most 0.000
+
+Marks:
+          mark                                                                                                                                                                 criterion                                                                                                                                 value                                                              needed   met
+            F1                    single-head re-ranking: of the top 20 by generation, how many were in notebook 56's C_20; rank correlation over 64 heads; heads that do anything alone                                                                  20/20 kept; Spearman +nan; 0 of 64 do anything alone (highest 0.000)                     reported; single-head ranking has no resolution  True
+           F1b knockout ranking: Cknock_20 sufficiency on the 72; heads with a positive drop; ties broken by margin order; rank correlation of the drop with the margin effect over C_40                                                    0.264 [0.176, 0.376]; 31/40 heads had any drop (resolution 0.042); Spearman +0.352                                                            reported  True
+F1b (reported)                                                                            C_40 itself, measured by generation here (the knockout top 40 is C_40), with the same controls                                                                                        0.319 [0.223, 0.434] (controls, highest 0.000)                                        reported, outside every mark  True
+            F2                                  C*_20 into the clean twin: twins following the injection (controls: rstar_20_draw1, rstar_20_draw2, rstar_20_draw3, cstar_complement_20)                                                            0.111 [0.057, 0.204] (controls, highest 0.000); C*_40 0.319 [0.223, 0.434]                                       >= 0.30 with controls <= 0.05 False
+  F2 (partial)                                                                                                                             C*_40 reaches 0.15 with controls at most 0.05                                                                                                                0.319 (controls 0.000)                                       >= 0.15 with controls <= 0.05  True
+            F3                                                                               C*_20 from the clean twin into the attacked run: stopped; random matched; paired difference                                                                              0.625 [0.510, 0.728]; random 0.236; +0.39 [+0.23, +0.52]                                 >= 0.60, <= 0.15, lower end >= 0.25 False
+ F4 (reported)                                                                                        clean-stop rate (stopped and not degenerate): C_20, C*_20, and the highest control                                                                                        C_20 0.625; C*_20 0.625; highest control 0.264                                       reported; F3 stays as it fell  True
+            P1                               all heads, instruction after the document against the separator-matched before placement, both conditioned on the source run doing the task after 0.395 [0.292, 0.507] (n=76); before, matched 0.692 [0.536, 0.814] (n=39); unconditioned after 0.200, notebook 56's before 0.200 after >= 0.30 with before <= 0.20, on at least 30 conditioned items False
+
+Re-ranking (top 20):
+ layer  head  margin_effect  margin_rank  generation_rate  generation_rank
+    22     3         0.1494            1              0.0                1
+    22     5         0.1290            2              0.0                2
+    27    13         0.1119            3              0.0                3
+    27    14         0.1068            4              0.0                4
+    34     6         0.0875            5              0.0                5
+    22     0         0.0799            6              0.0                6
+    35    12         0.0723            7              0.0                7
+    20     8         0.0702            8              0.0                8
+    23     1         0.0699            9              0.0                9
+    21    14         0.0672           10              0.0               10
+    21     7         0.0632           11              0.0               11
+    24     6         0.0594           12              0.0               12
+    26     3         0.0589           13              0.0               13
+    21     3         0.0584           14              0.0               14
+    28     2         0.0568           15              0.0               15
+    26    13         0.0548           16              0.0               16
+    17     5         0.0493           17              0.0               17
+    21     8         0.0480           18              0.0               18
+    21     1         0.0479           19              0.0               19
+    34     2         0.0441           20              0.0               20
+
+Every head set:
+              head_set  size  sufficiency       sufficiency_ci  necessity         necessity_ci  clean_stop  median_f1_of_stops  degenerate_of_stops
+                  C_10    10        0.056 0.056 [0.022, 0.134]      0.458 0.458 [0.348, 0.573]       0.444               0.480                0.030
+                  C_20    20        0.111 0.111 [0.057, 0.204]      0.625 0.625 [0.510, 0.728]       0.625               0.503                0.000
+                  C_40    40        0.319 0.319 [0.223, 0.434]      0.653 0.653 [0.538, 0.752]       0.653               0.547                0.000
+       random_20_draw1    20        0.000 0.000 [0.000, 0.051]      0.181 0.181 [0.109, 0.285]       0.111               0.000                0.385
+       random_20_draw2    20        0.000 0.000 [0.000, 0.051]      0.264 0.264 [0.176, 0.376]       0.181               0.000                0.316
+       random_20_draw3    20        0.000 0.000 [0.000, 0.051]      0.222 0.222 [0.142, 0.331]       0.111               0.000                0.500
+         complement_20    20        0.000 0.000 [0.000, 0.051]      0.194 0.194 [0.120, 0.300]       0.083               0.000                0.571
+          attention_20    20        0.000 0.000 [0.000, 0.051]      0.278 0.278 [0.188, 0.390]       0.264               0.466                0.050
+             all_heads   576        0.569 0.569 [0.454, 0.677]      0.819 0.819 [0.715, 0.891]       0.819               0.599                0.000
+              Cstar_10    10        0.056 0.056 [0.022, 0.134]      0.458 0.458 [0.348, 0.573]       0.444               0.480                0.030
+              Cstar_20    20        0.111 0.111 [0.057, 0.204]      0.625 0.625 [0.510, 0.728]       0.625               0.503                0.000
+              Cstar_40    40        0.319 0.319 [0.223, 0.434]      0.653 0.653 [0.538, 0.752]       0.653               0.547                0.000
+             Cknock_10    10        0.083 0.083 [0.039, 0.170]      0.556 0.556 [0.441, 0.665]       0.556               0.526                0.000
+             Cknock_20    20        0.264 0.264 [0.176, 0.376]      0.736 0.736 [0.624, 0.824]       0.736               0.537                0.000
+        rstar_20_draw1    20        0.000 0.000 [0.000, 0.051]      0.236 0.236 [0.153, 0.346]       0.153               0.000                0.353
+        rstar_20_draw2    20        0.000 0.000 [0.000, 0.051]      0.111 0.111 [0.057, 0.204]       0.097               0.009                0.125
+        rstar_20_draw3    20        0.000 0.000 [0.000, 0.051]      0.111 0.111 [0.057, 0.204]       0.069               0.000                0.375
+   cstar_complement_20    20        0.000 0.000 [0.000, 0.051]      0.194 0.194 [0.120, 0.300]       0.083               0.000                0.571
+    C_20 mean ablation    20          NaN                           0.583 0.583 [0.468, 0.690]       0.583               0.518                0.000
+Cstar_20 mean ablation    20          NaN                           0.583 0.583 [0.468, 0.690]       0.583               0.518                0.000
+
+Position control:
+     family  does_the_task_before_nb56  all_heads_before_nb56  does_the_task_before_matched  n_before_matched  n_before_matched_conditioned  all_heads_before_matched  all_heads_before_matched_conditioned  Cstar20_before_matched_conditioned  does_the_task_after  n_after  n_after_conditioned  all_heads_after  all_heads_after_conditioned  Cstar20_after_conditioned
+translation                      1.000                  0.967                          1.00                30                            30                     0.900                                 0.900                               0.933                1.000       30                   30              1.0                        1.000                      0.633
+      emoji                      0.967                  0.033                          0.10                30                             3                     0.000                                 0.000                               0.000                0.967       30                   29              0.0                        0.000                      0.000
+     base64                      0.000                  0.000                          0.00                30                             0                     0.033                                   NaN                                 NaN                0.233       30                    7              0.0                        0.000                      0.000
+    reverse                      0.000                  0.000                          0.00                30                             0                     0.000                                   NaN                                 NaN                0.167       30                    5              0.0                        0.000                      0.000
+     cipher                      0.700                  0.000                          0.20                30                             6                     0.000                                 0.000                               0.000                0.167       30                    5              0.0                        0.000                      0.000
+   all five                      0.533                  0.200                          0.26               150                            39                     0.187                                 0.692                               0.718                0.507      150                   76              0.2                        0.395                      0.250
+```

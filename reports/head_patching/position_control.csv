@@ -1,0 +1,7 @@
+family,does_the_task_before_nb56,all_heads_before_nb56,does_the_task_before_matched,n_before_matched,n_before_matched_conditioned,all_heads_before_matched,all_heads_before_matched_conditioned,Cstar20_before_matched_conditioned,does_the_task_after,n_after,n_after_conditioned,all_heads_after,all_heads_after_conditioned,Cstar20_after_conditioned
+translation,1.0,0.967,1.0,30,30,0.9,0.9,0.933,1.0,30,30,1.0,1.0,0.633
+emoji,0.967,0.033,0.1,30,3,0.0,0.0,0.0,0.967,30,29,0.0,0.0,0.0
+base64,0.0,0.0,0.0,30,0,0.033,,,0.233,30,7,0.0,0.0,0.0
+reverse,0.0,0.0,0.0,30,0,0.0,,,0.167,30,5,0.0,0.0,0.0
+cipher,0.7,0.0,0.2,30,6,0.0,0.0,0.0,0.167,30,5,0.0,0.0,0.0
+all five,0.533,0.2,0.26,150,39,0.187,0.692,0.718,0.507,150,76,0.2,0.395,0.25

@@ -1,0 +1,9 @@
+mark,criterion,value,needed,met
+F1,"single-head re-ranking: of the top 20 by generation, how many were in notebook 56's C_20; rank correlation over 64 heads; heads that do anything alone",20/20 kept; Spearman +nan; 0 of 64 do anything alone (highest 0.000),reported; single-head ranking has no resolution,True
+F1b,knockout ranking: Cknock_20 sufficiency on the 72; heads with a positive drop; ties broken by margin order; rank correlation of the drop with the margin effect over C_40,"0.264 [0.176, 0.376]; 31/40 heads had any drop (resolution 0.042); Spearman +0.352",reported,True
+F1b (reported),"C_40 itself, measured by generation here (the knockout top 40 is C_40), with the same controls","0.319 [0.223, 0.434] (controls, highest 0.000)","reported, outside every mark",True
+F2,"C*_20 into the clean twin: twins following the injection (controls: rstar_20_draw1, rstar_20_draw2, rstar_20_draw3, cstar_complement_20)","0.111 [0.057, 0.204] (controls, highest 0.000); C*_40 0.319 [0.223, 0.434]",>= 0.30 with controls <= 0.05,False
+F2 (partial),C*_40 reaches 0.15 with controls at most 0.05,0.319 (controls 0.000),>= 0.15 with controls <= 0.05,True
+F3,C*_20 from the clean twin into the attacked run: stopped; random matched; paired difference,"0.625 [0.510, 0.728]; random 0.236; +0.39 [+0.23, +0.52]",">= 0.60, <= 0.15, lower end >= 0.25",False
+F4 (reported),"clean-stop rate (stopped and not degenerate): C_20, C*_20, and the highest control",C_20 0.625; C*_20 0.625; highest control 0.264,reported; F3 stays as it fell,True
+P1,"all heads, instruction after the document against the separator-matched before placement, both conditioned on the source run doing the task","after 0.395 [0.292, 0.507] (n=76); before, matched 0.692 [0.536, 0.814] (n=39); unconditioned after 0.200, notebook 56's before 0.200","after >= 0.30 with before <= 0.20, on at least 30 conditioned items",False

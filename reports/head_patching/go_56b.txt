@@ -1,0 +1,2 @@
+the single-head ranking has no resolution (0 of 64 heads do anything alone), so C* is largely the margin set reordered and F2 is close to a repeat of L1 on fresh controls. GO to notebook 57 on sufficiency alone, built on C*_40 (partial F2, F3 failed as it did in notebook 56), mean ablation primary; no claim about instruction heads either way: P1 gave neither reading
+F2 partial, F3 fail, P1: neither reading: reported as it stands; C*_20 keeps 20 of notebook 56's C_20; C_40 by generation 0.319, Cknock_20 0.264, controls at most 0.000
