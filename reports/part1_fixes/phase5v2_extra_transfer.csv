@@ -1,0 +1,11 @@
+rule,source_detector,n_manufactured,caught_by_piguard,caught_by_conventional_ft
+published,ProtectAI-v2,21,0.714,0.0
+published,Prompt-Guard-2 (86M),15,0.533,0.0
+published,Prompt-Guard-2 (22M),11,0.727,0.091
+published,structural (full),12,0.5,0.0
+published,structural (full_aug),13,0.385,0.0
+final,ProtectAI-v2,19,0.737,0.0
+final,Prompt-Guard-2 (86M),12,0.5,0.0
+final,Prompt-Guard-2 (22M),8,0.625,0.0
+final,structural (full),7,0.143,0.0
+final,structural (full_aug),8,0.25,0.0

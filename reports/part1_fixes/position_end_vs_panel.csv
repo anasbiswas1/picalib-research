@@ -1,0 +1,9 @@
+detector,identical_texts,max_abs_diff_all,max_abs_diff_identical_texts,share_diff_over_1e3,share_diff_over_1e3_identical_texts,hijack_AUROC_table9,hijack_AUROC_table15_end,hijack_FNR_table9,hijack_FNR_table15_end,hosts_rescored_in_notebook_23
+ProtectAI-v2,24,0.9649867415428162,0.7819483280181885,0.486,0.25,0.424,0.419,0.993,1.0,False
+Prompt-Guard-2 (86M),24,0.1709698587656021,0.005322322715073824,0.21,0.292,0.625,0.634,0.967,0.973,False
+Prompt-Guard-2 (22M),24,0.008426387794315815,0.003156422171741724,0.129,0.042,0.585,0.598,1.0,1.0,False
+deepset injection,24,0.0,0.0,0.0,0.0,0.648,0.648,0.98,0.98,False
+ProtectAI-v1,24,1.2789769243681803e-13,0.0,0.0,0.0,0.368,0.368,0.993,0.993,False
+fmops distilbert,24,0.0,0.0,0.0,0.0,0.644,0.644,0.993,0.993,False
+structural (full),24,4.729372449219227e-11,0.0,0.0,0.0,0.962,0.962,0.14,0.14,False
+structural (full_aug),24,1.4551915228366852e-10,0.0,0.0,0.0,0.971,0.971,0.127,0.127,False

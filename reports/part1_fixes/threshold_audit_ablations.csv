@@ -1,0 +1,5 @@
+detector,calibration_set,n_benign,blocked_old,calFPR_old,blocked_strict,calFPR_strict,FNR_old,FNR_strict,fallback_fired,loo_FPR_strict
+structural (ablation_no_twins),BIPIA hosts (778),778,7,0.009,7,0.009,0.133,0.133,False,0.009
+structural (ablation_no_twins),second source benigns,900,9,0.01,9,0.01,0.152,0.152,False,0.0089
+structural (full_sizematched),BIPIA hosts (778),778,7,0.009,7,0.009,0.213,0.213,False,0.009
+structural (full_sizematched),second source benigns,900,9,0.01,9,0.01,0.083,0.083,False,0.0089

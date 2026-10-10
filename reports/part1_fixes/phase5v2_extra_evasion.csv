@@ -1,0 +1,3 @@
+detector,threshold_doc,mean_score_originals,mean_score_selected,FNR_static,FNR_adaptive
+PIGuard,0.21188999712467194,0.8735,0.0863,"0.110 [0.061, 0.191]","0.912 [0.836, 0.955]"
+conventional fine-tune,0.9990583062171936,0.1701,0.0729,"0.978 [0.923, 0.994]","1.000 [0.959, 1.000]"

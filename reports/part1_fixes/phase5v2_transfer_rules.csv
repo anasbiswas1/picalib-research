@@ -1,0 +1,11 @@
+rule,source_detector,n_manufactured,caught_by_protectai_v2,caught_by_prompt_guard_2,caught_by_prompt_guard_2_22m,caught_by_full,caught_by_full_aug
+published,ProtectAI-v2,21,0.0,0.048,0.0,0.667,0.619
+published,Prompt-Guard-2 (86M),15,0.0,0.0,0.0,0.2,0.267
+published,Prompt-Guard-2 (22M),11,0.0,0.091,0.0,0.545,0.545
+published,structural (full),12,0.0,0.0,0.0,0.0,0.0
+published,structural (full_aug),13,0.0,0.0,0.0,0.0,0.0
+final,ProtectAI-v2,19,0.0,0.053,0.0,0.789,0.737
+final,Prompt-Guard-2 (86M),12,0.0,0.0,0.0,0.25,0.333
+final,Prompt-Guard-2 (22M),8,0.0,0.125,0.0,0.625,0.625
+final,structural (full),7,0.0,0.0,0.0,0.0,0.0
+final,structural (full_aug),8,0.0,0.0,0.0,0.0,0.0

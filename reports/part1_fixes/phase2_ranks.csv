@@ -1,0 +1,4 @@
+detector,n_hijack_instructions,n_harmful_instructions,n_hosts,AUROC_hijack_embedded_vs_5_clean_hosts,AUROC_hijack_embedded_vs_778_hosts_other_run,AUROC_hijack_standalone_vs_embedded,share_hijack_embedded_below_its_standalone,median_host_percentile_hijack_embedded,AUROC_harmful_embedded_vs_5_clean_hosts,AUROC_harmful_embedded_vs_778_hosts_other_run,AUROC_harmful_standalone_vs_embedded,share_harmful_embedded_below_its_standalone,median_host_percentile_harmful_embedded
+ProtectAI-v2,20,10,5,0.491,0.539,0.669,"0.690 [0.594, 0.772]",0.398,0.392,0.452,0.302,"0.300 [0.191, 0.438]",0.398
+Prompt-Guard-2 (86M),20,10,5,0.519,0.745,0.026,"0.010 [0.002, 0.054]",0.15,0.728,0.904,0.376,"0.280 [0.175, 0.417]",0.04
+Prompt-Guard-2 (22M),20,10,5,0.609,0.634,0.082,"0.070 [0.034, 0.137]",0.222,0.736,0.725,0.272,"0.200 [0.112, 0.330]",0.221

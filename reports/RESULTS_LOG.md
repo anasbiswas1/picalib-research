@@ -3437,3 +3437,29 @@ Qwen2.5-3B (the Section 8 target)   extract         0.781          0.699        
          Qwen2.5-7B (notebook 27)        qa         0.679          0.550            0.740
          Qwen2.5-7B (notebook 27)   extract         0.685          0.596            0.500
 ```
+
+
+---
+## nb52b: part-one fixes from the cached files (hard review of 10 October), no GPU
+_2026-10-10 14:08_
+
+```
+Stage A: the published Table 20 numbers are reproduced from the caches under the published rule; judge answers on disk: 312
+distinct instruction strings among the 91 injections: 39; per category: Base Encoding 5, Emoji Substitution 5, Language Translation 9, Misinformation & Propaganda 5, Reverse Text 5, Scams & Fraud 5, Substitution Ciphers 5
+Stage A: verdicts that change between the published rule and the final rule, per source: {'orig': 4, 'protectai_v2': 4, 'prompt_guard_2': 5, 'prompt_guard_2_22m': 5, 'full': 7, 'full_aug': 7} | the final rule here keeps scams on markers (the judge was not run on marker-positive scam outputs in notebook 22)
+Stage B: PIGuard static 0.110 [0.061, 0.191] adaptive 0.912 [0.836, 0.955], conventional fine-tune static 0.978 [0.923, 0.994] adaptive 1.000 [0.959, 1.000] | selected rewrites not yet executed: {'PIGuard': 17, 'conventional fine-tune': 8} (indices in data/phase5v2/selected_extra.json)
+Stage C: hijack AUROC at layer 18, notebook 52 against this refit: 0.672 0.672 ; hijack AUROC by layer: {10: '0.742', 18: '0.672', 26: '0.714'} ; attacker-second miss rate by layer: {10: '0.945', 18: '0.978', 26: '0.967'}
+Stage C: layer 18, all seven categories under the final rule, rewrites deduplicated: all: followed 55 flagged 0.364 [0.249, 0.496], not followed 250 flagged 0.164 [0.123, 0.215], difference 0.2 [0.074, 0.338]; originals: followed 41 flagged 0.415 [0.278, 0.566], not followed 50 flagged 0.480 [0.348, 0.615], difference -0.065 [-0.258, 0.136]; rewrites: followed 14 flagged 0.214 [0.076, 0.476], not followed 200 flagged 0.085 [0.054, 0.132], difference 0.129 [-0.017, 0.393]
+Stage D: length alone separates the second source at AUROC 0.962 (characters) and 0.957 (words); the lexical reference is 0.860; injected record longer than its host in 1.000 of pairs
+Stage E: AgentDojo records after the window rule: 129 benign, 1452 attacked; excluded by the window rule: 66
+distinct benign texts 123 of 129 (6 duplicate copies in 2 groups); distinct attacked texts 1452 of 1452 (0 duplicate copies in 0 groups)
+Stage E: tied top benigns (count, distinct texts): ProtectAI-v2 2/2, Prompt-Guard-2 (86M) 6/2, structural (full) 5/1, PIGuard 3/1, TF-IDF reference 5/1; miss rate with the excluded records counted: ProtectAI-v2 0.963, Prompt-Guard-2 (86M) 0.455, Prompt-Guard-2 (22M) 0.949, deepset injection 0.892, ProtectAI-v1 0.985, fmops distilbert 0.903, structural (full) 0.839, structural (full_aug) 0.795, conventional fine-tune 0.724, PIGuard 0.749, TF-IDF reference 0.958
+Stage F: hijack width at N = 399 within deepset: Prompt-Guard-2 (22M) 0.000, Prompt-Guard-2 (86M) 0.307, ProtectAI-v2 0.360 | at N = 797 within deepset plus jailbreak benigns: Prompt-Guard-2 (22M) 0.000, Prompt-Guard-2 (86M) 0.000, ProtectAI-v2 0.187 | pooled four-source mixture at N = 400 (Figure 2): Prompt-Guard-2 (22M) 0.009, Prompt-Guard-2 (86M) 0.088, ProtectAI-v2 0.053
+Stage G: largest interval width, by detector and calibration set: ProtectAI-v2 on BIPIA hosts 0.000, ProtectAI-v2 on second source benigns 0.001, Prompt-Guard-2 (86M) on BIPIA hosts 0.000, Prompt-Guard-2 (86M) on second source benigns 0.000, Prompt-Guard-2 (22M) on BIPIA hosts 0.000, Prompt-Guard-2 (22M) on second source benigns 0.003, deepset injection on BIPIA hosts 0.007, deepset injection on second source benigns 0.000, ProtectAI-v1 on BIPIA hosts 0.000, ProtectAI-v1 on second source benigns 0.004, fmops distilbert on BIPIA hosts 0.007, fmops distilbert on second source benigns 0.002, PIGuard on BIPIA hosts 0.000, PIGuard on second source benigns 0.003, structural (full) on BIPIA hosts 0.000, structural (full) on second source benigns 0.000, structural (full_aug) on BIPIA hosts 0.000, structural (full_aug) on second source benigns 0.002, structural (ablation_no_twins) on BIPIA hosts 0.000, structural (ablation_no_twins) on second source benigns 0.001, structural (full_sizematched) on BIPIA hosts 0.013, structural (full_sizematched) on second source benigns 0.000, conventional fine-tune on BIPIA hosts 0.000, conventional fine-tune on second source benigns 0.000; every width at or under 0.02: True
+Stage G: ablation audit, fallback fired in 0 of 4 cells; old and strict miss rates agree: True
+Stage H: the "end" re-embedding reproduces the original BIPIA text in 24 of 210 records (the rest differ in whitespace or line breaks)
+Stage H: largest score difference between the two runs on records whose text is identical: ProtectAI-v2 7.82e-01, Prompt-Guard-2 (86M) 5.32e-03, Prompt-Guard-2 (22M) 3.16e-03, deepset injection 0.00e+00, ProtectAI-v1 0.00e+00, fmops distilbert 0.00e+00, structural (full) 0.00e+00, structural (full_aug) 0.00e+00; where the texts are identical and the scores still differ, the scorer is not run-to-run stable at that size
+Stage I: the notebook 08 layout is reconstructed and every cell mean of reports/phase2_cell_means.csv comes back from the cached scores
+Stage I: embedded benign-worded injection against the 778 hosts, AUROC: ProtectAI-v2 0.539, Prompt-Guard-2 (86M) 0.745, Prompt-Guard-2 (22M) 0.634; share of embedded copies scoring below the same instruction alone: ProtectAI-v2 0.690, Prompt-Guard-2 (86M) 0.010, Prompt-Guard-2 (22M) 0.070
+Stage J: figures/phase5v2.png regenerated from reports/phase5v2_evasion.csv and reports/phase5v2_manufactured.csv (legend: manufactured miss)
+```

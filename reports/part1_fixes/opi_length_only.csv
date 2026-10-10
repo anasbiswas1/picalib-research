@@ -1,0 +1,3 @@
+score,AUROC,FNR_at_1pct,threshold,benigns_blocked,AUROC_combined,AUROC_escape,AUROC_fake_completion,AUROC_ignore,AUROC_naive
+characters,"0.962 [0.952, 0.971]","0.906 [0.885, 0.923]",701.0,9,0.969,0.954,0.963,0.966,0.959
+words,"0.957 [0.946, 0.967]","0.917 [0.897, 0.933]",118.0,9,0.963,0.95,0.958,0.96,0.955
