@@ -1,0 +1,5 @@
+heads,where,median_cosine,median_kept
+carrier,template positions,0.796,0.585
+carrier,answer tokens,0.858,0.507
+all heads,template positions,0.565,0.823
+all heads,answer tokens,0.834,0.552

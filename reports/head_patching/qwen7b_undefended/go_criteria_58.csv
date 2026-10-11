@@ -1,0 +1,5 @@
+mark,criterion,value,needed,met
+L1,held-out sufficiency on Qwen 7B undefended (38 items): the knockout carrier set; worst control; the sweep's own top 20 beside it,0.158; 0.000; sweep set 0.105,>= 0.15; <= 0.05,True
+L2,held-out necessity: clean stops; worst control; paired difference; degenerate share; the sweep's own top set beside it,"0.132; 0.105 (random_draw1); +0.03 [-0.14, +0.19]; 0.286; sweep set 0.132",>= 0.60; <= 0.15; lower end >= 0.25; <= 0.05,False
+S,shared direction: median cosine on the carrier heads (template; answer tokens),0.796; 0.858,>= 0.60 in one,True
+T (reported),Form A and Form A+: clean stops; stop grounding minus twin; legitimate instructions minus undefended,"formA: 0.105, -0.19 [-0.60, +0.19]; formAplus: 0.368, -0.07 [-0.19, +0.04]; instructions A -0.05 [-0.10, -0.01], A+ -0.03 [-0.08, +0.03]",reported,True
