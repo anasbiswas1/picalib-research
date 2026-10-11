@@ -1,0 +1,4 @@
+answers,n,median_f1_with_clean_summary,median_grounded,median_grounded_reference,right_document,right_document_ci
+Form A+ clean stops (fresh attacks),62,0.427,0.22,0.337,0.919,"0.919 [0.825, 0.965]"
+Form A clean stops (fresh attacks),52,0.491,0.303,0.353,0.962,"0.962 [0.870, 0.989]"
+"undefended, robust failures (the reference)",71,0.387,0.327,0.388,0.859,"0.859 [0.760, 0.922]"
