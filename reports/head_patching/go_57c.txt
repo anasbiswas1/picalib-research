@@ -1,0 +1,2 @@
+CLOSE: Form A+ fails S1 on the fresh attacks (F1 of clean stops): clean stops 0.925, worst control 0.119, paired +0.81 [+0.67, +0.88], F1 with its own clean-host summary 0.473, degenerate 0.000. The stops are there, but the leg named fails, and nothing is built on the stops until it is understood.
+S1 fail, G1 pass, A1 not run, U1 not run, U2 not run, U3 not run
