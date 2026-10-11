@@ -1,0 +1,4 @@
+condition,n,degenerate,median_f1_with_undefended,median_grounded,grounded_minus_undefended,median_tokens
+undefended,128,0.0,1.0,0.404,,160
+D,128,0.0,0.784,0.388,"-0.01 [-0.02, +0.00]",160
+D_follow,128,0.0,0.727,0.409,"+0.00 [-0.01, +0.02]",160

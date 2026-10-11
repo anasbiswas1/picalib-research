@@ -1,0 +1,5 @@
+heads,where,median_cosine,median_kept,min_kept
+carrier (Cknock_20),template positions,0.734,0.646,0.549
+carrier (Cknock_20),answer tokens,0.882,0.467,0.35
+all 576,template positions,0.456,0.889,0.335
+all 576,answer tokens,0.868,0.496,0.243
