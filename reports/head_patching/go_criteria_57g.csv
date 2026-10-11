@@ -1,0 +1,4 @@
+mark,criterion,value,needed,met
+R1,"carrier heads, attention to the instruction, after-placement minus user-turn, paired over the matched triples: interval excludes zero and beats every control, at the template positions or the answer tokens","template: +0.02 [+0.02, +0.02], excludes zero True, largest control 0.0191; answer: +0.02 [+0.01, +0.02], excludes zero True, largest control 0.0090","at least one group: excludes zero, |difference| >= 0.02, beats the controls",False
+R2,"leave-one-document-out AUROC of a logistic classifier on the carrier heads' instruction masses, user-turn against after-placement","1.000; controls dctrl_20_draw1 1.000, dctrl_20_draw2 1.000, dctrl_20_draw3 1.000, dctrl_complement_20 1.000",>= 0.80,True
+R2b,the same classifier calls the before-placement items injected,0.000 (robust successes 0.958),>= 0.70,False

@@ -1,0 +1,6 @@
+head_set,n_features,auroc_user_vs_after_leave_one_document_out,before_called_injected,robust_successes_called_injected
+carrier (Cknock_20),40,1.0,0.0,0.958
+control dctrl_20_draw1,40,1.0,0.026,0.875
+control dctrl_20_draw2,40,1.0,0.0,1.0
+control dctrl_20_draw3,40,1.0,0.051,0.931
+control dctrl_complement_20,40,1.0,0.051,0.931

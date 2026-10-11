@@ -578,3 +578,48 @@ translation  90       1.000 1.000 +0.00 [-0.04, +0.04]     1.000      +0.00 [-0.
      cipher  90       0.678 0.633 -0.04 [-0.17, +0.08]     0.433      -0.24 [-0.37, -0.10]
    all five 450       0.540 0.533 -0.01 [-0.03, +0.02]     0.304      -0.24 [-0.28, -0.19]
 ```
+
+
+---
+## nb57g (follow-on work): do the carrier heads read an injected instruction differently from the user's? attention mass to the instruction by placement, with controls, and whether the source is readable from it
+_2026-10-11 17:29_
+
+```
+CLOSE: the carrier heads send the instruction no more or less attention than the controls do, wherever it sits (R1); what they read is recency, not placement in the content: a paragraph before the document is called injected in only 0.000 of cases (R2b). The carrier heads carry the following of an instruction in one shared direction (57f) and do not read its source either, so there is no head-level quantity left on which a defence could act without the trades notebooks 57 to 57f measured. The defence route closes on mechanism grounds; notebooks 56 to 57g are the account. At the template positions the carrier heads send 0.185 of their attention to the instruction when it is the user's and 0.203 when it sits after the document (0.216 for a rewritten injection inside it); at the answer tokens 0.023, 0.040 and 0.063.
+R1 fail, R2 pass, R2b fail
+
+Marks:
+mark                                                                                                                                                                                                     criterion                                                                                                                                                value                                                                      needed   met
+  R1 carrier heads, attention to the instruction, after-placement minus user-turn, paired over the matched triples: interval excludes zero and beats every control, at the template positions or the answer tokens template: +0.02 [+0.02, +0.02], excludes zero True, largest control 0.0191; answer: +0.02 [+0.01, +0.02], excludes zero True, largest control 0.0090 at least one group: excludes zero, |difference| >= 0.02, beats the controls False
+  R2                                                                             leave-one-document-out AUROC of a logistic classifier on the carrier heads' instruction masses, user-turn against after-placement                                          1.000; controls dctrl_20_draw1 1.000, dctrl_20_draw2 1.000, dctrl_20_draw3 1.000, dctrl_complement_20 1.000                                                                     >= 0.80  True
+ R2b                                                                                                                                                 the same classifier calls the before-placement items injected                                                                                                                       0.000 (robust successes 0.958)                                                                     >= 0.70 False
+
+Where they look:
+                   head_set positions  user: to instruction  before: to instruction  after: to instruction  injected (RS): to instruction  user: to document  after: to document after minus user (paired) before minus user (paired)
+        carrier (Cknock_20)  template                0.1849                  0.0960                 0.2032                         0.2160             0.1191              0.0721      +0.02 [+0.02, +0.02]       -0.09 [-0.09, -0.08]
+        carrier (Cknock_20)  first_16                0.0985                  0.0435                 0.1449                         0.1128             0.1543              0.1305      +0.05 [+0.04, +0.06]       -0.03 [-0.04, -0.02]
+        carrier (Cknock_20)    answer                0.0232                  0.0158                 0.0402                         0.0631             0.2276              0.2229      +0.02 [+0.01, +0.02]       -0.00 [-0.01, -0.00]
+     control dctrl_20_draw1  template                0.1086                  0.0741                 0.1048                         0.1066             0.1910              0.1642      -0.00 [-0.01, +0.00]       -0.04 [-0.04, -0.03]
+     control dctrl_20_draw1  first_16                0.0640                  0.0339                 0.1036                         0.0671             0.2404              0.2140      +0.04 [+0.03, +0.05]       -0.01 [-0.02, +0.00]
+     control dctrl_20_draw1    answer                0.0103                  0.0095                 0.0192                         0.0307             0.3057              0.3019      +0.01 [+0.01, +0.01]       +0.00 [-0.00, +0.00]
+     control dctrl_20_draw2  template                0.0966                  0.0654                 0.0907                         0.0931             0.1379              0.1062      -0.01 [-0.01, -0.00]       -0.03 [-0.03, -0.03]
+     control dctrl_20_draw2  first_16                0.0569                  0.0315                 0.0873                         0.0610             0.1983              0.1743      +0.03 [+0.02, +0.04]       -0.01 [-0.02, +0.00]
+     control dctrl_20_draw2    answer                0.0090                  0.0085                 0.0165                         0.0296             0.2769              0.2763      +0.01 [+0.01, +0.01]       +0.00 [-0.00, +0.00]
+     control dctrl_20_draw3  template                0.1242                  0.0744                 0.1051                         0.1104             0.1366              0.1142      -0.02 [-0.02, -0.01]       -0.05 [-0.06, -0.04]
+     control dctrl_20_draw3  first_16                0.0863                  0.0370                 0.1181                         0.0865             0.1871              0.1587      +0.03 [+0.02, +0.04]       -0.02 [-0.04, -0.01]
+     control dctrl_20_draw3    answer                0.0166                  0.0104                 0.0252                         0.0441             0.2785              0.2749      +0.01 [+0.01, +0.01]       -0.00 [-0.00, -0.00]
+control dctrl_complement_20  template                0.1319                  0.0767                 0.1159                         0.1247             0.1597              0.1442      -0.02 [-0.02, -0.01]       -0.06 [-0.07, -0.06]
+control dctrl_complement_20  first_16                0.0622                  0.0312                 0.1033                         0.0681             0.2099              0.1832      +0.04 [+0.03, +0.05]       -0.01 [-0.02, -0.00]
+control dctrl_complement_20    answer                0.0096                  0.0085                 0.0178                         0.0296             0.2859              0.2821      +0.01 [+0.01, +0.01]       -0.00 [-0.00, +0.00]
+              all 576 heads  template                0.0670                  0.0364                 0.1090                         0.1084             0.1674              0.1185      +0.04 [+0.04, +0.04]       -0.03 [-0.03, -0.03]
+              all 576 heads  first_16                0.0443                  0.0235                 0.0767                         0.0619             0.1520              0.1364      +0.03 [+0.03, +0.04]       -0.01 [-0.01, -0.00]
+              all 576 heads    answer                0.0098                  0.0085                 0.0187                         0.0331             0.1692              0.1679      +0.01 [+0.01, +0.01]       -0.00 [-0.00, +0.00]
+
+Source readable:
+                   head_set  n_features  auroc_user_vs_after_leave_one_document_out  before_called_injected  robust_successes_called_injected
+        carrier (Cknock_20)          40                                         1.0                   0.000                             0.958
+     control dctrl_20_draw1          40                                         1.0                   0.026                             0.875
+     control dctrl_20_draw2          40                                         1.0                   0.000                             1.000
+     control dctrl_20_draw3          40                                         1.0                   0.051                             0.931
+control dctrl_complement_20          40                                         1.0                   0.051                             0.931
+```
