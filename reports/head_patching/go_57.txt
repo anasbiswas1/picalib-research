@@ -1,0 +1,2 @@
+HOLD: Form B stops 0.667 of attacks cleanly, but every legitimate task the model can do at all pays for it (lost: translation, emoji, cipher; no headroom: base64, reverse). A block that costs every legitimate use of the same capability has no advantage over refusing the task, so notebook 57b is not worth running on this form. What to try instead is the open question.
+S1 pass (raw version fail), U1 fail, U2 pass

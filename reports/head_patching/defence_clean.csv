@@ -1,0 +1,4 @@
+condition,n,degenerate,median_f1_with_undefended,median_length
+undefended,128,0.0,1.0,580
+formB,128,0.0,0.861,577
+formA,128,0.0,0.607,547
