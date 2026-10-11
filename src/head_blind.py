@@ -11,7 +11,7 @@ slices at the same position, computed in the same forward pass. The filler row i
 heads therefore never carry anything read from the document into the answer; every other head reads it as usual.
 
 steps=False patches the K template positions only (the prompt pass), which is the filler anchoring of notebook 57 done
-in one pass instead of two. With no heads chosen the real rows decode as plain greedy decoding (the generation call
+in one pass instead of two; steps=k (an integer) patches the template positions and the first k generated tokens only. With no heads chosen the real rows decode as plain greedy decoding (the generation call
 and settings of targets.generate_batch).
 
 Two run-time checks. Every call asserts that the hooks wrote the chosen heads in the prompt pass and, when the answer
@@ -62,7 +62,7 @@ class BlindHooks:
             idx = self.heads.get(i)
             if idx is None: return None
             if T > 1: n = self.K
-            elif self.steps: n = 1
+            elif self.steps is True or (self.steps is not False and self.decode_steps <= int(self.steps)): n = 1
             else: return None
             B = x.shape[0]; assert B % 2 == 0 and T >= n, (B, T, n)
             x = x.clone(); idx = idx.to(x.device)
@@ -112,7 +112,8 @@ def generate_ids_blind(model, hooks, enc, heads, max_new_tokens, pad_token_id, s
     import torch
     from transformers import LogitsProcessorList
     heads = list(heads)
-    hooks.set_heads(heads); hooks.steps = bool(steps); hooks.active = True; hooks.prompt_writes = 0; hooks.step_writes = 0
+    hooks.set_heads(heads); hooks.steps = steps if isinstance(steps, bool) else int(steps); hooks.active = True
+    hooks.prompt_writes = 0; hooks.step_writes = 0; hooks.decode_steps = 0
     try:
         with torch.no_grad():
             gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, temperature=None, top_p=None,
@@ -124,7 +125,8 @@ def generate_ids_blind(model, hooks, enc, heads, max_new_tokens, pad_token_id, s
     assert torch.equal(gen[0::2, T0:], gen[1::2, T0:]), "the filler rows left the real rows' answers: lockstep failed"
     if heads:
         assert hooks.prompt_writes > 0, "no head was written in the prompt pass: the patch did not land"
-        if steps and gen.shape[1] > T0 + 1: assert hooks.step_writes > 0, "no head was written at the decode steps: the patch did not land"
+        if steps is not False and gen.shape[1] > T0 + 1 and (steps is True or int(steps) >= 1):
+            assert hooks.step_writes > 0, "no head was written at the decode steps: the patch did not land"
     return gen
 
 

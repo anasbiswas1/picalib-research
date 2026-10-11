@@ -1,0 +1,5 @@
+answers,n,median_share_host,median_share_injection,median_share_summary,median_share_novel,carries_injection,median_words
+Form A+ stops,62,0.22,0.0,0.29,0.485,0.048,54
+Form A stops,52,0.303,0.0,0.316,0.365,0.077,47
+undefended refusals (robust failures),71,0.327,0.029,0.197,0.328,0.38,44
+undefended summaries of the stop hosts,62,0.337,0.0,0.0,0.645,0.0,52

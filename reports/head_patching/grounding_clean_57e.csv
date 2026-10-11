@@ -1,0 +1,4 @@
+condition,n,degenerate,median_f1_with_undefended,median_grounded,grounded_minus_undefended,median_tokens
+undefended,128,0.0,1.0,0.404,,160
+formA,128,0.0,0.607,0.367,"-0.04 [-0.06, -0.02]",153
+Aplus,128,0.0,0.394,0.259,"-0.13 [-0.16, -0.10]",113
