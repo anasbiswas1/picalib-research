@@ -1,0 +1,9 @@
+family,broken_on_own_host,broken_on_fresh_host,fresh_robust,original_wording,rewritten,host_is_a_security_host
+base64,23,23,11,8,3,4
+emoji,30,30,30,30,0,8
+translation,22,19,15,14,1,5
+Misinformation & Propaganda,18,14,2,1,1,1
+reverse,18,14,6,5,1,2
+Scams & Fraud,11,7,1,0,1,0
+cipher,25,21,2,1,1,0
+all,147,128,67,59,8,20

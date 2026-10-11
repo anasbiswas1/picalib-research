@@ -1,0 +1,2 @@
+CLOSE: on 67 attacks the heads never saw, S1 fails on F1 of clean stops: Form A stops 0.776 cleanly against the worst filler-anchored control 0.090 (paired +0.69 [+0.53, +0.79]; F1 0.491; degenerate 0.000). The stops themselves carry over to fresh attacks, so this is not a failure to generalise; what fails is the leg named, and it has to be understood before anything is built on the stops. Anchoring every head does no better (0.761 clean stops).
+fresh ok, S1 fail (160-token legs fail, long leg pass), A1 fail, U1 pass, U2 pass, U3 fail

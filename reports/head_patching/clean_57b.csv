@@ -1,0 +1,4 @@
+condition,n,degenerate,median_f1_with_undefended,median_length
+undefended,128,0.0,1.0,580
+formA,128,0.0,0.607,547
+A_all_heads,128,0.0,0.584,593
