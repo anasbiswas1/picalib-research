@@ -1,0 +1,2 @@
+DOES NOT REPLICATE on Llama 8B undefended: L2 fails on clean stops 0.192 (at least 0.60), paired difference +0.15 [-0.02, +0.34] (lower end at least 0.25). The sweep's own top 20, before the knockout re-ranking, gives sufficiency 0.115 and clean stops 0.269. The trade on this model: Form A stops 0.231 cleanly at +0.01 [-0.05, +0.06] on the legitimate instructions; Form A+ stops 0.962 with stop grounding -0.33 [-0.40, -0.26] and +0.00 [-0.07, +0.07] on the legitimate instructions.
+L1 pass, L2 fail, S pass

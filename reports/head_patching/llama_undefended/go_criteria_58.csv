@@ -1,0 +1,5 @@
+mark,criterion,value,needed,met
+L1,held-out sufficiency on Llama 8B undefended (26 items): the knockout carrier set; worst control; the sweep's own top 20 beside it,0.192; 0.000; sweep set 0.115,>= 0.15; <= 0.05,True
+L2,held-out necessity: clean stops; worst control; paired difference; degenerate share; the sweep's own top set beside it,"0.192; 0.038 (random_draw1); +0.15 [-0.02, +0.34]; 0.000; sweep set 0.269",>= 0.60; <= 0.15; lower end >= 0.25; <= 0.05,False
+S,shared direction: median cosine on the carrier heads (template; answer tokens),0.825; 0.851,>= 0.60 in one,True
+T (reported),Form A and Form A+: clean stops; stop grounding minus twin; legitimate instructions minus undefended,"formA: 0.231, -0.20 [-0.35, -0.07]; formAplus: 0.962, -0.33 [-0.40, -0.26]; instructions A +0.01 [-0.05, +0.06], A+ +0.00 [-0.07, +0.07]",reported,True

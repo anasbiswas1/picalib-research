@@ -12,10 +12,22 @@ spec: {layer: dict(kind, heads, src)}
        listed heads' slices are read from it, so a full recorded tensor can be passed and the heads chosen per call.
 
 offset: 0, or the number of tokens appended after the template (16 when answer tokens are appended for the margin).
+
+Recordings are kept in rec_dtype: float16 on a float16 model, float32 otherwise, so writing a recording back is an exact
+copy on bfloat16 models too.
 """
 from __future__ import annotations
 import numpy as np
 from task_state import encode, _generate, decoder_layers
+
+
+def rec_dtype(dtype):
+    """The precision a recording is kept in: float16 for a float16 model (as in notebooks 56 to 57g, so those runs are
+    unchanged), float32 for anything else. A bfloat16 value smaller than about 8e-6 in size loses bits in float16 (and
+    one above 65504 does not fit), so writing a float16 recording back into a bfloat16 model (Llama) is not an exact
+    copy; float32 holds every bfloat16 value exactly."""
+    import torch
+    return torch.float16 if dtype == torch.float16 else torch.float32
 
 
 def head_dims(model):
@@ -46,7 +58,7 @@ class HeadHooks:
             if not isinstance(x, torch.Tensor) or x.dim() != 3 or x.shape[1] <= 1: return None
             if i == 0: self.prompt_passes += 1
             sl = self._slice()
-            if self.record: self.rec[i] = x[:, sl, :].detach().half().cpu().clone()
+            if self.record: self.rec[i] = x[:, sl, :].detach().to(rec_dtype(x.dtype)).cpu().clone()
             s = self.spec.get(i)
             if s is None: return None
             B = x.shape[0]; x = x.clone()
@@ -100,7 +112,7 @@ def set_spec(heads, src=None, kind="set"):
 
 
 def capture_heads(model, hooks, tok, prompts, system, sfx):
-    """Head outputs at the template positions for one batch: float16 [B, L, K, nh*dh], from the answering call's prompt pass."""
+    """Head outputs at the template positions for one batch: [B, L, K, nh*dh] in rec_dtype (float16 on a float16 model, float32 otherwise), from the answering call's prompt pass."""
     import torch
     enc = encode(tok, prompts, system, sfx).to(model.device)
     hooks.rec = {}; hooks.spec = {}; hooks.offset = 0; hooks.record = True
@@ -110,23 +122,28 @@ def capture_heads(model, hooks, tok, prompts, system, sfx):
     return st
 
 
-def answer_logprob(model, hooks, tok, prompts, system, sfx, ans_ids, spec=None):
+def answer_logprob(model, hooks, tok, prompts, system, sfx, ans_ids, spec=None, record=False):
     """Mean log-probability of each row's answer tokens, with the head spec applied at the template positions.
 
     ans_ids: one list of token ids per row, all the same length. The answer tokens are appended to the prompt, so the
-    template positions sit len(ans) places before the end and the hooks take that offset."""
+    template positions sit len(ans) places before the end and the hooks take that offset. record=True also returns the
+    head outputs at the template positions of this very pass, before any spec is applied ([B, L, K, nh*dh] in
+    rec_dtype), so a write-back can be checked against a recording of the same shape of pass."""
     import torch
     enc = encode(tok, prompts, system, sfx).to(model.device)
     A = torch.as_tensor(ans_ids, device=enc["input_ids"].device, dtype=enc["input_ids"].dtype)
     assert A.dim() == 2 and A.shape[0] == enc["input_ids"].shape[0], (A.shape, enc["input_ids"].shape)
     ids = torch.cat([enc["input_ids"], A], 1); am = torch.cat([enc["attention_mask"], torch.ones_like(A)], 1)
     nt = int(A.shape[1])
-    hooks.rec = {}; hooks.spec = dict(spec or {}); hooks.record = False; hooks.offset = nt
+    hooks.rec = {}; hooks.spec = dict(spec or {}); hooks.record = bool(record); hooks.offset = nt
     try:
         with torch.no_grad(): lg = model(input_ids=ids, attention_mask=am).logits
-    finally: hooks.spec = {}; hooks.offset = 0
+    finally: hooks.spec = {}; hooks.offset = 0; hooks.record = False
     lp = torch.log_softmax(lg[:, -nt - 1:-1, :].float(), -1)
-    return lp.gather(-1, A[:, :, None].long()).squeeze(-1).mean(1).detach().cpu().numpy()
+    out = lp.gather(-1, A[:, :, None].long()).squeeze(-1).mean(1).detach().cpu().numpy()
+    if not record: return out
+    st = torch.stack([hooks.rec[i] for i in range(len(hooks.layers))], 1); hooks.rec = {}
+    return out, st
 
 
 def doc_attention(model, tok, prompts, system, sfx, doc_tokens, batch=4):
