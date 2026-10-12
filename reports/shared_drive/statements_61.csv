@@ -1,0 +1,210 @@
+item,passage,instruction,statement,words_instruction,words_statement
+0,1779,"Categorize the following article as belonging to one of the genres: adventure, romance, horror, science fiction.","Between 1758 and 1760, the British military launched a campaign to capture the Colony of Canada.",16,16
+1,605,Summarize the article below in a maximum of 100 words.,Several procedures enable the Scottish Parliament to scrutinise the Government.,10,10
+2,337,"Given a word, find its synonym.",This phenomenon is called color confinement.,6,6
+3,1078,Generate a plural form for the given noun.,Plague repeatedly struck the cities of North Africa.,8,8
+4,1369,Modify the given code to print out the largest number in the list.,"These professional qualifications may include the study of pedagogy, the science of teaching.",13,13
+5,549,"Given a word, find its synonym.",Apicomplexans are another group of chromalveolates.,6,6
+6,851,Pose a follow-up question based on given statement.,This hypothesis is generally believed to be correct.,8,8
+7,1623,Notice and correct the spelling mistake in the following sentence.,The ESPN Deportes Spanish broadcast was made available through WatchESPN.,10,10
+8,166,Come up with a question that the given statement answers.,This represented 24% of national agricultural production total gross value.,10,10
+9,151,"Classify the following sentence as either fragment, a run-on, or a complete sentence.",Opportunistic bands of Normans successfully established a foothold in Southern Italy (the Mezzogiorno).,13,13
+10,863,Transform the following sentence into a yes/no question.,The conservators specialise in particular areas of conservation.,8,8
+11,21,"Based on the following text, construct an appropriate question.",This World's Fair devoted a building to electrical exhibits.,9,9
+12,505,Interpret the given piece of art.,"621,200 of Kenyans are Orthodox Christians.",6,6
+13,986,"Classify the following emotions - shame, pride, joy.",KMJ is now known as NBC affiliate KSEE.,8,8
+14,813,Create a social media post to promote a store offering discounts during holiday season.,"Until 1932 the generally accepted length of the Rhine was 1,230 kilometres (764 miles).",14,14
+15,1749,Create a social media post to promote a store offering discounts during holiday season.,Innate cells are also important mediators in the activation of the adaptive immune system.,14,14
+16,1811,Describe the characteristics of a specific bird species.,This hypothesis is generally believed to be correct.,8,8
+17,1770,Classify the populations in the table below.,"31:5), the common prayer of the dying.",7,7
+18,900,Comment on the changes in the given dataset.,"Today, this is known as the Miasma theory.",8,8
+19,138,"Given a sentence, identify all the named entities.",Prime numbers have influenced many artists and writers.,8,8
+20,1470,Research a famous author and come up with 3 interesting facts.,Tesla occasionally attended dinner parties held by Viereck and his wife.,11,11
+21,1546,Rewrite the following sentence to bring out the implicit emotion it conveys.,"During the first years after the war, the population growth was c.",12,12
+22,1616,Summarize the given text about machine learning.,"Confucius's descendants in Quzhou alone number 30,000.",7,7
+23,524,Identify if the sentence contains a simile.,Luther himself seemed saddened by the move.,7,7
+24,101,"Given a Twitter handle, identify what type of content the user is posting.","However, Kusala suddenly died only four days after a banquet with Tugh Temür.",13,13
+25,862,"Given the conditions, create a logical conclusion.",was produced in 1809 by William Maclure.,7,7
+26,1676,Come up with a question that the given statement answers.,Lindisfarne are a folk-rock group with a strong Tyneside connection.,10,10
+27,1469,Guess the next word.,Eastern Time (9:00 a.m.,4,4
+28,1789,Convert from polar coordinates to rectangular coordinates.,Executive power is exercised by the government.,7,7
+29,1514,Arrange a meeting between two different people.,It only operates at the user-network-interface (UNI).,7,7
+30,1209,Translate this text into Spanish.,Elmo's fire around their wings.,5,5
+31,1955,Make a suggestion to the customer regarding the given product.,The property of being prime (or not) is called primality.,10,10
+32,1853,"Classify the following sentence as either fragment, a run-on, or a complete sentence.","Here the Rhine flows through the largest conurbation in Germany, the Rhine-Ruhr region.",13,13
+33,1835,Identify a creative way to combine two items.,Visitors arrived by steamboat and later by railroad.,8,8
+34,1115,Interpret the given piece of art.,The Yuan undertook extensive public works.,6,6
+35,881,Convert from polar coordinates to rectangular coordinates.,Around 20% of Victorians claim no religion.,7,7
+36,382,Categorize the following sentence along with its subject and verb.,Construction is the process of constructing a building or infrastructure.,10,10
+37,1954,Interpret the given piece of art.,This phenomenon is called color confinement.,6,6
+38,1280,Provide a logical extension to the given sentence.,Price controls exacerbated the crisis in the US.,8,8
+39,1743,Create a poems using the same words.,Kublai's government faced financial difficulties after 1279.,7,7
+40,897,Modify the given code to print out the largest number in the list.,The efficiency of a Rankine cycle is usually limited by the working fluid.,13,13
+41,147,Translate this text into Spanish.,Various hypotheses have been promoted.,5,5
+42,1606,Develop a prototype for the given application.,The program passed into history by 1910.,7,7
+43,358,Determine the theme of the story.,But a storm dispersed the fleet.,6,6
+44,1995,Create a report summarizing a book you read.,Over 60% of Norway's population died in 1348–50.,8,8
+45,1808,What is the meaning of the following idiom?,NewcastleGateshead also holds an annual International Arts Fair.,8,8
+46,152,"Given the input string, identify the type of word (adjective, adverb, noun, etc.).",All the work on the north range was designed and built in 1864–69.,13,13
+47,754,Categorize the following news headline.,"brick versus stone, versus timber).",5,5
+48,787,Reorganize the poem for a better rhyme scheme.,Open of Surfing are all in southern California.,8,8
+49,441,Comment on the changes in the given dataset.,Participation of delegates with appropriate expertise is encouraged.,8,8
+50,1840,Order the following 3 numbers from biggest to smallest.,with a specific mission of undermining Islamism and jihadism.,9,9
+51,1444,Convert from polar coordinates to rectangular coordinates.,This is typically done on moral issues.,7,7
+52,1494,Summarize the article below in a maximum of 100 words.,He stated that he observed stationary waves during this time.,10,10
+53,355,Interpret the given piece of art.,There are about thirty photosynthetic carotenoids.,6,6
+54,1923,Develop a prototype for the given application.,The conflict is known by multiple names.,7,7
+55,171,Create a poems using the same words.,electrons) have a symmetric spin function (e.g.,7,7
+56,1049,Identify the grammatically correct sentence among the following two.,The concert aired on BBCi on Christmas Day 2006.,9,9
+57,1427,Guess the next word.,This has changed recently.,4,4
+58,1809,"Given the input string, identify the type of word (adjective, adverb, noun, etc.).","Harvard's 2,400 professors, lecturers, and instructors instruct 7,200 undergraduates and 14,000 graduate students.",13,13
+59,1617,Identify the name of the song given a short clip of the lyrics.,Northern Telecom sold several DATAPAC clones to foreign PTTs including the Deutsche Bundespost.,13,13
+60,403,Reorganize the poem for a better rhyme scheme.,The corresponding set of function problems is FP.,8,8
+61,239,Describe the characteristics of a specific bird species.,There are also numerous parasites and disease vectors.,8,8
+62,1692,Rewrite the following sentence to bring out the implicit emotion it conveys.,"In 1933, out of 1,178,914 inhabitants 833,500 were of Polish mother tongue.",12,12
+63,971,"Given a set of instructions, come up with a code snippet that performs the instruction.","They were based at Malatya and Edessa, under the Byzantine duke of Antioch, Isaac Komnenos.",15,15
+64,1041,"Given a word, find its synonym.",The median age was 35.5 years.,6,6
+65,1523,Provide a logical extension to the given sentence.,The rule also discouraged development of alternative energies.,8,8
+66,46,Pose a follow-up question based on given statement.,This region includes territory belonging to nine nations.,8,8
+67,1722,Translate this text into Spanish.,It was a plug-n-play system.,5,5
+68,1945,Summarize the article below in a maximum of 100 words.,A ‘neutral and objective statement’ was enough to protect consumers.,10,10
+69,1675,Translate this text into Spanish.,Currently the company is defunct.,5,5
+70,208,What is the meaning of the following idiom?,"[Tesla] spoke animatedly, with pauses, [as he] ...",8,8
+71,205,"Given a Twitter handle, identify what type of content the user is posting.",Co-teachers work in sync with one another to create a climate of learning.,13,13
+72,1126,Auto-summarize the following text.,and 3.5 million overseas.,4,4
+73,1372,"Given a sentence, identify all the named entities.",Most of the historical buildings were thoroughly reconstructed.,8,8
+74,82,Come up with a question that the given statement answers.,It is planned that it could open within five years.,10,10
+75,1015,Generate an acrostic poem with a given word.,NewcastleGateshead also holds an annual International Arts Fair.,8,8
+76,645,Comment on the changes in the given dataset.,The general test is whether a concentration (i.e.,8,8
+77,2017,Auto-summarize the following text.,and 3.5 million overseas.,4,4
+78,1408,Reorganize the poem for a better rhyme scheme.,Ambassador to the European Union Anthony Luzzatto Gardner.,8,8
+79,1373,Guess the next word.,Peter's Basilica in Rome.,4,4
+80,1586,"Given the sentence, classify it according to type.",Ware had five total tackles and two sacks.,8,8
+81,537,Reorganize the poem for a better rhyme scheme.,The city has a proud history of theatre.,8,8
+82,539,"Based on the following text, construct an appropriate question.",laws should not take effect before they are published.,9,9
+83,1202,Create a report summarizing a book you read.,"Harvard is a large, highly residential research university.",8,8
+84,1355,Come up with a question that the given statement answers.,Super Bowl 50 featured numerous records from individuals and teams.,10,10
+85,1191,Categorize the following news headline.,Various hypotheses have been promoted.,5,5
+86,99,Develop a prototype for the given application.,Construction took place between 1899 and 1909.,7,7
+87,1477,Summarize the given text about machine learning.,Church and the African Methodist Episcopal denomination.,7,7
+88,1239,Compare the following two items: a car and a boat.,Hamas has continued to be a major player in Palestine.,10,10
+89,1602,Identify a creative way to combine two items.,Acceptable values for service parameters may be negotiated.,8,8
+90,1608,Classify the populations in the table below.,Đuka had never received a formal education.,7,7
+91,1134,"Given the input string, identify the type of word (adjective, adverb, noun, etc.).","Most are members of the International Association of Methodist-related Schools, Colleges, and Universities.",13,13
+92,957,What is the meaning of the following idiom?,Liu Heima and Shi Tianze served Ogödei Khan.,8,8
+93,1595,"Given the input string, identify the type of word (adjective, adverb, noun, etc.).",Education in Australia is primarily the responsibility of the individual states and territories.,13,13
+94,1990,"Given the sentence, classify it according to type.",Price controls exacerbated the crisis in the US.,8,8
+95,756,"Based on the following text, construct an appropriate question.",It also provided crucial manpower in both World Wars.,9,9
+96,1448,Research a famous author and come up with 3 interesting facts.,The United Methodist Church (UMC) is a mainline Protestant Methodist denomination.,11,11
+97,1820,Provide a logical extension to the given sentence.,"Bolt, Beranack and Newman (BBN) provided the financing.",8,8
+98,1074,Categorize the following sentence along with its subject and verb.,A quarter of farmland is used to grow consumable crops.,10,10
+99,647,Which type of resource does the following sentence describe?,It also provided crucial manpower in both World Wars.,9,9
+100,1928,Change the sentence from passive to active voice.,Analogous definitions can be made for space requirements.,8,8
+101,536,Make a suggestion to the customer regarding the given product.,"Therefore, Genghis Khan decided to give the throne to Ögedei.",10,10
+102,2010,Come up with a question that the given statement answers.,"At the time, they constituted the majority of the townspeople.",10,10
+103,1275,Create a report summarizing a book you read.,Acceptable values for service parameters may be negotiated.,8,8
+104,1916,Create a report summarizing a book you read.,NewcastleGateshead also holds an annual International Arts Fair.,8,8
+105,1263,"Given a Twitter handle, identify what type of content the user is posting.","Last year, 121,200 tonnes of pears and 270,000 tonnes of tomatoes were produced.",13,13
+106,405,Come up with a question that the given statement answers.,They chose Major General Edward Braddock to lead the expedition.,10,10
+107,2019,Categorize the following sentence along with its subject and verb.,The two main regions are the core and the periphery.,10,10
+108,510,"Based on the following text, construct an appropriate question.",Networks affiliates approved a two-year affiliate agreement in 2002.,9,9
+109,207,Develop a prototype for the given application.,Church and the African Methodist Episcopal denomination.,7,7
+110,1601,Categorize the following sentence along with its subject and verb.,Innate immune systems are found in all plants and animals.,10,10
+111,430,Make a suggestion to the customer regarding the given product.,"It includes the Austrian towns of Gaißau, Höchst and Fußach.",10,10
+112,1975,Comment on the changes in the given dataset.,CBC began showing the series again in 2005.,8,8
+113,95,Order the following 3 numbers from biggest to smallest.,The Royal University of Warsaw was established in 1816.,9,9
+114,1740,"Given a word, find its synonym.",There are about thirty photosynthetic carotenoids.,6,6
+115,1819,Change the sentence from passive to active voice.,Six soundtrack releases have been released since 2005.,8,8
+116,156,Generate an acrostic poem with a given word.,"For example, consider the problem of primality testing.",8,8
+117,1498,"Classify the following emotions - shame, pride, joy.","Bolt, Beranack and Newman (BBN) provided the financing.",8,8
+118,211,Comment on the changes in the given dataset.,merger or acquisition) with a community dimension (i.e.,8,8
+119,29,Reorganize the poem for a better rhyme scheme.,Highly concentrated sources of oxygen promote rapid combustion.,8,8
+120,1987,Order the following 3 numbers from biggest to smallest.,This situation is more evident at the tertiary level.,9,9
+121,1291,Order the following 3 numbers from biggest to smallest.,also the Victorian period is represented by William Morris.,9,9
+122,884,Remove the extra consonants in the following word.,The General Conference meets every four years (quadrennium).,8,8
+123,895,Modify the given code to print out the largest number in the list.,"Victorian lines mainly use the 1,600 mm (5 ft 3 in) broad gauge.",13,13
+124,918,"Given a news article, summarize the main points in less than 100 words?","The packets are routed individually, sometimes resulting in different paths and out-of-order delivery.",13,13
+125,386,Describe the characteristics of a specific bird species.,The city council organize concerts and other events.,8,8
+126,582,"Given a word, find its synonym.",The Yuan undertook extensive public works.,6,6
+127,606,"Given the input string, identify the type of word (adjective, adverb, noun, etc.).",This is because competition between employers for employees will drive up the wage.,13,13
+128,889,Categorize the following sentence along with its subject and verb.,Innate immune systems are found in all plants and animals.,10,10
+129,1112,Create a report summarizing a book you read.,"For example, consider the deterministic sorting algorithm quicksort.",8,8
+130,489,Come up with a question that the given statement answers.,"It includes the Austrian towns of Gaißau, Höchst and Fußach.",10,10
+131,1881,"Given a set of instructions, come up with a code snippet that performs the instruction.","In addition to climate assessment reports, the IPCC is publishing Special Reports on specific topics.",15,15
+132,1258,Research a famous author and come up with 3 interesting facts.,DNA becomes susceptible to deamination events when it is single stranded.,11,11
+133,970,Comment on the changes in the given dataset.,This hypothesis is generally believed to be correct.,8,8
+134,1426,Suggest two advertising strategies for the following service.,"Grant, Jim Broadbent, Hugh Grant and Joanna Lumley.",8,8
+135,2011,Determine the theme of the story.,The input is an arbitrary graph.,6,6
+136,575,"Based on the following text, construct an appropriate question.",Western areas of the Coast Region are mostly Christian.,9,9
+137,1248,Calculate the revenue for a company that sold 5000 items for $20 each.,"Report P-2626 described a general architecture for a large-scale, distributed, survivable communications network.",13,13
+138,1036,Summarize the article below in a maximum of 100 words.,A mere half decade later the tract had 267 homes.,10,10
+139,1682,Modify the given code to print out the largest number in the list.,The Ottoman Empire was an imperial state that lasted from 1299 to 1923.,13,13
+140,1124,"Classify the following emotions - shame, pride, joy.",Acceptable values for service parameters may be negotiated.,8,8
+141,1693,Rewrite this sentence so it conveys the same meaning but uses different wording.,"However, Jamukha, threatened by Temüjin's rapid ascent, quickly moved to stop Temüjin's ambitions.",13,13
+142,1563,"Given a news article, summarize the main points in less than 100 words?","The only Jewish synagogue in the country is located in the capital, Nairobi.",13,13
+143,1318,Rewrite the following sentence to bring out the implicit emotion it conveys.,Several D&B contractors present different ideas about how to accomplish these goals.,12,12
+144,652,Notice and correct the spelling mistake in the following sentence.,for antiparallel spins the position variables must be symmetric (i.e.,10,10
+145,292,Research a famous author and come up with 3 interesting facts.,"It received a 5% production cut in December, causing a panic.",11,11
+146,1032,Generate a plural form for the given noun.,"While en route, Washington learned of Trent's retreat.",8,8
+147,1932,"Given a Twitter handle, identify what type of content the user is posting.","The Naimans did not surrender, although enough sectors again voluntarily sided with Temüjin.",13,13
+148,1500,Identify a creative way to combine two items.,About 61.1% of Victorians describe themselves as Christian.,8,8
+149,1471,Identify if the sentence contains a simile.,Kenya currently imports all crude petroleum requirements.,7,7
+150,1951,Remove the extra consonants in the following word.,The last plague outbreak ravaged Oslo in 1654.,8,8
+151,557,Classify the populations in the table below.,I feel I have done no wrong.,7,7
+152,44,"Categorize the following article as belonging to one of the genres: adventure, romance, horror, science fiction.","Pharmacists in this area are trained to participate in medication management system development, deployment and optimization.",16,16
+153,1356,Reorganize the poem for a better rhyme scheme.,Pedagogy can be thought of in two manners.,8,8
+154,1674,Transform the following sentence into a yes/no question.,Most of the historical buildings were thoroughly reconstructed.,8,8
+155,1458,Identify if the sentence contains a simile.,"Companions are usually human, or humanoid aliens.",7,7
+156,1186,Translate this text into Spanish.,This reply impressed Genghis Khan.,5,5
+157,257,Develop a prototype for the given application.,The astronauts returned safely on July 24.,7,7
+158,1543,Provide a logical extension to the given sentence.,The Scotland Act 2012 extends the devolved competencies.,8,8
+159,139,Generate a plural form for the given noun.,The practice has continued to the present day.,8,8
+160,221,Research a famous author and come up with 3 interesting facts.,Kenya had an estimated 15 million cases of malaria in 2006.,11,11
+161,1614,Create a report summarizing a book you read.,In a purely capitalist mode of production (i.e.,8,8
+162,285,Remove the extra consonants in the following word.,Council members are elected directly every four years.,8,8
+163,265,Rewrite this sentence so it conveys the same meaning but uses different wording.,"The inner surface of the cavity is lined with an epithelium, the gastrodermis.",13,13
+164,320,Develop a prototype for the given application.,pestis genome associated with medieval mass graves.,7,7
+165,1865,"Given a set of instructions, come up with a code snippet that performs the instruction.","The theologian Johann Eck, however, was determined to expose Luther's doctrine in a public forum.",15,15
+166,580,Arrange a meeting between two different people.,"Companions are usually human, or humanoid aliens.",7,7
+167,1727,"Given a set of instructions, come up with a code snippet that performs the instruction.","The process was continued under David's successors, most intensely of all under William the Lion.",15,15
+168,1814,Comment on the changes in the given dataset.,Imperialism is a type of advocacy of empire.,8,8
+169,502,Identify if the sentence contains a simile.,"Some bigger cities obtain the entitlements, i.e.",7,7
+170,1358,Transform the following sentence into a yes/no question.,"Lawrence, along with fishing rights in the area.",8,8
+171,1240,Convert from polar coordinates to rectangular coordinates.,The effect of Luther's intervention was immediate.,7,7
+172,1117,"Given the input string, identify the type of word (adjective, adverb, noun, etc.).","On the evening of the same day, the couple was married by Bugenhagen.",13,13
+173,202,"Given a news article, summarize the main points in less than 100 words?",The chloroplast double membrane is also often compared to the mitochondrial double membrane.,13,13
+174,1005,Summarize the given text about machine learning.,Both buildings were completed in June 1979.,7,7
+175,449,Rewrite the following sentence to bring out the implicit emotion it conveys.,These sediments are deposited on the rock unit that is going down.,12,12
+176,885,"Categorize the following article as belonging to one of the genres: adventure, romance, horror, science fiction.","When chairing meetings of the Parliament, the Presiding Officer and his/her deputies must be politically impartial.",16,16
+177,571,Remove the extra consonants in the following word.,The same is true for Frame Relays DLCI.,8,8
+178,1122,Identify the grammatically correct sentence among the following two.,"Throughout its existence, Warsaw has been a multi-cultural city.",9,9
+179,1822,Summarize the article below in a maximum of 100 words.,This description applies to all forces arising from fundamental interactions.,10,10
+180,375,Generate an acrostic poem with a given word.,They generally serve as pastors in local congregations.,8,8
+181,1780,What is the meaning of the following idiom?,In a purely capitalist mode of production (i.e.,8,8
+182,1662,Summarize the given text about machine learning.,This incarnation is played by Michelle Gomez.,7,7
+183,1006,Create a social media post to promote a store offering discounts during holiday season.,"Victoria is currently governed by the Labor Party, with Daniel Andrews the current Premier.",14,14
+184,296,"Based on the following text, construct an appropriate question.",Harvard has been highly ranked by many university rankings.,9,9
+185,1744,Develop a prototype for the given application.,It is also known as the plastome.,7,7
+186,1783,Create a social media post to promote a store offering discounts during holiday season.,Architect Henry John Klutho was a primary figure in the reconstruction of the city.,14,14
+187,190,Which type of resource does the following sentence describe?,"As replication continues, the forks grow and eventually converge.",9,9
+188,1605,Provide a logical extension to the given sentence.,Road and water communications were reorganized and improved.,8,8
+189,1790,Suggest two advertising strategies for the following service.,Wernher von Braun's original V-2 rocket engineering team.,8,8
+190,856,Create a report summarizing a book you read.,The conservators specialise in particular areas of conservation.,8,8
+191,706,"Given a sentence, identify all the named entities.",Open of Surfing are all in southern California.,8,8
+192,177,Categorize the following news headline.,Serious rain can occur unusually.,5,5
+193,1937,"Given the sentence, classify it according to type.",will travel much faster than such particles ...,8,8
+194,2033,Identify the grammatically correct sentence among the following two.,The Centre currently realizes about 500 projects a year.,9,9
+195,798,Identify the grammatically correct sentence among the following two.,Its precise meaning continues to be debated by scholars.,9,9
+196,336,"Given a sentence, identify all the named entities.",broadcast networks) disallows fast forwarding of accessed content.,8,8
+197,1654,Provide a logical extension to the given sentence.,Brainerd Holmes on his retirement effective September 1.,8,8
+198,1157,Research a famous author and come up with 3 interesting facts.,Defensive ends Derek Wolfe and Malik Jackson each had 5½ sacks.,11,11
+199,2013,Convert from polar coordinates to rectangular coordinates.,"The apicomplexans include Plasmodium, the malaria parasite.",7,7
+200,1831,Guess the next word.,News & World Report.,4,4
+201,270,Remove the extra consonants in the following word.,Finally it spread to northwestern Russia in 1351.,8,8
+202,1142,"Classify the following emotions - shame, pride, joy.",Apollo used Saturn family rockets as launch vehicles.,8,8
+203,531,"Given the conditions, create a logical conclusion.",It only operates at the user-network-interface (UNI).,7,7
+204,323,Identify if the sentence contains a simile.,Tesla worked every day from 9:00 a.m.,7,7
+205,1344,Rewrite this sentence so it conveys the same meaning but uses different wording.,"On Tesla's 75th birthday in 1931, Time magazine put him on its cover.",13,13
+206,725,Interpret the given piece of art.,"Moreover, the Doctor of Pharmacy (Pharm.",6,6
+207,1497,"Given the sentence, classify it according to type.",Concepts of this network influenced later ARPANET architecture.,8,8
+208,1311,"Given a set of instructions, come up with a code snippet that performs the instruction.","Many known complexity classes are suspected to be unequal, but this has not been proved.",15,15

@@ -1,0 +1,7 @@
+comparison,meaning,measure,difference
+l_role minus l_full,"the input role added to our recipe, same items",sharedness,"+0.016 [+0.000, +0.032]"
+l_role minus l_full,"the input role added to our recipe, same items",user drive,"-0.244 [-0.260, -0.227]"
+l_role minus l_full,"the input role added to our recipe, same items",injected drive,"-0.090 [-0.096, -0.084]"
+l_role minus l_sec,"ours against Meta-SecAlign at equal format, same items",sharedness,"-0.329 [-0.343, -0.314]"
+l_role minus l_sec,"ours against Meta-SecAlign at equal format, same items",user drive,"+0.161 [+0.149, +0.175]"
+l_role minus l_sec,"ours against Meta-SecAlign at equal format, same items",injected drive,"-0.191 [-0.199, -0.182]"
