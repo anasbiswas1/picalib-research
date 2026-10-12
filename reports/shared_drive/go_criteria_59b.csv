@@ -1,0 +1,7 @@
+mark,criterion,value,needed,met
+V,sharedness of each undefended model on 100 fresh items minus the highest of its architecture's 3 random-weight draws,Qwen 3B +0.070; Qwen 7B +0.176; Llama 8B +0.224,>= 0.05 on all three,True
+C1,"every trained defence that cuts attack success by at least 0.15 (15) lowers sharedness: change in sharedness, interval below 0",15 of 15,all 15,True
+C2,"twin-anchored defences (10) keep the user drive, change within 0.03 of 0; the 6 without the anchor lose at least 0.10 with the interval below 0",twins 10 of 10 (range -0.025 to +0.024); without 6 of 6 (range -0.531 to -0.271),all 16,True
+reported,the weak defence(s) outside C1: change in sharedness,"q3_v1 -0.046 [-0.056, -0.036] (attack -0.067)",reported,True
+reported,Spearman rho within families: change in sharedness against change in attack success; change in user drive against change in user instructions followed,+0.037 (p 0.3325); +0.196 (p 0.3842),reported,True
+reported,Meta-SecAlign-8B: sharedness with its input role minus with the document in the user turn,"-0.007 [-0.025, +0.011]",reported,True

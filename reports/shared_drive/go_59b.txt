@@ -1,0 +1,2 @@
+CONFIRMED on 209 fresh items (held-out Alpaca instructions in SQuAD passages): every trained defence that cuts attack success by at least 0.15 lowers sharedness (15 of 15), and the twin-anchored defences keep the user drive (change -0.025 to +0.024) while the 6 without the anchor, the SecOPD loss alone and Meta-SecAlign, lose 0.271 to 0.531. Both patterns of notebook 59 hold on items it never saw.
+V pass, C1 pass, C2 pass
