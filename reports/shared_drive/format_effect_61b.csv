@@ -1,0 +1,3 @@
+row,sharedness,user_drive,injected_drive
+"Llama 8B undefended, Meta-SecAlign template, document in the user turn","-0.008 [-0.015, -0.001]","-0.173 [-0.182, -0.164]","-0.185 [-0.193, -0.177]"
+"Llama 8B undefended, Meta-SecAlign template, input role","-0.086 [-0.102, -0.070]","-0.228 [-0.244, -0.212]","-0.291 [-0.304, -0.278]"

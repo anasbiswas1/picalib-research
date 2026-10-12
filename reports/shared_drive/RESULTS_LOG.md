@@ -145,3 +145,67 @@ l_role minus l_full         the input role added to our recipe, same items injec
  l_role minus l_sec ours against Meta-SecAlign at equal format, same items     user drive +0.161 [+0.149, +0.175]
  l_role minus l_sec ours against Meta-SecAlign at equal format, same items injected drive -0.191 [-0.199, -0.182]
 ```
+
+
+---
+## nb61b: the input-role model against the undefended model read in the same template and format (the format baselines notebook 61 lacked)
+_2026-10-12 20:27_
+
+```
+CONFIRMED in matched format: against the undefended model read in the same template and two-role format, the input-role model lowers sharedness (-0.372 [-0.384, -0.359]) and keeps the user drive (-0.006 [-0.008, -0.004]). The drop notebook 61 saw (-0.234 [-0.250, -0.218]) is the format: the undefended model itself loses -0.228 [-0.244, -0.212] of user drive when read in the two-role format with Meta-SecAlign's template. Meta-SecAlign in the same comparison: sharedness -0.043 [-0.056, -0.029], user drive -0.167 [-0.181, -0.154].
+C1M pass, C2M pass; format effect on user drive (input role) -0.228
+
+Marks:
+    mark                                                                                                                                                                                                                                                  criterion                                                                                                                                                                                                                                            value          needed  met
+       F the format effect, reported first: the undefended model read with Meta-SecAlign's template in the user turn, and in the two-role format, each minus the undefended model read as notebook 59b read it (own template, user turn): sharedness and user drive                                                                                                                       user turn: -0.008 [-0.015, -0.001]; -0.173 [-0.182, -0.164] | input role: -0.086 [-0.102, -0.070]; -0.228 [-0.244, -0.212]        reported True
+     C1M                                                                                 l_role minus the undefended model in the same template and format (l_undef_role): change in sharedness, cluster bootstrap over passages, upper end of the interval below 0                                                                                                                                                                                                                          -0.372 [-0.384, -0.359]   upper end < 0 True
+     C2M                                                                                                                                                                                           l_role minus l_undef_role: change in user drive within 0.03 of 0                                                                                                                                                                                                                          -0.006 [-0.008, -0.004] |point| <= 0.03 True
+reported                                                                                                                                            notebook 61's unmatched change for l_role (against the undefended model as 59b read it): sharedness; user drive                                                                                                                                                                                                 -0.458 [-0.475, -0.440]; -0.234 [-0.250, -0.218]        reported True
+reported                                                                                                                                                                        matched changes: l_role_p1; l_role_user; l_sec; l_sec_user (sharedness; user drive) l_role_p1 -0.356 [-0.367, -0.343]; +0.003 [+0.001, +0.005] | l_role_user -0.063 [-0.074, -0.052]; -0.009 [-0.011, -0.007] | l_sec -0.043 [-0.056, -0.029]; -0.167 [-0.181, -0.154] | l_sec_user -0.114 [-0.127, -0.101]; -0.127 [-0.140, -0.113]        reported True
+reported                                                                                                                                                                                                         l_role minus l_sec, paired: sharedness; user drive                                                                                                                                                                                                 -0.329 [-0.343, -0.314]; +0.161 [+0.149, +0.175]        reported True
+
+Format effect:
+                                                                   row              sharedness              user_drive          injected_drive
+Llama 8B undefended, Meta-SecAlign template, document in the user turn -0.008 [-0.015, -0.001] -0.173 [-0.182, -0.164] -0.185 [-0.193, -0.177]
+               Llama 8B undefended, Meta-SecAlign template, input role -0.086 [-0.102, -0.070] -0.228 [-0.244, -0.212] -0.291 [-0.304, -0.278]
+
+Llama rows:
+     condition                                                                  label                                   recipe       baseline              sharedness              user_drive          injected_drive change_sharedness_vs_59b_base  change_sharedness_nb61 change_sharedness_matched change_user_drive_vs_59b_base  change_user_drive_nb61 change_user_drive_matched change_injected_drive_matched change_attack change_user_followed
+       l_undef                                                    Llama 8B undefended                                     base        l_undef +0.224 [+0.205, +0.244] +0.922 [+0.886, +0.957] +0.743 [+0.715, +0.771]                                                                                                                                                                                                         0.0                  0.0
+          l_p1                                                 Llama 8B ours, phase 1                                    twins        l_undef -0.234 [-0.256, -0.213] +0.923 [+0.886, +0.957] +0.135 [+0.125, +0.145]       -0.459 [-0.472, -0.445] -0.459 [-0.472, -0.445]   -0.459 [-0.472, -0.445]       +0.001 [-0.003, +0.004] +0.001 [-0.003, +0.004]   +0.001 [-0.003, +0.004]       -0.608 [-0.633, -0.583]        -0.223               -0.013
+        l_full                                             Llama 8B ours, full recipe                                    twins        l_undef -0.249 [-0.270, -0.228] +0.931 [+0.895, +0.965] +0.131 [+0.121, +0.140]       -0.474 [-0.486, -0.460] -0.474 [-0.486, -0.460]   -0.474 [-0.486, -0.460]       +0.009 [+0.005, +0.013] +0.009 [+0.005, +0.013]   +0.009 [+0.005, +0.013]       -0.613 [-0.638, -0.587]        -0.276               -0.007
+         l_sec                            Meta-SecAlign-8B, input role (as specified)                                 no twins   l_undef_role +0.096 [+0.082, +0.109] +0.527 [+0.507, +0.546] +0.232 [+0.223, +0.240]       -0.129 [-0.146, -0.110] -0.129 [-0.146, -0.110]   -0.043 [-0.056, -0.029]       -0.396 [-0.419, -0.372] -0.396 [-0.419, -0.372]   -0.167 [-0.181, -0.154]       -0.221 [-0.232, -0.210]        -0.428               -0.127
+    l_sec_user                            Meta-SecAlign-8B, document in the user turn                                 no twins l_undef_sectok +0.102 [+0.082, +0.123] +0.622 [+0.600, +0.643] +0.335 [+0.323, +0.347]       -0.122 [-0.136, -0.108] -0.122 [-0.136, -0.108]   -0.114 [-0.127, -0.101]       -0.300 [-0.319, -0.281] -0.300 [-0.319, -0.281]   -0.127 [-0.140, -0.113]       -0.224 [-0.238, -0.209]        -0.295               -0.147
+     l_role_p1                                     Llama 8B ours, phase 1, input role                        twins, input role   l_undef_role -0.217 [-0.232, -0.203] +0.697 [+0.669, +0.724] +0.046 [+0.041, +0.051]       -0.442 [-0.458, -0.425] -0.442 [-0.458, -0.425]   -0.356 [-0.367, -0.343]       -0.225 [-0.241, -0.209] -0.225 [-0.241, -0.209]   +0.003 [+0.001, +0.005]       -0.407 [-0.424, -0.389]        -0.371                0.113
+        l_role                                 Llama 8B ours, full recipe, input role                        twins, input role   l_undef_role -0.233 [-0.248, -0.218] +0.688 [+0.660, +0.715] +0.041 [+0.036, +0.046]       -0.458 [-0.475, -0.440] -0.458 [-0.475, -0.440]   -0.372 [-0.384, -0.359]       -0.234 [-0.250, -0.218] -0.234 [-0.250, -0.218]   -0.006 [-0.008, -0.004]       -0.412 [-0.429, -0.394]         -0.39                  0.1
+   l_role_user      Llama 8B ours, full recipe, input role, document in the user turn  twins, input role, run in the user turn l_undef_sectok +0.153 [+0.129, +0.176] +0.740 [+0.711, +0.768] +0.341 [+0.321, +0.360]       -0.071 [-0.086, -0.057] -0.071 [-0.086, -0.057]   -0.063 [-0.074, -0.052]       -0.182 [-0.191, -0.172] -0.182 [-0.191, -0.172]   -0.009 [-0.011, -0.007]       -0.218 [-0.232, -0.204]         0.058                0.147
+l_undef_sectok Llama 8B undefended, Meta-SecAlign template, document in the user turn             base, Meta-SecAlign template l_undef_sectok +0.216 [+0.196, +0.236] +0.749 [+0.719, +0.778] +0.559 [+0.535, +0.582]       -0.008 [-0.015, -0.001]                                                         -0.173 [-0.182, -0.164]                                                                                                                   
+  l_undef_role                Llama 8B undefended, Meta-SecAlign template, input role base, Meta-SecAlign template, input role   l_undef_role +0.138 [+0.123, +0.154] +0.694 [+0.666, +0.721] +0.453 [+0.435, +0.470]       -0.086 [-0.102, -0.070]                                                         -0.228 [-0.244, -0.212]                                                                                                                   
+
+Paired:
+                      comparison                                                meaning        measure              difference
+              l_p1 minus l_undef                            matched template and format     sharedness -0.459 [-0.472, -0.445]
+              l_p1 minus l_undef                            matched template and format     user drive +0.001 [-0.003, +0.004]
+              l_p1 minus l_undef                            matched template and format injected drive -0.608 [-0.633, -0.583]
+            l_full minus l_undef                            matched template and format     sharedness -0.474 [-0.486, -0.460]
+            l_full minus l_undef                            matched template and format     user drive +0.009 [+0.005, +0.013]
+            l_full minus l_undef                            matched template and format injected drive -0.613 [-0.638, -0.587]
+        l_sec minus l_undef_role                            matched template and format     sharedness -0.043 [-0.056, -0.029]
+        l_sec minus l_undef_role                            matched template and format     user drive -0.167 [-0.181, -0.154]
+        l_sec minus l_undef_role                            matched template and format injected drive -0.221 [-0.232, -0.210]
+ l_sec_user minus l_undef_sectok                            matched template and format     sharedness -0.114 [-0.127, -0.101]
+ l_sec_user minus l_undef_sectok                            matched template and format     user drive -0.127 [-0.140, -0.113]
+ l_sec_user minus l_undef_sectok                            matched template and format injected drive -0.224 [-0.238, -0.209]
+    l_role_p1 minus l_undef_role                            matched template and format     sharedness -0.356 [-0.367, -0.343]
+    l_role_p1 minus l_undef_role                            matched template and format     user drive +0.003 [+0.001, +0.005]
+    l_role_p1 minus l_undef_role                            matched template and format injected drive -0.407 [-0.424, -0.389]
+       l_role minus l_undef_role                            matched template and format     sharedness -0.372 [-0.384, -0.359]
+       l_role minus l_undef_role                            matched template and format     user drive -0.006 [-0.008, -0.004]
+       l_role minus l_undef_role                            matched template and format injected drive -0.412 [-0.429, -0.394]
+l_role_user minus l_undef_sectok                            matched template and format     sharedness -0.063 [-0.074, -0.052]
+l_role_user minus l_undef_sectok                            matched template and format     user drive -0.009 [-0.011, -0.007]
+l_role_user minus l_undef_sectok                            matched template and format injected drive -0.218 [-0.232, -0.204]
+              l_role minus l_sec ours against Meta-SecAlign at equal format, same items     sharedness -0.329 [-0.343, -0.314]
+              l_role minus l_sec ours against Meta-SecAlign at equal format, same items     user drive +0.161 [+0.149, +0.175]
+              l_role minus l_sec ours against Meta-SecAlign at equal format, same items injected drive -0.191 [-0.199, -0.182]
+```
