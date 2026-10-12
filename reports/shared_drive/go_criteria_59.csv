@@ -1,0 +1,6 @@
+mark,criterion,value,needed,met
+V,sharedness of each undefended model on the 105 V items minus the highest of its architecture's 5 random-weight draws,Qwen 3B +0.175; Qwen 7B +0.302; Llama 8B +0.245,>= 0.05 on all three,True
+V (reported),sharedness on the V items: undefended model [interval]; random-weight draws,"Qwen 3B +0.177 [+0.142, +0.213]; -0.003, -0.004, +0.002, +0.002, -0.005; Qwen 7B +0.300 [+0.265, +0.335]; -0.003, -0.003, -0.003, -0.004, -0.002; Llama 8B +0.244 [+0.206, +0.283]; -0.002, -0.002, -0.002, -0.002, -0.001",reported,True
+H1,"Spearman rho, change in sharedness against change in attack success (paper rule, 13 fixed tries), 16 trained conditions; one-sided p, shuffled within each model family",+0.311; p 0.0780,>= 0.50; < 0.05,False
+H2,"Spearman rho, change in user drive against change in user instructions followed, 15 trained conditions; one-sided p, shuffled within each model family",+0.196; p 0.0870,>= 0.50; < 0.05,False
+H3,Meta-SecAlign-8B: sharedness with its input role minus with the document in the user turn (paired over items),"-0.077 [-0.092, -0.063]",upper end < 0,True

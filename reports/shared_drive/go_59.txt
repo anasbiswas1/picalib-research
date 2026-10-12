@@ -1,0 +1,2 @@
+CLOSE: sharedness does not track what the trained defences achieve (rho +0.31, p 0.0780, 16 conditions; user side rho +0.20, p 0.0870). The shared direction is real in the undefended models but is not what these defences change, and this route gives part two no method. H3: Meta-SecAlign-8B's sharedness is lower with its input role than with the document in the user turn (-0.077 [-0.092, -0.063]; attack success 0.062 against 0.195).
+V pass, H1 fail, H2 fail, H3 pass
