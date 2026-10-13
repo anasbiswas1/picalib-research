@@ -1,0 +1,17 @@
+model,measure,notebook_60,this_notebook,ok
+"ours, input role (notebook 60)",fixed_1,0.0,0.0,True
+"ours, input role (notebook 60)",fixed_13,0.1,0.1,True
+"ours, input role (notebook 60)",adaptive_13,0.005,0.0048,True
+"ours, input role (notebook 60)",combined,0.105,0.1048,True
+"ours, input role (notebook 60)",second_source,0.003,0.0033,True
+"ours, input role (notebook 60)",user,0.46,0.46,True
+"ours, input role (notebook 60)",alpaca,0.233,0.2333,True
+"ours, input role (notebook 60)",mmlu,0.64,0.64,True
+"ours, input role (notebook 60)",ifeval_prompt_strict,0.734,0.7338,True
+"ours, input role (notebook 60)",del_repeat,0.037,0.0375,True
+"ours, input role (notebook 60)",del_number,0.013,0.0125,True
+"ours, input role (notebook 60)",del_quote_last,0.212,0.2125,True
+"ours, input role (notebook 60)",exe_repeat,0.0,0.0,True
+"ours, input role (notebook 60)",exe_number,0.0,0.0,True
+Meta-SecAlign-8B (as specified),"fixed attacker per injection, 13 tries, against the paper file",,,True
+undefended Llama-3.1-8B (one user turn),"fixed attacker per injection, 13 tries, against the paper file",,,True
