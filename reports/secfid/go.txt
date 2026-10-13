@@ -1,0 +1,2 @@
+NO FIDELITY GAIN ON SECFID at equal format (fidelity +0.021 [-0.005, +0.045]; security -0.017 [-0.026, -0.009]): the fidelity claim of Section 7.3 stays limited to the project's own battery, and SecFid is reported as the stricter test. G0 fails: our harness does not reproduce SecFid's Table 1 within 0.10, so the published points are shown as reported and not compared. M2: q3_v4 fails, q7_v5 fails, l_full fails.
+G0 fail / C pass / M1 fail / M2 q3_v4 fail / M2 q7_v5 fail / M2 l_full fail
