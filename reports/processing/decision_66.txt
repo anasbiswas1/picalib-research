@@ -1,0 +1,2 @@
+PARTIAL: on the 7B the processing phase raises SecFid fidelity (v6 minus v5 +0.152 [+0.128, +0.176], processed +0.178 [+0.153, +0.204]) but S1 fails. SecFid fidelity: undefended 0.793, v5 0.661, v6 0.812; security 0.631, 0.894, 0.910. The gain is reported with what it costs.
+G0 pass / P1 pass / P3 pass / S1 fail / S2 pass / U1 pass / K1 pass
