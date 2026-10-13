@@ -1,0 +1,2 @@
+PARTIAL: the processing phase raises SecFid fidelity (v6 minus v4 +0.038 [+0.013, +0.062], processed +0.091 [+0.065, +0.116]) but P2 fails. SecFid fidelity: undefended 0.819, v4 0.728, v6 0.765; security 0.662, 0.887, 0.912. The gain is reported with what it costs. G0S fails: the no-system-prompt harness does not reproduce SecFid Table 1 either; SecFid's published points stay uncompared.
+G0 pass / P1 pass / P2 fail / P3 pass / S1 pass / U1 pass / K1 pass / G0S fail
