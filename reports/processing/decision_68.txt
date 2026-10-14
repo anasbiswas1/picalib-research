@@ -1,0 +1,2 @@
+ADOPT: the hardened phase restores BIPIA security (v8 minus v5, combined -0.281 [-0.343, -0.224]) and keeps the processing phase's SecFid fidelity gain (+0.135 [+0.111, +0.159]), SecFid security, the second source, the user and general ability, and copying. BIPIA combined: v5 0.286, v6 0.343, v7 0.410, v8 0.005; adaptive: v5 0.076, v6 0.119, v7 0.205, v8 0.000. SecFid fidelity: undefended 0.793, v5 0.661, v6 0.812, v7 0.765, v8 0.796. v8 is the 7B the paper presents.
+G0 pass / S1 pass / P1 pass / P3 pass / S2 pass / U1 pass / K1 pass
