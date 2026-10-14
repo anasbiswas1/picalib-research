@@ -1,0 +1,17 @@
+condition,task,executed,ignored,processed,fidelity
+q3_undef,counting,0.303,0.212,0.342,0.788
+q3_undef,extraction,0.39,0.106,0.439,0.894
+q3_undef,translation,0.338,0.094,0.658,0.906
+q3_undef,editing,0.319,0.319,0.48,0.681
+q3_v4,counting,0.101,0.319,0.492,0.681
+q3_v4,extraction,0.2,0.265,0.481,0.735
+q3_v4,translation,0.061,0.133,0.831,0.867
+q3_v4,editing,0.081,0.37,0.546,0.63
+q3_v6,counting,0.068,0.29,0.635,0.71
+q3_v6,extraction,0.135,0.187,0.619,0.813
+q3_v6,translation,0.061,0.104,0.885,0.896
+q3_v6,editing,0.084,0.359,0.56,0.641
+q3_v7,counting,0.068,0.261,0.648,0.739
+q3_v7,extraction,0.197,0.165,0.677,0.835
+q3_v7,translation,0.058,0.129,0.849,0.871
+q3_v7,editing,0.081,0.407,0.516,0.593

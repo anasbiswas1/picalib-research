@@ -1,0 +1,2 @@
+ADOPT: the rebalancing phase restores BIPIA security (v7 minus v4, combined +0.010 [-0.029, +0.048]) and keeps the processing phase's SecFid fidelity gain (+0.034 [+0.011, +0.057]), SecFid security, the second source, the user and general ability, and copying. BIPIA combined: v4 0.186, v6 0.186, v7 0.195. SecFid fidelity: undefended 0.819, v4 0.728, v6 0.765, v7 0.762. v7 is the model the paper presents on this base.
+G0 pass / S1 pass / P1 pass / P3 pass / S2 pass / U1 pass / K1 pass
