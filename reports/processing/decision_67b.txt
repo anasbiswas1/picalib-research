@@ -1,0 +1,2 @@
+NOT ADOPTED: BIPIA security is not restored (+0.124 [+0.071, +0.181]). BIPIA combined: v5 0.286, v6 0.343, v7 0.410. SecFid fidelity: undefended 0.793, v5 0.661, v6 0.812, v7 0.765. The paper keeps v5 and reports v6 and v7 as variants.
+G0 pass / S1 fail / P1 pass / P3 pass / S2 pass / U1 pass / K1 pass

@@ -1,0 +1,42 @@
+model,measure,reported,this_notebook,ok
+Qwen 7B undefended,fixed_1,0.39,0.3905,True
+Qwen 7B undefended,fixed_13,0.543,0.5429,True
+Qwen 7B undefended,adaptive_13,0.667,0.6667,True
+Qwen 7B undefended,combined,0.743,0.7429,True
+Qwen 7B undefended,second_source,0.313,0.3133,True
+Qwen 7B undefended,user,0.353,0.3533,True
+Qwen 7B undefended,alpaca,0.133,0.1333,True
+Qwen 7B undefended,mmlu,0.677,0.6767,True
+Qwen 7B undefended,del_repeat,0.25,0.25,True
+Qwen 7B undefended,del_number,0.388,0.3875,True
+Qwen 7B undefended,del_quote_last,0.537,0.5375,True
+Qwen 7B undefended,exe_repeat,0.175,0.175,True
+Qwen 7B undefended,exe_number,0.237,0.2375,True
+v5 (the paper),fixed_1,0.019,0.019,True
+v5 (the paper),fixed_13,0.252,0.2524,True
+v5 (the paper),adaptive_13,0.076,0.0762,True
+v5 (the paper),combined,0.286,0.2857,True
+v5 (the paper),second_source,0.087,0.0867,True
+v5 (the paper),user,0.347,0.3467,True
+v5 (the paper),alpaca,0.15,0.15,True
+v5 (the paper),mmlu,0.677,0.6767,True
+v5 (the paper),del_repeat,0.0,0.0,True
+v5 (the paper),del_number,0.0,0.0,True
+v5 (the paper),del_quote_last,0.375,0.375,True
+v5 (the paper),exe_repeat,0.0,0.0,True
+v5 (the paper),exe_number,0.0,0.0,True
+v6 (processing phase),fixed_1,0.014,0.0143,True
+v6 (processing phase),fixed_13,0.267,0.2667,True
+v6 (processing phase),adaptive_13,0.119,0.119,True
+v6 (processing phase),combined,0.343,0.3429,True
+v6 (processing phase),second_source,0.11,0.11,True
+v6 (processing phase),user,0.413,0.4133,True
+v6 (processing phase),alpaca,0.1,0.1,True
+v6 (processing phase),mmlu,0.673,0.6733,True
+v6 (processing phase),del_repeat,0.0,0.0,True
+v6 (processing phase),del_number,0.0,0.0,True
+v6 (processing phase),del_quote_last,0.1,0.1,True
+v6 (processing phase),exe_repeat,0.0,0.0,True
+v6 (processing phase),exe_number,0.0,0.0,True
+Qwen 7B undefended,"fixed attacker per injection, 1 and 13 tries, against the paper file",,,True
+v5 (the paper),"fixed attacker per injection, 1 and 13 tries, against the paper file",,,True

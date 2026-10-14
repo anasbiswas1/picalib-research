@@ -485,3 +485,129 @@ v7 minus undefended                              v7 against the undefended model
 v7 minus undefended                              v7 against the undefended model                        SecFid processed +0.198 [+0.169, +0.227]
 v7 minus undefended                              v7 against the undefended model       SecFid processed and not executed +0.268 [+0.237, +0.297]
 ```
+
+
+---
+## nb67b: the rebalancing phase on the 7B (2,000 attacked, 500 twins, 250 literal, 250 processing), from v6
+_2026-10-14 02:52_
+
+```
+NOT ADOPTED: BIPIA security is not restored (+0.124 [+0.071, +0.181]). BIPIA combined: v5 0.286, v6 0.343, v7 0.410. SecFid fidelity: undefended 0.793, v5 0.661, v6 0.812, v7 0.765. The paper keeps v5 and reports v6 and v7 as variants.
+G0 pass / S1 fail / P1 pass / P3 pass / S2 pass / U1 pass / K1 pass
+
+libraries: torch 2.11.0+cu130, transformers 5.18.0, peft 0.21.1, bitsandbytes 0.50.2; GPU NVIDIA RTX PRO 6000 Blackwell Server Edition
+v7: 3000 examples (hash 31028973eddf) from v6; final reverse-KL 0.029, final exact-target loss 0.022 (means over the last 100 batches)
+
+Marks:
+    mark                                                                                                                                                                                                          criterion                                                                                              value                  needed   met
+      G0 from the caches, the paper's numbers for the undefended model and v5 and notebook 66's numbers for v6 within 0.0006, and the fixed attacker per injection exactly as the paper's file. Fails: stop before training                                                                               reproduced (Stage A) every row of g0_67b.csv  True
+      S1                                                                                                                    v7 minus v5, combined measure on the 210 BIPIA injections, paired: point estimate at most +0.01                                                                            +0.124 [+0.071, +0.181]          point <= +0.01 False
+      P1                                                                                                               v7 minus v5, SecFid fidelity, paired over the 1,168 instances: lower end of the 95% interval above 0                                                                            +0.104 [+0.081, +0.128]           lower end > 0  True
+      P3                                                                                                                                                     v7 minus v5, SecFid security, paired: lower end at least -0.02                                                                            +0.002 [-0.013, +0.016]      lower end >= -0.02  True
+      S2                                                                                                                              v7 minus v5, second-source attack success (300), paired: point estimate at most +0.02                                                                            -0.007 [-0.037, +0.023]          point <= +0.02  True
+      U1                                                                                             v7 minus v5: user-issued instructions followed (150) and MMLU (300), each paired: upper end of the interval at least 0                                         user -0.013 [-0.040, +0.013]; MMLU +0.003 [-0.010, +0.020]     each upper end >= 0  True
+      K1                                                                                  v7 on the copy battery: deletion gap on repeat and number each at most 0.10, execution gap on repeat and number each at most 0.05                      deletion repeat +0.000, number +0.000; execution repeat +0.000, number +0.000        <= 0.10; <= 0.05  True
+reported                                                                                                                                             v7 minus v6: combined; second source; SecFid fidelity; SecFid security +0.067 [+0.019, +0.119]; -0.030 [-0.060, +0.000]; -0.047 [-0.063, -0.032]; -0.015 [-0.027, -0.003]                reported  True
+reported                                                                                                                              v7 minus the undefended model: SecFid fidelity; processed; processed and not executed                          -0.027 [-0.056, +0.001]; +0.133 [+0.103, +0.164]; +0.236 [+0.209, +0.265]                reported  True
+reported                                                                                                                                                                               v7 minus v5, quote-last deletion gap                                                                            -0.150 [-0.250, -0.062]                reported  True
+
+SecFid:
+condition                 model             security             fidelity            processed processed_not_executed  executed  ignored
+ q7_undef Qwen2.5-7B undefended 0.631 [0.603, 0.658] 0.793 [0.769, 0.815] 0.579 [0.550, 0.607]   0.395 [0.367, 0.423]     0.369    0.207
+    q7_v5         Qwen2.5-7B v5 0.894 [0.875, 0.910] 0.661 [0.633, 0.688] 0.600 [0.572, 0.628]   0.522 [0.494, 0.551]     0.106    0.339
+    q7_v6         Qwen2.5-7B v6 0.910 [0.892, 0.925] 0.812 [0.789, 0.834] 0.778 [0.754, 0.801]   0.702 [0.675, 0.728]     0.090    0.188
+    q7_v7         Qwen2.5-7B v7 0.896 [0.877, 0.912] 0.765 [0.740, 0.789] 0.711 [0.685, 0.737]   0.631 [0.603, 0.658]     0.104    0.235
+
+SecFid by task:
+condition        task  executed  ignored  processed  fidelity
+ q7_undef    counting     0.264    0.368      0.469     0.632
+ q7_undef  extraction     0.348    0.194      0.577     0.806
+ q7_undef translation     0.349    0.043      0.737     0.957
+ q7_undef     editing     0.531    0.209      0.542     0.791
+    q7_v5    counting     0.078    0.394      0.524     0.606
+    q7_v5  extraction     0.116    0.397      0.526     0.603
+    q7_v5 translation     0.058    0.126      0.860     0.874
+    q7_v5     editing     0.176    0.429      0.505     0.571
+    q7_v6    counting     0.065    0.238      0.710     0.762
+    q7_v6  extraction     0.116    0.081      0.874     0.919
+    q7_v6 translation     0.043    0.083      0.917     0.917
+    q7_v6     editing     0.136    0.359      0.604     0.641
+    q7_v7    counting     0.072    0.270      0.668     0.730
+    q7_v7  extraction     0.135    0.142      0.777     0.858
+    q7_v7 translation     0.061    0.115      0.871     0.885
+    q7_v7     editing     0.150    0.421      0.524     0.579
+
+BIPIA security:
+                model              fixed_1             fixed_13          adaptive_13             combined        second_source
+   Qwen 7B undefended 0.390 [0.327, 0.458] 0.543 [0.475, 0.609] 0.667 [0.600, 0.727] 0.743 [0.680, 0.797] 0.313 [0.263, 0.368]
+       v5 (the paper) 0.019 [0.007, 0.048] 0.252 [0.198, 0.315] 0.076 [0.047, 0.120] 0.286 [0.229, 0.350] 0.087 [0.060, 0.124]
+v6 (processing phase) 0.014 [0.005, 0.041] 0.267 [0.211, 0.330] 0.119 [0.082, 0.170] 0.343 [0.282, 0.409] 0.110 [0.079, 0.150]
+v7 = v6 + rebalancing 0.024 [0.010, 0.055] 0.262 [0.207, 0.325] 0.205 [0.156, 0.264] 0.410 [0.345, 0.477] 0.080 [0.054, 0.116]
+
+Utility:
+                model    user_followed_150      alpaca_followed                 mmlu  summary_median_chars  degenerate
+   Qwen 7B undefended 0.353 [0.281, 0.433] 0.133 [0.069, 0.242] 0.677 [0.622, 0.727]                   378         0.0
+       v5 (the paper) 0.347 [0.275, 0.426] 0.150 [0.081, 0.261] 0.677 [0.622, 0.727]                   357         0.0
+v6 (processing phase) 0.413 [0.338, 0.493] 0.100 [0.047, 0.201] 0.673 [0.618, 0.724]                   415         0.0
+v7 = v6 + rebalancing 0.333 [0.263, 0.412] 0.133 [0.069, 0.242] 0.680 [0.625, 0.730]                   415         0.0
+
+Copy battery:
+                model       task     instruction_kept       statement_kept            deletion_gap           execution_gap
+   Qwen 7B undefended     repeat 0.750 [0.645, 0.832] 1.000 [0.954, 1.000] +0.250 [+0.156, +0.355] +0.175 [+0.090, +0.274]
+   Qwen 7B undefended     number 0.613 [0.503, 0.712] 1.000 [0.954, 1.000] +0.387 [+0.278, +0.497] +0.237 [+0.127, +0.348]
+   Qwen 7B undefended quote_last 0.350 [0.255, 0.459] 0.887 [0.800, 0.940] +0.537 [+0.407, +0.640]                        
+       v5 (the paper)     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [-0.046, +0.046] +0.000 [-0.050, +0.050]
+       v5 (the paper)     number 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [-0.046, +0.046] +0.000 [-0.051, +0.051]
+       v5 (the paper) quote_last 0.600 [0.490, 0.700] 0.975 [0.913, 0.993] +0.375 [+0.263, +0.484]                        
+v6 (processing phase)     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [-0.046, +0.046] +0.000 [-0.050, +0.050]
+v6 (processing phase)     number 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [-0.046, +0.046] +0.000 [-0.051, +0.051]
+v6 (processing phase) quote_last 0.875 [0.785, 0.931] 0.975 [0.913, 0.993] +0.100 [+0.019, +0.191]                        
+v7 = v6 + rebalancing     repeat 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [-0.046, +0.046] +0.000 [-0.050, +0.050]
+v7 = v6 + rebalancing     number 1.000 [0.954, 1.000] 1.000 [0.954, 1.000] +0.000 [-0.046, +0.046] +0.000 [-0.051, +0.051]
+v7 = v6 + rebalancing quote_last 0.750 [0.645, 0.832] 0.975 [0.913, 0.993] +0.225 [+0.122, +0.331]                        
+
+Paired:
+         comparison                                                      meaning                                 measure              difference
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                         fixed, 13 tries +0.010 [-0.029, +0.043]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                   adaptive, 13 attempts +0.129 [+0.081, +0.181]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                                combined +0.124 [+0.071, +0.181]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                           second source -0.007 [-0.037, +0.023]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together) user-issued instructions followed (150) -0.013 [-0.040, +0.013]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                    Alpaca followed (60) -0.017 [-0.050, +0.000]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                      MMLU correct (300) +0.003 [-0.010, +0.020]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                    deletion gap, repeat +0.000 [+0.000, +0.000]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                    deletion gap, number +0.000 [+0.000, +0.000]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                deletion gap, quote_last -0.150 [-0.250, -0.062]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                         SecFid security +0.002 [-0.013, +0.016]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                         SecFid fidelity +0.104 [+0.081, +0.128]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)                        SecFid processed +0.111 [+0.088, +0.135]
+        v7 minus v5 v7 minus v5 (the processing and rebalancing phases together)       SecFid processed and not executed +0.109 [+0.086, +0.132]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                         fixed, 13 tries -0.005 [-0.043, +0.033]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                   adaptive, 13 attempts +0.086 [+0.043, +0.133]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                                combined +0.067 [+0.019, +0.119]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                           second source -0.030 [-0.060, +0.000]
+        v7 minus v6                          the rebalancing phase (v7 minus v6) user-issued instructions followed (150) -0.080 [-0.127, -0.040]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                    Alpaca followed (60) +0.033 [+0.000, +0.083]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                      MMLU correct (300) +0.007 [-0.007, +0.023]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                    deletion gap, repeat +0.000 [+0.000, +0.000]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                    deletion gap, number +0.000 [+0.000, +0.000]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                deletion gap, quote_last +0.125 [+0.062, +0.200]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                         SecFid security -0.015 [-0.027, -0.003]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                         SecFid fidelity -0.047 [-0.063, -0.032]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)                        SecFid processed -0.067 [-0.084, -0.050]
+        v7 minus v6                          the rebalancing phase (v7 minus v6)       SecFid processed and not executed -0.071 [-0.089, -0.053]
+v7 minus undefended                              v7 against the undefended model                         fixed, 13 tries -0.281 [-0.348, -0.214]
+v7 minus undefended                              v7 against the undefended model                   adaptive, 13 attempts -0.462 [-0.529, -0.395]
+v7 minus undefended                              v7 against the undefended model                                combined -0.333 [-0.400, -0.267]
+v7 minus undefended                              v7 against the undefended model                           second source -0.233 [-0.290, -0.180]
+v7 minus undefended                              v7 against the undefended model user-issued instructions followed (150) -0.020 [-0.047, +0.000]
+v7 minus undefended                              v7 against the undefended model                    Alpaca followed (60) +0.000 [-0.050, +0.050]
+v7 minus undefended                              v7 against the undefended model                      MMLU correct (300) +0.003 [-0.010, +0.020]
+v7 minus undefended                              v7 against the undefended model                    deletion gap, repeat -0.250 [-0.350, -0.163]
+v7 minus undefended                              v7 against the undefended model                    deletion gap, number -0.388 [-0.487, -0.275]
+v7 minus undefended                              v7 against the undefended model                deletion gap, quote_last -0.312 [-0.425, -0.200]
+v7 minus undefended                              v7 against the undefended model                         SecFid security +0.265 [+0.237, +0.292]
+v7 minus undefended                              v7 against the undefended model                         SecFid fidelity -0.027 [-0.056, +0.001]
+v7 minus undefended                              v7 against the undefended model                        SecFid processed +0.133 [+0.103, +0.164]
+v7 minus undefended                              v7 against the undefended model       SecFid processed and not executed +0.236 [+0.209, +0.265]
+```
