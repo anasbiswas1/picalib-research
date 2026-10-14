@@ -1,0 +1,31 @@
+model,measure,reported,this_notebook,ok
+"ours, input role (notebook 60)",fixed_1,0.0,0.0,True
+"ours, input role (notebook 60)",fixed_13,0.1,0.1,True
+"ours, input role (notebook 60)",adaptive_13,0.005,0.0048,True
+"ours, input role (notebook 60)",combined,0.105,0.1048,True
+"ours, input role (notebook 60)",second_source,0.003,0.0033,True
+"ours, input role (notebook 60)",user,0.46,0.46,True
+"ours, input role (notebook 60)",alpaca,0.233,0.2333,True
+"ours, input role (notebook 60)",mmlu,0.64,0.64,True
+"ours, input role (notebook 60)",ifeval_prompt_strict,0.734,0.7338,True
+"ours, input role (notebook 60)",del_repeat,0.037,0.0375,True
+"ours, input role (notebook 60)",del_number,0.013,0.0125,True
+"ours, input role (notebook 60)",del_quote_last,0.212,0.2125,True
+"ours, input role (notebook 60)",exe_repeat,0.0,0.0,True
+"ours, input role (notebook 60)",exe_number,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",fixed_1,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",fixed_13,0.152,0.1524,True
+"Llama v6 (processing phase, notebook 66b)",adaptive_13,0.01,0.0095,True
+"Llama v6 (processing phase, notebook 66b)",combined,0.162,0.1619,True
+"Llama v6 (processing phase, notebook 66b)",second_source,0.003,0.0033,True
+"Llama v6 (processing phase, notebook 66b)",user,0.467,0.4667,True
+"Llama v6 (processing phase, notebook 66b)",alpaca,0.183,0.1833,True
+"Llama v6 (processing phase, notebook 66b)",mmlu,0.643,0.6433,True
+"Llama v6 (processing phase, notebook 66b)",ifeval_prompt_strict,0.76,0.7597,True
+"Llama v6 (processing phase, notebook 66b)",del_repeat,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",del_number,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",del_quote_last,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",exe_repeat,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",exe_number,0.0,0.0,True
+Meta-SecAlign-8B (as specified),"fixed attacker per injection, 13 tries, against the paper file",,,True
+undefended Llama-3.1-8B (one user turn),"fixed attacker per injection, 13 tries, against the paper file",,,True

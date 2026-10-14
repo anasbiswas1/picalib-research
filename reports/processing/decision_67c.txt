@@ -1,0 +1,2 @@
+PARTIAL: on Llama BIPIA security is restored (+0.000 [-0.029, +0.029]) and the fidelity gain kept (+0.025 [+0.004, +0.046]), but K1 fails. BIPIA combined: notebook 60 0.105, v6 0.162, v7 0.105, Meta-SecAlign 0.100. SecFid fidelity: notebook 60 0.711, v6 0.777, v7 0.736, Meta-SecAlign 0.691. Reported with what it costs.
+G0 pass / S1 pass / P1 pass / P3 pass / S2 pass / U1 pass / K1 fail
