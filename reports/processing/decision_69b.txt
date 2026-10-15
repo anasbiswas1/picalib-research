@@ -1,0 +1,2 @@
+NOT ADOPTED: BIPIA security is not kept (+0.029 [-0.010, +0.067]); the fidelity gain is lost (-0.003 [-0.027, +0.019]). Summaries of 60 validation passages: notebook 60 median 371 characters, v9 369 (0% under 20); BIPIA replies: notebook 60 428, v9 422. BIPIA combined: notebook 60 0.105, v6 0.162, v7 0.105, v9 0.133, Meta-SecAlign 0.100. SecFid fidelity: notebook 60 0.711, v6 0.777, v7 0.736, v9 0.708, Meta-SecAlign 0.691. The paper keeps notebook 60's model.
+G0 pass / Q1 pass / S1 fail / P1 fail / P3 pass / S2 pass / U1 pass / K1 pass
