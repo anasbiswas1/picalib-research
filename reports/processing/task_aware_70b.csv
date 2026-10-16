@@ -1,0 +1,37 @@
+part,n
+the 7B's last set (notebook 68b): attacked examples,1500
+  of which Alpaca tasks,0
+  task works on its whole input: swapped out,0
+  shares a BIPIA sentence: swapped out,0
+consuming attacked examples swapped in,0
+kind attacked,2000
+kind literal,1000
+kind twin,1250
+literal family count_entities,66
+literal family count_questions,66
+literal family edit_delete,83
+literal family edit_replace,84
+literal family edit_typo,83
+literal family endword,68
+literal family list_entities,55
+literal family list_numbers,63
+literal family nocomma,58
+literal family reverse,61
+literal family translate,250
+literal family upper,63
+translation into French,94
+translation into German,85
+translation into Spanish,71
+edit inside the injected sentence,68
+translation candidates tried,450
+contrast attacked (contrast_family),250
+contrast attacked (contrast_structural),250
+contrast twin (contrast_family),125
+contrast twin (contrast_structural),125
+translation parts failing: copied,4
+translation parts failing: digits,71
+translation parts failing: ending,2
+translation parts failing: language,9
+translation parts failing: length,47
+translation parts failing: not one clean line,20
+translation parts failing: question,3
