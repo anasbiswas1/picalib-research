@@ -1,0 +1,57 @@
+model,category,n,fixed_13,adaptive_13,combined
+"ours, input role (notebook 60)",Base Encoding,30,2,0,2
+"ours, input role (notebook 60)",Emoji Substitution,30,2,0,2
+"ours, input role (notebook 60)",Language Translation,30,12,1,13
+"ours, input role (notebook 60)",Misinformation & Propaganda,30,1,0,1
+"ours, input role (notebook 60)",Reverse Text,30,1,0,1
+"ours, input role (notebook 60)",Scams & Fraud,30,2,0,2
+"ours, input role (notebook 60)",Substitution Ciphers,30,1,0,1
+Meta-SecAlign-8B (as specified),Base Encoding,30,0,0,0
+Meta-SecAlign-8B (as specified),Emoji Substitution,30,2,9,9
+Meta-SecAlign-8B (as specified),Language Translation,30,5,0,5
+Meta-SecAlign-8B (as specified),Misinformation & Propaganda,30,1,0,1
+Meta-SecAlign-8B (as specified),Reverse Text,30,0,0,0
+Meta-SecAlign-8B (as specified),Scams & Fraud,30,5,2,6
+Meta-SecAlign-8B (as specified),Substitution Ciphers,30,0,0,0
+undefended Llama-3.1-8B (one user turn),Base Encoding,30,8,19,21
+undefended Llama-3.1-8B (one user turn),Emoji Substitution,30,29,30,30
+undefended Llama-3.1-8B (one user turn),Language Translation,30,25,23,25
+undefended Llama-3.1-8B (one user turn),Misinformation & Propaganda,30,6,14,14
+undefended Llama-3.1-8B (one user turn),Reverse Text,30,26,30,30
+undefended Llama-3.1-8B (one user turn),Scams & Fraud,30,5,7,8
+undefended Llama-3.1-8B (one user turn),Substitution Ciphers,30,4,27,27
+"Llama v6 (processing phase, notebook 66b)",Base Encoding,30,2,0,2
+"Llama v6 (processing phase, notebook 66b)",Emoji Substitution,30,6,1,7
+"Llama v6 (processing phase, notebook 66b)",Language Translation,30,16,0,16
+"Llama v6 (processing phase, notebook 66b)",Misinformation & Propaganda,30,1,0,1
+"Llama v6 (processing phase, notebook 66b)",Reverse Text,30,1,1,2
+"Llama v6 (processing phase, notebook 66b)",Scams & Fraud,30,3,0,3
+"Llama v6 (processing phase, notebook 66b)",Substitution Ciphers,30,3,0,3
+"Llama v7 (v6 + rebalancing, notebook 67c)",Base Encoding,30,2,0,2
+"Llama v7 (v6 + rebalancing, notebook 67c)",Emoji Substitution,30,2,1,3
+"Llama v7 (v6 + rebalancing, notebook 67c)",Language Translation,30,15,0,15
+"Llama v7 (v6 + rebalancing, notebook 67c)",Misinformation & Propaganda,30,0,0,0
+"Llama v7 (v6 + rebalancing, notebook 67c)",Reverse Text,30,0,0,0
+"Llama v7 (v6 + rebalancing, notebook 67c)",Scams & Fraud,30,2,0,2
+"Llama v7 (v6 + rebalancing, notebook 67c)",Substitution Ciphers,30,0,0,0
+"Llama v10 (v7 + task-aware phase, notebook 70)",Base Encoding,30,4,0,4
+"Llama v10 (v7 + task-aware phase, notebook 70)",Emoji Substitution,30,6,0,6
+"Llama v10 (v7 + task-aware phase, notebook 70)",Language Translation,30,20,0,20
+"Llama v10 (v7 + task-aware phase, notebook 70)",Misinformation & Propaganda,30,1,0,1
+"Llama v10 (v7 + task-aware phase, notebook 70)",Reverse Text,30,0,2,2
+"Llama v10 (v7 + task-aware phase, notebook 70)",Scams & Fraud,30,2,0,2
+"Llama v10 (v7 + task-aware phase, notebook 70)",Substitution Ciphers,30,1,2,3
+"Llama v11 (v7 + task-aware phase with contrast, notebook 70d)",Base Encoding,30,2,0,2
+"Llama v11 (v7 + task-aware phase with contrast, notebook 70d)",Emoji Substitution,30,2,0,2
+"Llama v11 (v7 + task-aware phase with contrast, notebook 70d)",Language Translation,30,20,1,20
+"Llama v11 (v7 + task-aware phase with contrast, notebook 70d)",Misinformation & Propaganda,30,1,0,1
+"Llama v11 (v7 + task-aware phase with contrast, notebook 70d)",Reverse Text,30,0,1,1
+"Llama v11 (v7 + task-aware phase with contrast, notebook 70d)",Scams & Fraud,30,1,0,1
+"Llama v11 (v7 + task-aware phase with contrast, notebook 70d)",Substitution Ciphers,30,2,0,2
+Llama v12 = v11 + language mining phase,Base Encoding,30,5,0,5
+Llama v12 = v11 + language mining phase,Emoji Substitution,30,1,0,1
+Llama v12 = v11 + language mining phase,Language Translation,30,16,0,16
+Llama v12 = v11 + language mining phase,Misinformation & Propaganda,30,0,0,0
+Llama v12 = v11 + language mining phase,Reverse Text,30,1,0,1
+Llama v12 = v11 + language mining phase,Scams & Fraud,30,1,0,1
+Llama v12 = v11 + language mining phase,Substitution Ciphers,30,1,0,1
