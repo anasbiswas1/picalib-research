@@ -1,0 +1,59 @@
+model,measure,reported,this_notebook,ok
+"ours, input role (notebook 60)",fixed_1,0.0,0.0,True
+"ours, input role (notebook 60)",fixed_13,0.1,0.1,True
+"ours, input role (notebook 60)",adaptive_13,0.005,0.0048,True
+"ours, input role (notebook 60)",combined,0.105,0.1048,True
+"ours, input role (notebook 60)",second_source,0.003,0.0033,True
+"ours, input role (notebook 60)",user,0.46,0.46,True
+"ours, input role (notebook 60)",alpaca,0.233,0.2333,True
+"ours, input role (notebook 60)",mmlu,0.64,0.64,True
+"ours, input role (notebook 60)",ifeval_prompt_strict,0.734,0.7338,True
+"ours, input role (notebook 60)",del_repeat,0.037,0.0375,True
+"ours, input role (notebook 60)",del_number,0.013,0.0125,True
+"ours, input role (notebook 60)",del_quote_last,0.212,0.2125,True
+"ours, input role (notebook 60)",exe_repeat,0.0,0.0,True
+"ours, input role (notebook 60)",exe_number,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",fixed_1,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",fixed_13,0.152,0.1524,True
+"Llama v6 (processing phase, notebook 66b)",adaptive_13,0.01,0.0095,True
+"Llama v6 (processing phase, notebook 66b)",combined,0.162,0.1619,True
+"Llama v6 (processing phase, notebook 66b)",second_source,0.003,0.0033,True
+"Llama v6 (processing phase, notebook 66b)",user,0.467,0.4667,True
+"Llama v6 (processing phase, notebook 66b)",alpaca,0.183,0.1833,True
+"Llama v6 (processing phase, notebook 66b)",mmlu,0.643,0.6433,True
+"Llama v6 (processing phase, notebook 66b)",ifeval_prompt_strict,0.76,0.7597,True
+"Llama v6 (processing phase, notebook 66b)",del_repeat,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",del_number,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",del_quote_last,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",exe_repeat,0.0,0.0,True
+"Llama v6 (processing phase, notebook 66b)",exe_number,0.0,0.0,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",fixed_1,0.0,0.0,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",fixed_13,0.1,0.1,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",adaptive_13,0.005,0.0048,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",combined,0.105,0.1048,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",second_source,0.007,0.0067,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",user,0.48,0.48,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",alpaca,0.217,0.2167,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",mmlu,0.65,0.65,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",ifeval_prompt_strict,0.752,0.7523,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",del_repeat,0.137,0.1375,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",del_number,0.113,0.1125,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",del_quote_last,0.075,0.075,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",exe_repeat,0.0,0.0,True
+"Llama v7 (v6 + rebalancing, notebook 67c)",exe_number,0.0,0.0,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",fixed_1,0.0,0.0,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",fixed_13,0.162,0.1619,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",adaptive_13,0.019,0.019,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",combined,0.181,0.181,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",second_source,0.003,0.0033,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",user,0.46,0.46,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",alpaca,0.217,0.2167,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",mmlu,0.653,0.6533,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",ifeval_prompt_strict,0.756,0.756,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",del_repeat,0.0,0.0,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",del_number,0.0,0.0,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",del_quote_last,0.025,0.025,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",exe_repeat,0.0,0.0,True
+"Llama v10 (v7 + task-aware phase, notebook 70)",exe_number,0.0,0.0,True
+Meta-SecAlign-8B (as specified),"fixed attacker per injection, 13 tries, against the paper file",,,True
+undefended Llama-3.1-8B (one user turn),"fixed attacker per injection, 13 tries, against the paper file",,,True

@@ -1,0 +1,22 @@
+part,n
+notebook 70's task-aware set,3500
+"contrast attacked (contrast_family, copy)",62
+"contrast attacked (contrast_family, count_or_list)",62
+"contrast attacked (contrast_family, edit)",63
+"contrast attacked (contrast_family, translate)",63
+"contrast attacked (contrast_structural, encode_reply)",29
+"contrast attacked (contrast_structural, replace_nouns)",84
+"contrast attacked (contrast_structural, respond_format)",49
+"contrast attacked (contrast_structural, translate_before)",51
+"contrast attacked (contrast_structural, write_as)",37
+"contrast twin (contrast_family, copy)",31
+"contrast twin (contrast_family, count_or_list)",31
+"contrast twin (contrast_family, edit)",31
+"contrast twin (contrast_family, translate)",32
+"contrast twin (contrast_structural, encode_reply)",15
+"contrast twin (contrast_structural, replace_nouns)",38
+"contrast twin (contrast_structural, respond_format)",20
+"contrast twin (contrast_structural, translate_before)",27
+"contrast twin (contrast_structural, write_as)",25
+structural training items in the output families (pool),887
+set of v11,4250
