@@ -1,0 +1,37 @@
+part,n
+rebalancing set (notebook 67): attacked examples,2000
+  of which Alpaca tasks,1335
+  task works on its whole input: swapped out,552
+  shares a BIPIA sentence: swapped out,0
+consuming attacked examples swapped in,552
+kind attacked,2500
+kind literal,1000
+kind twin,750
+literal family count_entities,66
+literal family count_questions,66
+literal family edit_delete,83
+literal family edit_replace,84
+literal family edit_typo,83
+literal family endword,68
+literal family list_entities,55
+literal family list_numbers,63
+literal family nocomma,58
+literal family reverse,61
+literal family translate,250
+literal family upper,63
+translation into French,86
+translation into German,81
+translation into Spanish,83
+edit inside the injected sentence,68
+translation candidates tried,450
+contrast attacked (contrast_family),250
+contrast attacked (contrast_structural),250
+contrast twin (contrast_family),125
+contrast twin (contrast_structural),125
+translation parts failing: copied,4
+translation parts failing: digits,102
+translation parts failing: ending,13
+translation parts failing: language,5
+translation parts failing: length,70
+translation parts failing: not one clean line,20
+translation parts failing: question,5
