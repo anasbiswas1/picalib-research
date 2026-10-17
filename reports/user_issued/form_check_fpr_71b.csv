@@ -1,0 +1,13 @@
+dictionary,benign_set,model,n_benign_outputs,form_check_FPR,share_of_attacked_outputs_flagged,share_of_successful_outputs_flagged,primary
+notebook 34's dictionary,old set (two passages),undefended,120,"0.017 [0.005, 0.059]",0.08241758241758242,0.4766355140186916,False
+notebook 34's dictionary,old set (two passages),twin_distilled_v2,120,"0.025 [0.009, 0.071]",0.035897435897435895,0.3202247191011236,False
+notebook 34's dictionary,rebuilt set (60 passages),undefended,120,"0.017 [0.005, 0.059]",0.08241758241758242,0.4766355140186916,False
+notebook 34's dictionary,rebuilt set (60 passages),twin_distilled_v2,120,"0.025 [0.009, 0.071]",0.035897435897435895,0.3202247191011236,False
+clean dictionary,old set (two passages),undefended,120,"0.017 [0.005, 0.059]",0.08241758241758242,0.4766355140186916,False
+clean dictionary,old set (two passages),twin_distilled_v2,120,"0.025 [0.009, 0.071]",0.035897435897435895,0.3202247191011236,False
+clean dictionary,rebuilt set (60 passages),undefended,120,"0.017 [0.005, 0.059]",0.08241758241758242,0.4766355140186916,True
+clean dictionary,rebuilt set (60 passages),twin_distilled_v2,120,"0.025 [0.009, 0.071]",0.035897435897435895,0.3202247191011236,True
+clean dictionary plus the input's own words,old set (two passages),undefended,120,"0.017 [0.005, 0.059]",0.0706959706959707,0.46417445482866043,False
+clean dictionary plus the input's own words,old set (two passages),twin_distilled_v2,120,"0.025 [0.009, 0.071]",0.026373626373626374,0.3202247191011236,False
+clean dictionary plus the input's own words,rebuilt set (60 passages),undefended,120,"0.017 [0.005, 0.059]",0.0706959706959707,0.46417445482866043,False
+clean dictionary plus the input's own words,rebuilt set (60 passages),twin_distilled_v2,120,"0.025 [0.009, 0.071]",0.026373626373626374,0.3202247191011236,False

@@ -1,0 +1,3 @@
+F1 holds: with a dictionary that holds no evaluation text, on summaries of 60 different passages and 60 Alpaca answers, the form check flags 0.017 of the undefended 3B replies (notebook 34: 0.017), 0.025 of the v2 replies (notebook 34: 0.025).
+F2 holds: with the clean dictionary the form check takes v2 from 0.224 to 0.148 at 13 tries, paired -0.076 [-0.114, -0.043]; the full stack 0.148, two filters around the undefended model 0.157 (notebook 34: 0.224, 0.148, 0.148, 0.157).
+G0 pass / F1 pass / F2 pass
