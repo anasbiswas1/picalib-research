@@ -1,0 +1,6 @@
+Primary measure: rule (240) (J0 fails: the judge agrees with the rule on 0.749 of 5760 items).
+C1 holds: the 7B trained with twins (v5) follows the user 0.750, the 7B trained without them 0.496, paired +0.254 [+0.192, +0.317].
+C2 holds: Llama ours (input role) 0.683, Meta-SecAlign-8B as specified 0.537, paired +0.146 [+0.096, +0.200].
+C3 holds: 3B v7 (rebalancing) 0.533 against 0.500 undefended, paired +0.033 [+0.008, +0.058]; 7B v10 (task-aware phase) 0.754 against 0.742 undefended, paired +0.013 [-0.004, +0.033]; Llama ours (input role) 0.683 against 0.642 undefended, paired +0.042 [+0.008, +0.079].
+C4 holds: plain summaries of 60 validation passages, median characters from 344 to 486, the largest share under 20 characters 0.000.
+G0 pass / J0 fail / C1 pass / C2 pass / C3 pass / C4 pass

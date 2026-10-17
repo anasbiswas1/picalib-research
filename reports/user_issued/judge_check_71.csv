@@ -1,0 +1,8 @@
+family,items,followed_by_rule,followed_by_judge,judge_agrees,judge_kappa,paper_judge_agrees,paper_judge_kappa
+all six families,5760,0.59,0.367,0.749,0.522,0.665,0.375
+begin_with_phrase,936,0.881,0.681,0.741,0.286,0.635,0.23
+count_letters,960,0.26,0.22,0.947,0.855,0.875,0.643
+respond_only,1704,0.376,0.383,0.994,0.986,0.982,0.962
+answer_in_lang,720,1.0,0.343,0.343,0.0,0.075,0.0
+whole_reply_lang,720,0.993,0.319,0.326,0.007,0.111,0.002
+sign_with_name,720,0.344,0.188,0.749,0.376,0.818,0.599
