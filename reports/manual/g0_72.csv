@@ -1,0 +1,12 @@
+condition,similarity,lowest,exact,n,ok,g0b_similarity,g0b_lowest,g0b_exact,g0b_n,g0b_forced_agreement,g0b_forced_tokens,g0b_forced_misses,g0b_forced_median_gap,g0b_forced_largest_gap,g0b_ok,valid
+q3_undefended,0.9313,0.015,21,24,True,,,,,,,,,,False,True
+q3_v4,0.9479,0.2886,22,24,True,,,,,,,,,,False,True
+q3_v7,0.9533,0.422,18,24,True,,,,,,,,,,False,True
+q7_undefended,0.9312,0.1913,20,24,True,,,,,,,,,,False,True
+q7_v5,0.8633,0.2704,17,24,True,,,,,,,,,,False,True
+q7_v10,1.0,1.0,24,24,True,,,,,,,,,,False,True
+l_undefended,0.8361,0.0561,13,24,False,1.0,1.0,24.0,24.0,0.9941,3399.0,20.0,0.125,4.875,True,True
+l_user_turn,0.822,0.1745,10,24,False,1.0,1.0,24.0,24.0,0.9911,3608.0,32.0,0.125,0.5,True,True
+l_role,0.7583,0.1489,11,24,False,1.0,1.0,24.0,24.0,0.9922,3578.0,28.0,0.125,11.125,True,True
+l_secalign,0.8191,0.3094,11,24,False,1.0,1.0,24.0,24.0,0.9905,3680.0,35.0,0.125,6.25,True,True
+l_secalign_user_turn,0.8119,0.1575,10,24,False,1.0,1.0,24.0,24.0,0.9909,3283.0,30.0,0.125,0.25,True,True
