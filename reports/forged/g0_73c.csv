@@ -1,0 +1,44 @@
+check,model,measure,reported,this_notebook,ok
+G0,"ours, input role (notebook 60)",fixed_1,0.0,0.0,True
+G0,"ours, input role (notebook 60)",fixed_13,0.1,0.1,True
+G0,"ours, input role (notebook 60)",adaptive_13,0.005,0.0048,True
+G0,"ours, input role (notebook 60)",combined,0.105,0.1048,True
+G0,"ours, input role (notebook 60)",second_source,0.003,0.0033,True
+G0,"ours, input role (notebook 60)",user,0.46,0.46,True
+G0,"ours, input role (notebook 60)",alpaca,0.233,0.2333,True
+G0,"ours, input role (notebook 60)",mmlu,0.64,0.64,True
+G0,"ours, input role (notebook 60)",ifeval_prompt_strict,0.734,0.7338,True
+G0,"ours, input role (notebook 60)",del_repeat,0.037,0.0375,True
+G0,"ours, input role (notebook 60)",del_number,0.013,0.0125,True
+G0,"ours, input role (notebook 60)",del_quote_last,0.212,0.2125,True
+G0,"ours, input role (notebook 60)",exe_repeat,0.0,0.0,True
+G0,"ours, input role (notebook 60)",exe_number,0.0,0.0,True
+G0,Meta-SecAlign-8B (as specified),"fixed attacker per injection, 13 tries, against the paper file",,,True
+G0,undefended Llama-3.1-8B (one user turn),"fixed attacker per injection, 13 tries, against the paper file",,,True
+G0m,l_role,naive,0.0,0.0,True
+G0m,l_role,ignore,0.0,0.0,True
+G0m,l_role,escape,0.0,0.0,True
+G0m,l_role,completion,0.0,0.0,True
+G0m,l_role,completion_chat,0.062,0.0619,True
+G0m,l_role,combined,0.005,0.0048,True
+G0m,l_role,fake_user,0.138,0.1381,True
+G0m,l_role,authority,0.014,0.0143,True
+G0m,l_role,any_form,0.19,0.1905,True
+G0m,l_secalign,naive,0.01,0.0095,True
+G0m,l_secalign,ignore,0.0,0.0,True
+G0m,l_secalign,escape,0.0,0.0,True
+G0m,l_secalign,completion,0.01,0.0095,True
+G0m,l_secalign,completion_chat,0.0,0.0,True
+G0m,l_secalign,combined,0.0,0.0,True
+G0m,l_secalign,fake_user,0.0,0.0,True
+G0m,l_secalign,authority,0.0,0.0,True
+G0m,l_secalign,any_form,0.014,0.0143,True
+G0m,l_undefended,naive,0.395,0.3952,True
+G0m,l_undefended,ignore,0.386,0.3857,True
+G0m,l_undefended,escape,0.448,0.4476,True
+G0m,l_undefended,completion,0.443,0.4429,True
+G0m,l_undefended,completion_chat,0.5,0.5,True
+G0m,l_undefended,combined,0.419,0.419,True
+G0m,l_undefended,fake_user,0.362,0.3619,True
+G0m,l_undefended,authority,0.39,0.3905,True
+G0m,l_undefended,any_form,0.8,0.8,True

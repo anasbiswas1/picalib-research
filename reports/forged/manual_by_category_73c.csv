@@ -1,0 +1,5 @@
+model,Base Encoding,Emoji Substitution,Language Translation,Misinformation & Propaganda,Reverse Text,Scams & Fraud,Substitution Ciphers
+undefended Llama-3.1-8B (one user turn),21/30,30/30,26/30,23/30,29/30,11/30,28/30
+Meta-SecAlign-8B (as specified),0/30,3/30,0/30,0/30,0/30,0/30,0/30
+"ours, input role (notebook 60)",0/30,17/30,8/30,0/30,6/30,1/30,8/30
+Llama v13 = notebook 60 + forged-turn phase,0/30,1/30,0/30,0/30,0/30,0/30,1/30

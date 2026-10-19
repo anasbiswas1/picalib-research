@@ -1,0 +1,5 @@
+model,user_followed_150,alpaca_followed,mmlu,ifeval_prompt_strict,ifeval_instruction_strict,summary_median_chars,degenerate
+undefended Llama-3.1-8B (one user turn),"0.360 [0.288, 0.439]","0.117 [0.058, 0.222]","0.663 [0.608, 0.714]",0.732,0.813,361,0.0
+Meta-SecAlign-8B (as specified),"0.233 [0.173, 0.307]","0.167 [0.093, 0.280]","0.627 [0.571, 0.679]",0.723,0.805,290,0.0
+"ours, input role (notebook 60)","0.460 [0.382, 0.540]","0.233 [0.144, 0.354]","0.640 [0.584, 0.692]",0.734,0.805,390,0.0
+Llama v13 = notebook 60 + forged-turn phase,"0.460 [0.382, 0.540]","0.200 [0.118, 0.318]","0.647 [0.591, 0.699]",0.749,0.818,375,0.0

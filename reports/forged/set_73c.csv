@@ -1,0 +1,23 @@
+part,n
+"forged-turn attacked, form naive",100
+"forged-turn attacked, form ignore",100
+"forged-turn attacked, form escape",100
+"forged-turn attacked, form completion",100
+"forged-turn attacked, form completion_chat",100
+"forged-turn attacked, form combined",100
+"forged-turn attacked, form fake_user",100
+"forged-turn attacked, form authority",100
+"forged-turn twins, form naive",50
+"forged-turn twins, form ignore (half keep the wording)",50
+"forged-turn twins, form escape",50
+"forged-turn twins, form completion",50
+"forged-turn twins, form completion_chat",50
+"forged-turn twins, form combined",50
+"forged-turn twins, form fake_user (half keep the wording)",50
+"forged-turn twins, form authority (half keep the wording)",50
+replayed from the phase-2 set of notebook 60: attacked,389
+replayed from the phase-2 set of notebook 60: literal,810
+replayed from the phase-2 set of notebook 60: twin,401
+replay pool after the checks,4000
+the phase-2 set of notebook 60,4000
+set of the Llama v13,2800
