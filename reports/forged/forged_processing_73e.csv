@@ -1,0 +1,8 @@
+task,authority,combined,completion,completion_chat,escape,fake_user,ignore,naive
+count_entities,10,10,10,10,10,10,10,10
+count_questions,10,10,10,10,10,10,10,10
+endword,3,3,3,3,3,3,3,3
+list_entities,10,10,10,10,10,10,10,10
+list_numbers,10,10,10,10,10,10,10,10
+nocomma,3,3,3,3,3,3,3,3
+upper,4,4,4,4,4,4,4,4

@@ -1,0 +1,36 @@
+part,n
+"forged-turn attacked, form naive",100
+"forged-turn attacked, form ignore",100
+"forged-turn attacked, form escape",100
+"forged-turn attacked, form completion",100
+"forged-turn attacked, form completion_chat",100
+"forged-turn attacked, form combined",100
+"forged-turn attacked, form fake_user",100
+"forged-turn attacked, form authority",100
+"forged-turn twins, form naive",50
+"forged-turn twins, form ignore (half keep the wording)",50
+"forged-turn twins, form escape",50
+"forged-turn twins, form completion",50
+"forged-turn twins, form completion_chat",50
+"forged-turn twins, form combined",50
+"forged-turn twins, form fake_user (half keep the wording)",50
+"forged-turn twins, form authority (half keep the wording)",50
+"replayed: v7's copying examples, all (notebook 38's literal phase)",250
+"replayed: v7's processing examples, all (notebook 65)",250
+replayed: copying examples of notebook 38's literal phase not in v7's set,150
+replayed: processing examples of notebook 65 not in v7's set,150
+replayed from v7's set: attacked (part of the 400 kept from notebook 73d's 800),312
+replayed from v7's set: twin (part of the 400 kept from notebook 73d's 800),88
+forged-turn processing: count_entities,80
+forged-turn processing: list_entities,80
+forged-turn processing: count_questions,80
+forged-turn processing: list_numbers,80
+forged-turn processing: copy,80
+replay: copying and processing,800
+replay: attacked and twin,400
+forged-turn processing examples,400
+pool: v7's attacked and twin examples after the checks,2500
+"pool: notebook 38's copying examples not in v7's set, after the checks",1750
+"pool: notebook 65's processing examples not in v7's set, after the checks",1735
+the rebalancing set of notebook 67,3000
+set of v13,2800
