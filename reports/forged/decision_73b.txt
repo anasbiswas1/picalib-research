@@ -1,0 +1,2 @@
+NOT ADOPTED: P2 fails. Notebook 72 suite, any form: undefended 0.790, v10 0.386, v11 0.038; worst form for v11: completion_chat 0.019. BIPIA combined: v10 0.257, v11 0.252. SecFid fidelity: v10 0.797, v11 0.759; security: v10 0.937, v11 0.932. User-issued instructions: v10 0.393, v11 0.447. v11 meets notebook 72's limits (H1). The paper keeps v10 (notebook 70b) as its 7B.
+G0 pass / G0m pass / M2 pass / H1 pass / Q1 pass / S1 pass / P2 fail / P3 pass / S2 pass / U1 pass / K1 pass

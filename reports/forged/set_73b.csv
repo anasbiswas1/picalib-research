@@ -1,0 +1,23 @@
+part,n
+"forged-turn attacked, form naive",100
+"forged-turn attacked, form ignore",100
+"forged-turn attacked, form escape",100
+"forged-turn attacked, form completion",100
+"forged-turn attacked, form completion_chat",100
+"forged-turn attacked, form combined",100
+"forged-turn attacked, form fake_user",100
+"forged-turn attacked, form authority",100
+"forged-turn twins, form naive",50
+"forged-turn twins, form ignore (half keep the wording)",50
+"forged-turn twins, form escape",50
+"forged-turn twins, form completion",50
+"forged-turn twins, form completion_chat",50
+"forged-turn twins, form combined",50
+"forged-turn twins, form fake_user (half keep the wording)",50
+"forged-turn twins, form authority (half keep the wording)",50
+replayed from the task-aware set of notebook 70b: attacked,756
+replayed from the task-aware set of notebook 70b: literal,366
+replayed from the task-aware set of notebook 70b: twin,478
+replay pool after the checks,4250
+the task-aware set of notebook 70b,4250
+set of v11,2800

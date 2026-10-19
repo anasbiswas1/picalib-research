@@ -1,0 +1,69 @@
+check,model,measure,reported,this_notebook,ok
+G0,Qwen2.5-7B undefended,fixed_1,0.39,0.3905,True
+G0,Qwen2.5-7B undefended,fixed_13,0.543,0.5429,True
+G0,Qwen2.5-7B undefended,adaptive_13,0.667,0.6667,True
+G0,Qwen2.5-7B undefended,combined,0.743,0.7429,True
+G0,Qwen2.5-7B undefended,second_source,0.313,0.3133,True
+G0,Qwen2.5-7B undefended,user,0.353,0.3533,True
+G0,Qwen2.5-7B undefended,alpaca,0.133,0.1333,True
+G0,Qwen2.5-7B undefended,mmlu,0.677,0.6767,True
+G0,Qwen2.5-7B undefended,del_repeat,0.25,0.25,True
+G0,Qwen2.5-7B undefended,del_number,0.388,0.3875,True
+G0,Qwen2.5-7B undefended,del_quote_last,0.537,0.5375,True
+G0,Qwen2.5-7B undefended,exe_repeat,0.175,0.175,True
+G0,Qwen2.5-7B undefended,exe_number,0.237,0.2375,True
+G0,v5 (core recipe),fixed_1,0.019,0.019,True
+G0,v5 (core recipe),fixed_13,0.252,0.2524,True
+G0,v5 (core recipe),adaptive_13,0.076,0.0762,True
+G0,v5 (core recipe),combined,0.286,0.2857,True
+G0,v5 (core recipe),second_source,0.087,0.0867,True
+G0,v5 (core recipe),user,0.347,0.3467,True
+G0,v5 (core recipe),alpaca,0.15,0.15,True
+G0,v5 (core recipe),mmlu,0.677,0.6767,True
+G0,v5 (core recipe),del_repeat,0.0,0.0,True
+G0,v5 (core recipe),del_number,0.0,0.0,True
+G0,v5 (core recipe),del_quote_last,0.375,0.375,True
+G0,v5 (core recipe),exe_repeat,0.0,0.0,True
+G0,v5 (core recipe),exe_number,0.0,0.0,True
+G0,"v10 (final, notebook 70b)",fixed_1,0.0,0.0,True
+G0,"v10 (final, notebook 70b)",fixed_13,0.252,0.2524,True
+G0,"v10 (final, notebook 70b)",adaptive_13,0.014,0.0143,True
+G0,"v10 (final, notebook 70b)",combined,0.257,0.2571,True
+G0,"v10 (final, notebook 70b)",second_source,0.037,0.0367,True
+G0,"v10 (final, notebook 70b)",user,0.393,0.3933,True
+G0,"v10 (final, notebook 70b)",alpaca,0.117,0.1167,True
+G0,"v10 (final, notebook 70b)",mmlu,0.68,0.68,True
+G0,"v10 (final, notebook 70b)",del_repeat,0.0,0.0,True
+G0,"v10 (final, notebook 70b)",del_number,0.0125,0.0125,True
+G0,"v10 (final, notebook 70b)",del_quote_last,0.175,0.175,True
+G0,"v10 (final, notebook 70b)",exe_repeat,0.0,0.0,True
+G0,"v10 (final, notebook 70b)",exe_number,0.0,0.0,True
+G0,Qwen2.5-7B undefended,"fixed attacker per injection, 1 and 13 tries, against the paper file",,,True
+G0,v5 (core recipe),"fixed attacker per injection, 1 and 13 tries, against the paper file",,,True
+G0m,q7_undefended,naive,0.381,0.381,True
+G0m,q7_undefended,ignore,0.4,0.4,True
+G0m,q7_undefended,escape,0.362,0.3619,True
+G0m,q7_undefended,completion,0.438,0.4381,True
+G0m,q7_undefended,completion_chat,0.443,0.4429,True
+G0m,q7_undefended,combined,0.462,0.4619,True
+G0m,q7_undefended,fake_user,0.443,0.4429,True
+G0m,q7_undefended,authority,0.405,0.4048,True
+G0m,q7_undefended,any_form,0.79,0.7905,True
+G0m,q7_v5,naive,0.019,0.019,True
+G0m,q7_v5,ignore,0.062,0.0619,True
+G0m,q7_v5,escape,0.019,0.019,True
+G0m,q7_v5,completion,0.071,0.0714,True
+G0m,q7_v5,completion_chat,0.352,0.3524,True
+G0m,q7_v5,combined,0.171,0.1714,True
+G0m,q7_v5,fake_user,0.319,0.319,True
+G0m,q7_v5,authority,0.257,0.2571,True
+G0m,q7_v5,any_form,0.524,0.5238,True
+G0m,q7_v10,naive,0.0,0.0,True
+G0m,q7_v10,ignore,0.0,0.0,True
+G0m,q7_v10,escape,0.0,0.0,True
+G0m,q7_v10,completion,0.0,0.0,True
+G0m,q7_v10,completion_chat,0.214,0.2143,True
+G0m,q7_v10,combined,0.029,0.0286,True
+G0m,q7_v10,fake_user,0.238,0.2381,True
+G0m,q7_v10,authority,0.057,0.0571,True
+G0m,q7_v10,any_form,0.386,0.3857,True
