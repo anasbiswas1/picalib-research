@@ -1,0 +1,36 @@
+part,n
+"forged-turn attacked, form naive",100
+"forged-turn attacked, form ignore",100
+"forged-turn attacked, form escape",100
+"forged-turn attacked, form completion",100
+"forged-turn attacked, form completion_chat",100
+"forged-turn attacked, form combined",100
+"forged-turn attacked, form fake_user",100
+"forged-turn attacked, form authority",100
+"forged-turn twins, form naive",50
+"forged-turn twins, form ignore (half keep the wording)",50
+"forged-turn twins, form escape",50
+"forged-turn twins, form completion",50
+"forged-turn twins, form completion_chat",50
+"forged-turn twins, form combined",50
+"forged-turn twins, form fake_user (half keep the wording)",50
+"forged-turn twins, form authority (half keep the wording)",50
+"replayed from v10's set: edit_replace, all",84
+"replayed from v10's set: edit_delete, all",83
+"replayed from v10's set: edit_typo, all",83
+"replayed from v10's set: translate, all",250
+replayed from v10's set: copying (150 of its 250),150
+replayed from v10's set: processing (150 of its 250),150
+replayed from v10's set: attacked,216
+replayed from v10's set: twin,184
+forged-turn processing: count_entities,80
+forged-turn processing: list_entities,80
+forged-turn processing: count_questions,80
+forged-turn processing: list_numbers,80
+forged-turn processing: copy,80
+"replay: literal (edits, translations, copying, processing)",800
+replay: attacked and twin,400
+forged-turn processing examples,400
+"pool: v10's attacked and twin examples after the checks, distinct",3013
+the task-aware set of notebook 70b,4250
+set of v12,2800
