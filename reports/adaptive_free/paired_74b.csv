@@ -1,0 +1,6 @@
+comparison,meaning,within_25,within_13
+q3_v13 minus q3_undefended,"Qwen2.5-3B v13 (final, notebook 73e) minus undefended","-0.695 [-0.788, -0.590]","-0.624 [-0.728, -0.514]"
+q7_v12 minus q7_undefended,"Qwen2.5-7B v12 (final, notebook 73f) minus undefended","-0.695 [-0.801, -0.581]","-0.638 [-0.745, -0.526]"
+l_role_v13 minus l_undefended,"Llama v13 (final, notebook 73c, input role) minus undefended (formats differ)","-0.657 [-0.776, -0.530]","-0.648 [-0.768, -0.519]"
+l_secalign minus l_undefended,Meta-SecAlign-8B (as specified) minus undefended (formats differ),"-0.648 [-0.778, -0.510]","-0.633 [-0.761, -0.498]"
+l_role_v13 minus l_secalign,E3: Llama v13 (input role) minus Meta-SecAlign-8B as specified (equal format),"-0.010 [-0.056, +0.035]","-0.014 [-0.050, +0.020]"

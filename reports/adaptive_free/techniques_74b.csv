@@ -1,0 +1,8 @@
+condition,fake_turn (all),fake_completion (all),override (all),authority (all),roleplay (all),markup (all),successes,fake_turn (successful),fake_completion (successful),override (successful),authority (successful),roleplay (successful),markup (successful)
+q3_undefended,0.0,0.059,0.07,0.242,0.001,0.038,69,0,5,3,17,0,3
+q3_v13,0.0,0.071,0.061,0.221,0.0,0.044,7,0,0,0,1,0,0
+q7_undefended,0.0,0.042,0.041,0.216,0.004,0.031,75,0,4,5,14,1,4
+q7_v12,0.0,0.066,0.064,0.208,0.001,0.075,16,0,2,1,4,0,0
+l_undefended,0.0,0.08,0.062,0.288,0.002,0.04,60,0,6,10,15,0,6
+l_role_v13,0.0,0.078,0.061,0.301,0.001,0.072,15,0,2,2,8,0,0
+l_secalign,0.0,0.104,0.061,0.322,0.001,0.083,16,0,1,0,7,0,0

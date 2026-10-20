@@ -1,0 +1,8 @@
+condition,similarity,lowest,exact,n,ok,g0b_similarity,g0b_lowest,g0b_exact,g0b_n,valid
+q3_undefended,0.9313,0.015,21,24,True,,,,,True
+q3_v13,0.9476,0.2765,20,24,True,,,,,True
+q7_undefended,0.9312,0.1913,20,24,True,,,,,True
+q7_v12,0.9691,0.4169,22,24,True,,,,,True
+l_undefended,0.8361,0.0561,13,24,False,1.0,1.0,24.0,24.0,True
+l_role_v13,0.8611,0.3218,12,24,True,,,,,True
+l_secalign,0.8191,0.3094,11,24,False,1.0,1.0,24.0,24.0,True
