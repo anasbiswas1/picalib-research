@@ -2,9 +2,10 @@
 
     subprocess.run(["python", "tools/commit_cell.py", "message"])
 
-Restores git identity and credentials from the Drive project folder, strips all notebook outputs,
-refuses to stage data, credential or oversized files, refuses any staged file containing a secret
-token pattern, commits if anything is staged, and always pushes so unpushed commits never remain local.
+Restores git identity and credentials from the Drive project folder, strips the outputs of every notebook
+that git reports as changed, refuses to stage data, credential or oversized files, refuses any staged file
+containing a secret token pattern, commits if anything is staged, and always pushes so unpushed commits
+never remain local.
 """
 from __future__ import annotations
 
@@ -13,7 +14,6 @@ import re
 import shutil
 import subprocess
 import sys
-from glob import glob
 from pathlib import Path
 
 DRIVE_PROJECT_ROOT = Path("/content/drive/MyDrive/PICALIB_Research")
@@ -41,25 +41,30 @@ def run(args, check=True):
     return r.stdout
 
 
+def changed_notebooks():
+    """Notebooks that are modified, added or untracked. Committed notebooks are already stripped."""
+    paths = []
+    for line in run(["git", "status", "--porcelain", "--untracked-files=all", "--", "notebooks"]).splitlines():
+        p = line[3:].strip().strip('"')
+        if " -> " in p:
+            p = p.split(" -> ")[-1]
+        if p.endswith(".ipynb") and (REPO_ROOT / p).is_file():
+            paths.append(REPO_ROOT / p)
+    return sorted(set(paths))
+
+
 def strip_outputs():
-    notebooks = sorted(glob(str(REPO_ROOT / "notebooks" / "*.ipynb")))
-    for notebook in notebooks:
-        r = subprocess.run([sys.executable, "-m", "jupyter", "nbconvert",
-                            "--ClearOutputPreprocessor.enabled=True", "--inplace", notebook],
-                           capture_output=True, text=True)
-        if r.returncode != 0:
-            import nbformat
-            nb = nbformat.read(notebook, as_version=4)
-            for cell in nb.cells:
-                if cell.cell_type == "code":
-                    cell["outputs"] = []; cell["execution_count"] = None
-            nbformat.write(nb, notebook)
     import nbformat
+    notebooks = changed_notebooks()
     for notebook in notebooks:
         nb = nbformat.read(notebook, as_version=4)
-        if "widgets" in nb.metadata:
-            del nb.metadata["widgets"]; nbformat.write(nb, notebook)
-    print(f"outputs: stripped {len(notebooks)} notebook(s)")
+        for cell in nb.cells:
+            if cell.cell_type == "code":
+                cell["outputs"] = []
+                cell["execution_count"] = None
+        nb.metadata.pop("widgets", None)
+        nbformat.write(nb, notebook)
+    print(f"outputs: stripped {len(notebooks)} changed notebook(s)")
 
 
 def secret_scan(paths):
