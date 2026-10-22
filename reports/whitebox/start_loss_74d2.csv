@@ -1,0 +1,7 @@
+condition,label,median,lowest,highest
+q3_undefended,"Qwen2.5-3B undefended, one user turn",2.2803,0.015,17.8423
+q3_undefended_in_role,"Qwen2.5-3B undefended, input role (no training)",1.7155,0.0052,17.2894
+q3_v13,"v13, one user turn (the final 3B)",21.7268,14.5366,23.8536
+q3_v13_in_role,"v13, input role at run time only",14.7848,9.755,21.2793
+q3_v13_more_oneturn,"v13 + one more pass, one user turn (control)",20.7672,14.2847,23.6162
+q3_v13_role,"v13 + one more pass, input role (notebook 74d)",17.2362,14.3118,21.5119

@@ -1,0 +1,6 @@
+R1 (E minus C): broken +0.000 [-0.240, +0.240], 11 against 11 of 25; starting loss -0.644 [-0.935, -0.390]. Not settled (the interval contains 0): extra training: one more pass over the same examples, without the role, makes the 3B easier to break.
+R2 (F minus E): broken +0.400 [+0.200, +0.600], 21 against 11 of 25; starting loss -3.040 [-3.965, -2.142]. Supported: the role at equal training makes the 3B easier to break.
+R3 (D minus C): broken +0.480 [+0.240, +0.680], 23 against 11 of 25; starting loss -6.190 [-7.774, -4.615]. Supported: moving the document without retraining breaks v13's defence (a defence tied to the one-turn layout).
+R4 (F minus D): broken -0.080 [-0.240, +0.080], 21 against 23 of 25; starting loss +2.506 [+1.621, +3.470]. Not settled (the interval contains 0): training in the role repairs part of what moving the document broke.
+R5 (B minus A, the untrained model): the injection alone -0.040 [-0.120, +0.000] (16 against 17); broken at step 1 +0.080 [+0.000, +0.200] (17 against 15); starting loss -0.203 [-0.625, +0.222]. Not settled: the untrained Qwen obeys an instruction at the end of the document more readily when the document has its own turn.
+Training: E's reverse-KL to the teacher 0.0203 in the first 100 batches and 0.0168 in the last; F's 0.0336 and 0.0234.

@@ -1,0 +1,5 @@
+condition,label,under_20,median_chars
+q3_undefended_in_role,"Qwen2.5-3B undefended, input role (no training)",0.0,440.0
+q3_v13_in_role,"v13, input role at run time only",0.0,446.5
+q3_v13_more_oneturn,"v13 + one more pass, one user turn (control)",0.0,458.0
+q3_v13,"v13, one user turn (the final 3B) (notebook 73e)",0.0,459.0

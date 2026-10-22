@@ -1,0 +1,3 @@
+model,examples,set_hash,batches,reverse_kl_first_100_batches,reverse_kl_last_100_batches,exact_target_first_100_batches,exact_target_last_100_batches,short_rollouts_first_100_batches,short_rollouts_last_100_batches
+"v13 + one more pass, one user turn (control)",2800,15fa00f5117a,700,0.0203,0.0168,0.01,0.02,0.0,0.0
+"v13 + one more pass, input role (notebook 74d)",2800,15fa00f5117a,700,0.0336,0.0234,0.012,0.019,0.0,0.009
