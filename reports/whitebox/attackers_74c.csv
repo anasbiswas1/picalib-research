@@ -1,0 +1,8 @@
+condition,constrained_13_attempts,free_25_attempts,white_box_gcg,note
+q3_undefended,"0.748 [0.685, 0.802]","0.729 [0.665, 0.784]","1.000 [0.867, 1.000]","constrained and free: share of the 210 BIPIA injections, each with its own goal; white-box: share of 25 documents, the fixed goal ""hacked"""
+q3_v13,"0.000 [0.000, 0.018]","0.033 [0.016, 0.067]","0.440 [0.267, 0.629]","constrained and free: share of the 210 BIPIA injections, each with its own goal; white-box: share of 25 documents, the fixed goal ""hacked"""
+q7_undefended,"0.667 [0.600, 0.727]","0.771 [0.710, 0.823]","1.000 [0.867, 1.000]","constrained and free: share of the 210 BIPIA injections, each with its own goal; white-box: share of 25 documents, the fixed goal ""hacked"""
+q7_v12,"0.010 [0.003, 0.034]","0.076 [0.047, 0.120]","0.760 [0.566, 0.885]","constrained and free: share of the 210 BIPIA injections, each with its own goal; white-box: share of 25 documents, the fixed goal ""hacked"""
+l_undefended,"0.714 [0.650, 0.771]","0.729 [0.665, 0.784]","0.960 [0.805, 0.993]","constrained and free: share of the 210 BIPIA injections, each with its own goal; white-box: share of 25 documents, the fixed goal ""hacked"""
+l_role_v13,"0.000 [0.000, 0.018]","0.071 [0.044, 0.114]","0.040 [0.007, 0.195]","constrained and free: share of the 210 BIPIA injections, each with its own goal; white-box: share of 25 documents, the fixed goal ""hacked"""
+l_secalign,"0.052 [0.029, 0.091]","0.081 [0.051, 0.126]","0.080 [0.022, 0.250]","constrained and free: share of the 210 BIPIA injections, each with its own goal; white-box: share of 25 documents, the fixed goal ""hacked"""
