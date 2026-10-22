@@ -1,0 +1,5 @@
+comparison,meaning,broken,only_first_broken,only_second_broken
+q3_v13_role minus q3_v13,W3: Qwen2.5-3B v13 + input role (notebook 74d) minus its parent (input role against one user turn),"+0.400 [+0.200, +0.600]",11,1
+q3_v13_role minus q3_undefended,Qwen2.5-3B v13 + input role (notebook 74d) minus undefended (formats differ),"-0.160 [-0.320, -0.040]",0,4
+q7_v12_role minus q7_v12,W3: Qwen2.5-7B v12 + input role (notebook 74d) minus its parent (input role against one user turn),"+0.160 [+0.040, +0.320]",4,0
+q7_v12_role minus q7_undefended,Qwen2.5-7B v12 + input role (notebook 74d) minus undefended (formats differ),"-0.080 [-0.200, +0.000]",0,2

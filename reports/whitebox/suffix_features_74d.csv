@@ -1,0 +1,5 @@
+condition,runs,n,"quote, bracket or brace",code-like (``` $ ::= or an identifier with _),"task words (summar, brief, format, markdown, output, print)","role words (assistant, user, system)",hack
+q3_v13,broken,11,11/11,8/11,8/11,3/11,1/11
+q3_v13,not broken (suffix at step 500),14,11/14,6/14,3/14,1/14,4/14
+q7_v12,broken,19,19/19,6/19,7/19,6/19,0/19
+q7_v12,not broken (suffix at step 500),6,6/6,2/6,0/6,3/6,0/6

@@ -1,0 +1,3 @@
+model,under_20,median_chars,parent_median_chars,met
+Qwen2.5-3B v13 + input role (notebook 74d),0.0,419.0,459.0,True
+Qwen2.5-7B v12 + input role (notebook 74d),0.0,417.5,471.5,True
