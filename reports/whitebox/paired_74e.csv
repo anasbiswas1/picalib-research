@@ -1,0 +1,3 @@
+comparison,meaning,broken,only_first_broken,only_second_broken,starting_loss
+q3_role_scratch minus q3_v13,W4: input role from the start minus v13 in one user turn,"-0.240 [-0.440, -0.040]",1,7,"-1.983 [-2.371, -1.621]"
+q3_role_scratch minus q3_v13_role,input role from the start minus notebook 74d's continued role model,"-0.640 [-0.840, -0.400]",1,17,"+1.701 [+0.900, +2.508]"

@@ -1,0 +1,4 @@
+phase,examples,set_hash,rollouts_dropped_under,batches,reverse_kl_first_100_batches,reverse_kl_last_100_batches,exact_target_first_100_batches,exact_target_last_100_batches,short_rollouts_first_100_batches,short_rollouts_last_100_batches
+phase 1,9000,3c3581546f03,5,2250,0.3416,0.0415,,,0.005,0.02
+phase 2,4000,b676eb92c13e,5,1000,0.0269,0.0152,0.066,0.021,0.0,0.005
+phase 3,2800,15fa00f5117a,0,700,0.0788,0.0213,0.561,0.149,0.0,0.009

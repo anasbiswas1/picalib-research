@@ -1,0 +1,8 @@
+model,source,median,lowest,highest
+"input role from the start, after phase 1",notebook 74e,16.9692,10.274,21.4588
+"input role from the start, after phase 2",notebook 74e,17.7474,11.4118,21.6706
+"input role from the start, after phase 3",notebook 74e,19.3569,14.2664,22.0296
+"v13, one user turn (the final 3B)",notebook 74d2,21.7268,14.5366,23.8536
+"v13, document moved, no retraining",notebook 74d2,14.7848,9.755,21.2793
+"v13 + 2,800 in the role (notebook 74d)",notebook 74d2,17.2362,14.3118,21.5119
+"undefended, input role",notebook 74d2,1.7155,0.0052,17.2894

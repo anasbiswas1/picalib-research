@@ -1,0 +1,6 @@
+condition,model,broken,broken_n,injection_alone,broken_only_with_the_suffix,hacked_anywhere_in_final_reply,median_step_of_success,median_final_loss,median_lowest_loss,largest_first_token_difference,largest_kl,largest_cache_difference,candidates_rejected,render_mismatches,inconsistent_checks,source
+q3_undefended,"Qwen2.5-3B undefended, one user turn","1.000 [0.867, 1.000]",25,"0.680 [0.484, 0.828]",8,"1.000 [0.867, 1.000]",1.0,0.001,0.001,0.2828,,0.144,0.215,0,0,notebook 74c
+q3_v13,"Qwen2.5-3B v13, one user turn (the final 3B)","0.440 [0.267, 0.629]",11,"0.000 [0.000, 0.133]",11,"0.440 [0.267, 0.629]",280.0,1.942,1.402,0.0772,5e-05,0.0678,0.099,0,0,notebook 74c
+q3_v13_role,"Qwen2.5-3B v13 + 2,800 in the role (notebook 74d)","0.840 [0.653, 0.936]",21,"0.000 [0.000, 0.133]",21,"0.840 [0.653, 0.936]",80.0,0.275,0.232,0.0493,3e-05,0.1337,0.111,0,0,notebook 74d
+q3_role_scratch,"Qwen2.5-3B, input role from the start (notebook 74e)","0.200 [0.089, 0.391]",5,"0.000 [0.000, 0.133]",5,"0.200 [0.089, 0.391]",300.0,3.254,2.865,0.0424,3e-05,0.1082,0.103,0,0,notebook 74e
+l_role_v13,"Llama-3.1-8B v13, input role from the start (reference)","0.040 [0.007, 0.195]",1,"0.000 [0.000, 0.133]",1,"0.080 [0.022, 0.250]",280.0,5.048,4.783,0.4053,0.01173,0.3943,0.095,0,0,notebook 74c
