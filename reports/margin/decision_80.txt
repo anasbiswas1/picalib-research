@@ -1,0 +1,8 @@
+A1: the margin separates the documents GCG did not break from those it broke with pooled AUROC 0.675 [0.611, 0.729]; the attacked side alone 0.762, the starting loss 0.773, the twin side alone 0.705.
+A2: across the 13 conditions the median margin and the number of documents broken have Spearman -0.587; reported within one family: Qwen -0.932, Llama (three conditions) -1.000.
+A3: within one model, mean AUROC 0.589 over 5 conditions with both outcomes; below 0.60, so the margin is claimed as a model-level measure only.
+A4: the twin side changes the pooled AUROC by -0.086 [-0.112, -0.066].
+Target margin: no margin value meets the rule: m is not fixed here, notebook 81 sets it from the inner attack.
+STOP: the margin is not what GCG exploits; no training is built on it, and the plan is revised from these per-document results.
+G0m pass / A1 fail / A2 fail
+STOP

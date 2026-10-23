@@ -1,0 +1,7 @@
+measure,pooled_auroc,ci_low,ci_high
+margin,0.675,0.611,0.729
+margin with the starting suffix,0.678,0.62,0.729
+attacked side alone,0.762,0.711,0.81
+"attacked side alone, with the starting suffix (the starting loss)",0.773,0.727,0.814
+twin side alone (the twin loss: high when the model refuses even the user),0.705,0.658,0.754
+margin minus attacked side alone (A4),-0.086,-0.112,-0.066

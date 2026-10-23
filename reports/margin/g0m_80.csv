@@ -1,0 +1,7 @@
+condition,median_74d2,median_here,mean_difference,largest_abs_difference,document_of_largest,documents_over_0_05,whole_prompt_minus_gcg_code_largest
+q3_undefended,2.28,2.266,0.0091,0.209,6,3,0.0
+q3_undefended_in_role,1.716,1.684,0.0107,0.1133,6,4,0.0
+q3_v13,21.727,21.713,-0.0023,0.0358,13,0,0.0
+q3_v13_in_role,14.785,14.798,0.0126,0.1552,18,2,0.0
+q3_v13_more_oneturn,20.767,20.763,0.0034,0.0477,14,0,0.0
+q3_v13_role,17.236,17.209,-0.0089,0.0648,12,3,0.0

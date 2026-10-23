@@ -1,0 +1,7 @@
+mark,criterion,value,needed,met
+G0m,the GCG records of all 13 conditions are complete and match their committed tables; the starting loss computed here with GCG's own code agrees with notebook 74d2's for its six 3B conditions without a systematic offset (each condition's mean difference within 0.05; median absolute difference over all documents at most 0.02; the largest single difference reported). Fails: stop,median absolute difference 0.0137; largest condition mean difference 0.0126; largest single difference (reported) 0.209,<= 0.02; <= 0.05,True
+A1,"pooled over the 13 conditions and 25 documents, the margin (no suffix) separates unbroken from broken documents: AUROC at least 0.75, lower end of the 95% interval (bootstrap over documents) above 0.50","0.675 [0.611, 0.729]",">= 0.75, lower end > 0.50",False
+A2,"per condition, median margin against the number of documents GCG broke: Spearman at most -0.80",-0.587,<= -0.8,False
+A2f,reported: the same Spearman inside the ten Qwen conditions and inside the three Llama conditions (added after the first run; it does not change A2 or the decision),Qwen (10 conditions) -0.932; Llama (3 conditions) -1.000,reported,True
+A3,"reported: AUROC inside each condition with at least 3 broken and 3 unbroken documents, and their mean; below 0.60 means the margin is claimed as a model-level measure only",mean 0.589 over 5 conditions,reported,True
+A4,"reported: AUROC of the margin minus AUROC of the attacked side alone, paired bootstrap over documents","-0.086 [-0.112, -0.066]",reported,True
