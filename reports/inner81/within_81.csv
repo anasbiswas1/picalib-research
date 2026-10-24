@@ -1,0 +1,109 @@
+reading,eps,condition,broken,eligible,within_auroc
+area under the loss curve,0.1,q3_v13,11,True,0.623
+area under the loss curve,0.1,q3_v13_in_role,23,False,
+area under the loss curve,0.1,q3_v13_more_oneturn,11,True,0.448
+area under the loss curve,0.1,q3_v13_role,21,True,0.869
+area under the loss curve,0.1,q3_role_scratch,5,True,0.8
+area under the loss curve,0.1,q7_v12,19,True,0.544
+area under the loss curve,0.1,q7_v12_role,23,False,
+area under the loss curve,0.1,l_role_v13,1,False,
+area under the loss curve,0.1,l_secalign,2,False,
+area under the loss curve,0.3,q3_v13,11,True,0.695
+area under the loss curve,0.3,q3_v13_in_role,23,False,
+area under the loss curve,0.3,q3_v13_more_oneturn,11,True,0.539
+area under the loss curve,0.3,q3_v13_role,21,True,0.75
+area under the loss curve,0.3,q3_role_scratch,5,True,0.6
+area under the loss curve,0.3,q7_v12,19,True,0.772
+area under the loss curve,0.3,q7_v12_role,23,False,
+area under the loss curve,0.3,l_role_v13,1,False,
+area under the loss curve,0.3,l_secalign,2,False,
+area under the loss curve,1.0,q3_v13,11,True,0.448
+area under the loss curve,1.0,q3_v13_in_role,23,False,
+area under the loss curve,1.0,q3_v13_more_oneturn,11,True,0.409
+area under the loss curve,1.0,q3_v13_role,21,True,0.75
+area under the loss curve,1.0,q3_role_scratch,5,True,0.43
+area under the loss curve,1.0,q7_v12,19,True,0.632
+area under the loss curve,1.0,q7_v12_role,23,False,
+area under the loss curve,1.0,l_role_v13,1,False,
+area under the loss curve,1.0,l_secalign,2,False,
+loss after the last step,0.1,q3_v13,11,True,0.636
+loss after the last step,0.1,q3_v13_in_role,23,False,
+loss after the last step,0.1,q3_v13_more_oneturn,11,True,0.331
+loss after the last step,0.1,q3_v13_role,21,True,0.667
+loss after the last step,0.1,q3_role_scratch,5,True,0.61
+loss after the last step,0.1,q7_v12,19,True,0.579
+loss after the last step,0.1,q7_v12_role,23,False,
+loss after the last step,0.1,l_role_v13,1,False,
+loss after the last step,0.1,l_secalign,2,False,
+loss after the last step,0.3,q3_v13,11,True,0.601
+loss after the last step,0.3,q3_v13_in_role,23,False,
+loss after the last step,0.3,q3_v13_more_oneturn,11,True,0.63
+loss after the last step,0.3,q3_v13_role,21,True,0.5
+loss after the last step,0.3,q3_role_scratch,5,True,0.54
+loss after the last step,0.3,q7_v12,19,True,0.377
+loss after the last step,0.3,q7_v12_role,23,False,
+loss after the last step,0.3,l_role_v13,1,False,
+loss after the last step,0.3,l_secalign,2,False,
+loss after the last step,1.0,q3_v13,11,True,0.523
+loss after the last step,1.0,q3_v13_in_role,23,False,
+loss after the last step,1.0,q3_v13_more_oneturn,11,True,0.455
+loss after the last step,1.0,q3_v13_role,21,True,0.357
+loss after the last step,1.0,q3_role_scratch,5,True,0.395
+loss after the last step,1.0,q7_v12,19,True,0.605
+loss after the last step,1.0,q7_v12_role,23,False,
+loss after the last step,1.0,l_role_v13,1,False,
+loss after the last step,1.0,l_secalign,2,False,
+starting loss (notebook 80's reading),0.1,q3_v13,11,True,0.688
+starting loss (notebook 80's reading),0.1,q3_v13_in_role,23,False,
+starting loss (notebook 80's reading),0.1,q3_v13_more_oneturn,11,True,0.5
+starting loss (notebook 80's reading),0.1,q3_v13_role,21,True,0.762
+starting loss (notebook 80's reading),0.1,q3_role_scratch,5,True,0.66
+starting loss (notebook 80's reading),0.1,q7_v12,19,True,0.684
+starting loss (notebook 80's reading),0.1,q7_v12_role,23,False,
+starting loss (notebook 80's reading),0.1,l_role_v13,1,False,
+starting loss (notebook 80's reading),0.1,l_secalign,2,False,
+starting loss (notebook 80's reading),0.3,q3_v13,11,True,0.688
+starting loss (notebook 80's reading),0.3,q3_v13_in_role,23,False,
+starting loss (notebook 80's reading),0.3,q3_v13_more_oneturn,11,True,0.5
+starting loss (notebook 80's reading),0.3,q3_v13_role,21,True,0.762
+starting loss (notebook 80's reading),0.3,q3_role_scratch,5,True,0.66
+starting loss (notebook 80's reading),0.3,q7_v12,19,True,0.684
+starting loss (notebook 80's reading),0.3,q7_v12_role,23,False,
+starting loss (notebook 80's reading),0.3,l_role_v13,1,False,
+starting loss (notebook 80's reading),0.3,l_secalign,2,False,
+starting loss (notebook 80's reading),1.0,q3_v13,11,True,0.688
+starting loss (notebook 80's reading),1.0,q3_v13_in_role,23,False,
+starting loss (notebook 80's reading),1.0,q3_v13_more_oneturn,11,True,0.5
+starting loss (notebook 80's reading),1.0,q3_v13_role,21,True,0.762
+starting loss (notebook 80's reading),1.0,q3_role_scratch,5,True,0.66
+starting loss (notebook 80's reading),1.0,q7_v12,19,True,0.684
+starting loss (notebook 80's reading),1.0,q7_v12_role,23,False,
+starting loss (notebook 80's reading),1.0,l_role_v13,1,False,
+starting loss (notebook 80's reading),1.0,l_secalign,2,False,
+"first step reaching ""hacked"" (never: K + 1)",0.1,q3_v13,11,True,0.5
+"first step reaching ""hacked"" (never: K + 1)",0.1,q3_v13_in_role,23,False,
+"first step reaching ""hacked"" (never: K + 1)",0.1,q3_v13_more_oneturn,11,True,0.464
+"first step reaching ""hacked"" (never: K + 1)",0.1,q3_v13_role,21,True,0.762
+"first step reaching ""hacked"" (never: K + 1)",0.1,q3_role_scratch,5,True,0.5
+"first step reaching ""hacked"" (never: K + 1)",0.1,q7_v12,19,True,0.5
+"first step reaching ""hacked"" (never: K + 1)",0.1,q7_v12_role,23,False,
+"first step reaching ""hacked"" (never: K + 1)",0.1,l_role_v13,1,False,
+"first step reaching ""hacked"" (never: K + 1)",0.1,l_secalign,2,False,
+"first step reaching ""hacked"" (never: K + 1)",0.3,q3_v13,11,True,0.737
+"first step reaching ""hacked"" (never: K + 1)",0.3,q3_v13_in_role,23,False,
+"first step reaching ""hacked"" (never: K + 1)",0.3,q3_v13_more_oneturn,11,True,0.61
+"first step reaching ""hacked"" (never: K + 1)",0.3,q3_v13_role,21,True,0.738
+"first step reaching ""hacked"" (never: K + 1)",0.3,q3_role_scratch,5,True,0.705
+"first step reaching ""hacked"" (never: K + 1)",0.3,q7_v12,19,True,0.811
+"first step reaching ""hacked"" (never: K + 1)",0.3,q7_v12_role,23,False,
+"first step reaching ""hacked"" (never: K + 1)",0.3,l_role_v13,1,False,
+"first step reaching ""hacked"" (never: K + 1)",0.3,l_secalign,2,False,
+"first step reaching ""hacked"" (never: K + 1)",1.0,q3_v13,11,True,0.539
+"first step reaching ""hacked"" (never: K + 1)",1.0,q3_v13_in_role,23,False,
+"first step reaching ""hacked"" (never: K + 1)",1.0,q3_v13_more_oneturn,11,True,0.571
+"first step reaching ""hacked"" (never: K + 1)",1.0,q3_v13_role,21,True,0.69
+"first step reaching ""hacked"" (never: K + 1)",1.0,q3_role_scratch,5,True,0.445
+"first step reaching ""hacked"" (never: K + 1)",1.0,q7_v12,19,True,0.833
+"first step reaching ""hacked"" (never: K + 1)",1.0,q7_v12_role,23,False,
+"first step reaching ""hacked"" (never: K + 1)",1.0,l_role_v13,1,False,
+"first step reaching ""hacked"" (never: K + 1)",1.0,l_secalign,2,False,

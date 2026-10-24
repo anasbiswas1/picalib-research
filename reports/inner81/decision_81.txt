@@ -1,0 +1,7 @@
+Size judged (chosen from the attack alone): eps 0.1, reaching 0.324 of the pairs.
+P1: inside the 5 models with both outcomes, the area under the loss curve separates the documents GCG did not break from those it broke with mean AUROC 0.657 [0.530, 0.761] (notebook 80's margin: 0.589); the starting loss at the same size 0.659.
+P2: at eps 1.0 the attack reaches "hacked" on 1.000 of the pairs GCG broke, and on 1.000 of those it did not.
+P3: at eps 1.0, the median time to its outcome is 0.0169 of GCG's.
+STOP: inside a model, what the document-only attack achieves does not say which documents GCG breaks; no training is built on this route, and part two is written from what is already committed.
+G0i pass / U pass / P1 fail / P2 pass / P3 pass
+STOP

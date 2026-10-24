@@ -1,0 +1,10 @@
+condition,U1_zero_outside,U3_no_weight_gradient,U4_largest_difference_from_gcg,largest_spread_three_sizes_at_step_0,one_at_a_time,U5_document_tokens,U6_finite,steps_skipped_eps0.1,steps_skipped_eps0.3,steps_skipped_eps1.0,steps_undone_eps0.1,steps_undone_eps0.3,steps_undone_eps1.0,median_document_tokens,gpu
+q3_v13,True,True,0.0,0.0,0,True,True,0,0,0,0,0,0,434,NVIDIA A100-SXM4-80GB
+q3_v13_in_role,True,True,0.0,0.0,0,True,True,0,1,0,0,0,0,434,NVIDIA A100-SXM4-40GB
+q3_v13_more_oneturn,True,True,0.0,0.0,0,True,True,0,0,1,0,0,0,434,NVIDIA A100-SXM4-40GB
+q3_v13_role,True,True,0.0,0.0,0,True,True,3,0,0,0,0,0,434,NVIDIA A100-SXM4-40GB
+q3_role_scratch,True,True,0.0,0.0,0,True,True,2,1,0,0,0,0,434,NVIDIA A100-SXM4-40GB
+q7_v12,True,True,0.0,0.0,0,True,True,0,0,0,0,0,0,434,NVIDIA A100-SXM4-40GB
+q7_v12_role,True,True,0.0,0.0,0,True,True,0,0,0,0,0,0,434,NVIDIA A100-SXM4-40GB
+l_role_v13,True,True,0.0,0.0,0,True,True,0,0,0,0,0,0,366,NVIDIA A100-SXM4-40GB
+l_secalign,True,True,0.0,0.0,0,True,True,0,0,0,0,0,0,366,NVIDIA A100-SXM4-40GB
