@@ -1,0 +1,6 @@
+model,user_followed_150,user_followed_600,alpaca_followed,mmlu,ifeval_prompt_strict,ifeval_instruction_strict,summary_median_chars,degenerate
+Qwen2.5-3B undefended,"0.340 [0.269, 0.419]",,"0.117 [0.058, 0.222]","0.633 [0.577, 0.686]",,,463,0.0
+v7 (notebook 67),"0.380 [0.306, 0.460]",,"0.100 [0.047, 0.201]","0.637 [0.581, 0.689]",,,508,0.0
+"v13, one user turn (notebook 73e)","0.420 [0.344, 0.500]",,"0.100 [0.047, 0.201]","0.630 [0.574, 0.683]",0.58,0.679,389,0.0
+input role from the start (notebook 74e),"0.533 [0.454, 0.611]","0.538 [0.460, 0.615]","0.150 [0.081, 0.261]","0.647 [0.591, 0.699]",0.595,0.686,338,0.0
+adversarial twin distillation (notebook 82a),"0.433 [0.357, 0.513]","0.429 [0.354, 0.508]","0.150 [0.081, 0.261]","0.637 [0.581, 0.689]",0.575,0.674,452,0.0

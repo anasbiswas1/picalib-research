@@ -1,0 +1,11 @@
+prompts,n,document_not_in_the_input_turn,instruction_tail_in_the_input_turn,user_instruction_not_in_the_user_turn,over_3072_tokens_two_role,over_2048_tokens_one_turn
+"BIPIA, 13 variants (2,730)",2730,0,0,0,0.0,0.0
+second source (300),300,0,0,0,0.0,0.0
+user-issued (156),156,0,0,0,0.0,0.0
+plain summaries (60),60,0,0,0,0.0,0.0
+clean passages (240),240,0,0,0,0.0,0.0
+evidence pairs (600),600,0,0,0,0.0,0.0
+held-out Alpaca (60),60,0,0,0,0.0,0.0
+copy battery,480,0,0,0,0.0,0.0
+"notebook 72's suite, input role (1,680)",1680,0,0,0,0.0,0.0
+"SecFid (1,168)",1168,0,0,0,,

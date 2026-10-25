@@ -1,0 +1,4 @@
+model,agreement_with_base_rouge_l,median_chars,under_20_chars
+adversarial twin distillation (notebook 82a),0.695,407,0.0
+input role from the start (notebook 74e),0.728,403,0.0
+"base model, adapter off (the teacher of the distillation)",,404,0.0
