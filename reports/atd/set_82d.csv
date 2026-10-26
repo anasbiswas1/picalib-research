@@ -1,0 +1,25 @@
+part,n
+"notebook 82a's forged-onset examples, attacked",1127
+their twins (the phase-1 twin of each triplet),1127
+notebook 82a's forged-onset examples left out: twin not the phase-1 twin,1
+notebook 82a's forged-onset examples left out by the separation checks,3
+phase-1 attacked examples (any position),150
+their twins,150
+forged-turn attacked examples (notebook 73e's set),150
+their twins,150
+clean anchors,200
+copying (notebook 38's literal phase),250
+processing (notebook 65),350
+forged-turn processing (notebook 73e),150
+forged-onset copying (new),250
+"  forged-onset copying, endword at the end",63
+"  forged-onset copying, endword at the middle",20
+"  forged-onset copying, nocomma at the end",62
+"  forged-onset copying, nocomma at the middle",21
+"  forged-onset copying, upper at the end",63
+"  forged-onset copying, upper at the middle",21
+set: examples,4054
+set: batches of 4,1014
+"pool sources (notebook 82a's, after the separation checks)",574
+pool attacked prompts (2 a batch),2028
+pool twins (2 a batch),2028

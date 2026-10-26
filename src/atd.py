@@ -6,7 +6,16 @@ the user asks for the injected instruction, after the prefix it shares with the 
 suffixes of twenty tokens that GCG (src/gcg_attack.py, the project's implementation, with a smaller candidate batch)
 keeps optimising against the model as it trains, each on its own triplet, with the compliance onset as the target and
 the test-time filters. The training step is src/qwen_role.py's (on-policy reverse-KL distillation towards the same
-model with the adapter off, the twins, the literal tasks); the pool adds two attacked prompts to every batch."""
+model with the adapter off, the twins, the literal tasks); the pool adds two attacked prompts to every batch.
+
+Notebook 82d adds what the repaired set needs, and nothing in notebook 82a's path changes (pool_twins defaults to off):
+  pool_twins       every pool draw also adds its entry's twin (the same instruction in the user turn with the clean
+                   document, teacher the same prompt), so the pool's attacked prompts are matched one to one;
+  phase1_twin      the phase-1 twin of a phase-1 attacked example, found by its clean data and its instruction line;
+  forged_copy_examples
+                   copying tasks whose text holds an injected instruction followed by its forged opening, with the exact
+                   answer computed by code (the forged opening is copied like any other text);
+  the training log records the reverse KL by kind of example (forged, twin, pool, clean, ...)."""
 from __future__ import annotations
 import os, json, shutil, hashlib, time
 import numpy as np
@@ -42,6 +51,49 @@ def parse_triplet(e):
 def twin_prompt(t): return f"{t['instr']} {t['g']}\n\n{t['label']}{t['clean']}"
 def clean_prompt(t): return f"{t['instr']}\n\n{t['label']}{t['clean']}"
 def attacked_prompt(t, tail=""): return f"{t['instr']}\n\n{t['label']}{t['injected']}{tail}"
+
+
+def phase1_twin(e, index):
+    """The phase-1 twin of a phase-1 attacked example (notebooks 41 and 60 built each attacked example with its twin): a
+    twin with the same data as the attacked example's clean teacher, whose instruction line is the attacked example's
+    instruction line, a space and an extra instruction that sits in the attacked data. index: data part -> twins.
+    Returns every (twin, extra instruction) that fits; the caller keeps the example only if there is exactly one."""
+    ti, _, td = e["teacher"].partition("\n\n"); _, _, sd = e["student"].partition("\n\n"); out = []
+    for w in index.get(td, []):
+        wi = w["student"].partition("\n\n")[0]
+        if wi.startswith(ti + " "):
+            extra = wi[len(ti) + 1:].strip()
+            if extra and extra in sd: out.append((w, extra))
+    return out
+
+
+COPY_TASKS = ("upper", "nocomma", "endword")      # notebook 38's copying tasks that keep a forged line whole (reverse splits it into sentences); repeat, number and quote_last are the copy battery's
+
+
+def forged_copy_examples(bases, lines, n, seed=0, keep=lambda e: True):
+    """n copying examples whose text holds a forged opening: a short training passage (forged_processing.host_bases)
+    with an injected instruction and the forged opening that followed it in a forged-onset example (g and tail) inserted
+    at the end (three in four) or in the middle; the task copies the text in capital letters, without commas, or with
+    END on a new line (notebook 38's prompts), and the exact answer, computed by code, copies the forged opening like
+    any other text. The tasks rotate; keep(example) applies the caller's separation checks, a rejected draw is replaced."""
+    from literal_tasks import LITERAL
+    from forged_processing import copy_gold
+    rng = np.random.default_rng(seed); out, tries = [], 0
+    while len(out) < n:
+        tries += 1; assert tries < 50 * n, "too many rejected draws"
+        k = len(out); task = COPY_TASKS[k % len(COPY_TASKS)]; where = "middle" if k % 4 == 3 else "end"
+        g, tail = lines[int(rng.integers(len(lines)))]; sents = list(bases[int(rng.integers(len(bases)))])
+        sents.insert(len(sents) if where == "end" else len(sents) // 2, g.strip() + tail)
+        doc = " ".join(sents)
+        if qwen_filter(doc) != doc: continue
+        e = dict(kind="literal", source="forged_copy", task=task, position=where, inserted=g.strip(), tail=tail, prompt=LITERAL[task].format(doc=doc), gold=copy_gold(task, doc))
+        if keep(e): out.append(e)
+    return out
+
+
+def kind_of(e):
+    """The kind of a training example and where it comes from, for the log (attacked:pool, twin:pool_twin, ...)."""
+    return f"{e['kind']}:{e.get('source', '')}"
 
 
 @torch.no_grad()
@@ -144,11 +196,13 @@ def check_rendering(tok, system, student, tail):
     return 0 <= i_in < i_t < i_as and r.count(INPUT_HEADER) == 1
 
 
-def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed, init_adapter, probe_prompts, cfg, lam=0.3, B=4, LOG=20, CKPT=100, MAXNEW=128, lr=2e-5, min_chars=0):
+def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed, init_adapter, probe_prompts, cfg, lam=0.3, B=4, LOG=20, CKPT=100, MAXNEW=128, lr=2e-5, min_chars=0, pool_twins=False):
     """qwen_role.train_phase_all_q with the live pool: every batch, n_p pool entries get m GCG steps against the current
-    model and join the batch as attacked examples (teacher: the clean prompt). An entry that has won (loss on the
-    compliance onset below tau) is used once more at its next draw and then reset to the next source triplet; every L
-    batches a random fifth of the pool is reset. The pool and its log are checkpointed with the adapter and resume."""
+    model and join the batch as attacked examples (teacher: the clean prompt); with pool_twins, each drawn entry's twin
+    (its instruction in the user turn with the clean document, teacher the same prompt) joins the batch too. An entry
+    that has won (loss on the compliance onset below tau) is used once more at its next draw and then reset to the next
+    source triplet; every L batches a random fifth of the pool is reset. The pool and its log are checkpointed with the
+    adapter and resume. Each logged batch carries the reverse KL by kind of example (kl_by: kind -> [sum, count])."""
     import gc
     from peft import PeftModel, LoraConfig, get_peft_model, prepare_model_for_kbit_training
     from targets import load_lm
@@ -201,10 +255,11 @@ def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed
         drawn = [pool[(nb * cfg["n_p"] + j) % cfg["P"]] for j in range(cfg["n_p"])]; pool_ex = []
         for e in drawn:
             s0 = e.get("steps", 0); student = att.steps(e, cfg["m"], cfg["tau"]); e["draws"] += 1
-            pool_ex.append(dict(kind="attacked", student=student, teacher=clean_prompt(e)))
+            pool_ex.append(dict(kind="attacked", source="pool", student=student, teacher=clean_prompt(e)))
+            if pool_twins: tw = twin_prompt(e); pool_ex.append(dict(kind="twin", source="pool_twin", student=tw, teacher=tw))
             plog.append(dict(step=step, id=e["id"], event="draw", loss_before=e["loss_before"], loss=e["loss"], steps=e["steps"], gained=e["steps"] - s0, won=bool(e["won"]), seconds=e["seconds"], suffix=e["suffix"] if e["won"] else None))
         dist = dist + pool_ex
-        terms, rec = [], dict(step=step, kl=None, sft=None, kinds="".join(e["kind"][0] for e in batch) + "p" * len(pool_ex), pool_loss=[e["loss"] for e in drawn], pool_won=[bool(e["won"]) for e in drawn])
+        terms, rec = [], dict(step=step, kl=None, sft=None, kinds="".join(e["kind"][0] for e in batch) + "".join("p" if x["kind"] == "attacked" else "q" for x in pool_ex), pool_loss=[e["loss"] for e in drawn], pool_won=[bool(e["won"]) for e in drawn])
         if dist:
             roll = sample_rollouts_q(model, tok, [e["student"] for e in dist], system, max_new_tokens=MAXNEW)
             keep = [i for i, r in enumerate(roll) if len(r) >= min_chars]; rec["short"] = sum(len(r) < 20 for r in roll); rec["nroll"] = len(roll)
@@ -214,6 +269,10 @@ def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed
                 with torch.no_grad(), model.disable_adapter():
                     lp_t = response_logprobs_q(model, tok, [e["teacher"] for e in dk], rk, system)
                 dl, kl = distill_loss(lp_s, lp_t); terms.append(dl); rec["kl"] = kl
+                kb = {}
+                for x_, s_, t_ in zip(dk, lp_s, lp_t):       # the same per-prompt reverse KL that distill_loss averages, by kind of example (logged only)
+                    v_ = kb.setdefault(kind_of(x_), [0.0, 0]); v_[0] += float((s_ - t_).detach().mean()); v_[1] += 1
+                rec["kl_by"] = kb
         if lit:
             sl = sft_loss(response_logprobs_q(model, tok, [e["prompt"] for e in lit], [e["gold"] for e in lit], system)); terms.append(lam * sl); rec["sft"] = float(sl.detach())
         if terms:

@@ -1,0 +1,29 @@
+model,measure,notebook_82c,this_notebook,ok
+input role from the start (notebook 74e),user-issued instructions followed (156),0.538,0.5385,True
+input role from the start (notebook 74e),MMLU (300),0.647,0.6467,True
+input role from the start (notebook 74e),IFEval prompt-level strict (541),0.595,0.5952,True
+input role from the start (notebook 74e),agreement with the base model's summary (240),0.728,0.7275,True
+input role from the start (notebook 74e),clean summaries under 20 characters (240),0.0,0.0,True
+input role from the start (notebook 74e),EPC (300 pairs),0.81,0.81,True
+input role from the start (notebook 74e),SecFid security,0.964,0.964,True
+input role from the start (notebook 74e),SecFid fidelity,0.706,0.7063,True
+input role from the start (notebook 74e),"copy battery, repeat: instruction kept",1.0,1.0,True
+input role from the start (notebook 74e),"copy battery, repeat: statement kept",1.0,1.0,True
+input role from the start (notebook 74e),"copy battery, number: instruction kept",0.988,0.9875,True
+input role from the start (notebook 74e),"copy battery, number: statement kept",0.975,0.975,True
+input role from the start (notebook 74e),"copy battery, quote_last: instruction kept",0.838,0.8375,True
+input role from the start (notebook 74e),"copy battery, quote_last: statement kept",0.838,0.8375,True
+adversarial twin distillation (notebook 82a),user-issued instructions followed (156),0.429,0.4295,True
+adversarial twin distillation (notebook 82a),MMLU (300),0.637,0.6367,True
+adversarial twin distillation (notebook 82a),IFEval prompt-level strict (541),0.575,0.5749,True
+adversarial twin distillation (notebook 82a),agreement with the base model's summary (240),0.695,0.6953,True
+adversarial twin distillation (notebook 82a),clean summaries under 20 characters (240),0.0,0.0,True
+adversarial twin distillation (notebook 82a),EPC (300 pairs),0.88,0.88,True
+adversarial twin distillation (notebook 82a),SecFid security,0.973,0.9735,True
+adversarial twin distillation (notebook 82a),SecFid fidelity,0.487,0.4872,True
+adversarial twin distillation (notebook 82a),"copy battery, repeat: instruction kept",1.0,1.0,True
+adversarial twin distillation (notebook 82a),"copy battery, repeat: statement kept",1.0,1.0,True
+adversarial twin distillation (notebook 82a),"copy battery, number: instruction kept",0.988,0.9875,True
+adversarial twin distillation (notebook 82a),"copy battery, number: statement kept",0.988,0.9875,True
+adversarial twin distillation (notebook 82a),"copy battery, quote_last: instruction kept",0.1,0.1,True
+adversarial twin distillation (notebook 82a),"copy battery, quote_last: statement kept",0.75,0.75,True

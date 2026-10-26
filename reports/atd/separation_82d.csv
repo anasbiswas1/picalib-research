@@ -1,0 +1,3 @@
+part,examples,copy_battery,secfid,bipia_and_gcg_documents,evidence_pairs,validation_passages_and_instructions,held_out_alpaca_instruction,test_wording_of_notebook_72
+notebook 82a's forged-onset examples (with the phase-1 twin),1130,0,0,0,0,3,0,0
+notebook 82a's pool sources,574,0,0,0,0,0,0,0
