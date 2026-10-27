@@ -1,0 +1,28 @@
+part,n
+end: forged_copy,188
+end: forged_processing,50
+end: processing_65,81
+other: copying_38,250
+other: forged_copy,62
+other: forged_processing,100
+other: processing_65,269
+twin drawn: forged_onset_twin,200
+twin drawn: forged_turn_twin,50
+twin drawn: phase1_twin,50
+twin drawn: clean_anchor,100
+twin kept: clean_anchor,89
+twin kept: forged_onset_twin,154
+twin kept: forged_turn_twin,43
+twin kept: phase1_twin,38
+twins whose base reply did not end within 256 tokens,76
+twins longer than 1024 tokens,0
+end examples longer than 1024 tokens,0
+other examples longer than 1024 tokens,0
+end examples whose text ends exactly with the injected instruction,319
+exact targets that differ from their code (kept),0
+protected set: end,319
+protected set: other,681
+protected set: twin,324
+"reference batch a step (end, other, twin)","4, 2, 2"
+U330 items sharing a sentence with the training set,0
+U71 items,240

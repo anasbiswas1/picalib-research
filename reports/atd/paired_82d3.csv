@@ -1,0 +1,4 @@
+comparison,documents,n,broken_a,broken_b,difference,only_a_broken,only_b_broken,exact_p,logrank_z,logrank_p
+q3_atd minus q3_role_scratch,all 50,50,2,10,"-0.160 [-0.280, -0.040]",2,10,0.0386,-2.421,0.0155
+q3_atd minus q3_role_scratch,development,25,2,5,"-0.120 [-0.320, +0.080]",2,5,0.4531,-1.156,0.2477
+q3_atd minus q3_role_scratch,fresh,25,0,5,"-0.200 [-0.360, -0.040]",0,5,0.0625,-2.333,0.0196

@@ -1,0 +1,8 @@
+source,n,carried_out,kept_as_content,reply_ended
+forged_onset,1127,0.105,0.511,0.781
+phase1,150,0.127,0.527,0.753
+forged_turn,150,0.18,0.547,0.707
+pool sources,574,0.092,0.493,0.786
+all,2001,0.108,0.51,0.775
+the 300 drawn: the clean teacher,300,0.0,0.0,0.81
+the 300 drawn: the content-preserving teacher,300,0.123,0.49,0.807
