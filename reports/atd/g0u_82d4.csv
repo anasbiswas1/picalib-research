@@ -1,0 +1,15 @@
+what,notebook_71,this_notebook,ok
+"U150, begin_with_phrase: items and distinct passages","39, 37","39, 37",True
+"U150, count_letters: items and distinct passages","40, 40","40, 40",True
+"U150, respond_only: items and distinct passages","71, 64","71, 64",True
+"U180, answer_as_persona: items and distinct passages","30, 30","30, 30",True
+"U180, answer_in_lang: items and distinct passages","30, 30","30, 30",True
+"U180, new_instructions: items and distinct passages","30, 30","30, 30",True
+"U180, reverse_words: items and distinct passages","30, 30","30, 30",True
+"U180, sign_with_name: items and distinct passages","30, 30","30, 30",True
+"U180, whole_reply_lang: items and distinct passages","30, 30","30, 30",True
+families in the set table,9,9,True
+q3_v7: rule (240),0.533,0.5333,True
+"q3_v7: U330, judge",0.276,0.2758,True
+q3_undefended: rule (240),0.5,0.5,True
+"q3_undefended: U330, judge",0.252,0.2515,True

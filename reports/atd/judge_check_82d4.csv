@@ -1,0 +1,6 @@
+models,items,followed_by_rule,followed_by_judge,judge_agrees,kappa
+all models measured,960,0.594,0.415,0.787,0.588
+role model,240,0.633,0.446,0.779,0.571
+ATD,240,0.621,0.425,0.787,0.59
+ATD-r,240,0.613,0.438,0.792,0.595
+ATD-c,240,0.508,0.35,0.792,0.585

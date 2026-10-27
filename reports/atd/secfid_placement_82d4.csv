@@ -1,0 +1,4 @@
+placement,n,"fidelity, role model","fidelity, ATD","fidelity, ATD-r","fidelity, ATD-c","security, role model","security, ATD","security, ATD-r","security, ATD-c","fidelity, ATD-r minus role model","fidelity, ATD-c minus role model"
+prefix,368,0.636,0.649,0.701,0.815,0.978,0.943,0.951,0.84,"+0.065 [+0.022, +0.109]","+0.179 [+0.122, +0.234]"
+middle,408,0.706,0.451,0.532,0.777,0.963,0.983,0.978,0.912,"-0.174 [-0.221, -0.127]","+0.071 [+0.025, +0.123]"
+suffix,392,0.773,0.372,0.526,0.783,0.952,0.992,0.982,0.837,"-0.247 [-0.296, -0.201]","+0.010 [-0.033, +0.054]"
