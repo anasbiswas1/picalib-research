@@ -1,0 +1,19 @@
+reason,candidates,French,Spanish,German,Italian,Portuguese
+a passage part: another number of sentences,146,31,29,43,25,18
+the injected sentence: too short or too long,47,8,10,5,12,12
+"the back-translation opens as a statement, not an instruction",39,3,6,12,12,6
+the injected sentence: another number of sentences,38,6,6,6,8,12
+the back-translation does not match the injected sentence,30,5,4,12,7,2
+the back-translation reports the task as done,16,12,1,1,2,0
+the back-translation asks for the sentence's input,8,5,1,2,0,0
+the injected sentence: another end mark,8,1,0,0,3,4
+a passage part: a second line,7,0,1,1,3,2
+a passage part not in the target language,5,1,0,0,0,4
+the injected sentence not in the target language,4,0,1,2,0,1
+a part did not end,3,1,0,1,1,0
+the injected sentence left in English,3,0,1,2,0,0
+a passage part: too short or too long,2,0,1,1,0,0
+"the injected sentence: an added colon, bracket or dash",2,1,0,0,1,0
+the back-translation opens as another kind of question or as a statement,1,0,0,1,0,0
+the injected sentence: a second line,1,0,0,1,0,0
+the injected sentence: a preamble or a label,1,1,0,0,0,0

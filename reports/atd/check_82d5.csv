@@ -1,0 +1,14 @@
+test,n,kept,share_kept
+"Alpaca's one-sentence reference answers, taken as the base model's answers: kept",15588,8,0.0005
+"of these, instructions opening with name, list, give, identify, find, state, provide, determine, convert, calculate: kept",3749,1,0.0003
+"first-person answers and disclaimers ('I cannot ...', 'Note that I cannot ...', 'I would ...', 'Let us ...'), built from the instructions: kept",137724,0,0.0
+"the sentence restated with an answer after a comma (', which is ...'), built from the instructions: kept",34489,0,0.0
+"requests for the missing input ('Please provide the sentence ...'), built from the instructions: kept",25812,18,0.0007
+"how-to answers opening with a purpose clause ('To reduce stress, ...'), built from the instructions: kept",284,0,0.0
+the instruction as its own back-translation: kept,38385,38385,1.0
+"the instruction reworded as a back-translation rewords it, the opening verb as a synonym: kept",25588,25588,1.0
+"the instruction reworded as a back-translation rewords it, 'Please' first: kept",34431,34390,0.9988
+"the instruction reworded as a back-translation rewords it, 'To' first: kept",34431,34222,0.9939
+"the instruction reworded as a back-translation rewords it, 'the' as 'a': kept",22486,22486,1.0
+"the instruction reworded as a back-translation rewords it, 'given' as 'provided': kept",4242,4242,1.0
+"the instruction reworded as a back-translation rewords it, 'following' as 'next': kept",4502,4502,1.0

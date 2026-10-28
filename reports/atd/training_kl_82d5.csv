@@ -1,0 +1,10 @@
+kind,first_100_batches,last_100_batches,last_100_batches_82d,last_100_batches_82d3
+attacked:forged_onset,0.0727,0.0523,0.0381,0.3973
+attacked:forged_turn,0.0404,0.0141,0.0274,0.2702
+attacked:phase1,0.1033,0.0101,0.0359,0.1852
+attacked:pool,0.1904,0.0346,0.3,0.3482
+clean:clean_anchor,-0.0062,0.051,0.0298,0.0175
+twin:forged_onset_twin,0.021,0.0184,0.0121,0.0308
+twin:forged_turn_twin,0.0092,0.0069,0.0044,0.0214
+twin:phase1_twin,0.0013,0.0113,0.0128,0.0168
+twin:pool_twin,0.0196,0.0081,0.0096,0.0331

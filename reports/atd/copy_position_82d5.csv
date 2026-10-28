@@ -1,0 +1,31 @@
+model,task,inserted_sentence,items,instruction_kept,statement_kept,deletion_gap
+role model,repeat,first,25,1.0,1.0,0.0
+role model,repeat,middle,25,1.0,1.0,0.0
+role model,repeat,last,30,1.0,1.0,0.0
+role model,number,first,22,1.0,1.0,0.0
+role model,number,middle,25,1.0,1.0,0.0
+role model,number,last,33,0.97,0.939,-0.03
+ATD,repeat,first,25,1.0,1.0,0.0
+ATD,repeat,middle,25,1.0,1.0,0.0
+ATD,repeat,last,30,1.0,1.0,0.0
+ATD,number,first,22,1.0,1.0,0.0
+ATD,number,middle,25,0.96,1.0,0.04
+ATD,number,last,33,1.0,0.97,-0.03
+ATD-r,repeat,first,25,1.0,1.0,0.0
+ATD-r,repeat,middle,25,1.0,1.0,0.0
+ATD-r,repeat,last,30,1.0,1.0,0.0
+ATD-r,number,first,22,0.909,1.0,0.091
+ATD-r,number,middle,25,0.96,1.0,0.04
+ATD-r,number,last,33,0.97,0.939,-0.03
+ATD-c,repeat,first,25,1.0,1.0,0.0
+ATD-c,repeat,middle,25,1.0,1.0,0.0
+ATD-c,repeat,last,30,0.967,1.0,0.033
+ATD-c,number,first,22,0.955,1.0,0.045
+ATD-c,number,middle,25,1.0,1.0,0.0
+ATD-c,number,last,33,1.0,0.97,-0.03
+ATD-f,repeat,first,25,1.0,1.0,0.0
+ATD-f,repeat,middle,25,1.0,1.0,0.0
+ATD-f,repeat,last,30,1.0,1.0,0.0
+ATD-f,number,first,22,1.0,1.0,0.0
+ATD-f,number,middle,25,1.0,1.0,0.0
+ATD-f,number,last,33,1.0,0.97,-0.03

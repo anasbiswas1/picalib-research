@@ -1,0 +1,11 @@
+model,version,items,kept,quoted the previous sentence,other
+role model,instruction,80,0.838,0.125,0.037
+role model,statement,80,0.838,0.138,0.025
+ATD,instruction,80,0.1,0.662,0.237
+ATD,statement,80,0.75,0.15,0.1
+ATD-r,instruction,80,0.463,0.388,0.15
+ATD-r,statement,80,0.662,0.212,0.125
+ATD-c,instruction,80,0.55,0.312,0.138
+ATD-c,statement,80,0.725,0.188,0.087
+ATD-f,instruction,80,0.838,0.15,0.013
+ATD-f,statement,80,0.625,0.237,0.138

@@ -1,0 +1,85 @@
+model,measure,notebook_82d4,this_notebook,ok
+input role from the start (notebook 74e),MMLU correct,0.647,0.6467,True
+input role from the start (notebook 74e),IFEval prompt-level strict,0.595,0.5952,True
+input role from the start (notebook 74e),agreement with the base model's summary,0.728,0.7275,True
+input role from the start (notebook 74e),EPC,0.81,0.81,True
+input role from the start (notebook 74e),"EPC, injected pairs",0.732,0.7315,True
+input role from the start (notebook 74e),injected instruction executed (evidence pairs),0.168,0.1678,True
+input role from the start (notebook 74e),answered from memory on the changed passage,0.013,0.0133,True
+input role from the start (notebook 74e),"copy battery, repeat: instruction kept",1.0,1.0,True
+input role from the start (notebook 74e),"copy battery, number: instruction kept",0.988,0.9875,True
+input role from the start (notebook 74e),"copy battery, quote_last: instruction kept",0.838,0.8375,True
+input role from the start (notebook 74e),SecFid fidelity (data instructions not ignored),0.706,0.7063,True
+input role from the start (notebook 74e),SecFid security (data instructions not executed),0.964,0.964,True
+input role from the start (notebook 74e),"SecFid fidelity, counting",0.651,0.6515,True
+input role from the start (notebook 74e),"SecFid fidelity, extraction",0.665,0.6645,True
+input role from the start (notebook 74e),"SecFid fidelity, translation",0.871,0.8705,True
+input role from the start (notebook 74e),"SecFid fidelity, editing",0.648,0.6484,True
+input role from the start (notebook 74e),clean summaries under 20 characters,0.0,0.0,True
+input role from the start (notebook 74e),summaries of the 60 validation passages: median characters (v13 459),408.0,408.0,True
+adversarial twin distillation (notebook 82a),MMLU correct,0.637,0.6367,True
+adversarial twin distillation (notebook 82a),IFEval prompt-level strict,0.575,0.5749,True
+adversarial twin distillation (notebook 82a),agreement with the base model's summary,0.695,0.6953,True
+adversarial twin distillation (notebook 82a),EPC,0.88,0.88,True
+adversarial twin distillation (notebook 82a),"EPC, injected pairs",0.872,0.8725,True
+adversarial twin distillation (notebook 82a),injected instruction executed (evidence pairs),0.007,0.0067,True
+adversarial twin distillation (notebook 82a),answered from memory on the changed passage,0.017,0.0167,True
+adversarial twin distillation (notebook 82a),"copy battery, repeat: instruction kept",1.0,1.0,True
+adversarial twin distillation (notebook 82a),"copy battery, number: instruction kept",0.988,0.9875,True
+adversarial twin distillation (notebook 82a),"copy battery, quote_last: instruction kept",0.1,0.1,True
+adversarial twin distillation (notebook 82a),SecFid fidelity (data instructions not ignored),0.487,0.4872,True
+adversarial twin distillation (notebook 82a),SecFid security (data instructions not executed),0.973,0.9735,True
+adversarial twin distillation (notebook 82a),"SecFid fidelity, counting",0.42,0.4202,True
+adversarial twin distillation (notebook 82a),"SecFid fidelity, extraction",0.435,0.4355,True
+adversarial twin distillation (notebook 82a),"SecFid fidelity, translation",0.583,0.5827,True
+adversarial twin distillation (notebook 82a),"SecFid fidelity, editing",0.524,0.5238,True
+adversarial twin distillation (notebook 82a),clean summaries under 20 characters,0.0,0.0,True
+adversarial twin distillation (notebook 82a),summaries of the 60 validation passages: median characters (v13 459),424.5,424.5,True
+"adversarial twin distillation, repaired mix (notebook 82d)",MMLU correct,0.637,0.6367,True
+"adversarial twin distillation, repaired mix (notebook 82d)",IFEval prompt-level strict,0.569,0.5693,True
+"adversarial twin distillation, repaired mix (notebook 82d)",agreement with the base model's summary,0.721,0.7215,True
+"adversarial twin distillation, repaired mix (notebook 82d)",EPC,0.853,0.8533,True
+"adversarial twin distillation, repaired mix (notebook 82d)","EPC, injected pairs",0.832,0.8322,True
+"adversarial twin distillation, repaired mix (notebook 82d)",injected instruction executed (evidence pairs),0.034,0.0336,True
+"adversarial twin distillation, repaired mix (notebook 82d)",answered from memory on the changed passage,0.02,0.02,True
+"adversarial twin distillation, repaired mix (notebook 82d)","copy battery, repeat: instruction kept",1.0,1.0,True
+"adversarial twin distillation, repaired mix (notebook 82d)","copy battery, number: instruction kept",0.95,0.95,True
+"adversarial twin distillation, repaired mix (notebook 82d)","copy battery, quote_last: instruction kept",0.463,0.4625,True
+"adversarial twin distillation, repaired mix (notebook 82d)",SecFid fidelity (data instructions not ignored),0.583,0.583,True
+"adversarial twin distillation, repaired mix (notebook 82d)",SecFid security (data instructions not executed),0.971,0.9709,True
+"adversarial twin distillation, repaired mix (notebook 82d)","SecFid fidelity, counting",0.469,0.4691,True
+"adversarial twin distillation, repaired mix (notebook 82d)","SecFid fidelity, extraction",0.561,0.5613,True
+"adversarial twin distillation, repaired mix (notebook 82d)","SecFid fidelity, translation",0.727,0.7266,True
+"adversarial twin distillation, repaired mix (notebook 82d)","SecFid fidelity, editing",0.59,0.5897,True
+"adversarial twin distillation, repaired mix (notebook 82d)",clean summaries under 20 characters,0.0,0.0,True
+"adversarial twin distillation, repaired mix (notebook 82d)",summaries of the 60 validation passages: median characters (v13 459),434.5,434.5,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",MMLU correct,0.633,0.6333,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",IFEval prompt-level strict,0.582,0.5823,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",agreement with the base model's summary,0.624,0.6242,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",EPC,0.727,0.7267,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","EPC, injected pairs",0.557,0.557,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",injected instruction executed (evidence pairs),0.409,0.4094,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",answered from memory on the changed passage,0.017,0.0167,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","copy battery, repeat: instruction kept",0.988,0.9875,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","copy battery, number: instruction kept",0.988,0.9875,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","copy battery, quote_last: instruction kept",0.55,0.55,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",SecFid fidelity (data instructions not ignored),0.791,0.7911,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",SecFid security (data instructions not executed),0.864,0.8639,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","SecFid fidelity, counting",0.7,0.7003,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","SecFid fidelity, extraction",0.881,0.8806,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","SecFid fidelity, translation",0.903,0.9029,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","SecFid fidelity, editing",0.678,0.6777,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",clean summaries under 20 characters,0.0,0.0,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)",summaries of the 60 validation passages: median characters (v13 459),460.5,460.5,True
+input role from the start (notebook 74e),"user-issued followed, decided by the rules (240 of U330)",0.633,0.6333,True
+input role from the start (notebook 74e),"user-issued followed, the judge (U330, 330)",0.367,0.3667,True
+input role from the start (notebook 74e),"user-issued followed, the judge on the items no rule decides (90)",0.156,0.1556,True
+adversarial twin distillation (notebook 82a),"user-issued followed, decided by the rules (240 of U330)",0.621,0.6208,True
+adversarial twin distillation (notebook 82a),"user-issued followed, the judge (U330, 330)",0.342,0.3424,True
+adversarial twin distillation (notebook 82a),"user-issued followed, the judge on the items no rule decides (90)",0.122,0.1222,True
+"adversarial twin distillation, repaired mix (notebook 82d)","user-issued followed, decided by the rules (240 of U330)",0.613,0.6125,True
+"adversarial twin distillation, repaired mix (notebook 82d)","user-issued followed, the judge (U330, 330)",0.342,0.3424,True
+"adversarial twin distillation, repaired mix (notebook 82d)","user-issued followed, the judge on the items no rule decides (90)",0.089,0.0889,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","user-issued followed, decided by the rules (240 of U330)",0.508,0.5083,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","user-issued followed, the judge (U330, 330)",0.279,0.2788,True
+"adversarial twin distillation, content-preserving teacher (notebook 82d3)","user-issued followed, the judge on the items no rule decides (90)",0.089,0.0889,True
