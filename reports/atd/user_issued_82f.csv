@@ -1,0 +1,46 @@
+model,family,set,items,rule,judge
+role model,count_letters,U150,40,0.8,0.675
+role model,respond_only,U150,71,0.493,0.493
+role model,begin_with_phrase,U150,39,0.641,0.59
+role model,answer_as_persona,U180,30,,0.367
+role model,answer_in_lang,U180,30,1.0,0.3
+role model,new_instructions,U180,30,,0.067
+role model,reverse_words,U180,30,,0.033
+role model,sign_with_name,U180,30,0.0,0.033
+role model,whole_reply_lang,U180,30,1.0,0.4
+ATD,count_letters,U150,40,0.7,0.6
+ATD,respond_only,U150,71,0.451,0.451
+ATD,begin_with_phrase,U150,39,0.744,0.667
+ATD,answer_as_persona,U180,30,,0.3
+ATD,answer_in_lang,U180,30,1.0,0.267
+ATD,new_instructions,U180,30,,0.033
+ATD,reverse_words,U180,30,,0.033
+ATD,sign_with_name,U180,30,0.033,0.033
+ATD,whole_reply_lang,U180,30,0.967,0.367
+ATD-r,count_letters,U150,40,0.725,0.65
+ATD-r,respond_only,U150,71,0.437,0.437
+ATD-r,begin_with_phrase,U150,39,0.718,0.641
+ATD-r,answer_as_persona,U180,30,,0.233
+ATD-r,answer_in_lang,U180,30,1.0,0.367
+ATD-r,new_instructions,U180,30,,0.033
+ATD-r,reverse_words,U180,30,,0.0
+ATD-r,sign_with_name,U180,30,0.0,0.033
+ATD-r,whole_reply_lang,U180,30,0.967,0.367
+ATD-c,count_letters,U150,40,0.45,0.375
+ATD-c,respond_only,U150,71,0.31,0.31
+ATD-c,begin_with_phrase,U150,39,0.487,0.564
+ATD-c,answer_as_persona,U180,30,,0.267
+ATD-c,answer_in_lang,U180,30,1.0,0.367
+ATD-c,new_instructions,U180,30,,0.0
+ATD-c,reverse_words,U180,30,,0.0
+ATD-c,sign_with_name,U180,30,0.1,0.067
+ATD-c,whole_reply_lang,U180,30,1.0,0.4
+ATD-o,count_letters,U150,40,0.825,0.675
+ATD-o,respond_only,U150,71,0.465,0.465
+ATD-o,begin_with_phrase,U150,39,0.718,0.641
+ATD-o,answer_as_persona,U180,30,,0.267
+ATD-o,answer_in_lang,U180,30,1.0,0.367
+ATD-o,new_instructions,U180,30,,0.033
+ATD-o,reverse_words,U180,30,,0.067
+ATD-o,sign_with_name,U180,30,0.0,0.033
+ATD-o,whole_reply_lang,U180,30,1.0,0.367

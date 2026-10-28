@@ -17,6 +17,12 @@ Notebook 82d adds what the repaired set needs, and nothing in notebook 82a's pat
                    answer computed by code (the forged opening is copied like any other text);
   the training log records the reverse KL by kind of example (forged, twin, pool, clean, ...).
 
+Notebook 82f adds the opening-only loss, and nothing in the earlier paths changes when window is None:
+  window           an attacked example's reverse KL (student on the attacked prompt, teacher on the clean prompt) is
+                   taken over the first `window` tokens of the sampled reply only, the reply's opening; a twin's (the
+                   same prompt for student and teacher) and a literal example's loss cover the whole reply. The rollout
+                   and both log-probability passes are unchanged; only the loss and the logged reverse KL are windowed.
+
 Notebook 82d2 adds the projection, and nothing in the paths of notebooks 82a and 82d changes when protect is None:
   protect          a protected set in groups ("end", "other", "twin"), each a list of dict(prompt, target). Every step,
                    after the training loss's gradient G is computed, a reference batch (n_ref[g] examples of each group,
@@ -308,7 +314,7 @@ def check_rendering(tok, system, student, tail):
 
 
 def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed, init_adapter, probe_prompts, cfg, lam=0.3, B=4, LOG=20, CKPT=100, MAXNEW=128, lr=2e-5, min_chars=0, pool_twins=False,
-              protect=None, n_ref=None, pool_teacher=None):
+              protect=None, n_ref=None, pool_teacher=None, window=None):
     """qwen_role.train_phase_all_q with the live pool: every batch, n_p pool entries get m GCG steps against the current
     model and join the batch as attacked examples (teacher: the clean prompt); with pool_twins, each drawn entry's twin
     (its instruction in the user turn with the clean document, teacher the same prompt) joins the batch too. An entry
@@ -320,7 +326,8 @@ def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed
     with seed torch_seed + 7919 + step; each logged batch then carries agem: dot, cos, projected (the gradient), step_dot,
     step_cos, step_projected (the step), ref_loss, ref_by (mean loss by group), gnorm, rnorm, step_norm.
     With pool_teacher (a function of a pool entry), a pool draw's attacked prompt is distilled towards pool_teacher(entry)
-    instead of its clean prompt."""
+    instead of its clean prompt. With window (an integer), every attacked example's distillation loss (the pool's draws
+    included) is taken over the first `window` tokens of its sampled reply; the twins' loss covers the whole reply."""
     import gc
     from peft import PeftModel, LoraConfig, get_peft_model, prepare_model_for_kbit_training
     from targets import load_lm
@@ -386,6 +393,7 @@ def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed
             plog.append(dict(step=step, id=e["id"], event="draw", loss_before=e["loss_before"], loss=e["loss"], steps=e["steps"], gained=e["steps"] - s0, won=bool(e["won"]), seconds=e["seconds"], suffix=e["suffix"] if e["won"] else None))
         dist = dist + pool_ex
         terms, rec = [], dict(step=step, kl=None, sft=None, kinds="".join(e["kind"][0] for e in batch) + "".join("p" if x["kind"] == "attacked" else "q" for x in pool_ex), pool_loss=[e["loss"] for e in drawn], pool_won=[bool(e["won"]) for e in drawn])
+        if window is not None: rec["window"] = int(window)
         if dist:
             roll = sample_rollouts_q(model, tok, [e["student"] for e in dist], system, max_new_tokens=MAXNEW)
             keep = [i for i, r in enumerate(roll) if len(r) >= min_chars]; rec["short"] = sum(len(r) < 20 for r in roll); rec["nroll"] = len(roll)
@@ -394,6 +402,9 @@ def train_atd(EX, pool_src, out_adapter, workdir, model_name, system, torch_seed
                 lp_s = response_logprobs_q(model, tok, [e["student"] for e in dk], rk, system)
                 with torch.no_grad(), model.disable_adapter():
                     lp_t = response_logprobs_q(model, tok, [e["teacher"] for e in dk], rk, system)
+                if window is not None:         # the opening-only loss: an attacked example (student and teacher prompts differ) over its first `window` reply tokens
+                    att_ = [e["student"] != e["teacher"] for e in dk]
+                    lp_s = [x[:window] if a_ else x for a_, x in zip(att_, lp_s)]; lp_t = [x[:window] if a_ else x for a_, x in zip(att_, lp_t)]
                 dl, kl = distill_loss(lp_s, lp_t); terms.append(dl); rec["kl"] = kl
                 kb = {}
                 for x_, s_, t_ in zip(dk, lp_s, lp_t):       # the same per-prompt reverse KL that distill_loss averages, by kind of example (logged only)
