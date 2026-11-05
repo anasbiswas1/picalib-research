@@ -1,0 +1,4 @@
+phase,with_twins,examples_with_twins,twins_removed,examples_without_twins,kinds_without_twins,starts_from_with_twins,starts_from_without_twins,training_step,torch_seed,set_hash_without_twins
+v6,"v6 (notebook 65, the processing phase)",3985,500,3485,"{'attacked': 500, 'literal': 2985}",v4,notwin_literal (notebook 50),processing_literal.train_phase,65000000,10ae8cff5c6d
+v7,"v7 (notebook 67, the rebalancing phase)",3000,500,2500,"{'attacked': 2000, 'literal': 500}",v6,the no-twin v6 trained here,processing_literal.train_phase,67000000,db7caac4dca1
+v13,"v13 (notebook 73e, the forged-turn phase)",2800,488,2312,"{'attacked': 1112, 'literal': 1200}",v7,the no-twin v7 trained here,hardened_phase.train_phase_all,73000000,ee6a7a115057

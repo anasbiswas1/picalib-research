@@ -1,0 +1,10 @@
+check,phase,item,expected,got,ok
+T0,v6,the committed set is the one its phase trained on,"3985 examples, hash 4b9abea0f3c1","3985 examples, hash 4b9abea0f3c1",True
+T0,v6,"only twins removed, nothing added, order kept","kept examples equal the committed set filtered on kind != twin, in order",3485 kept of 3985; 500 twins removed,True
+T0,v6,every other kind is untouched,"{'attacked': 500, 'literal': 2985}","{'attacked': 500, 'literal': 2985}",True
+T0,v7,the committed set is the one its phase trained on,"3000 examples, hash 31028973eddf","3000 examples, hash 31028973eddf",True
+T0,v7,"only twins removed, nothing added, order kept","kept examples equal the committed set filtered on kind != twin, in order",2500 kept of 3000; 500 twins removed,True
+T0,v7,every other kind is untouched,"{'attacked': 2000, 'literal': 500}","{'attacked': 2000, 'literal': 500}",True
+T0,v13,the committed set is the one its phase trained on,"2800 examples, hash 15fa00f5117a","2800 examples, hash 15fa00f5117a",True
+T0,v13,"only twins removed, nothing added, order kept","kept examples equal the committed set filtered on kind != twin, in order",2312 kept of 2800; 488 twins removed,True
+T0,v13,every other kind is untouched,"{'attacked': 1112, 'literal': 1200}","{'attacked': 1112, 'literal': 1200}",True

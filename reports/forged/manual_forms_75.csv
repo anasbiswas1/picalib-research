@@ -1,0 +1,6 @@
+model,naive,ignore,escape,completion,completion_chat,combined,fake_user,authority,any_form
+Qwen2.5-3B undefended,0.319,0.419,0.367,0.362,0.362,0.429,0.271,0.305,0.771
+v4 (core recipe),0.0,0.014,0.0,0.014,0.224,0.048,0.076,0.014,0.286
+v7 (notebook 67),0.0,0.029,0.0,0.029,0.205,0.095,0.1,0.029,0.29
+"v13 (final, notebook 73e; with twins)",0.0,0.0,0.0,0.0,0.0,0.0,0.005,0.0,0.005
+nt13 (the same chain without twins),0.0,0.005,0.0,0.0,0.014,0.0,0.014,0.005,0.033

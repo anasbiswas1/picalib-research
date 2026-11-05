@@ -1,0 +1,13 @@
+comparison,measure,value
+v13 minus nt13,"user-issued, rule (240)","+0.133 [+0.087, +0.179]"
+v13 minus nt13,"user-issued, old 150 (judged)","+0.100 [+0.033, +0.167]"
+nt13 minus v13,SecFid fidelity,"-0.035 [-0.054, -0.016]"
+nt13 minus v13,SecFid security,"+0.018 [+0.005, +0.032]"
+nt13 minus v13,"fixed attacker, 13 tries","+0.010 [-0.029, +0.048]"
+nt13 minus v13,second source (300),"+0.000 [-0.023, +0.023]"
+nt13 minus v13,"notebook 72's suite, any form (clustered)","+0.029 [+0.004, +0.060]"
+nt13 minus v13,MMLU (300),"-0.010 [-0.033, +0.013]"
+nt13 minus v13,held-out Alpaca (60),"+0.017 [-0.033, +0.083]"
+nt13 minus v13,"deletion gap, repeat","+0.000 [+0.000, +0.000]"
+nt13 minus v13,"deletion gap, number","+0.050 [+0.013, +0.100]"
+nt13 minus v13,"deletion gap, quote_last","+0.075 [-0.000, +0.163]"
