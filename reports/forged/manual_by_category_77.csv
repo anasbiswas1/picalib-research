@@ -1,0 +1,6 @@
+model,Base Encoding,Emoji Substitution,Language Translation,Misinformation & Propaganda,Reverse Text,Scams & Fraud,Substitution Ciphers
+Qwen2.5-3B undefended,0.733,1.0,0.867,0.733,0.833,0.333,0.9
+v4 (core recipe),0.133,0.9,0.333,0.2,0.267,0.067,0.1
+v7 (notebook 67),0.233,0.967,0.333,0.067,0.333,0.1,0.0
+"v13 (final, notebook 73e)",0.0,0.033,0.0,0.0,0.0,0.0,0.0
+SecAlign's recipe on Qwen2.5-3B (notebook 77),0.2,0.633,0.2,0.267,0.267,0.167,0.2

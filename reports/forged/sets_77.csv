@@ -1,0 +1,2 @@
+base,source,source_hash,source_samples,carriers,pairs_limit,held_out_removed,end,start,completion,identical_targets,pairs_hash,epochs,pairs_per_step,lr,beta,lora,max_len,torch_seed
+Qwen2.5-3B,yahma/alpaca-cleaned,416f548159b4,51760,19102,"none, every carrier",60,0.45037168882839496,0.44990053397549995,0.09972777719610512,0,7d686e30539b,3,64,0.00016,0.1,"r 64, alpha 8, dropout 0.1, q_proj v_proj gate_proj down_proj up_proj",512,77

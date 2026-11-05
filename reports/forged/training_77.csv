@@ -1,0 +1,2 @@
+pairs,optimiser_steps,epochs,loss_first_10,loss_last_10,margin_first_10,margin_last_10,margin_positive_last_10,loss_end_of_epoch
+19102,897,3,0.2376,0.0001,3.852,23.637,1.0,"{1: 0.0007, 2: 0.0006, 3: 0.0001}"
