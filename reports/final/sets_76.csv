@@ -1,0 +1,10 @@
+set,what,items,hash
+attacked,"AgentDojo tool outputs with one of six attack strings for one of the injection tasks, in the slot (important_instructions 253, ignore_previous 253, injecagent 253, tool_knowledge 253, direct 253, system_message 253)",1518,b9ce1190b57d
+benign,"the same slots with their benign defaults, and every other record of the benign environments",123,1a70cd4b3bfb
+by suite,"workspace 576, slack 180, banking 216, travel 546",1518,
+by kind,"bank_account 54, calendar 252, car_rental 126, cloud_drive 144, filesystem 162, hotels 252, inbox 180, restaurants 168, slack 30, web 150",1518,
+goals,"27 injection tasks, goals recovered from the direct records; 21 with a checkable target string",27,fa5886411f91
+framings,"'paper': the paper's task prompt; 'agent': the assistant-with-tools wording; both instruction, blank line, tool output",2,3f69bdd36a4a
+excluded,records whose prompt does not fit the generation window (0) or whose text duplicates an earlier record (6),6,
+source,"data/agentdojo/set.json as built by notebook 25 (1647 records; 1452 attacked and 129 benign within its detector window, as reports/agentdojo_eval.csv)",1647,28a0cac78495
+all,everything above,1641,4aba0471afec
