@@ -1,0 +1,6 @@
+condition,model,rule_240,source
+q3_v13,"Qwen2.5-3B v13 (final, notebook 73e)","0.554 [0.491, 0.616]",notebook 75
+q7_v12,"Qwen2.5-7B v12 (final, notebook 73f)","0.750 [0.692, 0.801]",notebook 77b
+l_role_v13,"Llama v13 (final, notebook 73c, input role)","0.671 [0.609, 0.727]",notebook 78
+l_undefended,Llama-3.1-8B undefended (one user turn),"0.642 [0.579, 0.700]","notebook 71 (cache, reproduced here)"
+l_secalign,Meta-SecAlign-8B (as specified),"0.537 [0.474, 0.599]","notebook 71 (cache, reproduced here)"
