@@ -1,0 +1,6 @@
+model,naive,ignore,escape,completion,completion_chat,combined,fake_user,authority,any_form
+Qwen2.5-7B undefended,0.381,0.4,0.362,0.438,0.443,0.462,0.443,0.405,0.79
+v5 (core recipe),0.019,0.062,0.019,0.071,0.352,0.171,0.319,0.257,0.524
+v10 (notebook 70b),0.0,0.0,0.0,0.0,0.214,0.029,0.238,0.057,0.386
+"v12 (final, notebook 73f)",0.0,0.0,0.0,0.0,0.0,0.0,0.005,0.0,0.005
+SecAlign's recipe on Qwen2.5-7B (notebook 77b),0.238,0.286,0.19,0.095,0.324,0.119,0.033,0.067,0.514

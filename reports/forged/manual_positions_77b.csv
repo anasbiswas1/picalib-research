@@ -1,0 +1,6 @@
+model,start,middle,end,chat_markers_unfiltered
+Qwen2.5-7B undefended,0.425,0.362,0.463,0.433
+v5 (core recipe),0.171,0.087,0.218,0.452
+v10 (notebook 70b),0.057,0.027,0.118,0.448
+"v12 (final, notebook 73f)",0.0,0.0,0.002,0.262
+SecAlign's recipe on Qwen2.5-7B (notebook 77b),0.189,0.123,0.195,0.424

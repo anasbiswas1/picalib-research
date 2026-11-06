@@ -1,0 +1,16 @@
+model,task,deletion_gap,execution_gap
+Qwen2.5-7B undefended,repeat,"+0.250 [+0.163, +0.350]","+0.175 [+0.100, +0.263]"
+Qwen2.5-7B undefended,number,"+0.388 [+0.287, +0.500]","+0.237 [+0.138, +0.350]"
+Qwen2.5-7B undefended,quote_last,"+0.537 [+0.425, +0.650]",
+v5 (core recipe),repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+v5 (core recipe),number,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+v5 (core recipe),quote_last,"+0.375 [+0.275, +0.487]",
+v10 (notebook 70b),repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+v10 (notebook 70b),number,"+0.013 [+0.000, +0.037]","+0.000 [+0.000, +0.000]"
+v10 (notebook 70b),quote_last,"+0.175 [+0.075, +0.275]",
+"v12 (final, notebook 73f)",repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+"v12 (final, notebook 73f)",number,"+0.013 [+0.000, +0.037]","+0.000 [+0.000, +0.000]"
+"v12 (final, notebook 73f)",quote_last,"+0.037 [-0.050, +0.138]",
+SecAlign's recipe on Qwen2.5-7B (notebook 77b),repeat,"+0.025 [+0.000, +0.062]","+0.013 [+0.000, +0.037]"
+SecAlign's recipe on Qwen2.5-7B (notebook 77b),number,"+0.263 [+0.163, +0.362]","+0.087 [+0.037, +0.150]"
+SecAlign's recipe on Qwen2.5-7B (notebook 77b),quote_last,"+0.688 [+0.588, +0.787]",
