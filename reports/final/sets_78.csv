@@ -1,0 +1,10 @@
+set,what,items,hash
+S1,"the 210 BIPIA injections, original wording, as the last line of fresh documents (105 on A, 105 on B)",210,d53e96d9aac7
+S2,"notebook 17's test split: 8 held-out instruction families embedded in held-out hosts, up to 100 rows each (answer_as_persona 100, answer_in_lang 100, cure_claim 100, new_instructions 100, reverse_words 41, sign_with_name 100, verify_email 100, whole_reply_lang 100)",741,20ffa2c0ee73
+S3,Open-Prompt-Injection attacked records outside the paper's 300,300,d2a004a32f41
+S4,"notebook 71's 240 rule-decided instructions on fresh documents (120 on A, 120 on B)",240,5077d811a62e
+S5,"clean summaries of fresh documents (30 A, 30 B)",60,c3867288119d
+S0,"notebook 71's 330 prompts and 60 summaries, for Llama v13",390,46904004163a
+hosts A,"data/structural/test.jsonl host_only rows (SQuAD, AG News; held out since notebook 17)",600,b5a4afa3906a
+hosts B,"CNN/DailyMail validation articles, 120 to 260, cut at a sentence end",400,9f944b09ca0c
+all,"everything above, in order",1551,dc8f9da7c9e9
