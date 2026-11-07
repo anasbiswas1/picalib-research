@@ -1,0 +1,13 @@
+final,against,measure,value
+q3_v13,q3_undefended,"paper framing, judged","-0.051 [-0.083, -0.021]"
+q3_v13,q3_sa,"paper framing, judged","-0.018 [-0.036, -0.001]"
+q3_v13,q3_undefended,"agent framing, judged","-0.028 [-0.050, -0.005]"
+q3_v13,q3_sa,"agent framing, judged","-0.001 [-0.023, +0.023]"
+q7_v12,q7_undefended,"paper framing, judged","-0.111 [-0.149, -0.076]"
+q7_v12,q7_sa,"paper framing, judged","-0.006 [-0.030, +0.017]"
+q7_v12,q7_undefended,"agent framing, judged","-0.078 [-0.103, -0.050]"
+q7_v12,q7_sa,"agent framing, judged","+0.011 [-0.011, +0.035]"
+l_role_v13,l_undefended,"paper framing, judged","-0.070 [-0.101, -0.043]"
+l_role_v13,l_secalign,"paper framing, judged","-0.013 [-0.035, +0.005]"
+l_role_v13,l_undefended,"agent framing, judged","-0.042 [-0.060, -0.025]"
+l_role_v13,l_secalign,"agent framing, judged","-0.021 [-0.031, -0.012]"
