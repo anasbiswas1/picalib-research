@@ -1,0 +1,74 @@
+test,condition,measure,recomputed,reported,ok
+sealed (78),q3_undefended,S1 fixed_1,0.4048,0.405,True
+sealed (78),q3_undefended,S2 rule-decided,0.594,0.594,True
+sealed (78),q3_undefended,S3,0.3167,0.317,True
+sealed (78),q3_undefended,S4,0.5042,0.504,True
+sealed (78),q3_v13,S1 fixed_1,0.0,0.0,True
+sealed (78),q3_v13,S2 rule-decided,0.028,0.028,True
+sealed (78),q3_v13,S3,0.0233,0.023,True
+sealed (78),q3_v13,S4,0.5708,0.571,True
+sealed (78),q3_sa,S1 fixed_1,0.1333,0.133,True
+sealed (78),q3_sa,S2 rule-decided,0.428,0.428,True
+sealed (78),q3_sa,S3,0.05,0.05,True
+sealed (78),q3_sa,S4,0.425,0.425,True
+sealed (78),q7_undefended,S1 fixed_1,0.5,0.5,True
+sealed (78),q7_undefended,S2 rule-decided,0.668,0.668,True
+sealed (78),q7_undefended,S3,0.3133,0.313,True
+sealed (78),q7_undefended,S4,0.7417,0.742,True
+sealed (78),q7_v12,S1 fixed_1,0.0,0.0,True
+sealed (78),q7_v12,S2 rule-decided,0.0,0.0,True
+sealed (78),q7_v12,S3,0.06,0.06,True
+sealed (78),q7_v12,S4,0.7458,0.746,True
+sealed (78),q7_sa,S1 fixed_1,0.3048,0.305,True
+sealed (78),q7_sa,S2 rule-decided,0.582,0.582,True
+sealed (78),q7_sa,S3,0.03,0.03,True
+sealed (78),q7_sa,S4,0.6542,0.654,True
+sealed (78),l_undefended,S1 fixed_1,0.5286,0.529,True
+sealed (78),l_undefended,S2 rule-decided,0.65,0.65,True
+sealed (78),l_undefended,S3,0.3433,0.343,True
+sealed (78),l_undefended,S4,0.6125,0.613,True
+sealed (78),l_role_v13,S1 fixed_1,0.0,0.0,True
+sealed (78),l_role_v13,S2 rule-decided,0.002,0.002,True
+sealed (78),l_role_v13,S3,0.0,0.0,True
+sealed (78),l_role_v13,S4,0.6625,0.662,True
+sealed (78),l_secalign,S1 fixed_1,0.0048,0.005,True
+sealed (78),l_secalign,S2 rule-decided,0.044,0.044,True
+sealed (78),l_secalign,S3,0.0,0.0,True
+sealed (78),l_secalign,S4,0.5333,0.533,True
+untrained forms (74),q3_undefended,any form,0.5619,0.562,True
+untrained forms (74),q3_v13,any form,0.0048,0.005,True
+untrained forms (74),q7_undefended,any form,0.6857,0.686,True
+untrained forms (74),q7_v12,any form,0.0476,0.048,True
+untrained forms (74),l_undefended,any form,0.6524,0.652,True
+untrained forms (74),l_role_v13,any form,0.0048,0.005,True
+untrained forms (74),l_secalign,any form,0.0095,0.01,True
+free attacker (74b),q3_undefended,within 25,0.7286,0.729,True
+GCG (74c),q3_undefended,documents broken,1.0,1.0,True
+free attacker (74b),q3_v13,within 25,0.0333,0.033,True
+GCG (74c),q3_v13,documents broken,0.44,0.44,True
+free attacker (74b),q7_undefended,within 25,0.7714,0.771,True
+GCG (74c),q7_undefended,documents broken,1.0,1.0,True
+free attacker (74b),q7_v12,within 25,0.0762,0.076,True
+GCG (74c),q7_v12,documents broken,0.76,0.76,True
+free attacker (74b),l_undefended,within 25,0.7286,0.729,True
+GCG (74c),l_undefended,documents broken,0.96,0.96,True
+free attacker (74b),l_role_v13,within 25,0.0714,0.071,True
+GCG (74c),l_role_v13,documents broken,0.04,0.04,True
+free attacker (74b),l_secalign,within 25,0.081,0.081,True
+GCG (74c),l_secalign,documents broken,0.08,0.08,True
+SecFid,q7_undefended,security,0.631,0.631,True
+SecFid,q7_undefended,fidelity,0.7928,0.793,True
+SecFid,q7_v12,security,0.9307,0.931,True
+SecFid,q7_v12,fidelity,0.8425,0.842,True
+SecFid,l_undefended,security,0.6541,0.654,True
+SecFid,l_undefended,fidelity,0.9298,0.93,True
+SecFid,l_role_v13,security,0.9666,0.967,True
+SecFid,l_role_v13,fidelity,0.7235,0.723,True
+SecFid,l_secalign,security,0.9786,0.979,True
+SecFid,l_secalign,fidelity,0.6909,0.691,True
+copy battery,q7_v12,deletion gap repeat,0.0,0.0,True
+copy battery,q7_v12,deletion gap number,0.0125,0.012,True
+copy battery,q7_v12,deletion gap quote_last,0.0375,0.037,True
+copy battery,l_role_v13,deletion gap repeat,0.0,0.0,True
+copy battery,l_role_v13,deletion gap number,0.0125,0.012,True
+copy battery,l_role_v13,deletion gap quote_last,0.25,0.25,True
