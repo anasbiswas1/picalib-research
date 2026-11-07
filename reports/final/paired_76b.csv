@@ -1,0 +1,13 @@
+final,against,measure,value
+q3_v13,q3_undefended,"paper framing, CARRIES","-0.009 [-0.024, +0.006]"
+q3_v13,q3_sa,"paper framing, CARRIES","+0.004 [-0.010, +0.019]"
+q3_v13,q3_undefended,"agent framing, CARRIES","-0.018 [-0.028, -0.008]"
+q3_v13,q3_sa,"agent framing, CARRIES","-0.016 [-0.028, -0.005]"
+q7_v12,q7_undefended,"paper framing, CARRIES","-0.067 [-0.099, -0.040]"
+q7_v12,q7_sa,"paper framing, CARRIES","+0.005 [-0.008, +0.019]"
+q7_v12,q7_undefended,"agent framing, CARRIES","-0.028 [-0.042, -0.016]"
+q7_v12,q7_sa,"agent framing, CARRIES","+0.001 [-0.007, +0.008]"
+l_role_v13,l_undefended,"paper framing, CARRIES","-0.018 [-0.027, -0.010]"
+l_role_v13,l_secalign,"paper framing, CARRIES","+0.003 [+0.000, +0.008]"
+l_role_v13,l_undefended,"agent framing, CARRIES","-0.007 [-0.012, -0.002]"
+l_role_v13,l_secalign,"agent framing, CARRIES","-0.001 [-0.003, +0.000]"
