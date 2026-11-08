@@ -1,0 +1,3 @@
+model,largest_row_difference,rows,tokenizer,dtype
+Qwen/Qwen2.5-7B-Instruct,0.0,151670,151670,torch.bfloat16
+meta-llama/Llama-3.1-8B-Instruct,0.0,128261,128261,torch.bfloat16

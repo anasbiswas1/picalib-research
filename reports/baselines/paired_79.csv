@@ -1,0 +1,52 @@
+final,against,measure,value,bootstrap
+q7_v12,q7_dt,S1 fixed_1 on fresh documents,"-0.162 [-0.214, -0.114]",item
+q7_v12,q7_dt,"S2 fresh injections, rule-decided","-0.484 [-0.528, -0.440]",item
+q7_v12,q7_dt,S3 fresh second source,"+0.020 [-0.003, +0.047]",item
+q7_v12,q7_dt,"untrained forms, any form","-0.105 [-0.171, -0.046]",clustered
+q7_v12,q7_dt,"free attacker, within 25","-0.100 [-0.188, -0.023]",clustered
+q7_v12,q7_dt,GCG documents broken (difference in documents: 2),"+0.080 [-0.160, +0.320]",item
+q7_v12,q7_dt,S4 the user's instructions on fresh documents,"+0.004 [-0.029, +0.042]",item
+q7_v12,q7_dt,SecFid fidelity,"+0.405 [+0.373, +0.438]",item
+q7_v12,q7_dt,SecFid security (higher is better),"-0.032 [-0.048, -0.016]",item
+q7_v12,q7_dt,"copy battery deletion gap, repeat","-0.150 [-0.237, -0.075]",item
+q7_v12,q7_dt,"copy battery deletion gap, number","-0.600 [-0.713, -0.487]",item
+q7_v12,q7_dt,"copy battery deletion gap, quote_last","-0.637 [-0.775, -0.500]",item
+q7_dt,q7_dtoff,S1 (DefensiveToken minus its tokens-off control),"-0.352 [-0.419, -0.286]",item
+q7_dt,q7_undefended,S1 (DefensiveToken minus the undefended model),"-0.338 [-0.410, -0.267]",item
+q7_dt,q7_dtoff,S2 (DefensiveToken minus its tokens-off control),"-0.222 [-0.262, -0.184]",item
+q7_dt,q7_undefended,S2 (DefensiveToken minus the undefended model),"-0.184 [-0.224, -0.146]",item
+q7_dt,q7_dtoff,S4 (DefensiveToken minus its tokens-off control),"-0.004 [-0.046, +0.037]",item
+q7_dt,q7_undefended,S4 (DefensiveToken minus the undefended model),"+0.000 [-0.042, +0.042]",item
+q7_dt,q7_undefended,"untrained forms, any form (DefensiveToken minus the undefended model)","-0.533 [-0.644, -0.424]",clustered
+q7_dt,q7_undefended,"free attacker, within 25 (DefensiveToken minus the undefended model)","-0.595 [-0.698, -0.486]",clustered
+l_role_v13,l_dt,S1 fixed_1 on fresh documents,"-0.033 [-0.057, -0.010]",item
+l_role_v13,l_dt,"S2 fresh injections, rule-decided","-0.246 [-0.284, -0.208]",item
+l_role_v13,l_dt,S3 fresh second source,"-0.003 [-0.010, +0.000]",item
+l_role_v13,l_dt,"untrained forms, any form","-0.076 [-0.143, -0.023]",clustered
+l_role_v13,l_dt,"free attacker, within 25","-0.167 [-0.279, -0.059]",clustered
+l_role_v13,l_dt,GCG documents broken (difference in documents: -22),"-0.880 [-1.000, -0.760]",item
+l_role_v13,l_dt,S4 the user's instructions on fresh documents,"+0.067 [+0.029, +0.108]",item
+l_role_v13,l_dt,SecFid fidelity,"+0.263 [+0.231, +0.293]",item
+l_role_v13,l_dt,SecFid security (higher is better),"-0.003 [-0.015, +0.009]",item
+l_role_v13,l_dt,"copy battery deletion gap, repeat","-0.475 [-0.588, -0.375]",item
+l_role_v13,l_dt,"copy battery deletion gap, number","-0.688 [-0.800, -0.575]",item
+l_role_v13,l_dt,"copy battery deletion gap, quote_last","-0.625 [-0.738, -0.500]",item
+l_dt,l_dtoff,S1 (DefensiveToken minus its tokens-off control),"-0.543 [-0.610, -0.476]",item
+l_dt,l_undefended,S1 (DefensiveToken minus the undefended model),"-0.495 [-0.562, -0.424]",item
+l_dt,l_dtoff,S2 (DefensiveToken minus its tokens-off control),"-0.350 [-0.394, -0.306]",item
+l_dt,l_undefended,S2 (DefensiveToken minus the undefended model),"-0.402 [-0.448, -0.358]",item
+l_dt,l_dtoff,S4 (DefensiveToken minus its tokens-off control),"-0.075 [-0.108, -0.046]",item
+l_dt,l_undefended,S4 (DefensiveToken minus the undefended model),"-0.017 [-0.054, +0.021]",item
+l_dt,l_undefended,"untrained forms, any form (DefensiveToken minus the undefended model)","-0.571 [-0.686, -0.457]",clustered
+l_dt,l_undefended,"free attacker, within 25 (DefensiveToken minus the undefended model)","-0.490 [-0.595, -0.386]",clustered
+l_secalign,l_dt,S1 (Meta-SecAlign minus DefensiveToken),"-0.029 [-0.057, -0.005]",item
+l_secalign,l_dt,S4 (Meta-SecAlign minus DefensiveToken),"-0.062 [-0.108, -0.017]",item
+l_secalign,l_dt,"untrained forms, any form (Meta-SecAlign minus DefensiveToken)","-0.071 [-0.120, -0.029]",clustered
+q3_v13,q3_sa,"untrained forms, any form","-0.052 [-0.091, -0.019]",clustered
+q3_v13,q3_sa,"free attacker, within 25","-0.229 [-0.303, -0.159]",clustered
+q3_v13,q3_sa,GCG documents broken (difference in documents: -14),"-0.560 [-0.760, -0.360]",item
+q3_sa,q3_undefended,"untrained forms, any form (SecAlign's recipe minus the undefended model)","-0.505 [-0.616, -0.392]",clustered
+q7_v12,q7_sa,"untrained forms, any form","-0.110 [-0.197, -0.041]",clustered
+q7_v12,q7_sa,"free attacker, within 25","-0.333 [-0.452, -0.221]",clustered
+q7_v12,q7_sa,GCG documents broken (difference in documents: -3),"-0.120 [-0.240, +0.000]",item
+q7_sa,q7_undefended,"untrained forms, any form (SecAlign's recipe minus the undefended model)","-0.529 [-0.643, -0.414]",clustered

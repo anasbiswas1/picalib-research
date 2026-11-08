@@ -1,0 +1,13 @@
+condition,model,task,instruction_kept,statement_kept,deletion_gap
+q7_v12,"Qwen2.5-7B v12 (final, notebook 73f)",repeat,,,"+0.000 [+0.000, +0.000]"
+q7_v12,"Qwen2.5-7B v12 (final, notebook 73f)",number,,,"+0.013 [+0.000, +0.037]"
+q7_v12,"Qwen2.5-7B v12 (final, notebook 73f)",quote_last,,,"+0.037 [-0.050, +0.138]"
+q7_dt,"DefensiveToken on Qwen2.5-7B (as released, bf16)",repeat,"0.850 [0.756, 0.912]","1.000 [0.954, 1.000]","+0.150 [+0.075, +0.237]"
+q7_dt,"DefensiveToken on Qwen2.5-7B (as released, bf16)",number,"0.362 [0.266, 0.472]","0.975 [0.913, 0.993]","+0.613 [+0.500, +0.725]"
+q7_dt,"DefensiveToken on Qwen2.5-7B (as released, bf16)",quote_last,"0.087 [0.043, 0.170]","0.762 [0.659, 0.842]","+0.675 [+0.575, +0.775]"
+l_role_v13,"Llama v13 (final, notebook 73c, input role)",repeat,,,"+0.000 [+0.000, +0.000]"
+l_role_v13,"Llama v13 (final, notebook 73c, input role)",number,,,"+0.013 [+0.000, +0.037]"
+l_role_v13,"Llama v13 (final, notebook 73c, input role)",quote_last,,,"+0.250 [+0.150, +0.350]"
+l_dt,"DefensiveToken on Llama-3.1-8B (as released, bf16)",repeat,"0.500 [0.393, 0.607]","0.975 [0.913, 0.993]","+0.475 [+0.375, +0.588]"
+l_dt,"DefensiveToken on Llama-3.1-8B (as released, bf16)",number,"0.263 [0.179, 0.368]","0.963 [0.895, 0.987]","+0.700 [+0.600, +0.800]"
+l_dt,"DefensiveToken on Llama-3.1-8B (as released, bf16)",quote_last,"0.087 [0.043, 0.170]","0.963 [0.895, 0.987]","+0.875 [+0.800, +0.938]"

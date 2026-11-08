@@ -1,0 +1,8 @@
+condition,model,security,fidelity,processed,fidelity_counting,fidelity_extraction,fidelity_translation,fidelity_editing
+q7_undefended,Qwen2.5-7B undefended,"0.631 [0.603, 0.658]","0.793 [0.769, 0.815]","0.579 [0.550, 0.607]",0.632,0.806,0.957,0.791
+q7_v12,"Qwen2.5-7B v12 (final, notebook 73f)","0.931 [0.915, 0.944]","0.842 [0.820, 0.862]","0.815 [0.792, 0.836]",0.84,0.913,0.917,0.689
+q7_dt,"DefensiveToken on Qwen2.5-7B (as released, bf16)","0.962 [0.950, 0.972]","0.438 [0.409, 0.466]","0.312 [0.286, 0.339]",0.355,0.381,0.669,0.359
+l_undefended,Llama-3.1-8B undefended (one user turn),"0.654 [0.626, 0.681]","0.930 [0.914, 0.943]","0.752 [0.726, 0.776]",0.922,0.935,0.953,0.908
+l_role_v13,"Llama v13 (final, notebook 73c, input role)","0.967 [0.955, 0.975]","0.723 [0.697, 0.748]","0.699 [0.672, 0.724]",0.866,0.806,0.597,0.597
+l_secalign,Meta-SecAlign-8B (as specified),"0.979 [0.969, 0.985]","0.691 [0.664, 0.717]","0.598 [0.569, 0.625]",0.857,0.797,0.622,0.454
+l_dt,"DefensiveToken on Llama-3.1-8B (as released, bf16)","0.970 [0.959, 0.978]","0.461 [0.432, 0.489]","0.360 [0.333, 0.388]",0.489,0.465,0.489,0.396
