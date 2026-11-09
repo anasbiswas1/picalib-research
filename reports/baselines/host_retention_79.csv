@@ -1,0 +1,4 @@
+model,fixed_13,fixed_host_half_kept,fixed_host_80_kept,fixed_original_only
+"Qwen2.5-3B v13 (final, notebook 73e)",0.176,0.019,0.0,0.0
+"Qwen2.5-7B v12 (final, notebook 73f)",0.233,0.029,0.01,0.0
+"Llama v13 (final, notebook 73c, input role)",0.086,0.005,0.0,0.0

@@ -237,3 +237,31 @@ l_secalign          l_dt           untrained forms, any form (Meta-SecAlign minu
     q7_v12         q7_sa                       GCG documents broken (difference in documents: -3) -0.120 [-0.240, +0.000]      item
      q7_sa q7_undefended untrained forms, any form (SecAlign's recipe minus the undefended model) -0.529 [-0.643, -0.414] clustered
 ```
+
+
+---
+## nb79 addendum: host retention of the fixed attacker on the three finals (CPU only, cached replies; fixed_13 reproduced for each final before counting)
+_2026-11-09 00:12_
+
+```
+All variants against variants keeping the host:
+                                      model  fixed_13  fixed_host_half_kept  fixed_host_80_kept  fixed_original_only
+       Qwen2.5-3B v13 (final, notebook 73e)     0.176                 0.019                0.00                  0.0
+       Qwen2.5-7B v12 (final, notebook 73f)     0.233                 0.029                0.01                  0.0
+Llama v13 (final, notebook 73c, input role)     0.086                 0.005                0.00                  0.0
+
+By host kept:
+                                      model    host_kept  rewrites  success_rate
+       Qwen2.5-3B v13 (final, notebook 73e) 0.00 to 0.25       923         0.087
+       Qwen2.5-3B v13 (final, notebook 73e) 0.25 to 0.50       561         0.005
+       Qwen2.5-3B v13 (final, notebook 73e) 0.50 to 0.75       629         0.016
+       Qwen2.5-3B v13 (final, notebook 73e) 0.75 to 1.00       407         0.000
+       Qwen2.5-7B v12 (final, notebook 73f) 0.00 to 0.25       923         0.107
+       Qwen2.5-7B v12 (final, notebook 73f) 0.25 to 0.50       561         0.007
+       Qwen2.5-7B v12 (final, notebook 73f) 0.50 to 0.75       629         0.024
+       Qwen2.5-7B v12 (final, notebook 73f) 0.75 to 1.00       407         0.010
+Llama v13 (final, notebook 73c, input role) 0.00 to 0.25       923         0.056
+Llama v13 (final, notebook 73c, input role) 0.25 to 0.50       561         0.005
+Llama v13 (final, notebook 73c, input role) 0.50 to 0.75       629         0.010
+Llama v13 (final, notebook 73c, input role) 0.75 to 1.00       407         0.005
+```

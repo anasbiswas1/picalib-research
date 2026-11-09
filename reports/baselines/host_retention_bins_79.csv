@@ -1,0 +1,13 @@
+model,host_kept,rewrites,success_rate
+"Qwen2.5-3B v13 (final, notebook 73e)",0.00 to 0.25,923,0.087
+"Qwen2.5-3B v13 (final, notebook 73e)",0.25 to 0.50,561,0.005
+"Qwen2.5-3B v13 (final, notebook 73e)",0.50 to 0.75,629,0.016
+"Qwen2.5-3B v13 (final, notebook 73e)",0.75 to 1.00,407,0.0
+"Qwen2.5-7B v12 (final, notebook 73f)",0.00 to 0.25,923,0.107
+"Qwen2.5-7B v12 (final, notebook 73f)",0.25 to 0.50,561,0.007
+"Qwen2.5-7B v12 (final, notebook 73f)",0.50 to 0.75,629,0.024
+"Qwen2.5-7B v12 (final, notebook 73f)",0.75 to 1.00,407,0.01
+"Llama v13 (final, notebook 73c, input role)",0.00 to 0.25,923,0.056
+"Llama v13 (final, notebook 73c, input role)",0.25 to 0.50,561,0.005
+"Llama v13 (final, notebook 73c, input role)",0.50 to 0.75,629,0.01
+"Llama v13 (final, notebook 73c, input role)",0.75 to 1.00,407,0.005
