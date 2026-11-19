@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or the released adapters, please cite the method paper below."
+title: "picalib-research: twin distillation against indirect prompt injection"
+authors:
+  - family-names: Biswas
+    given-names: Md Anas
+    orcid: "https://orcid.org/0009-0009-0113-5816"
+    affiliation: "School of Computing, University of Portsmouth"
+repository-code: "https://github.com/anasbiswas1/picalib-research"
+license: MIT
+date-released: 2026-11-19
+preferred-citation:
+  type: generic
+  title: "Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions"
+  authors:
+    - family-names: Biswas
+      given-names: Md Anas
+      orcid: "https://orcid.org/0009-0009-0113-5816"
+  year: 2026
+  url: "https://github.com/anasbiswas1/picalib-research"
