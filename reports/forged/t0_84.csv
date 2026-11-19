@@ -1,0 +1,19 @@
+check,seed,phase,item,expected,got,ok
+T0,1,v6,the committed set is the one its phase trained on,"3985 examples, hash 4b9abea0f3c1","3985, 4b9abea0f3c1",True
+T0,1,v6,the permuted set is a permutation of the committed set,"same examples, same multiplicities","3985 examples, order seed 84100",True
+T0,1,v6,"the without-twin set is the permuted set filtered on kind != twin, in order, with notebook 75's count",3485 examples,"3485 kept of 3985; 500 twins removed; kinds {'attacked': 500, 'literal': 2985}",True
+T0,1,v7,the committed set is the one its phase trained on,"3000 examples, hash 31028973eddf","3000, 31028973eddf",True
+T0,1,v7,the permuted set is a permutation of the committed set,"same examples, same multiplicities","3000 examples, order seed 84101",True
+T0,1,v7,"the without-twin set is the permuted set filtered on kind != twin, in order, with notebook 75's count",2500 examples,"2500 kept of 3000; 500 twins removed; kinds {'attacked': 2000, 'literal': 500}",True
+T0,1,v13,the committed set is the one its phase trained on,"2800 examples, hash 15fa00f5117a","2800, 15fa00f5117a",True
+T0,1,v13,the permuted set is a permutation of the committed set,"same examples, same multiplicities","2800 examples, order seed 84102",True
+T0,1,v13,"the without-twin set is the permuted set filtered on kind != twin, in order, with notebook 75's count",2312 examples,"2312 kept of 2800; 488 twins removed; kinds {'attacked': 1112, 'literal': 1200}",True
+T0,2,v6,the committed set is the one its phase trained on,"3985 examples, hash 4b9abea0f3c1","3985, 4b9abea0f3c1",True
+T0,2,v6,the permuted set is a permutation of the committed set,"same examples, same multiplicities","3985 examples, order seed 84200",True
+T0,2,v6,"the without-twin set is the permuted set filtered on kind != twin, in order, with notebook 75's count",3485 examples,"3485 kept of 3985; 500 twins removed; kinds {'attacked': 500, 'literal': 2985}",True
+T0,2,v7,the committed set is the one its phase trained on,"3000 examples, hash 31028973eddf","3000, 31028973eddf",True
+T0,2,v7,the permuted set is a permutation of the committed set,"same examples, same multiplicities","3000 examples, order seed 84201",True
+T0,2,v7,"the without-twin set is the permuted set filtered on kind != twin, in order, with notebook 75's count",2500 examples,"2500 kept of 3000; 500 twins removed; kinds {'attacked': 2000, 'literal': 500}",True
+T0,2,v13,the committed set is the one its phase trained on,"2800 examples, hash 15fa00f5117a","2800, 15fa00f5117a",True
+T0,2,v13,the permuted set is a permutation of the committed set,"same examples, same multiplicities","2800 examples, order seed 84202",True
+T0,2,v13,"the without-twin set is the permuted set filtered on kind != twin, in order, with notebook 75's count",2312 examples,"2312 kept of 2800; 488 twins removed; kinds {'attacked': 1112, 'literal': 1200}",True

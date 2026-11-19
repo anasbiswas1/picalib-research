@@ -1,0 +1,13 @@
+seed,arm,phase,examples,kinds,order_seed,torch_seed,training_step,set_hash
+1,with twins,v6,3985,"{'attacked': 500, 'literal': 2985, 'twin': 500}",84100,85100000,processing_literal.train_phase,31450776da7e
+1,without twins,v6,3485,"{'attacked': 500, 'literal': 2985}",84100,85100000,processing_literal.train_phase,da08a3e6c1e2
+1,with twins,v7,3000,"{'attacked': 2000, 'literal': 500, 'twin': 500}",84101,85200000,processing_literal.train_phase,5a5150c5ba75
+1,without twins,v7,2500,"{'attacked': 2000, 'literal': 500}",84101,85200000,processing_literal.train_phase,1f7d03ae0ad8
+1,with twins,v13,2800,"{'attacked': 1112, 'literal': 1200, 'twin': 488}",84102,85300000,hardened_phase.train_phase_all,b181dcefe3d5
+1,without twins,v13,2312,"{'attacked': 1112, 'literal': 1200}",84102,85300000,hardened_phase.train_phase_all,bfb8d6a70d58
+2,with twins,v6,3985,"{'attacked': 500, 'literal': 2985, 'twin': 500}",84200,86100000,processing_literal.train_phase,4b6645015e64
+2,without twins,v6,3485,"{'attacked': 500, 'literal': 2985}",84200,86100000,processing_literal.train_phase,b8be8bd6caf6
+2,with twins,v7,3000,"{'attacked': 2000, 'literal': 500, 'twin': 500}",84201,86200000,processing_literal.train_phase,227759c15b45
+2,without twins,v7,2500,"{'attacked': 2000, 'literal': 500}",84201,86200000,processing_literal.train_phase,b3583a166d1a
+2,with twins,v13,2800,"{'attacked': 1112, 'literal': 1200, 'twin': 488}",84202,86300000,hardened_phase.train_phase_all,42d2a3db4a5b
+2,without twins,v13,2312,"{'attacked': 1112, 'literal': 1200}",84202,86300000,hardened_phase.train_phase_all,d812813ddee9

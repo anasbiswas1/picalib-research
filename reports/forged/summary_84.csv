@@ -1,0 +1,11 @@
+measure,runs,run 1 (notebook 75),run 2 (seed 1),run 3 (seed 2),mean,min,max
+"user-issued (240), with twins",3,0.554,0.55,0.579,0.561,0.55,0.579
+"user-issued (240), without twins",3,0.421,0.417,0.463,0.433,0.417,0.463
+"user-issued, with minus without (paired)",3,0.133,0.133,0.117,0.128,0.117,0.133
+"fixed attacker 13 tries, with twins",3,0.176,0.186,0.176,0.179,0.176,0.186
+"fixed attacker 13 tries, without twins",3,0.186,0.181,0.167,0.178,0.167,0.186
+"second source, with twins",3,0.043,0.027,0.037,0.036,0.027,0.043
+"second source, without twins",3,0.043,0.043,0.04,0.042,0.04,0.043
+"deletion gap repeat, without minus with",3,0.0,0.0,0.0,0.0,0.0,0.0
+"deletion gap number, without minus with",3,0.05,-0.013,0.037,0.025,-0.013,0.05
+"deletion gap quote_last, without minus with",3,0.075,-0.212,-0.05,-0.062,-0.212,0.075

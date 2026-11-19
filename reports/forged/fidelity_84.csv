@@ -1,0 +1,19 @@
+run,model,task,deletion_gap,execution_gap
+run 1 (notebook 75),"v13 (final, notebook 73e; with twins)",repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+run 1 (notebook 75),"v13 (final, notebook 73e; with twins)",number,"-0.013 [-0.037, +0.000]","+0.013 [-0.025, +0.062]"
+run 1 (notebook 75),"v13 (final, notebook 73e; with twins)",quote_last,"+0.138 [+0.050, +0.237]",
+run 1 (notebook 75),nt13 (the same chain without twins),repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+run 1 (notebook 75),nt13 (the same chain without twins),number,"+0.037 [+0.000, +0.087]","+0.000 [+0.000, +0.000]"
+run 1 (notebook 75),nt13 (the same chain without twins),quote_last,"+0.212 [+0.100, +0.325]",
+run 2 (seed 1),"seed 1, with twins",repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+run 2 (seed 1),"seed 1, with twins",number,"+0.037 [-0.013, +0.100]","-0.013 [-0.037, +0.000]"
+run 2 (seed 1),"seed 1, with twins",quote_last,"+0.400 [+0.275, +0.525]",
+run 2 (seed 1),"seed 1, without twins",repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+run 2 (seed 1),"seed 1, without twins",number,"+0.025 [-0.037, +0.087]","+0.000 [+0.000, +0.000]"
+run 2 (seed 1),"seed 1, without twins",quote_last,"+0.188 [+0.087, +0.287]",
+run 3 (seed 2),"seed 2, with twins",repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+run 3 (seed 2),"seed 2, with twins",number,"+0.013 [-0.075, +0.100]","+0.013 [-0.025, +0.062]"
+run 3 (seed 2),"seed 2, with twins",quote_last,"+0.225 [+0.113, +0.338]",
+run 3 (seed 2),"seed 2, without twins",repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+run 3 (seed 2),"seed 2, without twins",number,"+0.050 [+0.013, +0.100]","+0.013 [+0.000, +0.037]"
+run 3 (seed 2),"seed 2, without twins",quote_last,"+0.175 [+0.062, +0.287]",

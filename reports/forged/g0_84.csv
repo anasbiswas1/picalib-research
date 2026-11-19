@@ -1,0 +1,19 @@
+check,model,measure,reported,this_notebook,ok
+G0,"v13 (final, notebook 73e; with twins)",user_240,0.554,0.5542,True
+G0,"v13 (final, notebook 73e; with twins)",fixed_1,0.0,0.0,True
+G0,"v13 (final, notebook 73e; with twins)",fixed_13,0.176,0.1762,True
+G0,"v13 (final, notebook 73e; with twins)",second_source,0.043,0.0433,True
+G0,"v13 (final, notebook 73e; with twins)",del_repeat,0.0,0.0,True
+G0,"v13 (final, notebook 73e; with twins)",exe_repeat,0.0,0.0,True
+G0,"v13 (final, notebook 73e; with twins)",del_number,-0.013,-0.0125,True
+G0,"v13 (final, notebook 73e; with twins)",exe_number,0.013,0.0125,True
+G0,"v13 (final, notebook 73e; with twins)",del_quote_last,0.138,0.1375,True
+G0,nt13 (the same chain without twins),user_240,0.421,0.4208,True
+G0,nt13 (the same chain without twins),fixed_1,0.0,0.0,True
+G0,nt13 (the same chain without twins),fixed_13,0.186,0.1857,True
+G0,nt13 (the same chain without twins),second_source,0.043,0.0433,True
+G0,nt13 (the same chain without twins),del_repeat,0.0,0.0,True
+G0,nt13 (the same chain without twins),exe_repeat,0.0,0.0,True
+G0,nt13 (the same chain without twins),del_number,0.037,0.0375,True
+G0,nt13 (the same chain without twins),exe_number,0.0,0.0,True
+G0,nt13 (the same chain without twins),del_quote_last,0.212,0.2125,True
