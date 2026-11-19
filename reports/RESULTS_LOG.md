@@ -3476,3 +3476,15 @@ Stage 3: agreement of the three judges on this section's 312 judge-decided outpu
 Stage 4: the judge finds the instruction still present in 0.374 of the 91 originals (a control: every original carries it) and in 0.126 of the 364 rewrites
 Stage 4: selected rewrites that still carry the instruction, per detector: ProtectAI-v2 0.198, Prompt-Guard-2 (86M) 0.187, Prompt-Guard-2 (22M) 0.176, structural (full) 0.176, structural (full_aug) 0.198, PIGuard 0.143, conventional fine-tune 0.220 (judge labels, not hand labels)
 ```
+
+
+---
+## nb83: the three final adapters released on Hugging Face
+_2026-11-19 01:04_
+
+```
+q3_v13 -> https://huggingface.co/anasbiswas/Qwen2.5-3B-Instruct-TwinDistillation (hub commit 364af8aa, qwen-research, 119.8 MB)
+q7_v12 -> https://huggingface.co/anasbiswas/Qwen2.5-7B-Instruct-TwinDistillation (hub commit d82850fe, apache-2.0, 161.5 MB)
+l_role_v13 -> https://huggingface.co/anasbiswas/Llama-3.1-8B-Instruct-TwinDistillation (hub commit 65b833c3, llama3.1, 167.8 MB)
+numbers on the cards from commit 08e477d
+```
