@@ -2,7 +2,7 @@
 
 Code, notebooks, report files and released models for two papers on indirect prompt injection by Md Anas Biswas (School of Computing, University of Portsmouth).
 
-- **Method paper:** *Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions* (2026). arXiv link follows on announcement.
+- **Method paper:** *Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions* (2026). Preprint: [doi:10.20944/preprints202611.2399.v1](https://doi.org/10.20944/preprints202611.2399.v1).
 - **Evaluation paper:** *Confidently Wrong: Severity-Aware Calibration of Prompt-Injection Detectors under Attack Shift*, [arXiv:2606.22659](https://arxiv.org/abs/2606.22659).
 - **Released models (Hugging Face):** [Qwen2.5-3B-Instruct-TwinDistillation](https://huggingface.co/anasbiswas/Qwen2.5-3B-Instruct-TwinDistillation) | [Qwen2.5-7B-Instruct-TwinDistillation](https://huggingface.co/anasbiswas/Qwen2.5-7B-Instruct-TwinDistillation) | [Llama-3.1-8B-Instruct-TwinDistillation](https://huggingface.co/anasbiswas/Llama-3.1-8B-Instruct-TwinDistillation)
 
@@ -110,6 +110,8 @@ BIPIA, Open-Prompt-Injection, AgentDojo and SecFid are used under their own lice
   title  = {Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions},
   author = {Biswas, Md Anas},
   year   = {2026},
+  publisher = {Preprints.org},
+  doi    = {10.20944/preprints202611.2399.v1},
   note   = {Code: https://github.com/anasbiswas1/picalib-research}
 }
 

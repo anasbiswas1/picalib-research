@@ -15,7 +15,7 @@ tags:
 
 # Qwen2.5-7B-Instruct-TwinDistillation
 
-A LoRA adapter (rank 16) for **Qwen/Qwen2.5-7B-Instruct** trained with **twin distillation**, a fine-tuning recipe against indirect prompt injection: the model learns to judge an instruction by where it came from, not by what it says. It is the final Qwen2.5-7B-Instruct model of the paper *Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions* (Md Anas Biswas, 2026; code at https://github.com/anasbiswas1/picalib-research). Nothing else about the model changes: same base weights, same chat template, one small adapter.
+A LoRA adapter (rank 16) for **Qwen/Qwen2.5-7B-Instruct** trained with **twin distillation**, a fine-tuning recipe against indirect prompt injection: the model learns to judge an instruction by where it came from, not by what it says. It is the final Qwen2.5-7B-Instruct model of the paper *Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions* (Md Anas Biswas, 2026, https://doi.org/10.20944/preprints202611.2399.v1; code at https://github.com/anasbiswas1/picalib-research). Nothing else about the model changes: same base weights, same chat template, one small adapter.
 
 ## What it does
 
@@ -72,4 +72,4 @@ This adapter is a derivative of Qwen2.5-7B-Instruct and is released under the Ap
 
 ## Citation
 
-Md Anas Biswas. Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions. 2026. Code: https://github.com/anasbiswas1/picalib-research.
+Md Anas Biswas. Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions. 2026. Preprint: https://doi.org/10.20944/preprints202611.2399.v1. Code: https://github.com/anasbiswas1/picalib-research.

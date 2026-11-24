@@ -16,7 +16,7 @@ tags:
 
 # Llama-3.1-8B-Instruct-TwinDistillation
 
-A LoRA adapter (rank 16) for **meta-llama/Llama-3.1-8B-Instruct** trained with **twin distillation**, a fine-tuning recipe against indirect prompt injection: the model learns to judge an instruction by where it came from, not by what it says. It is the final Llama-3.1-8B-Instruct model of the paper *Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions* (Md Anas Biswas, 2026; code at https://github.com/anasbiswas1/picalib-research). Nothing else about the model changes: same base weights, same chat template, one small adapter.
+A LoRA adapter (rank 16) for **meta-llama/Llama-3.1-8B-Instruct** trained with **twin distillation**, a fine-tuning recipe against indirect prompt injection: the model learns to judge an instruction by where it came from, not by what it says. It is the final Llama-3.1-8B-Instruct model of the paper *Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions* (Md Anas Biswas, 2026, https://doi.org/10.20944/preprints202611.2399.v1; code at https://github.com/anasbiswas1/picalib-research). Nothing else about the model changes: same base weights, same chat template, one small adapter.
 
 **Built with Llama.** Llama 3.1 is licensed under the Llama 3.1 Community License, Copyright Meta Platforms, Inc. All Rights Reserved.
 
@@ -76,4 +76,4 @@ This adapter is a derivative of Llama-3.1-8B-Instruct and is released under the 
 
 ## Citation
 
-Md Anas Biswas. Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions. 2026. Code: https://github.com/anasbiswas1/picalib-research.
+Md Anas Biswas. Twin Distillation Against Indirect Prompt Injection: Training Language Models to Distinguish User Instructions from Injected Instructions. 2026. Preprint: https://doi.org/10.20944/preprints202611.2399.v1. Code: https://github.com/anasbiswas1/picalib-research.
