@@ -1,0 +1,2 @@
+pairs,attacked,twins,optimiser_steps,epochs,loss_first_10,loss_last_10,margin_first_10,margin_last_10,margin_positive_last_10,loss_end_of_epoch,versions
+38204,19102,19102,1791,3,0.3164,0.0017,2.486,19.905,1.0,"{1: 0.0111, 2: 0.0058, 3: 0.0017}","{'transformers': '5.22.1', 'peft': '0.21.2', 'bitsandbytes': '0.50.2', 'torch': '2.14.1+cu130'}"

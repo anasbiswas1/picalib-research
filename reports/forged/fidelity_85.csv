@@ -1,0 +1,10 @@
+model,task,deletion_gap,execution_gap
+SecAlign's recipe on Qwen2.5-3B (notebook 77),repeat,"+0.050 [+0.013, +0.100]","+0.025 [+0.000, +0.062]"
+SecAlign's recipe on Qwen2.5-3B (notebook 77),number,"+0.312 [+0.212, +0.425]","+0.013 [-0.050, +0.075]"
+SecAlign's recipe on Qwen2.5-3B (notebook 77),quote_last,"+0.625 [+0.500, +0.750]",
+SecAlign's recipe with twins (notebook 85),repeat,"+0.312 [+0.212, +0.412]","+0.225 [+0.138, +0.313]"
+SecAlign's recipe with twins (notebook 85),number,"+0.412 [+0.300, +0.525]","+0.487 [+0.375, +0.600]"
+SecAlign's recipe with twins (notebook 85),quote_last,"+0.588 [+0.463, +0.700]",
+"v13 (final, notebook 73e)",repeat,"+0.000 [+0.000, +0.000]","+0.000 [+0.000, +0.000]"
+"v13 (final, notebook 73e)",number,"-0.013 [-0.037, +0.000]","+0.013 [-0.025, +0.062]"
+"v13 (final, notebook 73e)",quote_last,"+0.138 [+0.050, +0.225]",

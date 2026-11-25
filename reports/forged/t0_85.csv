@@ -1,0 +1,10 @@
+check,item,expected,got,ok
+T0,notebook 77's attacked pairs are the committed set,"19102 pairs, hash 7d686e30539b","19102 pairs, hash 7d686e30539b",True
+T0,"one twin per attacked pair, ids distinct",19102,19102 twins; 38204 distinct ids in 38204,True
+T0,the twin's instruction part is the carrier's instruction followed by the injected words; its data part is the clean data exactly,all,19102 of 19102,True
+T0,"every attacked prompt contains the injected wording (notebook 77's D0, repeated)",all,19102 of 19102,True
+T0,the twin's preferred reply is present,all but at most 1%,0 empty of 19102,True
+T0,the twin's preferred reply differs from the clean reply,all but at most 1%,125 identical,True
+T0,"twins whose prompt leaves fewer than 32 of the 512 tokens for the reply (the reply is cut, never the prompt)",reported,7 of 19102,True
+T0,"twins whose instruction part itself contains an ""Input:"" block (a carrier or injected sample written that way in Cleaned Alpaca; the twin is built by the same rule)",reported,6 of 19102,True
+T0,"combined set: pairs, optimiser steps at 64 per step over 3 epochs, hash",recorded,"38204 pairs, 1791 steps, hash feaa44bbd82b",True

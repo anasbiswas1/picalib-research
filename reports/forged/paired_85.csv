@@ -1,0 +1,16 @@
+comparison,measure,value,reading
+with twins minus without (SecAlign's recipe),"user-issued, rule (240)","+0.042 [+0.008, +0.075]",lower end above 0
+with twins minus without,"fixed attacker, 13 tries","+0.281 [+0.210, +0.352]",security lost
+with twins minus without,"fixed attacker, 1 try","+0.329 [+0.262, +0.400]",
+with twins minus without,second source (300),"+0.100 [+0.053, +0.147]",security lost
+with twins minus without,held-out Alpaca (60),"+0.083 [-0.033, +0.200]",
+with twins minus without,MMLU (300),"+0.000 [-0.027, +0.027]",
+with twins minus without,"deletion gap, repeat","+0.263 [+0.175, +0.362]",
+with twins minus without,"deletion gap, number","+0.100 [+0.000, +0.200]",
+with twins minus without,"deletion gap, quote_last","-0.037 [-0.188, +0.100]",
+v13 minus SecAlign's recipe with twins,"user-issued, rule (240)","+0.075 [+0.033, +0.121]",
+SecAlign's recipe with twins minus v13,"fixed attacker, 13 tries","+0.333 [+0.267, +0.405]",
+SecAlign's recipe with twins minus v13,second source (300),"+0.110 [+0.067, +0.157]",
+SecAlign's recipe with twins minus v13,"deletion gap, repeat","+0.312 [+0.212, +0.412]",
+SecAlign's recipe with twins minus v13,"deletion gap, number","+0.425 [+0.312, +0.537]",
+SecAlign's recipe with twins minus v13,"deletion gap, quote_last","+0.450 [+0.312, +0.588]",
